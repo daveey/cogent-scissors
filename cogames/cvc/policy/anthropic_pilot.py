@@ -4,15 +4,15 @@ from typing import Any
 
 from mettagrid_sdk.sdk import MacroDirective, MettagridState
 
-from cvc.cogent.player_cog.policy import helpers as _h
-from cvc.cogent.player_cog.policy.helpers.types import KnownEntity
-from cvc.cogent.player_cog.policy.semantic_cog import (
+from cvc.policy import helpers as _h
+from cvc.policy.helpers.types import KnownEntity
+from cvc.policy.semantic_cog import (
     MettagridSemanticPolicy,
     SemanticCogAgentPolicy,
     SharedWorldModel,
 )
-from cvc.cogent.player_cog.policy.pilot_base import PilotAgentPolicy, PilotCyborgPolicy
-from cvc.cogent.player_cog.runtime.anthropic_pilot import AnthropicPilotSession
+from cvc.policy.pilot_base import PilotAgentPolicy, PilotCyborgPolicy
+from cvc.runtime.anthropic_pilot import AnthropicPilotSession
 from mettagrid.policy.policy import AgentPolicy
 from mettagrid.policy.policy_env_interface import PolicyEnvInterface
 from mettagrid.simulator import Action

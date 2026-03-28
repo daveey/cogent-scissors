@@ -21,11 +21,11 @@ from mettagrid_sdk.sdk import (
     TeamSummary,
 )
 
-from cvc.cogent.player_cog.memory import MemoryStore
-from cvc.cogent.player_cog.providers import CodeReviewRequest, CodeReviewResponse, coerce_code_review_response
-from cvc.cogent.player_cog.runtime.artifacts import ArtifactStore
-from cvc.cogent.player_cog.runtime.execution import render_sdk_reference
-from cvc.cogent.player_cog.runtime.pilot import LivePolicyBundleSession
+from cvc.memory import MemoryStore
+from cvc.providers import CodeReviewRequest, CodeReviewResponse, coerce_code_review_response
+from cvc.runtime.artifacts import ArtifactStore
+from cvc.runtime.execution import render_sdk_reference
+from cvc.runtime.pilot import LivePolicyBundleSession
 
 _ELEMENTS = ("carbon", "oxygen", "germanium", "silicon")
 DEFAULT_GOAL = (

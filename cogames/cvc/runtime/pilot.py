@@ -7,12 +7,12 @@ from typing import Any
 
 from mettagrid_sdk.sdk import LogRecord, MettagridSDK, ReviewRequest
 
-from cvc.cogent.player_cog.providers.models import (
+from cvc.providers.models import (
     CodeReviewRequest,
     CodeReviewResponse,
 )
-from cvc.cogent.player_cog.runtime.artifacts import ArtifactStore
-from cvc.cogent.player_cog.runtime.execution import (
+from cvc.runtime.artifacts import ArtifactStore
+from cvc.runtime.execution import (
     DEFAULT_POLICY_TIMEOUT_SECONDS,
     PolicyExecutionRecord,
     PolicyExecutionResult,
@@ -21,12 +21,12 @@ from cvc.cogent.player_cog.runtime.execution import (
     execute_compiled_policy,
     render_sdk_reference,
 )
-from cvc.cogent.player_cog.runtime.models import (
+from cvc.runtime.models import (
     ExperienceTraceRecord,
     PolicyGenerationRecord,
     ReviewDecisionRecord,
 )
-from cvc.cogent.player_cog.scratchpad import SCRATCHPAD_LINE_RE, scratchpad_key_lines, scratchpad_line_value
+from cvc.scratchpad import SCRATCHPAD_LINE_RE, scratchpad_key_lines, scratchpad_line_value
 
 _MAX_RAW_RESPONSE_CHARS = 4000
 _MAX_MONOLOGUE_TRANSCRIPT_CHARS = 200_000

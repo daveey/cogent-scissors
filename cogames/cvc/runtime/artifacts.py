@@ -8,9 +8,9 @@ from pathlib import Path
 
 from mettagrid_sdk.sdk import MemoryQuery, MemoryRecord
 
-from cvc.cogent.player_cog.memory.store import MemoryStore
-from cvc.cogent.player_cog.runtime.execution import PolicyExecutionRecord
-from cvc.cogent.player_cog.runtime.models import ExperienceTraceRecord, PolicyGenerationRecord, ReviewDecisionRecord
+from cvc.memory.store import MemoryStore
+from cvc.runtime.execution import PolicyExecutionRecord
+from cvc.runtime.models import ExperienceTraceRecord, PolicyGenerationRecord, ReviewDecisionRecord
 
 _PYTHON_SHEBANG = "#!/usr/bin/env python3\n"
 CODE_MODE_MAIN_FILE = "main.py"

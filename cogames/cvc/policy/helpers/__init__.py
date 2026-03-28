@@ -9,7 +9,7 @@ Organized by concern:
 - benchmarking: Run comparison and statistical analysis
 """
 
-from cvc.cogent.player_cog.policy.helpers.geometry import (
+from cvc.policy.helpers.geometry import (
     direction_from_step,
     explore_offsets,
     format_position,
@@ -17,7 +17,7 @@ from cvc.cogent.player_cog.policy.helpers.geometry import (
     manhattan,
     unstick_directions,
 )
-from cvc.cogent.player_cog.policy.helpers.resources import (
+from cvc.policy.helpers.resources import (
     absolute_position,
     attr_int,
     attr_str,
@@ -38,7 +38,7 @@ from cvc.cogent.player_cog.policy.helpers.resources import (
     team_id,
     team_min_resource,
 )
-from cvc.cogent.player_cog.policy.helpers.targeting import (
+from cvc.policy.helpers.targeting import (
     aligner_target_score,
     is_claimed_by_other,
     is_usable_recent_extractor,
@@ -46,7 +46,7 @@ from cvc.cogent.player_cog.policy.helpers.targeting import (
     spawn_relative_station_target,
     within_alignment_network,
 )
-from cvc.cogent.player_cog.policy.helpers.types import (
+from cvc.policy.helpers.types import (
     _ALIGNER_EXPLORE_OFFSETS,
     _CLAIMED_TARGET_PENALTY,
     _ELEMENTS,

@@ -4,7 +4,7 @@ import os
 
 from anthropic import Anthropic, AnthropicBedrock
 
-from cvc.cogent.player_cog.provider_utils import should_use_anthropic_bedrock
+from cvc.provider_utils import should_use_anthropic_bedrock
 
 
 def build_anthropic_client(*, api_key: str | None) -> Anthropic | AnthropicBedrock:

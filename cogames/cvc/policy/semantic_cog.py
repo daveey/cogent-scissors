@@ -11,9 +11,9 @@ from mettagrid_sdk.games.cogsguard import (
 )
 from mettagrid_sdk.sdk import MacroDirective, MettagridState, SemanticEntity
 
-from cvc.cogent.player_cog.memory import MemoryStore
-from cvc.cogent.player_cog.policy import helpers as _h
-from cvc.cogent.player_cog.policy.helpers import KnownEntity
+from cvc.memory import MemoryStore
+from cvc.policy import helpers as _h
+from cvc.policy.helpers import KnownEntity
 from mettagrid.policy.policy import AgentPolicy, MultiAgentPolicy
 from mettagrid.policy.policy_env_interface import PolicyEnvInterface
 from mettagrid.simulator import Action

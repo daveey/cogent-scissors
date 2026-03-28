@@ -3,10 +3,10 @@ from __future__ import annotations
 import time
 from typing import Any
 
-from cvc.cogent.player_cog.provider_utils import get_default_anthropic_model
-from cvc.cogent.player_cog.providers.anthropic import build_anthropic_client
-from cvc.cogent.player_cog.runtime.artifacts import ArtifactStore
-from cvc.cogent.player_cog.runtime.pilot_runtime_common import (
+from cvc.provider_utils import get_default_anthropic_model
+from cvc.providers.anthropic import build_anthropic_client
+from cvc.runtime.artifacts import ArtifactStore
+from cvc.runtime.pilot_runtime_common import (
     DEFAULT_GOAL,
     DEFAULT_MAX_TOKENS,
     DEFAULT_PILOT_TIMEOUT_SECONDS,
@@ -15,7 +15,7 @@ from cvc.cogent.player_cog.runtime.pilot_runtime_common import (
     PilotSession,
     SharedPilotContext,
 )
-from cvc.cogent.player_cog.secret_utils import resolve_api_key
+from cvc.secret_utils import resolve_api_key
 
 __all__ = [
     "AnthropicPilotSession",

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from cvc.cogent.player_cog.policy.helpers.types import (
+from cvc.policy.helpers.types import (
     _ALIGNER_EXPLORE_OFFSETS,
     _MINER_EXPLORE_OFFSETS,
     _MOVE_DELTAS,

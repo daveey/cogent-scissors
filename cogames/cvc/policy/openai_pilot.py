@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from cvc.cogent.player_cog.policy.pilot_base import PilotAgentPolicy, PilotCyborgPolicy
-from cvc.cogent.player_cog.runtime.openai_pilot import OpenAIPilotSession
+from cvc.policy.pilot_base import PilotAgentPolicy, PilotCyborgPolicy
+from cvc.runtime.openai_pilot import OpenAIPilotSession
 
 __all__ = [
     "OpenAICyborgPolicy",

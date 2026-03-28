@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from mettagrid_sdk.sdk import MettagridState, SemanticEntity
 
-from cvc.cogent.player_cog.policy.helpers.geometry import manhattan
-from cvc.cogent.player_cog.policy.helpers.types import (
+from cvc.policy.helpers.geometry import manhattan
+from cvc.policy.helpers.types import (
     _ELEMENTS,
     _EMERGENCY_RESOURCE_LOW,
     _GEAR_COSTS,

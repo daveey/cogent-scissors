@@ -16,8 +16,8 @@ from mettagrid_sdk.sdk import (
     SemanticEvent,
 )
 
-from cvc.cogent.player_cog.memory.retrieval import render_retrieved_context, retrieve_records
-from cvc.cogent.player_cog.scratchpad import SCRATCHPAD_LINE_RE, parse_scratchpad_value, render_scratchpad_value
+from cvc.memory.retrieval import render_retrieved_context, retrieve_records
+from cvc.scratchpad import SCRATCHPAD_LINE_RE, parse_scratchpad_value, render_scratchpad_value
 
 _MISSING = object()
 

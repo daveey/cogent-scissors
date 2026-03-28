@@ -11,9 +11,9 @@ from mettagrid_sdk.sdk import (
     ReviewRequest,
 )
 
-from cvc.cogent.player_cog.policy.semantic_cog import MettagridSemanticPolicy, SemanticCogAgentPolicy, SharedWorldModel
-from cvc.cogent.player_cog.runtime.artifacts import resolve_debug_artifact_root
-from cvc.cogent.player_cog.runtime.pilot_runtime_common import (
+from cvc.policy.semantic_cog import MettagridSemanticPolicy, SemanticCogAgentPolicy, SharedWorldModel
+from cvc.runtime.artifacts import resolve_debug_artifact_root
+from cvc.runtime.pilot_runtime_common import (
     DEFAULT_GOAL,
     DEFAULT_MAX_TOKENS,
     DEFAULT_TEMPERATURE,

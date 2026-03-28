@@ -5,10 +5,7 @@ AnthropicCyborgPolicy adds LLM-based runtime improvements on top.
 """
 from __future__ import annotations
 
-from typing import Any
-
-from cvc.cogent.player_cog.policy.anthropic_pilot import AlphaCyborgPolicy, AnthropicCyborgPolicy
-from mettagrid.policy.policy_env_interface import PolicyEnvInterface  # type: ignore[import-untyped]
+from cvc.policy.anthropic_pilot import AlphaCyborgPolicy, AnthropicCyborgPolicy
 
 
 class CogletPolicy(AlphaCyborgPolicy):
