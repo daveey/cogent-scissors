@@ -8,6 +8,9 @@ dependencies = [
     "pydantic",
 ]
 
+[project.scripts]
+cogweb = "cogweb.cli:main"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
