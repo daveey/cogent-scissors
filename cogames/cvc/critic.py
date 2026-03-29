@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from coglet.coglet import Coglet, listen
+from coglet.coglet import Coglet, enact, listen
 
 
 class CvCCritic(Coglet):
@@ -21,9 +21,9 @@ class CvCCritic(Coglet):
         evaluation = self.evaluate(data)
         await self.transmit("evaluation", evaluation)
 
-    @listen("update")
+    @enact("update")
     async def _on_update(self, data: Any) -> None:
-        pass  # no-op: PCO protocol requires this channel
+        pass  # no-op: PCO protocol requires this handler
 
     def evaluate(self, snapshots: list[dict]) -> dict:
         """Compute evaluation metrics from a list of game snapshots."""
