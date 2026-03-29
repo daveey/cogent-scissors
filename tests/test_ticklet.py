@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from coglet import Coglet, CogletConfig, CogletRuntime, LogLet, TickLet, every
+from coglet import Coglet, CogBase, CogletRuntime, LogLet, TickLet, every
 
 
 class CounterTicker(Coglet, TickLet):
@@ -64,7 +64,7 @@ class FailingTicker(Coglet, TickLet, LogLet):
 @pytest.mark.asyncio
 async def test_ticklet_time_based():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=CounterTicker))
+    handle = await rt.spawn(CogBase(cls=CounterTicker))
     cog: CounterTicker = handle.coglet
     await asyncio.sleep(0.15)
     assert cog.time_count >= 2
@@ -83,7 +83,7 @@ async def test_ticklet_manual():
 @pytest.mark.asyncio
 async def test_ticklet_stop_cancels_tasks():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=CounterTicker))
+    handle = await rt.spawn(CogBase(cls=CounterTicker))
     cog: CounterTicker = handle.coglet
     assert len(cog._tick_tasks) == 1
     await rt.shutdown()
@@ -109,7 +109,7 @@ def test_ticklet_minute_unit():
 async def test_ticklet_error_handling():
     """Ticker errors call on_ticker_error and continue running."""
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=FailingTicker))
+    handle = await rt.spawn(CogBase(cls=FailingTicker))
     cog: FailingTicker = handle.coglet
     await asyncio.sleep(0.15)
     assert cog.tick_calls >= 2

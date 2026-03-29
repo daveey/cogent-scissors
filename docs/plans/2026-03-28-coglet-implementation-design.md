@@ -7,7 +7,7 @@ src/coglet/
     coglet.py     # Coglet base, @listen, @enact, transmit, COG methods
     channel.py    # ChannelBus, async channel primitives
     runtime.py    # CogletRuntime — lifecycle, dispatch, scheduling
-    handle.py     # CogletHandle, CogletConfig
+    handle.py     # CogletHandle, CogBase
     lifelet.py    # on_start, on_stop (process lifecycle)
     ticklet.py    # @every decorator
     codelet.py    # mutable function table
@@ -43,9 +43,9 @@ COG methods (available on all Coglets, used when supervising children):
 
 Backed by `asyncio.Queue`. Bounded optional (default unbounded).
 
-### handle.py — CogletHandle, CogletConfig
+### handle.py — CogletHandle, CogBase
 
-`CogletConfig` — dataclass describing how to instantiate a Coglet (class, kwargs, capabilities).
+`CogBase` — dataclass describing how to instantiate a Coglet (class, kwargs, capabilities).
 
 `CogletHandle` — opaque reference to a running child. Used by parent COG for `observe` and `guide`. Contains the child's ChannelBus reference and command intake.
 

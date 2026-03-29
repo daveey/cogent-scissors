@@ -9,7 +9,7 @@ from typing import Any
 import pytest
 
 from coglet import (
-    Coglet, CogletConfig, CogletHandle, CogletRuntime, CogletTrace,
+    Coglet, CogBase, CogletHandle, CogletRuntime, CogletTrace,
     Command, LifeLet, TickLet, listen, enact,
 )
 
@@ -56,7 +56,7 @@ class Plain(Coglet):
 @pytest.mark.asyncio
 async def test_spawn_basic():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Plain))
+    handle = await rt.spawn(CogBase(cls=Plain))
     assert handle.coglet in rt._coglets
     assert handle in rt._handles
     await rt.shutdown()
@@ -65,7 +65,7 @@ async def test_spawn_basic():
 @pytest.mark.asyncio
 async def test_spawn_calls_on_start():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Node))
+    handle = await rt.spawn(CogBase(cls=Node))
     assert handle.coglet.started is True
     await rt.shutdown()
 
@@ -73,9 +73,9 @@ async def test_spawn_calls_on_start():
 @pytest.mark.asyncio
 async def test_shutdown_reverse_order():
     rt = CogletRuntime()
-    h1 = await rt.spawn(CogletConfig(cls=Node))
-    h2 = await rt.spawn(CogletConfig(cls=Node))
-    h3 = await rt.spawn(CogletConfig(cls=Node))
+    h1 = await rt.spawn(CogBase(cls=Node))
+    h2 = await rt.spawn(CogBase(cls=Node))
+    h3 = await rt.spawn(CogBase(cls=Node))
 
     stop_order = []
     original_stop1 = h1.coglet.on_stop
@@ -107,8 +107,8 @@ async def test_shutdown_reverse_order():
 @pytest.mark.asyncio
 async def test_shutdown_clears_state():
     rt = CogletRuntime()
-    await rt.spawn(CogletConfig(cls=Plain))
-    await rt.spawn(CogletConfig(cls=Plain))
+    await rt.spawn(CogBase(cls=Plain))
+    await rt.spawn(CogBase(cls=Plain))
     await rt.shutdown()
     assert rt._coglets == []
     assert rt._handles == []
@@ -119,7 +119,7 @@ async def test_shutdown_clears_state():
 @pytest.mark.asyncio
 async def test_run_is_spawn():
     rt = CogletRuntime()
-    handle = await rt.run(CogletConfig(cls=Node))
+    handle = await rt.run(CogBase(cls=Node))
     assert handle.coglet.started is True
     await rt.shutdown()
 
@@ -129,10 +129,10 @@ async def test_run_is_spawn():
 @pytest.mark.asyncio
 async def test_parent_tracking():
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=Plain))
+    parent_handle = await rt.spawn(CogBase(cls=Plain))
     parent = parent_handle.coglet
 
-    child_handle = await parent.create(CogletConfig(cls=Plain))
+    child_handle = await parent.create(CogBase(cls=Plain))
     child = child_handle.coglet
 
     assert rt._parents[id(child)] is parent
@@ -146,7 +146,7 @@ async def test_parent_tracking():
 @pytest.mark.asyncio
 async def test_tree_single_node():
     rt = CogletRuntime()
-    await rt.spawn(CogletConfig(cls=Plain))
+    await rt.spawn(CogBase(cls=Plain))
     tree = rt.tree()
     assert "CogletRuntime" in tree
     assert "Plain" in tree
@@ -156,11 +156,11 @@ async def test_tree_single_node():
 @pytest.mark.asyncio
 async def test_tree_hierarchy():
     rt = CogletRuntime()
-    root_handle = await rt.spawn(CogletConfig(cls=Node))
+    root_handle = await rt.spawn(CogBase(cls=Node))
     root = root_handle.coglet
 
-    await root.create(CogletConfig(cls=Plain))
-    await root.create(CogletConfig(cls=Plain))
+    await root.create(CogBase(cls=Plain))
+    await root.create(CogBase(cls=Plain))
 
     tree = rt.tree()
     assert "Node" in tree
@@ -173,7 +173,7 @@ async def test_tree_hierarchy():
 @pytest.mark.asyncio
 async def test_tree_shows_mixins():
     rt = CogletRuntime()
-    await rt.spawn(CogletConfig(cls=Node))
+    await rt.spawn(CogBase(cls=Node))
     tree = rt.tree()
     assert "LifeLet" in tree
     await rt.shutdown()
@@ -182,7 +182,7 @@ async def test_tree_shows_mixins():
 @pytest.mark.asyncio
 async def test_tree_shows_channels():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Plain))
+    handle = await rt.spawn(CogBase(cls=Plain))
     cog = handle.coglet
     cog._bus.subscribe("events")
     tree = rt.tree()
@@ -205,7 +205,7 @@ async def test_trace_records_transmit():
     try:
         trace = CogletTrace(path)
         rt = CogletRuntime(trace=trace)
-        handle = await rt.spawn(CogletConfig(cls=Plain))
+        handle = await rt.spawn(CogBase(cls=Plain))
         cog = handle.coglet
 
         await cog.transmit("ch", "data1")
@@ -233,7 +233,7 @@ async def test_trace_records_enact():
             @enact("ping")
             async def on_ping(self, data): pass
 
-        handle = await rt.spawn(CogletConfig(cls=Enactable))
+        handle = await rt.spawn(CogBase(cls=Enactable))
         await handle.guide(Command("ping", "pong"))
 
         await rt.shutdown()
@@ -252,7 +252,7 @@ async def test_trace_timestamps_increase():
     try:
         trace = CogletTrace(path)
         rt = CogletRuntime(trace=trace)
-        handle = await rt.spawn(CogletConfig(cls=Plain))
+        handle = await rt.spawn(CogBase(cls=Plain))
 
         await handle.coglet.transmit("a", 1)
         await asyncio.sleep(0.01)
@@ -281,10 +281,10 @@ class RestartParent(Coglet):
 @pytest.mark.asyncio
 async def test_restart_replaces_coglet():
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=RestartParent))
+    parent_handle = await rt.spawn(CogBase(cls=RestartParent))
     parent = parent_handle.coglet
 
-    config = CogletConfig(cls=Node, restart="on_error", max_restarts=3, backoff_s=0.01)
+    config = CogBase(cls=Node, restart="on_error", max_restarts=3, backoff_s=0.01)
     child_handle = await rt.spawn(config, parent=parent)
     old = child_handle.coglet
 
@@ -300,10 +300,10 @@ async def test_restart_replaces_coglet():
 @pytest.mark.asyncio
 async def test_restart_respects_max():
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=RestartParent))
+    parent_handle = await rt.spawn(CogBase(cls=RestartParent))
     parent = parent_handle.coglet
 
-    config = CogletConfig(cls=Node, restart="on_error", max_restarts=2, backoff_s=0.01)
+    config = CogBase(cls=Node, restart="on_error", max_restarts=2, backoff_s=0.01)
     child_handle = await rt.spawn(config, parent=parent)
 
     # First restart
@@ -326,7 +326,7 @@ async def test_restart_respects_max():
 @pytest.mark.asyncio
 async def test_stop_child_removes_from_runtime():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Node))
+    handle = await rt.spawn(CogBase(cls=Node))
     cog = handle.coglet
     assert cog in rt._coglets
 
@@ -339,7 +339,7 @@ async def test_stop_child_removes_from_runtime():
 async def test_handle_child_error_no_parent():
     """Child with no parent just gets stopped."""
     rt = CogletRuntime()
-    config = CogletConfig(cls=Node)
+    config = CogBase(cls=Node)
     handle = await rt.spawn(config)
     cog = handle.coglet
 

@@ -81,9 +81,9 @@ continue. Override `on_ticker_error()` to customize (e.g., count failures, escal
 
 **Inspired by:** OTP supervision strategies (one-for-one with backoff)
 
-**Status: Implemented** — `CogletConfig` fields + `CogletRuntime` restart logic
+**Status: Implemented** — `CogBase` fields + `CogletRuntime` restart logic
 
-`CogletConfig` now accepts:
+`CogBase` now accepts:
 - `restart: str` — `"never"` (default), `"on_error"`, or `"always"`
 - `max_restarts: int` — maximum restart attempts (default 3)
 - `backoff_s: float` — base backoff delay in seconds (default 1.0), doubles each attempt
@@ -99,7 +99,7 @@ preserved across restarts — it points to the new coglet instance transparently
 **Status: Implemented** — `Coglet.on_child_error()` in `src/coglet/coglet.py`
 
 Parent COG gets a hook when a child coglet errors. Returns one of:
-- `"restart"` — restart the child (respects CogletConfig limits)
+- `"restart"` — restart the child (respects CogBase limits)
 - `"stop"` — stop the child (default)
 - `"escalate"` — re-raise the error in this coglet
 

@@ -1,4 +1,4 @@
-"""Unit tests for coglet.handle: Command, CogletConfig, CogletHandle."""
+"""Unit tests for coglet.handle: Command, CogBase, CogletHandle."""
 from __future__ import annotations
 
 import asyncio
@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from coglet import Coglet, CogletConfig, CogletHandle, Command, listen, enact
+from coglet import Coglet, CogBase, CogletHandle, Command, listen, enact
 
 
 class Worker(Coglet):
@@ -33,10 +33,10 @@ def test_command_with_data():
     assert cmd.data == {"x": 1}
 
 
-# ---- CogletConfig ----
+# ---- CogBase ----
 
 def test_config_defaults():
-    cfg = CogletConfig(cls=Worker)
+    cfg = CogBase(cls=Worker)
     assert cfg.cls is Worker
     assert cfg.kwargs == {}
     assert cfg.restart == "never"
@@ -45,7 +45,7 @@ def test_config_defaults():
 
 
 def test_config_custom():
-    cfg = CogletConfig(
+    cfg = CogBase(
         cls=Worker,
         kwargs={"name": "w1"},
         restart="on_error",

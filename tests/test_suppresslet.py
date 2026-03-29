@@ -7,7 +7,7 @@ from typing import Any
 import pytest
 
 from coglet import (
-    Coglet, CogletConfig, CogletRuntime, Command, SuppressLet, enact, listen,
+    Coglet, CogBase, CogletRuntime, Command, SuppressLet, enact, listen,
 )
 
 
@@ -31,7 +31,7 @@ class SuppressedCollector(SuppressLet, Coglet):
 async def test_suppresslet_channels():
     """SuppressLet gates transmit on suppressed channels."""
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=SuppressedCollector))
+    handle = await rt.spawn(CogBase(cls=SuppressedCollector))
     cog: SuppressedCollector = handle.coglet
 
     sub = cog._bus.subscribe("out")
@@ -65,7 +65,7 @@ async def test_suppresslet_channels():
 async def test_suppresslet_commands():
     """SuppressLet gates enact on suppressed commands."""
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=SuppressedCollector))
+    handle = await rt.spawn(CogBase(cls=SuppressedCollector))
     cog: SuppressedCollector = handle.coglet
 
     # Normal command works

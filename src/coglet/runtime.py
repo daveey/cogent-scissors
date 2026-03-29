@@ -3,7 +3,7 @@
 Responsibilities:
   - spawn/shutdown: lifecycle management with LifeLet/TickLet integration
   - tree(): ASCII visualization of the live coglet hierarchy
-  - Restart: exponential backoff restart via on_child_error + CogletConfig policy
+  - Restart: exponential backoff restart via on_child_error + CogBase policy
   - Tracing: optional jsonl event recording via CogletTrace
 """
 
@@ -13,7 +13,7 @@ import asyncio
 from typing import Any
 
 from coglet.coglet import Coglet
-from coglet.handle import CogletConfig, CogletHandle
+from coglet.handle import CogBase, CogletHandle
 from coglet.lifelet import LifeLet
 from coglet.ticklet import TickLet
 from coglet.trace import CogletTrace
@@ -25,12 +25,12 @@ class CogletRuntime:
     def __init__(self, trace: CogletTrace | None = None):
         self._handles: list[CogletHandle] = []
         self._coglets: list[Coglet] = []
-        self._configs: dict[int, CogletConfig] = {}  # id(coglet) -> config
+        self._configs: dict[int, CogBase] = {}  # id(coglet) -> config
         self._parents: dict[int, Coglet] = {}         # id(coglet) -> parent
         self._restart_counts: dict[int, int] = {}     # id(coglet) -> count
         self._trace = trace
 
-    def _instantiate(self, config: CogletConfig) -> Coglet:
+    def _instantiate(self, config: CogBase) -> Coglet:
         coglet = config.cls(**config.kwargs)
         coglet._runtime = self
         if self._trace:
@@ -59,7 +59,7 @@ class CogletRuntime:
         coglet._dispatch_enact = traced_dispatch  # type: ignore[assignment]
 
     async def spawn(
-        self, config: CogletConfig, parent: Coglet | None = None
+        self, config: CogBase, parent: Coglet | None = None
     ) -> CogletHandle:
         coglet = self._instantiate(config)
         handle = CogletHandle(coglet)
@@ -78,7 +78,7 @@ class CogletRuntime:
 
         return handle
 
-    async def run(self, config: CogletConfig) -> CogletHandle:
+    async def run(self, config: CogBase) -> CogletHandle:
         """Boot a root coglet and return its handle."""
         return await self.spawn(config)
 
@@ -125,7 +125,7 @@ class CogletRuntime:
         await self._stop_coglet(coglet)
 
     async def _restart_child(
-        self, handle: CogletHandle, config: CogletConfig, restart_count: int
+        self, handle: CogletHandle, config: CogBase, restart_count: int
     ) -> None:
         old_coglet = handle.coglet
         await self._stop_coglet(old_coglet)

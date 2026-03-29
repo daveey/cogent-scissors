@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from coglet import Coglet, CogletConfig, CogletRuntime, Command, MulLet, listen, enact
+from coglet import Coglet, CogBase, CogletRuntime, Command, MulLet, listen, enact
 
 
 class Worker(Coglet):
@@ -39,9 +39,9 @@ class CustomFleet(Coglet, MulLet):
 @pytest.mark.asyncio
 async def test_mullet_create_mul():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     assert len(fleet._mul_children) == 3
     await rt.shutdown()
 
@@ -49,9 +49,9 @@ async def test_mullet_create_mul():
 @pytest.mark.asyncio
 async def test_mullet_guide_mapped():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     await fleet.guide_mapped(Command("cmd", "hello"))
     for child_handle in fleet._mul_children:
         assert ("cmd", "hello") in child_handle.coglet.received
@@ -61,9 +61,9 @@ async def test_mullet_guide_mapped():
 @pytest.mark.asyncio
 async def test_mullet_scatter_broadcast():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     await fleet.scatter("task", "job1")
     for child_handle in fleet._mul_children:
         assert "job1" in child_handle.coglet.received
@@ -73,9 +73,9 @@ async def test_mullet_scatter_broadcast():
 @pytest.mark.asyncio
 async def test_mullet_gather():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
-    await fleet.create_mul(2, CogletConfig(cls=Worker))
+    await fleet.create_mul(2, CogBase(cls=Worker))
 
     subs = []
     for child_handle in fleet._mul_children:
@@ -108,9 +108,9 @@ async def test_mullet_default_reduce():
 @pytest.mark.asyncio
 async def test_mullet_custom_map():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=CustomFleet))
+    handle = await rt.spawn(CogBase(cls=CustomFleet))
     fleet: CustomFleet = handle.coglet
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     await fleet.scatter("task", "only-first")
     assert "only-first" in fleet._mul_children[0].coglet.received
     assert fleet._mul_children[1].coglet.received == []

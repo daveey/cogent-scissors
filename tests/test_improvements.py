@@ -10,7 +10,7 @@ from typing import Any
 import pytest
 
 from coglet import (
-    Coglet, CogletConfig, CogletHandle, CogletRuntime, CogletTrace,
+    Coglet, CogBase, CogletHandle, CogletRuntime, CogletTrace,
     Command, LifeLet, LogLet, SuppressLet, TickLet, enact, every, listen,
 )
 
@@ -104,7 +104,7 @@ class EscalateParent(Coglet):
 async def test_suppresslet_channels():
     """SuppressLet gates transmit on suppressed channels."""
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=SuppressedCollector))
+    handle = await rt.spawn(CogBase(cls=SuppressedCollector))
     cog: SuppressedCollector = handle.coglet
 
     # Subscribe to output
@@ -140,7 +140,7 @@ async def test_suppresslet_channels():
 async def test_suppresslet_commands():
     """SuppressLet gates enact on suppressed commands."""
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=SuppressedCollector))
+    handle = await rt.spawn(CogBase(cls=SuppressedCollector))
     cog: SuppressedCollector = handle.coglet
 
     # Normal command works
@@ -166,10 +166,10 @@ async def test_suppresslet_commands():
 async def test_tree_visualization():
     """Runtime.tree() shows the coglet hierarchy."""
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=Parent))
+    parent_handle = await rt.spawn(CogBase(cls=Parent))
     parent: Parent = parent_handle.coglet
 
-    child_handle = await parent.create(CogletConfig(cls=Collector))
+    child_handle = await parent.create(CogBase(cls=Collector))
 
     output = rt.tree()
     assert "Parent" in output
@@ -195,7 +195,7 @@ async def test_trace():
     try:
         trace = CogletTrace(trace_path)
         rt = CogletRuntime(trace=trace)
-        handle = await rt.spawn(CogletConfig(cls=Collector))
+        handle = await rt.spawn(CogBase(cls=Collector))
         cog: Collector = handle.coglet
 
         await cog.transmit("out", {"msg": "hello"})
@@ -218,7 +218,7 @@ async def test_trace():
 async def test_ticker_error_handling():
     """Ticker errors call on_ticker_error and continue running."""
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=FailingTicker))
+    handle = await rt.spawn(CogBase(cls=FailingTicker))
     cog: FailingTicker = handle.coglet
 
     # Wait for at least 2 tick cycles
@@ -235,10 +235,10 @@ async def test_ticker_error_handling():
 async def test_on_child_error_restart():
     """Parent with on_child_error='restart' restarts failed children."""
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=Parent))
+    parent_handle = await rt.spawn(CogBase(cls=Parent))
     parent: Parent = parent_handle.coglet
 
-    config = CogletConfig(
+    config = CogBase(
         cls=FailingStart, kwargs={"fail_count": 1},
         restart="on_error", max_restarts=3, backoff_s=0.01,
     )
@@ -256,7 +256,7 @@ async def test_on_child_error_restart():
 
     # The restart mechanism is for runtime errors during operation.
     # Let's test with a coglet that starts fine but we manually trigger error handling.
-    config2 = CogletConfig(
+    config2 = CogBase(
         cls=Collector, restart="on_error", max_restarts=3, backoff_s=0.01,
     )
     child_handle2 = await rt.spawn(config2, parent=parent)
@@ -276,10 +276,10 @@ async def test_on_child_error_restart():
 async def test_on_child_error_stop():
     """Default parent stops children on error."""
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=StopParent))
+    parent_handle = await rt.spawn(CogBase(cls=StopParent))
     parent: StopParent = parent_handle.coglet
 
-    config = CogletConfig(cls=Collector, restart="on_error", max_restarts=3)
+    config = CogBase(cls=Collector, restart="on_error", max_restarts=3)
     child_handle = await rt.spawn(config, parent=parent)
     child = child_handle.coglet
 
@@ -295,10 +295,10 @@ async def test_on_child_error_stop():
 async def test_on_child_error_escalate():
     """Escalate parent re-raises child error."""
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=EscalateParent))
+    parent_handle = await rt.spawn(CogBase(cls=EscalateParent))
     parent: EscalateParent = parent_handle.coglet
 
-    config = CogletConfig(cls=Collector)
+    config = CogBase(cls=Collector)
     child_handle = await rt.spawn(config, parent=parent)
 
     with pytest.raises(RuntimeError, match="escalated"):
@@ -309,13 +309,13 @@ async def test_on_child_error_escalate():
 
 @pytest.mark.asyncio
 async def test_config_restart_fields():
-    """CogletConfig has restart, max_restarts, backoff_s."""
-    config = CogletConfig(cls=Collector)
+    """CogBase has restart, max_restarts, backoff_s."""
+    config = CogBase(cls=Collector)
     assert config.restart == "never"
     assert config.max_restarts == 3
     assert config.backoff_s == 1.0
 
-    config2 = CogletConfig(cls=Collector, restart="on_error", max_restarts=5, backoff_s=0.5)
+    config2 = CogBase(cls=Collector, restart="on_error", max_restarts=5, backoff_s=0.5)
     assert config2.restart == "on_error"
     assert config2.max_restarts == 5
     assert config2.backoff_s == 0.5

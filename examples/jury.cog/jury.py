@@ -13,7 +13,7 @@ import asyncio
 import hashlib
 
 from coglet import (
-    Coglet, LifeLet, ProgLet, LogLet, CogletConfig, Command,
+    Coglet, LifeLet, ProgLet, LogLet, CogBase, Command,
     Program, enact,
 )
 from coglet.mullet import MulLet
@@ -103,7 +103,7 @@ class JuryCoglet(Coglet, LifeLet, MulLet):
 
         # Create jurors with unique IDs
         for i in range(self.num_jurors):
-            config = CogletConfig(
+            config = CogBase(
                 cls=JurorCoglet,
                 kwargs={"juror_id": i},
             )

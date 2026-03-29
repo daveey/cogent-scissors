@@ -13,7 +13,7 @@ from __future__ import annotations
 from typing import Any, AsyncIterator, Callable
 
 from coglet.channel import ChannelBus
-from coglet.handle import CogletConfig, CogletHandle, Command
+from coglet.handle import CogBase, CogletHandle, Command
 
 
 # --- Decorators ---
@@ -86,7 +86,7 @@ class Coglet:
 
     # --- COG: create, observe, guide ---
 
-    async def create(self, config: CogletConfig) -> CogletHandle:
+    async def create(self, config: CogBase) -> CogletHandle:
         if self._runtime is None:
             raise RuntimeError("Coglet not attached to a runtime")
         handle: CogletHandle = await self._runtime.spawn(config, parent=self)
@@ -108,7 +108,7 @@ class Coglet:
         """Called when a child coglet errors. Override to customize.
 
         Return:
-            "restart" — restart the child (respects CogletConfig limits)
+            "restart" — restart the child (respects CogBase limits)
             "stop"    — stop the child (default)
             "escalate" — re-raise the error in this coglet
         """

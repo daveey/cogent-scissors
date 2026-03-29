@@ -19,7 +19,7 @@ import sys
 import anthropic
 
 from coglet import (
-    Coglet, LifeLet, ProgLet, LogLet, CogletConfig, Command,
+    Coglet, LifeLet, ProgLet, LogLet, CogBase, Command,
     Program, LLMExecutor, enact,
 )
 from coglet.mullet import MulLet
@@ -103,7 +103,7 @@ class JuryCoglet(Coglet, LifeLet, MulLet):
 
         for i in range(self.num_jurors):
             persona = PERSONAS[i % len(PERSONAS)]
-            handle = await self.create(CogletConfig(
+            handle = await self.create(CogBase(
                 cls=JurorCoglet,
                 kwargs={"juror_id": i, "persona": persona},
             ))

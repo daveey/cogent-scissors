@@ -33,7 +33,7 @@ A Coglet is both: every COG is itself a LET under a higher COG, forming a recurs
 - **Data plane**: `@listen(channel)` — receive data from named channels
 - **Control plane**: `@enact(command_type)` — receive commands from supervising COG
 - **Output**: `transmit(channel, data)` — push results outbound
-- **Supervision**: `observe(handle, channel)`, `guide(handle, command)`, `create(config)`
+- **Supervision**: `observe(handle, channel)`, `guide(handle, command)`, `create(base)`
 - All communication is async, location-agnostic, fire-and-forget
 
 ### Mixins
@@ -44,7 +44,7 @@ LifeLet (lifecycle hooks), GitLet (repo-as-policy), LogLet (log stream), TickLet
 
 - `CogletRuntime.tree()` — ASCII visualization of the live supervision tree
 - `CogletTrace` — jsonl event recording for post-mortem debugging
-- Restart policy — `CogletConfig(restart="on_error", max_restarts=3, backoff_s=1.0)`
+- Restart policy — `CogBase(restart="on_error", max_restarts=3, backoff_s=1.0)`
 - `Coglet.on_child_error()` — parent decides restart/stop/escalate on child failure
 - `TickLet.on_ticker_error()` — overridable hook for ticker exceptions
 

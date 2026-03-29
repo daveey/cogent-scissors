@@ -12,7 +12,7 @@ from typing import Any
 from coglet.coglet import Coglet, listen, enact
 from coglet.gitlet import GitLet
 from coglet.lifelet import LifeLet
-from coglet.handle import CogletConfig, Command
+from coglet.handle import CogBase, Command
 
 
 class PlayerCoglet(Coglet, GitLet, LifeLet):

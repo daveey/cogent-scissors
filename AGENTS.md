@@ -15,7 +15,7 @@ src/coglet/
 ├── __init__.py        # Package exports (all public types)
 ├── coglet.py          # Base Coglet class + @listen/@enact decorators
 ├── channel.py         # Channel, ChannelSubscription, ChannelBus (async pub/sub)
-├���─ handle.py          # Command, CogletConfig, CogletHandle (child references)
+├���─ handle.py          # Command, CogBase, CogletHandle (child references)
 ├── runtime.py         # CogletRuntime (spawn, shutdown, tree, restart, tracing)
 ├── lifelet.py         # LifeLet mixin (on_start/on_stop lifecycle hooks)
 ├── ticklet.py         # TickLet mixin + @every decorator (periodic execution)
@@ -54,7 +54,7 @@ The universal primitive. Every coglet has two interfaces:
 - `transmit_sync(channel, data)` — non-async variant
 
 **COG interface** (managing children):
-- `create(config) -> CogletHandle` — spawn a child coglet
+- `create(base) -> CogletHandle` — spawn a child coglet from a CogBase
 - `observe(handle, channel)` — async iterator over child's channel output
 - `guide(handle, command)` — fire-and-forget command to child's @enact handlers
 
@@ -78,8 +78,9 @@ There is no replay/history — missed messages are gone.
 ### handle.py — Child References
 
 - `Command(type, data)` — control-plane message sent via `guide()`
-- `CogletConfig(cls, kwargs, restart, max_restarts, backoff_s)` — instantiation config.
-  `restart` can be `"never"` (default), `"on_error"`, or `"always"`.
+- `CogBase(cls, kwargs, restart, max_restarts, backoff_s)` — bundle of assets for
+  creating a Coglet. `restart` can be `"never"` (default), `"on_error"`, or `"always"`.
+
 - `CogletHandle` — opaque reference to a running child. Exposes `observe(channel)`
   and `guide(command)`. The parent never accesses the child directly.
 
@@ -87,8 +88,8 @@ There is no replay/history — missed messages are gone.
 
 `CogletRuntime` manages the coglet tree:
 
-- `spawn(config, parent)` — instantiate, call on_start, start tickers, return handle
-- `run(config)` — spawn a root coglet (no parent)
+- `spawn(base, parent)` — instantiate from CogBase, call on_start, start tickers, return handle
+- `run(base)` — spawn a root coglet (no parent)
 - `shutdown()` — stop all coglets in reverse spawn order (LIFO)
 - `tree()` — ASCII visualization of the live supervision hierarchy
 - `handle_child_error(handle, error)` — consult parent's on_child_error, apply restart policy
@@ -233,7 +234,7 @@ PYTHONPATH=src python -m pytest tests/ -v
 200 tests, organized by component:
 - `test_channel.py` — Channel, ChannelSubscription, ChannelBus
 - `test_coglet.py` — Coglet base, decorators, dispatch, COG interface
-- `test_handle.py` — Command, CogletConfig, CogletHandle
+- `test_handle.py` — Command, CogBase, CogletHandle
 - `test_runtime.py` — spawn, shutdown, tree, trace, restart
 - `test_mixins.py` — LifeLet, TickLet, ProgLet, GitLet, LogLet, MulLet
 - `test_improvements.py` — SuppressLet, tree, trace, ticker errors, restart, on_child_error

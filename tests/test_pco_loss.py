@@ -1,6 +1,6 @@
 import asyncio
 import pytest
-from coglet import Coglet, CogletRuntime, CogletConfig, CogletHandle, listen
+from coglet import Coglet, CogletRuntime, CogBase, CogletHandle, listen
 from coglet.pco.loss import LossCoglet
 
 
@@ -12,7 +12,7 @@ class ScoreLoss(LossCoglet):
 @pytest.mark.asyncio
 async def test_loss_coglet_emits_signal():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=ScoreLoss))
+    handle = await runtime.spawn(CogBase(cls=ScoreLoss))
     coglet = handle.coglet
 
     signals = []

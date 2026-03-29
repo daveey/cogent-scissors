@@ -1,6 +1,6 @@
 import asyncio
 import pytest
-from coglet import CogletRuntime, CogletConfig
+from coglet import CogletRuntime, CogBase
 from coglet.pco.constraint import ConstraintCoglet
 
 
@@ -15,7 +15,7 @@ class MaxLines(ConstraintCoglet):
 @pytest.mark.asyncio
 async def test_constraint_rejects_large_patch():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=MaxLines))
+    handle = await runtime.spawn(CogBase(cls=MaxLines))
     coglet = handle.coglet
 
     verdicts = []
@@ -39,7 +39,7 @@ async def test_constraint_rejects_large_patch():
 @pytest.mark.asyncio
 async def test_constraint_accepts_small_patch():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=MaxLines))
+    handle = await runtime.spawn(CogBase(cls=MaxLines))
     coglet = handle.coglet
 
     verdicts = []

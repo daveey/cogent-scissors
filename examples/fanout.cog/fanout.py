@@ -12,7 +12,7 @@ Demonstrates:
 import asyncio
 
 from coglet import (
-    Coglet, LifeLet, CogletConfig, Command, listen, enact,
+    Coglet, LifeLet, CogBase, Command, listen, enact,
 )
 from coglet.mullet import MulLet
 
@@ -52,7 +52,7 @@ class AggregatorCoglet(Coglet, LifeLet, MulLet):
         print(f"[aggregator] spawning {self.NUM_WORKERS} workers")
         await self.create_mul(
             self.NUM_WORKERS,
-            CogletConfig(cls=WorkerCoglet),
+            CogBase(cls=WorkerCoglet),
         )
 
         numbers = list(range(1, self.NUM_WORKERS + 1))  # [1, 2, 3, 4]

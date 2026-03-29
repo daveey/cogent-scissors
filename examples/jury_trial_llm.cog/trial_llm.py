@@ -22,7 +22,7 @@ import sys
 import anthropic
 
 from coglet import (
-    Coglet, LifeLet, ProgLet, LogLet, CogletConfig, Command,
+    Coglet, LifeLet, ProgLet, LogLet, CogBase, Command,
     Program, LLMExecutor, enact, listen,
 )
 from coglet.mullet import MulLet
@@ -185,14 +185,14 @@ class AdvocateTeamCoglet(Coglet, LifeLet, MulLet, LogLet):
         # Spawn advocates
         for i in range(self.NUM_ADVOCATES):
             style = ADVOCATE_STYLES[i % len(ADVOCATE_STYLES)]
-            h = await self.create(CogletConfig(
+            h = await self.create(CogBase(
                 cls=AdvocateCoglet,
                 kwargs={"side": self.side, "style": style, "advocate_id": i},
             ))
             self._mul_children.append(h)
 
         # Spawn editor
-        self.editor_handle = await self.create(CogletConfig(
+        self.editor_handle = await self.create(CogBase(
             cls=EditorCoglet,
             kwargs={"side": self.side},
         ))
@@ -311,7 +311,7 @@ class TrialCoglet(Coglet, LifeLet):
         juror_handles = []
         for i in range(self.num_jurors):
             persona = JUROR_PERSONAS[i % len(JUROR_PERSONAS)]
-            h = await self.create(CogletConfig(
+            h = await self.create(CogBase(
                 cls=JurorCoglet,
                 kwargs={"juror_id": i, "persona": persona},
             ))
@@ -320,10 +320,10 @@ class TrialCoglet(Coglet, LifeLet):
 
         # Phase 2: Assemble advocate teams
         print("[trial] assembling advocate teams (5 advocates + editor per side)...")
-        pro_team = await self.create(CogletConfig(
+        pro_team = await self.create(CogBase(
             cls=AdvocateTeamCoglet, kwargs={"side": "pro"},
         ))
-        con_team = await self.create(CogletConfig(
+        con_team = await self.create(CogBase(
             cls=AdvocateTeamCoglet, kwargs={"side": "con"},
         ))
 

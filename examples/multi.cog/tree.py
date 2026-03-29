@@ -1,6 +1,6 @@
 """A 3-level coglet tree: Root -> 2 Workers -> 2 Leaves each."""
 
-from coglet import Coglet, LifeLet, TickLet, CogletConfig, every, listen
+from coglet import Coglet, LifeLet, TickLet, CogBase, every, listen
 
 
 class LeafCoglet(Coglet, LifeLet, TickLet):
@@ -36,7 +36,7 @@ class WorkerCoglet(Coglet, LifeLet):
         print(f"  [worker] {self.name} started, spawning {self.num_leaves} leaves")
         for i in range(self.num_leaves):
             leaf_name = f"{self.name}/leaf-{i}"
-            await self.create(CogletConfig(
+            await self.create(CogBase(
                 cls=LeafCoglet,
                 kwargs={"name": leaf_name},
             ))
@@ -58,7 +58,7 @@ class RootCoglet(Coglet, LifeLet):
     async def on_start(self):
         print("[root] started, spawning 2 workers")
         for i in range(2):
-            await self.create(CogletConfig(
+            await self.create(CogBase(
                 cls=WorkerCoglet,
                 kwargs={"name": f"worker-{i}", "num_leaves": 2},
             ))

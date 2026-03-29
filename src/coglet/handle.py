@@ -1,8 +1,8 @@
-"""Data types for coglet child management: Command, CogletConfig, CogletHandle.
+"""Data types for coglet child management: Command, CogBase, CogletHandle.
 
 CogletHandle is the opaque reference a parent COG holds to a child. It exposes
 only observe() and guide() — the parent never accesses the child directly.
-CogletConfig describes how to instantiate a coglet, including restart policy.
+CogBase is a bundle of assets used to create a Coglet via runtime.spawn().
 """
 
 from __future__ import annotations
@@ -20,8 +20,16 @@ class Command:
 
 
 @dataclass
-class CogletConfig:
-    """Describes how to instantiate a Coglet."""
+class CogBase:
+    """A bundle of assets that can be used to create a Coglet.
+
+    Contains the class to instantiate, constructor kwargs, and
+    supervision policy (restart behavior, backoff).
+
+    Usage:
+        base = CogBase(cls=MyCoglet, kwargs={"name": "worker"})
+        handle = await runtime.spawn(base)
+    """
     cls: Type
     kwargs: dict[str, Any] = field(default_factory=dict)
     restart: str = "never"      # "never" | "on_error" | "always"

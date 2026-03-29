@@ -10,7 +10,7 @@ import asyncio
 from typing import Any
 
 from coglet.coglet import Coglet
-from coglet.handle import CogletConfig, CogletHandle, Command
+from coglet.handle import CogBase, CogletHandle, Command
 from coglet.lifelet import LifeLet
 from coglet.pco.loss import LossCoglet
 from coglet.pco.constraint import ConstraintCoglet
@@ -27,8 +27,8 @@ class ProximalCogletOptimizer(Coglet, LifeLet):
 
     def __init__(
         self,
-        actor_config: CogletConfig,
-        critic_config: CogletConfig,
+        actor_config: CogBase,
+        critic_config: CogBase,
         losses: list[LossCoglet],
         constraints: list[ConstraintCoglet],
         learner: LearnerCoglet,

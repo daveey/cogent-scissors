@@ -11,7 +11,7 @@ Demonstrates:
 import asyncio
 
 from coglet import (
-    Coglet, LifeLet, TickLet, LogLet, CogletConfig, Command, every,
+    Coglet, LifeLet, TickLet, LogLet, CogBase, Command, every,
 )
 
 
@@ -44,7 +44,7 @@ class SupervisorCoglet(Coglet, LifeLet):
 
     async def on_start(self):
         print("[supervisor] spawning sensor")
-        config = CogletConfig(cls=SensorCoglet, kwargs={"name": "temp-1"})
+        config = CogBase(cls=SensorCoglet, kwargs={"name": "temp-1"})
         self.sensor = await self.create(config)
 
         # Watch logs in a background task

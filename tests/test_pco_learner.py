@@ -1,6 +1,6 @@
 import asyncio
 import pytest
-from coglet import CogletRuntime, CogletConfig
+from coglet import CogletRuntime, CogBase
 from coglet.pco.learner import LearnerCoglet
 
 
@@ -12,7 +12,7 @@ class EchoLearner(LearnerCoglet):
 @pytest.mark.asyncio
 async def test_learner_produces_patch():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=EchoLearner))
+    handle = await runtime.spawn(CogBase(cls=EchoLearner))
     coglet = handle.coglet
 
     patches = []

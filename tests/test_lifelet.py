@@ -5,7 +5,7 @@ from typing import Any
 
 import pytest
 
-from coglet import Coglet, CogletConfig, CogletRuntime, LifeLet
+from coglet import Coglet, CogBase, CogletRuntime, LifeLet
 
 
 class TrackingLifeLet(Coglet, LifeLet):
@@ -29,7 +29,7 @@ class FailingLifeLet(Coglet, LifeLet):
 @pytest.mark.asyncio
 async def test_lifelet_start_stop():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=TrackingLifeLet))
+    handle = await rt.spawn(CogBase(cls=TrackingLifeLet))
     cog: TrackingLifeLet = handle.coglet
     assert cog.started is True
     assert cog.stopped is False
@@ -41,5 +41,5 @@ async def test_lifelet_start_stop():
 async def test_lifelet_start_failure_propagates():
     rt = CogletRuntime()
     with pytest.raises(ValueError, match="start failed"):
-        await rt.spawn(CogletConfig(cls=FailingLifeLet))
+        await rt.spawn(CogBase(cls=FailingLifeLet))
     await rt.shutdown()

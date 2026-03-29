@@ -9,7 +9,7 @@ from typing import Any
 import pytest
 
 from coglet import (
-    Coglet, CogletConfig, CogletHandle, CogletRuntime, CogletTrace,
+    Coglet, CogBase, CogletHandle, CogletRuntime, CogletTrace,
     Command, LifeLet, TickLet, ProgLet, Program, LogLet, MulLet, SuppressLet,
     listen, enact, every,
 )
@@ -25,7 +25,7 @@ class Supervisor(Coglet, LifeLet, LogLet):
         self.worker_handle: CogletHandle | None = None
 
     async def on_start(self) -> None:
-        self.worker_handle = await self.create(CogletConfig(cls=ReactiveWorker))
+        self.worker_handle = await self.create(CogBase(cls=ReactiveWorker))
 
     async def run_task(self, task_data: Any) -> Any:
         """Subscribe first, then guide worker, observe result."""
@@ -55,7 +55,7 @@ class ReactiveWorker(Coglet, LifeLet):
 @pytest.mark.asyncio
 async def test_supervisor_worker_cycle():
     rt = CogletRuntime()
-    sup_handle = await rt.spawn(CogletConfig(cls=Supervisor))
+    sup_handle = await rt.spawn(CogBase(cls=Supervisor))
     sup: Supervisor = sup_handle.coglet
 
     assert sup.worker_handle is not None
@@ -76,13 +76,13 @@ class FleetSupervisor(Coglet, MulLet, LifeLet):
         self.n_workers = n_workers
 
     async def on_start(self) -> None:
-        await self.create_mul(self.n_workers, CogletConfig(cls=ReactiveWorker))
+        await self.create_mul(self.n_workers, CogBase(cls=ReactiveWorker))
 
 
 @pytest.mark.asyncio
 async def test_fleet_scatter_gather():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=FleetSupervisor, kwargs={"n_workers": 4}))
+    handle = await rt.spawn(CogBase(cls=FleetSupervisor, kwargs={"n_workers": 4}))
     fleet: FleetSupervisor = handle.coglet
 
     assert len(fleet._mul_children) == 4
@@ -105,7 +105,7 @@ async def test_fleet_scatter_gather():
 
     # Redo properly
     rt2 = CogletRuntime()
-    handle2 = await rt2.spawn(CogletConfig(cls=FleetSupervisor, kwargs={"n_workers": 4}))
+    handle2 = await rt2.spawn(CogBase(cls=FleetSupervisor, kwargs={"n_workers": 4}))
     fleet2: FleetSupervisor = handle2.coglet
 
     # Pre-subscribe on each child before guide
@@ -137,7 +137,7 @@ class SuppressedLogger(SuppressLet, Coglet, LogLet):
 @pytest.mark.asyncio
 async def test_suppress_channels_while_logging():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=SuppressedLogger))
+    handle = await rt.spawn(CogBase(cls=SuppressedLogger))
     cog: SuppressedLogger = handle.coglet
 
     log_sub = cog._bus.subscribe("log")
@@ -185,7 +185,7 @@ class HotSwapPolicy(Coglet, ProgLet, LifeLet):
 @pytest.mark.asyncio
 async def test_proglet_hot_swap():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=HotSwapPolicy))
+    handle = await rt.spawn(CogBase(cls=HotSwapPolicy))
     cog: HotSwapPolicy = handle.coglet
 
     sub = cog._bus.subscribe("output")
@@ -221,7 +221,7 @@ class Heartbeater(Coglet, TickLet, LifeLet):
 @pytest.mark.asyncio
 async def test_ticker_transmits():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Heartbeater))
+    handle = await rt.spawn(CogBase(cls=Heartbeater))
     cog: Heartbeater = handle.coglet
 
     sub = cog._bus.subscribe("heartbeat")
@@ -246,7 +246,7 @@ class TopLevel(Coglet, LifeLet):
         self.mid_handle: CogletHandle | None = None
 
     async def on_start(self) -> None:
-        self.mid_handle = await self.create(CogletConfig(cls=MidLevel))
+        self.mid_handle = await self.create(CogBase(cls=MidLevel))
 
 
 class MidLevel(Coglet, LifeLet):
@@ -255,7 +255,7 @@ class MidLevel(Coglet, LifeLet):
         self.leaf_handle: CogletHandle | None = None
 
     async def on_start(self) -> None:
-        self.leaf_handle = await self.create(CogletConfig(cls=LeafWorker))
+        self.leaf_handle = await self.create(CogBase(cls=LeafWorker))
 
 
 class LeafWorker(Coglet):
@@ -267,7 +267,7 @@ class LeafWorker(Coglet):
 @pytest.mark.asyncio
 async def test_three_level_hierarchy():
     rt = CogletRuntime()
-    top_handle = await rt.spawn(CogletConfig(cls=TopLevel))
+    top_handle = await rt.spawn(CogBase(cls=TopLevel))
     top: TopLevel = top_handle.coglet
     mid: MidLevel = top.mid_handle.coglet
     leaf_handle = mid.leaf_handle
@@ -297,7 +297,7 @@ async def test_three_level_with_trace():
     try:
         trace = CogletTrace(path)
         rt = CogletRuntime(trace=trace)
-        top_handle = await rt.spawn(CogletConfig(cls=TopLevel))
+        top_handle = await rt.spawn(CogBase(cls=TopLevel))
         top: TopLevel = top_handle.coglet
         mid: MidLevel = top.mid_handle.coglet
 
@@ -350,10 +350,10 @@ async def test_restart_preserves_handle():
     """After restart, the same handle points to a new coglet instance."""
     FragileWorker.instance_count = 0
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=SupervisingParent))
+    parent_handle = await rt.spawn(CogBase(cls=SupervisingParent))
     parent: SupervisingParent = parent_handle.coglet
 
-    config = CogletConfig(cls=FragileWorker, restart="on_error", max_restarts=3, backoff_s=0.01)
+    config = CogBase(cls=FragileWorker, restart="on_error", max_restarts=3, backoff_s=0.01)
     child_handle = await rt.spawn(config, parent=parent)
 
     assert child_handle.coglet.instance_id == 1
@@ -402,7 +402,7 @@ class KitchenSink(SuppressLet, Coglet, LifeLet, TickLet, ProgLet, LogLet):
 async def test_kitchen_sink():
     """All mixins work together on one coglet."""
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=KitchenSink))
+    handle = await rt.spawn(CogBase(cls=KitchenSink))
     cog: KitchenSink = handle.coglet
 
     assert cog.lifecycle_events == ["start"]
