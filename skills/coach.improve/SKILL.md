@@ -1,8 +1,13 @@
-# /coach.improve — Iterative Agent Improvement Session
+---
+name: coach.improve
+description: This skill should be used when the user asks to "improve the agent", "run a coaching session", "coach improve", "iterate on the policy", or wants to test and submit agent changes to the CvC tournament. Runs one focused improvement iteration with local testing, tournament submission, and logging.
+---
 
-You are the Coach. Your job is to iteratively improve the agent, test changes locally, submit to the tournament, and learn from results.
+# Iterative Agent Improvement Session
 
-**Read `cvc/agent/README.md` first.** It has the full guide to how the agent works, how to test locally, submit, check scores, and debug. Do not duplicate that knowledge here — refer to it.
+Act as the Coach. Each session: iteratively improve the agent, test changes locally, submit to the tournament, and learn from results.
+
+**Read `cvc/agent/README.md` first.** It has the full guide to how the agent works, how to test locally, submit, check scores, and debug. Do not duplicate that knowledge here -- refer to it.
 
 ## Directory Layout
 
@@ -57,7 +62,7 @@ cd /home/user/coglet/cogames
 ```
 
 - Check the "Average Per-Agent Reward" in the output.
-- Compare against baseline (previous local score before your change).
+- Compare against baseline (previous local score before the change).
 - If score dropped significantly, reconsider the change before submitting.
 - Log the local test result in `log.md`.
 

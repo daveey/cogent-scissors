@@ -1,4 +1,9 @@
-# /coach — Start the Coaching Loop
+---
+name: coach
+description: This skill should be used when the user asks to "start coaching", "start the coaching loop", "coach the agent", or wants to begin continuous automated improvement of the CvC tournament policy. Sets up a recurring loop that runs coach.improve every 30 minutes.
+---
+
+# Start the Coaching Loop
 
 Start an automated coaching loop that continuously improves the coglet CvC tournament policy.
 
