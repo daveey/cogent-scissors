@@ -1,6 +1,6 @@
 from coglet.coglet import Coglet, listen, enact
 from coglet.channel import ChannelBus
-from coglet.handle import CogletHandle, CogletConfig, Command
+from coglet.handle import CogletHandle, CogBase, Command
 from coglet.runtime import CogletRuntime
 from coglet.lifelet import LifeLet
 from coglet.ticklet import TickLet, every
@@ -15,7 +15,7 @@ from coglet.trace import CogletTrace
 __all__ = [
     "Coglet", "listen", "enact",
     "ChannelBus",
-    "CogletHandle", "CogletConfig", "Command",
+    "CogletHandle", "CogBase", "Command",
     "CogletRuntime",
     "LifeLet", "TickLet", "every",
     "ProgLet", "Program", "Executor", "CodeExecutor", "LLMExecutor",

@@ -12,8 +12,8 @@ Every component of PPO — actor, critic, losses, learner, constraints — is a 
 class ProximalCogletOptimizer(Coglet, TickLet):
     def __init__(
         self,
-        actor_config: CogletConfig,
-        critic_config: CogletConfig,
+        actor_config: CogBase,
+        critic_config: CogBase,
         losses: list[LossCoglet],
         constraints: list[ConstraintCoglet],
         learner: LearnerCoglet,
@@ -109,8 +109,8 @@ Three categories of pluggable coglets:
 
 ```python
 pco = ProximalCogletOptimizer(
-    actor_config=CogletConfig(cls=CvcActor),
-    critic_config=CogletConfig(cls=CvcCritic),
+    actor_config=CogBase(cls=CvcActor),
+    critic_config=CogBase(cls=CvcCritic),
     losses=[
         PolicyLoss(),
         ValueLoss(),

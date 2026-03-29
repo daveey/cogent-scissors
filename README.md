@@ -17,7 +17,7 @@ Every Coglet is both: a LET under its parent COG, and a COG over its children. T
 src/coglet/          # Framework
   coglet.py          # Base class + @listen/@enact/transmit decorators
   channel.py         # Async pub/sub channel bus
-  handle.py          # CogletHandle, CogletConfig, Command
+  handle.py          # CogletHandle, CogBase, Command
   runtime.py         # CogletRuntime — boots and manages Coglet trees
   lifelet.py         # LifeLet mixin — on_start/on_stop lifecycle
   ticklet.py         # TickLet mixin — @every periodic scheduling

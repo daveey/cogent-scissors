@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Any, TYPE_CHECKING
 
-from coglet.handle import CogletConfig, CogletHandle, Command
+from coglet.handle import CogBase, CogletHandle, Command
 
 if TYPE_CHECKING:
     from coglet.coglet import Coglet
@@ -26,7 +26,7 @@ class MulLet:
         super().__init__(**kwargs)
         self._mul_children: list[CogletHandle] = []
 
-    async def create_mul(self, n: int, config: CogletConfig) -> None:
+    async def create_mul(self, n: int, config: CogBase) -> None:
         for _ in range(n):
             handle: CogletHandle = await self.create(config)  # type: ignore[attr-defined]
             self._mul_children.append(handle)

@@ -4,7 +4,7 @@
 
 **Goal:** Implement PCO as a coglet that orchestrates PPO-style optimization over source code, using LLM prompts for each operation.
 
-**Architecture:** PCO is a COG that creates actor + critic from configs, wires plugged losses/constraints/learner via channels, and runs the rollout→critic→losses→learner→constraint→enact loop. All components are standard coglets using @listen/@enact/transmit. Built on existing `src/coglet/` framework (Coglet, CogletRuntime, CogletConfig, CogletHandle, TickLet, LifeLet).
+**Architecture:** PCO is a COG that creates actor + critic from configs, wires plugged losses/constraints/learner via channels, and runs the rollout→critic→losses→learner→constraint→enact loop. All components are standard coglets using @listen/@enact/transmit. Built on existing `src/coglet/` framework (Coglet, CogletRuntime, CogBase, CogletHandle, TickLet, LifeLet).
 
 **Tech Stack:** Python 3.11+, asyncio, coglet framework, pytest + pytest-asyncio
 
@@ -26,7 +26,7 @@ The base class for all loss coglets. Listens on "experience" + "evaluation", tra
 # tests/test_pco_loss.py
 import asyncio
 import pytest
-from coglet import Coglet, CogletRuntime, CogletConfig, CogletHandle, listen
+from coglet import Coglet, CogletRuntime, CogBase, CogletHandle, listen
 
 from coglet.pco.loss import LossCoglet
 
@@ -40,7 +40,7 @@ class ScoreLoss(LossCoglet):
 @pytest.mark.asyncio
 async def test_loss_coglet_emits_signal():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=ScoreLoss))
+    handle = await runtime.spawn(CogBase(cls=ScoreLoss))
     coglet = handle.coglet
 
     signals = []
@@ -145,7 +145,7 @@ Gates patches with accept/reject. Listens on "update", transmits on "verdict".
 # tests/test_pco_constraint.py
 import asyncio
 import pytest
-from coglet import CogletRuntime, CogletConfig
+from coglet import CogletRuntime, CogBase
 
 from coglet.pco.constraint import ConstraintCoglet
 
@@ -161,7 +161,7 @@ class MaxLines(ConstraintCoglet):
 @pytest.mark.asyncio
 async def test_constraint_rejects_large_patch():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=MaxLines))
+    handle = await runtime.spawn(CogBase(cls=MaxLines))
     coglet = handle.coglet
 
     verdicts = []
@@ -185,7 +185,7 @@ async def test_constraint_rejects_large_patch():
 @pytest.mark.asyncio
 async def test_constraint_accepts_small_patch():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=MaxLines))
+    handle = await runtime.spawn(CogBase(cls=MaxLines))
     coglet = handle.coglet
 
     verdicts = []
@@ -264,7 +264,7 @@ Takes loss signals, produces code patches. Listens on "signals", transmits on "u
 # tests/test_pco_learner.py
 import asyncio
 import pytest
-from coglet import CogletRuntime, CogletConfig
+from coglet import CogletRuntime, CogBase
 
 from coglet.pco.learner import LearnerCoglet
 
@@ -277,7 +277,7 @@ class EchoLearner(LearnerCoglet):
 @pytest.mark.asyncio
 async def test_learner_produces_patch():
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(cls=EchoLearner))
+    handle = await runtime.spawn(CogBase(cls=EchoLearner))
     coglet = handle.coglet
 
     patches = []
@@ -358,7 +358,7 @@ The COG that wires everything together. Creates actor + critic from configs, orc
 # tests/test_pco_optimizer.py
 import asyncio
 import pytest
-from coglet import Coglet, CogletRuntime, CogletConfig, listen, enact
+from coglet import Coglet, CogletRuntime, CogBase, listen, enact
 
 from coglet.pco.optimizer import ProximalCogletOptimizer
 from coglet.pco.loss import LossCoglet
@@ -409,11 +409,11 @@ class FakeLearner(LearnerCoglet):
 @pytest.mark.asyncio
 async def test_pco_runs_one_epoch():
     runtime = CogletRuntime()
-    pco_handle = await runtime.spawn(CogletConfig(
+    pco_handle = await runtime.spawn(CogBase(
         cls=ProximalCogletOptimizer,
         kwargs=dict(
-            actor_config=CogletConfig(cls=FakeActor),
-            critic_config=CogletConfig(cls=FakeCritic),
+            actor_config=CogBase(cls=FakeActor),
+            critic_config=CogBase(cls=FakeCritic),
             losses=[ScoreLoss()],
             constraints=[AlwaysAccept()],
             learner=FakeLearner(),
@@ -452,7 +452,7 @@ import asyncio
 from typing import Any
 
 from coglet.coglet import Coglet
-from coglet.handle import CogletConfig, CogletHandle, Command
+from coglet.handle import CogBase, CogletHandle, Command
 from coglet.lifelet import LifeLet
 from coglet.pco.constraint import ConstraintCoglet
 from coglet.pco.learner import LearnerCoglet
@@ -465,8 +465,8 @@ class ProximalCogletOptimizer(Coglet, LifeLet):
     def __init__(
         self,
         *,
-        actor_config: CogletConfig,
-        critic_config: CogletConfig,
+        actor_config: CogBase,
+        critic_config: CogBase,
         losses: list[LossCoglet],
         constraints: list[ConstraintCoglet],
         learner: LearnerCoglet,
@@ -611,11 +611,11 @@ async def test_pco_retries_on_rejection():
     learner = RetryLearner()
     constraint = RejectFirstConstraint()
     runtime = CogletRuntime()
-    pco_handle = await runtime.spawn(CogletConfig(
+    pco_handle = await runtime.spawn(CogBase(
         cls=ProximalCogletOptimizer,
         kwargs=dict(
-            actor_config=CogletConfig(cls=FakeActor),
-            critic_config=CogletConfig(cls=FakeCritic),
+            actor_config=CogBase(cls=FakeActor),
+            critic_config=CogBase(cls=FakeCritic),
             losses=[ScoreLoss()],
             constraints=[constraint],
             learner=learner,
@@ -691,11 +691,11 @@ Test that PCO can run multiple epochs and transmits epoch results on "epoch" cha
 @pytest.mark.asyncio
 async def test_pco_multi_epoch():
     runtime = CogletRuntime()
-    pco_handle = await runtime.spawn(CogletConfig(
+    pco_handle = await runtime.spawn(CogBase(
         cls=ProximalCogletOptimizer,
         kwargs=dict(
-            actor_config=CogletConfig(cls=FakeActor),
-            critic_config=CogletConfig(cls=FakeCritic),
+            actor_config=CogBase(cls=FakeActor),
+            critic_config=CogBase(cls=FakeCritic),
             losses=[ScoreLoss()],
             constraints=[AlwaysAccept()],
             learner=FakeLearner(),

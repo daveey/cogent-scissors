@@ -30,7 +30,7 @@ class MyCoglet(Coglet):
 ### COG Methods
 
 ```python
-handle = await self.create(CogletConfig(cls=ChildCoglet, kwargs={...}))
+handle = await self.create(CogBase(cls=ChildCoglet, kwargs={...}))
 await self.guide(handle, Command(type="reload", data={...}))
 async for data in self.observe(handle, "results"):
     process(data)
@@ -47,7 +47,7 @@ Async pub/sub. `transmit()` pushes to all subscribers on a channel. `subscribe()
 ## Handle: `handle.py`
 
 - `CogletHandle` — opaque reference to a child Coglet
-- `CogletConfig` — class + kwargs for spawning
+- `CogBase` — bundle of assets for spawning (class + kwargs + restart policy)
 - `Command` — type + data for the control plane
 
 ## Runtime: `runtime.py`

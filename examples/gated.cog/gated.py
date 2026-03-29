@@ -11,7 +11,7 @@ Demonstrates:
 import asyncio
 
 from coglet import (
-    Coglet, LifeLet, TickLet, CogletConfig, Command, every,
+    Coglet, LifeLet, TickLet, CogBase, Command, every,
 )
 from coglet.suppresslet import SuppressLet
 
@@ -52,7 +52,7 @@ class ControllerCoglet(Coglet, LifeLet):
 
     async def on_start(self):
         print("[controller] spawning noisy sensor")
-        self.sensor = await self.create(CogletConfig(cls=NoisySensor))
+        self.sensor = await self.create(CogBase(cls=NoisySensor))
 
         # Watch the readings channel
         asyncio.create_task(self._watch())

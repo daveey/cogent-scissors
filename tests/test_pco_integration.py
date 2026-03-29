@@ -14,7 +14,7 @@ import asyncio
 
 import pytest
 
-from coglet import Coglet, CogletConfig, CogletRuntime, enact, listen
+from coglet import Coglet, CogBase, CogletRuntime, enact, listen
 from coglet.pco.constraint import ConstraintCoglet
 from coglet.pco.learner import LearnerCoglet
 from coglet.pco.loss import LossCoglet
@@ -78,14 +78,14 @@ class AlwaysAccept(ConstraintCoglet):
 async def run_pco(*, target, inputs, learner, epochs, constraints=None):
     """Helper: run PCO for N epochs and return (results, actor)."""
     runtime = CogletRuntime()
-    handle = await runtime.spawn(CogletConfig(
+    handle = await runtime.spawn(CogBase(
         cls=ProximalCogletOptimizer,
         kwargs=dict(
-            actor_config=CogletConfig(
+            actor_config=CogBase(
                 cls=FnActor,
                 kwargs=dict(inputs=inputs, target=target),
             ),
-            critic_config=CogletConfig(cls=ErrorCritic),
+            critic_config=CogBase(cls=ErrorCritic),
             losses=[ErrorCountLoss()],
             constraints=constraints or [AlwaysAccept()],
             learner=learner,

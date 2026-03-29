@@ -54,7 +54,7 @@ A COG supervises one or more LETs. The 1:1 case (one COG paired with one LET) is
 |---|---|
 | `observe(let_id, channel) → AsyncStream[Result]` | Subscribe to a named channel on a LET's transmit stream |
 | `guide(let_id, command)` | Send a command to a LET's `on_enact` — fire-and-forget |
-| `create(config) → CogletHandle` | Spawn a new LET, return its handle |
+| `create(base) → CogletHandle` | Spawn a new LET from a CogBase, return its handle |
 
 The COG's only feedback loop is observe. `guide` has no return value — the COG knows its command took effect by watching subsequent transmissions.
 

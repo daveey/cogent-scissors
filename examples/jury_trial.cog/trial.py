@@ -15,7 +15,7 @@ import asyncio
 import hashlib
 
 from coglet import (
-    Coglet, LifeLet, ProgLet, LogLet, CogletConfig, Command,
+    Coglet, LifeLet, ProgLet, LogLet, CogBase, Command,
     Program, enact, listen,
 )
 from coglet.suppresslet import SuppressLet
@@ -171,7 +171,7 @@ class TrialCoglet(Coglet, LifeLet):
         print("[trial] empaneling jury...")
         juror_handles = []
         for i in range(self.num_jurors):
-            h = await self.create(CogletConfig(
+            h = await self.create(CogBase(
                 cls=JurorCoglet,
                 kwargs={"juror_id": i},
             ))
@@ -181,11 +181,11 @@ class TrialCoglet(Coglet, LifeLet):
 
         # --- Phase 2: Seat advocates ---
         print("[trial] seating advocates...")
-        prosecution = await self.create(CogletConfig(
+        prosecution = await self.create(CogBase(
             cls=AdvocateCoglet,
             kwargs={"side": "prosecution"},
         ))
-        defense = await self.create(CogletConfig(
+        defense = await self.create(CogBase(
             cls=AdvocateCoglet,
             kwargs={"side": "defense"},
         ))

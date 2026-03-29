@@ -15,7 +15,7 @@ import anthropic
 
 import pytest
 
-from coglet import Coglet, CogletConfig, CogletRuntime, enact, listen
+from coglet import Coglet, CogBase, CogletRuntime, enact, listen
 from coglet.handle import Command
 from coglet.pco.constraint import ConstraintCoglet
 from coglet.pco.learner import LearnerCoglet
@@ -476,11 +476,11 @@ async def test_pco_llm_experiment():
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     runtime = CogletRuntime()
-    pco_handle = await runtime.spawn(CogletConfig(
+    pco_handle = await runtime.spawn(CogBase(
         cls=ProximalCogletOptimizer,
         kwargs=dict(
-            actor_config=CogletConfig(cls=CodeGenActor, kwargs=dict(puzzles=PUZZLES)),
-            critic_config=CogletConfig(cls=CodeReviewCritic, kwargs=dict(puzzles=PUZZLES)),
+            actor_config=CogBase(cls=CodeGenActor, kwargs=dict(puzzles=PUZZLES)),
+            critic_config=CogBase(cls=CodeReviewCritic, kwargs=dict(puzzles=PUZZLES)),
             losses=[ActorLoss(), CriticLoss()],
             constraints=[MaxRewritesConstraint()],
             learner=CodeGenLearner(),

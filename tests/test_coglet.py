@@ -6,7 +6,7 @@ from typing import Any
 
 import pytest
 
-from coglet import Coglet, CogletConfig, CogletRuntime, Command, listen, enact
+from coglet import Coglet, CogBase, CogletRuntime, Command, listen, enact
 
 
 # ---- Decorator tests ----
@@ -163,16 +163,16 @@ async def test_transmit_sync():
 async def test_create_requires_runtime():
     cog = SimpleLET()
     with pytest.raises(RuntimeError, match="not attached to a runtime"):
-        await cog.create(CogletConfig(cls=SimpleLET))
+        await cog.create(CogBase(cls=SimpleLET))
 
 
 @pytest.mark.asyncio
 async def test_create_and_guide():
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=SimpleLET))
+    parent_handle = await rt.spawn(CogBase(cls=SimpleLET))
     parent = parent_handle.coglet
 
-    child_handle = await parent.create(CogletConfig(cls=SimpleLET))
+    child_handle = await parent.create(CogBase(cls=SimpleLET))
     assert child_handle in parent._children
 
     await parent.guide(child_handle, Command("do", "task"))
@@ -184,10 +184,10 @@ async def test_create_and_guide():
 @pytest.mark.asyncio
 async def test_observe():
     rt = CogletRuntime()
-    parent_handle = await rt.spawn(CogletConfig(cls=SimpleLET))
+    parent_handle = await rt.spawn(CogBase(cls=SimpleLET))
     parent = parent_handle.coglet
 
-    child_handle = await parent.create(CogletConfig(cls=SimpleLET))
+    child_handle = await parent.create(CogBase(cls=SimpleLET))
     child = child_handle.coglet
 
     # Start observing in background

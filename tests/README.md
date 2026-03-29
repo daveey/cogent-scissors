@@ -10,7 +10,7 @@ PYTHONPATH=src python -m pytest tests/ -v
 |---|---|
 | `test_coglet.py` | Base Coglet, @listen/@enact dispatch, transmit |
 | `test_channel.py` | ChannelBus pub/sub, subscriber isolation |
-| `test_handle.py` | CogletHandle observe/guide, CogletConfig |
+| `test_handle.py` | CogletHandle observe/guide, CogBase |
 | `test_runtime.py` | CogletRuntime spawn/shutdown, restart, tree viz, tracing |
 | `test_lifelet.py` | LifeLet on_start/on_stop hooks |
 | `test_ticklet.py` | TickLet @every with time/tick units |

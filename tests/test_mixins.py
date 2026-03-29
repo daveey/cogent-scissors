@@ -10,7 +10,7 @@ from unittest.mock import AsyncMock, patch
 import pytest
 
 from coglet import (
-    Coglet, CogletConfig, CogletRuntime, Command,
+    Coglet, CogBase, CogletRuntime, Command,
     LifeLet, TickLet, ProgLet, Program, GitLet, LogLet, MulLet, SuppressLet,
     listen, enact, every,
 )
@@ -34,7 +34,7 @@ class TrackingLifeLet(Coglet, LifeLet):
 @pytest.mark.asyncio
 async def test_lifelet_start_stop():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=TrackingLifeLet))
+    handle = await rt.spawn(CogBase(cls=TrackingLifeLet))
     cog: TrackingLifeLet = handle.coglet
     assert cog.started is True
     assert cog.stopped is False
@@ -51,7 +51,7 @@ class FailingLifeLet(Coglet, LifeLet):
 async def test_lifelet_start_failure_propagates():
     rt = CogletRuntime()
     with pytest.raises(ValueError, match="start failed"):
-        await rt.spawn(CogletConfig(cls=FailingLifeLet))
+        await rt.spawn(CogBase(cls=FailingLifeLet))
     await rt.shutdown()
 
 
@@ -75,7 +75,7 @@ class CounterTicker(Coglet, TickLet):
 @pytest.mark.asyncio
 async def test_ticklet_time_based():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=CounterTicker))
+    handle = await rt.spawn(CogBase(cls=CounterTicker))
     cog: CounterTicker = handle.coglet
     await asyncio.sleep(0.15)
     assert cog.time_count >= 2
@@ -96,7 +96,7 @@ async def test_ticklet_manual():
 @pytest.mark.asyncio
 async def test_ticklet_stop_cancels_tasks():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=CounterTicker))
+    handle = await rt.spawn(CogBase(cls=CounterTicker))
     cog: CounterTicker = handle.coglet
     assert len(cog._tick_tasks) == 1  # only time-based
     await rt.shutdown()
@@ -327,10 +327,10 @@ class CustomFleet(Coglet, MulLet):
 @pytest.mark.asyncio
 async def test_mullet_create_mul():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
 
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     assert len(fleet._mul_children) == 3
 
     await rt.shutdown()
@@ -339,10 +339,10 @@ async def test_mullet_create_mul():
 @pytest.mark.asyncio
 async def test_mullet_guide_mapped():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
 
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     await fleet.guide_mapped(Command("cmd", "hello"))
 
     for child_handle in fleet._mul_children:
@@ -355,10 +355,10 @@ async def test_mullet_guide_mapped():
 @pytest.mark.asyncio
 async def test_mullet_scatter_broadcast():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
 
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     await fleet.scatter("task", "job1")
 
     for child_handle in fleet._mul_children:
@@ -371,10 +371,10 @@ async def test_mullet_scatter_broadcast():
 @pytest.mark.asyncio
 async def test_mullet_gather():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=Fleet))
+    handle = await rt.spawn(CogBase(cls=Fleet))
     fleet: Fleet = handle.coglet
 
-    await fleet.create_mul(2, CogletConfig(cls=Worker))
+    await fleet.create_mul(2, CogBase(cls=Worker))
 
     # Pre-subscribe before scatter triggers transmit
     subs = []
@@ -410,10 +410,10 @@ async def test_mullet_default_reduce():
 @pytest.mark.asyncio
 async def test_mullet_custom_map():
     rt = CogletRuntime()
-    handle = await rt.spawn(CogletConfig(cls=CustomFleet))
+    handle = await rt.spawn(CogBase(cls=CustomFleet))
     fleet: CustomFleet = handle.coglet
 
-    await fleet.create_mul(3, CogletConfig(cls=Worker))
+    await fleet.create_mul(3, CogBase(cls=Worker))
     await fleet.scatter("task", "only-first")
 
     # Only first child should have received

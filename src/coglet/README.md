@@ -17,7 +17,7 @@ Fractal asynchronous control for distributed agent systems.
 | File | Purpose |
 |---|---|
 | `coglet.py` | Base class, @listen/@enact decorators, handler discovery via MRO |
-| `handle.py` | CogletHandle (opaque child ref), CogletConfig, Command |
+| `handle.py` | CogletHandle (opaque child ref), CogBase, Command |
 | `channel.py` | Async pub/sub channels (ChannelBus, per-subscriber queues) |
 | `runtime.py` | CogletRuntime: spawn, shutdown, restart, tree visualization, tracing |
 

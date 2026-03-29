@@ -55,7 +55,7 @@ def cog_dir_with_children(tmp_path: Path) -> Path:
     """))
 
     (d / "parent.py").write_text(textwrap.dedent("""\
-        from coglet import Coglet, LifeLet, CogletConfig
+        from coglet import Coglet, LifeLet, CogBase
 
         class ChildCoglet(Coglet, LifeLet):
             def __init__(self, **kwargs):
@@ -71,7 +71,7 @@ def cog_dir_with_children(tmp_path: Path) -> Path:
                 self.child_handle = None
 
             async def on_start(self):
-                config = CogletConfig(cls=ChildCoglet)
+                config = CogBase(cls=ChildCoglet)
                 self.child_handle = await self.create(config)
     """))
 

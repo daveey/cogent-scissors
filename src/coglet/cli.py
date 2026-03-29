@@ -14,7 +14,7 @@ manifest.toml format:
     [coglet.kwargs]                # optional constructor kwargs
     name = "hello"
 
-    [config]                       # optional CogletConfig fields
+    [config]                       # optional CogBase fields
     restart = "on_error"
     max_restarts = 3
     backoff_s = 1.0
@@ -31,7 +31,7 @@ import tomllib
 from pathlib import Path
 from typing import Any
 
-from coglet.handle import CogletConfig
+from coglet.handle import CogBase
 from coglet.runtime import CogletRuntime
 from coglet.trace import CogletTrace
 
@@ -76,12 +76,12 @@ def resolve_class(dotted: str, cog_dir: Path) -> type:
     return cls
 
 
-def build_config(manifest: dict[str, Any], cls: type) -> CogletConfig:
-    """Build a CogletConfig from manifest data."""
+def build_config(manifest: dict[str, Any], cls: type) -> CogBase:
+    """Build a CogBase from manifest data."""
     kwargs = dict(manifest["coglet"].get("kwargs", {}))
     config_section = manifest.get("config", {})
 
-    return CogletConfig(
+    return CogBase(
         cls=cls,
         kwargs=kwargs,
         restart=config_section.get("restart", "never"),
