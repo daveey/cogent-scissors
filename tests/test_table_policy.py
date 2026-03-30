@@ -37,8 +37,8 @@ def test_table_agent_state_defaults():
 def test_seed_programs_has_required_keys():
     """seed_programs() returns all programs needed by TablePolicyImpl."""
     programs = seed_programs()
-    required = {"step", "heal", "retreat", "mine", "align", "scramble",
-                "explore", "macro", "summarize", "analyze"}
+    required = {"step", "hold", "retreat", "mine", "align", "scramble",
+                "explore", "summarize", "analyze"}
     assert required.issubset(programs.keys())
 
 
