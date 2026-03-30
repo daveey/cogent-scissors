@@ -1,13 +1,13 @@
 {
-  "last_session": "20260330-080000",
-  "best_score": 1.65,
-  "best_version": "shared junction memory + wider exploration",
-  "total_sessions": 8,
+  "last_session": "20260330-090000",
+  "best_score": 6.18,
+  "best_version": "fix role misassignment from team_summary.members visibility",
+  "total_sessions": 9,
   "policy_name": "coglet-v0",
   "season": "beta-cvc",
   "tournament_best": 3.05,
   "tournament_rank": 252,
   "tournament_top": 14.66,
-  "latest_submission": "coglet-v0:v16",
-  "key_fix": "shared junction memory across agents, 10000-step memory, inner explore ring"
+  "latest_submission": "coglet-v0:v17",
+  "key_fix": "removed broken _desired_role override that used incomplete team_summary.members count"
 }

@@ -127,6 +127,7 @@ class TargetingMixin:
                         step=self._step_index,
                     ),
                     hub_position=hub_pos,
+                    friendly_sources=network_sources,
                 ),
                 entity.position,
             ),
@@ -152,6 +153,9 @@ class TargetingMixin:
         )
         hub = self._nearest_hub(state)  # type: ignore[attr-defined]
         hub_pos = hub.position if hub is not None else None
+        hubs = self._world_model.entities(entity_type="hub", predicate=lambda entity: entity.team == team)
+        friendly_junctions = self._known_junctions(state, predicate=lambda entity: entity.owner == team)  # type: ignore[attr-defined]
+        network_sources = [*hubs, *friendly_junctions]
         sticky_score = _h.aligner_target_score(
             current_position=current_pos,
             candidate=sticky,
@@ -159,6 +163,7 @@ class TargetingMixin:
             enemy_junctions=enemy_junctions,
             claimed_by_other=False,
             hub_position=hub_pos,
+            friendly_sources=network_sources,
         )[0]
         candidate_score = _h.aligner_target_score(
             current_position=current_pos,
@@ -172,6 +177,7 @@ class TargetingMixin:
                 step=self._step_index,
             ),
             hub_position=hub_pos,
+            friendly_sources=network_sources,
         )[0]
         if candidate.position != sticky.position and candidate_score + _TARGET_SWITCH_THRESHOLD < sticky_score:
             return candidate
