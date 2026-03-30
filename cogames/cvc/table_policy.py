@@ -89,12 +89,15 @@ class CvCPolicyImpl(StatefulPolicyImpl[CvCAgentState]):
         # 2. Determine role via desired_role program
         gs.role = self._invoke_sync("desired_role", gs)
 
-        # 3. Invoke main dispatch program
-        action = self._invoke_sync("step", gs)
+        # 3. Invoke main dispatch program (returns (Action, summary))
+        action, summary = self._invoke_sync("step", gs)
+
+        # 4. Finalize — record navigation observation, bookkeep
+        gs.finalize_step(summary)
 
         step = gs.step_index
 
-        # 4. Periodic LLM analysis
+        # 5. Periodic LLM analysis
         if (
             self._llm_executor is not None
             and step - state.last_llm_step >= state.llm_interval
@@ -103,7 +106,7 @@ class CvCPolicyImpl(StatefulPolicyImpl[CvCAgentState]):
             self._llm_analyze(gs, state)
             self._adapt_interval(state)
 
-        # 5. Periodic snapshots (experience collection)
+        # 6. Periodic snapshots (experience collection)
         if step - state.last_snapshot_step >= _LOG_INTERVAL:
             state.last_snapshot_step = step
             summary_dict = self._invoke_sync("summarize", gs)

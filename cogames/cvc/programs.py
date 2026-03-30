@@ -1,16 +1,16 @@
 """Flat program table: all CvC programs in one dict, operating on GameState.
 
 Every program is evolvable by PCO. Programs read from / write to GameState
-(from cvc.game_state), not any engine instance. The ``all_programs()`` function
-returns a dict[str, Program] with query, action, and decision programs.
+(from cvc.game_state), which delegates to the engine's A* pathfinding and
+role logic. The ``all_programs()`` function returns a dict[str, Program]
+with query, action, and decision programs.
 
 ``seed_programs()`` is kept as a backward-compat alias.
 """
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
-from typing import Any, Callable
+from typing import Any
 
 from coglet.proglet import Program
 from mettagrid.simulator import Action
@@ -20,17 +20,13 @@ from cvc.agent.helpers.types import KnownEntity
 
 _ELEMENTS = ("carbon", "oxygen", "germanium", "silicon")
 
-# Role allocation constants (simplified from PressureMixin)
-_ALIGNER_PRIORITY = (4, 5, 6, 7, 3)
-_SCRAMBLER_PRIORITY = (7, 6)
-
 # ---------------------------------------------------------------------------
-# Query programs — read from GameState
+# Query programs — read from GameState (which delegates to engine)
 # ---------------------------------------------------------------------------
 
 
 def _hp(gs: Any) -> int:
-    return int(gs.mg_state.self_state.inventory.get("hp", 0))
+    return gs.hp
 
 
 def _step_num(gs: Any) -> int:
@@ -38,7 +34,7 @@ def _step_num(gs: Any) -> int:
 
 
 def _position(gs: Any) -> tuple[int, int]:
-    return _h.absolute_position(gs.mg_state)
+    return gs.position
 
 
 def _inventory(gs: Any) -> dict:
@@ -59,69 +55,38 @@ def _team_resources(gs: Any) -> dict[str, int]:
 
 
 def _resource_priority(gs: Any) -> list[str]:
-    return _h.resource_priority(gs.mg_state, resource_bias=gs.resource_bias)
+    return gs.resource_priority()
 
 
 def _nearest_hub(gs: Any) -> KnownEntity | None:
-    team = _h.team_id(gs.mg_state)
-    hub = gs.world_model.nearest(
-        position=_h.absolute_position(gs.mg_state),
-        entity_type="hub",
-        predicate=lambda e: e.team == team,
-    )
-    if hub is not None:
-        return hub
-    # Bootstrap fallback
-    from mettagrid_sdk.games.cogsguard import COGSGUARD_BOOTSTRAP_HUB_OFFSETS
-    offset = COGSGUARD_BOOTSTRAP_HUB_OFFSETS.get(gs.agent_id)
-    if offset is None:
-        return None
-    return KnownEntity(
-        entity_type="hub",
-        global_x=offset[0],
-        global_y=offset[1],
-        labels=(),
-        team=team,
-        owner=team,
-        last_seen_step=gs.step_index,
-        attributes={},
-    )
+    return gs.nearest_hub()
 
 
 def _nearest_extractor(gs: Any, resource: str) -> KnownEntity | None:
-    current_pos = _h.absolute_position(gs.mg_state)
-    return gs.world_model.nearest(
-        position=current_pos,
-        entity_type=f"{resource}_extractor",
-        predicate=lambda e: _h.is_usable_recent_extractor(
-            e, step=gs.step_index
-        ),
-    )
+    return gs.nearest_extractor(resource)
 
 
 def _known_junctions(gs: Any, predicate: Any = None) -> list[KnownEntity]:
-    if predicate is None:
-        predicate = lambda e: True  # noqa: E731
-    return list(gs.world_model.entities(entity_type="junction", predicate=predicate))
+    return gs.known_junctions(predicate)
 
 
 def _safe_distance(gs: Any) -> int:
-    hub = _nearest_hub(gs)
+    hub = gs.nearest_hub()
     if hub is None:
         return 0
-    return _h.manhattan(_h.absolute_position(gs.mg_state), hub.position)
+    return _h.manhattan(gs.position, hub.position)
 
 
 def _has_role_gear(gs: Any, role: str) -> bool:
-    return _h.has_role_gear(gs.mg_state, role)
+    return gs.has_role_gear(role)
 
 
 def _team_can_afford_gear(gs: Any, role: str) -> bool:
-    return _h.team_can_afford_gear(gs.mg_state, role)
+    return gs.team_can_afford_gear(role)
 
 
 def _needs_emergency_mining(gs: Any) -> bool:
-    return _h.needs_emergency_mining(gs.mg_state)
+    return gs.needs_emergency_mining()
 
 
 def _is_stalled(gs: Any) -> bool:
@@ -133,7 +98,7 @@ def _is_oscillating(gs: Any) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# Action programs — produce Action objects
+# Action programs — delegate to GameState → engine A* pathfinding
 # ---------------------------------------------------------------------------
 
 
@@ -143,213 +108,69 @@ def _action(gs: Any, name: str, vibe: str | None = None) -> Action:
     return Action(name=action_name, vibe=vibe_name)
 
 
-def _move_to(gs: Any, target: tuple[int, int]) -> Action:
-    current = _h.absolute_position(gs.mg_state)
-    if current == target:
-        return _action(gs, gs.fallback)
-    blocked = gs.world_model.occupied_cells()
-    blocked.update(set(gs.temp_blocks.keys()))
-    next_cell = _h.greedy_step(current, target, blocked)
-    if next_cell is None:
-        return _action(gs, gs.fallback)
-    direction = _h.direction_from_step(current, next_cell)
-    return _action(gs, f"move_{direction}")
+def _move_to(gs: Any, target: Any) -> tuple[Action, str]:
+    """Move to a KnownEntity or position tuple using engine A* pathfinding."""
+    if hasattr(target, "position"):
+        return gs.move_to_known(target, summary="move")
+    return gs.move_to_position(target, summary="move")
 
 
-def _hold(gs: Any) -> Action:
-    return _action(gs, gs.fallback)
+def _hold(gs: Any) -> tuple[Action, str]:
+    return gs.hold()
 
 
-def _explore(gs: Any, role: str = "miner") -> Action:
-    current_pos = _h.absolute_position(gs.mg_state)
-    hub = _nearest_hub(gs)
-    center = (hub.global_x, hub.global_y) if hub is not None else current_pos
-    offsets = _h.explore_offsets(role)
-    offset_index = (gs.agent_id + gs.explore_index) % len(offsets)
-    target = offsets[offset_index]
-    absolute_target = (center[0] + target[0], center[1] + target[1])
-    if _h.manhattan(current_pos, absolute_target) <= 2:
-        gs.explore_index += 1
-        offset_index = (gs.agent_id + gs.explore_index) % len(offsets)
-        target = offsets[offset_index]
-        absolute_target = (center[0] + target[0], center[1] + target[1])
-    return _move_to(gs, absolute_target)
+def _explore(gs: Any, role: str = "miner") -> tuple[Action, str]:
+    return gs.explore(role)
 
 
-def _unstick(gs: Any, role: str = "miner") -> Action:
-    current = _h.absolute_position(gs.mg_state)
-    gs.explore_index += 1
-    blocked = gs.world_model.occupied_cells()
-    blocked.update(set(gs.temp_blocks.keys()))
-    for direction in _h.unstick_directions(gs.agent_id, gs.step_index):
-        dx, dy = _h._MOVE_DELTAS[direction]
-        nxt = (current[0] + dx, current[1] + dy)
-        if nxt in blocked:
-            continue
-        return _action(gs, f"move_{direction}")
-    return _hold(gs)
+def _unstick(gs: Any, role: str = "miner") -> tuple[Action, str]:
+    return gs.unstick(role)
 
 
 # ---------------------------------------------------------------------------
-# Decision programs — compose queries and actions
+# Decision programs — compose queries and actions via engine delegation
 # ---------------------------------------------------------------------------
 
 
 def _desired_role(gs: Any) -> str:
-    step = gs.step_index
-    if step < 300:
-        aligner_budget = 2
-        scrambler_budget = 0
-    else:
-        aligner_budget = 4
-        scrambler_budget = 1
-    scrambler_ids = set(_SCRAMBLER_PRIORITY[:scrambler_budget])
-    aligner_ids: list[int] = []
-    for aid in _ALIGNER_PRIORITY:
-        if aid in scrambler_ids:
-            continue
-        if len(aligner_ids) == aligner_budget:
-            break
-        aligner_ids.append(aid)
-    if gs.agent_id in scrambler_ids:
-        return "scrambler"
-    if gs.agent_id in aligner_ids:
-        return "aligner"
-    return "miner"
+    return gs.desired_role()
 
 
 def _should_retreat(gs: Any) -> bool:
-    hp = _hp(gs)
-    role = gs.role
-    threshold = _h.retreat_threshold(gs.mg_state, role)
-    hub = _nearest_hub(gs)
-    if hub is None:
-        return hp <= threshold
-    safe_steps = max(
-        0,
-        _h.manhattan(_h.absolute_position(gs.mg_state), hub.position)
-        - _h._JUNCTION_AOE_RANGE,
-    )
-    margin = 15
-    return hp <= safe_steps + margin
+    return gs.should_retreat()
 
 
-def _retreat(gs: Any) -> Action:
-    hub = _nearest_hub(gs)
+def _retreat(gs: Any) -> tuple[Action, str]:
+    hub = gs.nearest_hub()
     if hub is not None:
-        return _move_to(gs, hub.position)
-    return _hold(gs)
+        return gs.move_to_known(hub, summary="retreat_to_hub")
+    return gs.hold(summary="retreat_hold")
 
 
-def _mine(gs: Any) -> Action:
-    priorities = _resource_priority(gs)
-    current_pos = _h.absolute_position(gs.mg_state)
-    for resource in priorities:
-        extractor = _nearest_extractor(gs, resource)
-        if extractor is not None:
-            return _move_to(gs, extractor.position)
-    return _explore(gs, role="miner")
+def _mine(gs: Any) -> tuple[Action, str]:
+    return gs.miner_action()
 
 
-def _align(gs: Any) -> Action:
-    team = _h.team_id(gs.mg_state)
-    neutrals = _known_junctions(
-        gs,
-        predicate=lambda e: e.owner in {None, "neutral"},
-    )
-    if neutrals:
-        current_pos = _h.absolute_position(gs.mg_state)
-        target = min(
-            neutrals,
-            key=lambda e: (_h.manhattan(current_pos, e.position), e.position),
-        )
-        return _move_to(gs, target.position)
-    return _explore(gs, role="aligner")
+def _align(gs: Any) -> tuple[Action, str]:
+    return gs.aligner_action()
 
 
-def _scramble(gs: Any) -> Action:
-    team = _h.team_id(gs.mg_state)
-    enemies = _known_junctions(
-        gs,
-        predicate=lambda e: e.owner not in {None, "neutral", team},
-    )
-    if enemies:
-        current_pos = _h.absolute_position(gs.mg_state)
-        target = min(
-            enemies,
-            key=lambda e: (_h.manhattan(current_pos, e.position), e.position),
-        )
-        return _move_to(gs, target.position)
-    return _explore(gs, role="scrambler")
+def _scramble(gs: Any) -> tuple[Action, str]:
+    return gs.scrambler_action()
 
 
-def _step(gs: Any) -> Action:
-    """Main dispatch — follows CvcEngine._choose_action priority chain."""
-    hp = _hp(gs)
-    step = _step_num(gs)
-    hub = _nearest_hub(gs)
-    safe_dist = 0 if hub is None else _h.manhattan(
-        _h.absolute_position(gs.mg_state), hub.position
-    )
-    role = gs.role
-
-    # 1. Heal at hub
-    if hp < 100 and hp > 0 and hub is not None and safe_dist <= 3 and step <= 20:
-        return _hold(gs)
-
-    # 2. Early retreat
-    if step < 150 and hub is not None and safe_dist > 8:
-        if hp < 40 or (hp < 50 and safe_dist > 15):
-            return _retreat(gs)
-
-    # 3. Wipeout
-    if hp == 0 and hub is not None:
-        if safe_dist > 5:
-            return _retreat(gs)
-        return _mine(gs)
-
-    # 4. Should retreat
-    if _should_retreat(gs):
-        if hub is not None and safe_dist > 2:
-            return _retreat(gs)
-        if _has_role_gear(gs, role):
-            return _hold(gs)
-
-    # 5. Oscillating or stalled
-    if _is_oscillating(gs):
-        return _unstick(gs, role)
-    if _is_stalled(gs):
-        return _unstick(gs, role)
-
-    # 6. Emergency mining
-    if role != "miner" and _needs_emergency_mining(gs):
-        return _mine(gs)
-
-    # 7. No gear
-    if not _has_role_gear(gs, role):
-        if not _team_can_afford_gear(gs, role):
-            return _mine(gs)
-        # Move to hub to get gear
-        if hub is not None:
-            return _move_to(gs, hub.position)
-
-    # 8. Role action
-    if role == "miner":
-        return _mine(gs)
-    if role == "aligner":
-        return _align(gs)
-    if role == "scrambler":
-        return _scramble(gs)
-    return _explore(gs, role=role)
+def _step(gs: Any) -> tuple[Action, str]:
+    """Main dispatch — delegates to engine._choose_action decision tree."""
+    return gs.choose_action(gs.role)
 
 
 def _summarize(gs: Any) -> dict:
     """Experience snapshot for PCO learner."""
-    hp = _hp(gs)
-    pos = _position(gs)
-    hub = _nearest_hub(gs)
+    hp = gs.hp
+    pos = gs.position
+    hub = gs.nearest_hub()
     return {
-        "step": _step_num(gs),
+        "step": gs.step_index,
         "agent_id": gs.agent_id,
         "hp": hp,
         "position": pos,
@@ -357,11 +178,11 @@ def _summarize(gs: Any) -> dict:
         "resource_bias": gs.resource_bias,
         "team_resources": _team_resources(gs),
         "inventory": _inventory(gs),
-        "safe_distance": _safe_distance(gs),
+        "safe_distance": 0 if hub is None else _h.manhattan(pos, hub.position),
         "stalled": _is_stalled(gs),
         "oscillating": _is_oscillating(gs),
-        "has_gear": _has_role_gear(gs, gs.role),
-        "emergency_mining": _needs_emergency_mining(gs),
+        "has_gear": gs.has_role_gear(gs.role),
+        "emergency_mining": gs.needs_emergency_mining(),
     }
 
 
@@ -407,20 +228,6 @@ def _parse_analysis(text: str) -> dict:
     except (json.JSONDecodeError, ValueError):
         pass
     return result
-
-
-# ---------------------------------------------------------------------------
-# Backward-compat: StepContext (used by table_policy.py, will be removed)
-# ---------------------------------------------------------------------------
-
-
-@dataclass
-class StepContext:
-    """Legacy context object — kept for backward compatibility."""
-    engine: Any
-    state: Any
-    role: str
-    invoke: Callable[[str, "StepContext"], Any]
 
 
 # ---------------------------------------------------------------------------
