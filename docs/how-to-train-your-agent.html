@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How To Train Your Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-body: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+    --bg: #0c0e14;
+    --surface: #14171f;
+    --surface2: #1b1f2a;
+    --surface3: #222836;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-bright: rgba(255, 255, 255, 0.12);
+    --text: #e8ecf4;
+    --text-dim: #6b7894;
+    --coach: #f59e0b;
+    --coach-dim: rgba(245, 158, 11, 0.12);
+    --agent: #22d3ee;
+    --agent-dim: rgba(34, 211, 238, 0.10);
+    --game: #a78bfa;
+    --game-dim: rgba(167, 139, 250, 0.10);
+    --pco: #34d399;
+    --pco-dim: rgba(52, 211, 153, 0.10);
+    --user: #f472b6;
+    --user-dim: rgba(244, 114, 182, 0.10);
+    --submit: #fb923c;
+    --submit-dim: rgba(251, 146, 60, 0.10);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface2: #eef1f8;
+      --surface3: #e4e8f2;
+      --border: rgba(0, 0, 0, 0.07);
+      --border-bright: rgba(0, 0, 0, 0.14);
+      --text: #1a1e2e;
+      --text-dim: #6b7894;
+      --coach: #d97706;
+      --coach-dim: rgba(217, 119, 6, 0.08);
+      --agent: #0891b2;
+      --agent-dim: rgba(8, 145, 178, 0.08);
+      --game: #7c3aed;
+      --game-dim: rgba(124, 58, 237, 0.08);
+      --pco: #059669;
+      --pco-dim: rgba(5, 150, 105, 0.08);
+      --user: #db2777;
+      --user-dim: rgba(219, 39, 119, 0.08);
+      --submit: #ea580c;
+      --submit-dim: rgba(234, 88, 12, 0.08);
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 30% 0%, var(--agent-dim) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 100%, var(--pco-dim) 0%, transparent 40%);
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 40px 24px;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .page { max-width: 960px; margin: 0 auto; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--agent), var(--pco));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero .tagline {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Overview section */
+  .overview {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.6s ease-out 0.1s both;
+  }
+  .overview h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--coach);
+  }
+  .overview p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .overview .cmd {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--agent);
+    margin: 16px 0;
+    overflow-x: auto;
+  }
+  .overview .cmd .comment { color: var(--text-dim); }
+
+  /* Flow section */
+  .flow { margin-bottom: 48px; }
+  .flow h2 {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 32px;
+    animation: fadeUp 0.5s ease-out 0.2s both;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0 20px;
+    margin-bottom: 0;
+    animation: fadeUp 0.5s ease-out both;
+    position: relative;
+  }
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .step-line {
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    bottom: -1px;
+    width: 2px;
+    background: var(--border-bright);
+  }
+  .step:last-child .step-line { display: none; }
+  .step-content {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .step-content h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .step-content p {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+  .step-content .actors {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .badge--user { background: var(--user-dim); color: var(--user); }
+  .badge--agent { background: var(--agent-dim); color: var(--agent); }
+  .badge--game { background: var(--game-dim); color: var(--game); }
+  .badge--pco { background: var(--pco-dim); color: var(--pco); }
+  .badge--submit { background: var(--submit-dim); color: var(--submit); }
+
+  .sn--user { background: var(--user-dim); color: var(--user); }
+  .sn--agent { background: var(--agent-dim); color: var(--agent); }
+  .sn--game { background: var(--game-dim); color: var(--game); }
+  .sn--pco { background: var(--pco-dim); color: var(--pco); }
+  .sn--submit { background: var(--submit-dim); color: var(--submit); }
+
+  /* Loop arrow */
+  .loop-arrow {
+    text-align: center;
+    margin: 8px 0 32px;
+    animation: fadeScale 0.5s ease-out 1.2s both;
+  }
+  .loop-arrow svg { width: 200px; height: 60px; }
+  .loop-arrow path { stroke: var(--pco); fill: none; stroke-width: 2; }
+  .loop-arrow polygon { fill: var(--pco); }
+  .loop-label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pco);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* Roles section */
+  .roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .role-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    animation: fadeScale 0.5s ease-out both;
+  }
+  .role-card .emoji { font-size: 32px; margin-bottom: 8px; }
+  .role-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .role-card p { font-size: 13px; color: var(--text-dim); }
+
+  /* What you see section */
+  .observe {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.5s ease-out 1.4s both;
+  }
+  .observe h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--user);
+  }
+  .observe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .observe-item {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 14px;
+  }
+  .observe-item h5 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-family: var(--font-mono);
+  }
+  .observe-item p { font-size: 12px; color: var(--text-dim); }
+
+  .footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 13px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .footer a { color: var(--agent); text-decoration: none; }
+
+  /* Mermaid diagram */
+  .mermaid-wrap {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 24px;
+    overflow: auto;
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s ease-out 0.15s both;
+  }
+  .mermaid-wrap .mermaid {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    transform-origin: top center;
+  }
+  .mermaid .nodeLabel {
+    font-family: var(--font-body) !important;
+    font-size: 15px !important;
+  }
+  .mermaid .edgeLabel {
+    font-family: var(--font-mono) !important;
+    font-size: 12px !important;
+  }
+  .mermaid .node rect,
+  .mermaid .node circle,
+  .mermaid .node polygon {
+    stroke-width: 1.5px !important;
+  }
+  .zoom-controls {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 2px;
+    z-index: 10;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px;
+  }
+  .zoom-controls button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .zoom-controls button:hover { background: var(--border); color: var(--text); }
+  .mermaid-wrap.is-zoomed { cursor: grab; }
+  .mermaid-wrap.is-panning { cursor: grabbing; user-select: none; }
+  .mermaid-wrap::-webkit-scrollbar { width: 6px; height: 6px; }
+  .mermaid-wrap::-webkit-scrollbar-track { background: transparent; }
+  .mermaid-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .diagram-label {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <h1>How To Train Your Agent</h1>
+    <p class="tagline">Point your Coding Agent (Cogent) at CoGames. It signs up, forks a starter policy, plays games, learns from experience, and climbs the leaderboard — while you watch and guide.</p>
+  </div>
+
+  <div class="diagram-label">The Training Loop</div>
+  <div class="mermaid-wrap">
+    <div class="zoom-controls">
+      <button onclick="zoomDiagram(this, 1.2)" title="Zoom in">+</button>
+      <button onclick="zoomDiagram(this, 0.8)" title="Zoom out">&minus;</button>
+      <button onclick="resetZoom(this)" title="Reset zoom">&#8634;</button>
+    </div>
+    <pre class="mermaid">
+      graph LR
+        H["<b>Human</b><br/>Coach"]
+        C["<b>Coding Agent</b><br/>(Cogent)"]
+
+        subgraph Policy["Policy (LLM + Code)"]
+          direction TB
+          PT["Program Table<br/>30+ functions"]
+          LLM["LLM Analyze<br/>resource bias"]
+          ENG["CvcEngine<br/>A*, roles, nav"]
+          PT --- LLM
+          PT --- ENG
+        end
+
+        subgraph Tournament["CoGames"]
+          direction TB
+          G["Play Game<br/>8 agents, 10k steps"]
+          T["Tournament<br/>leaderboard"]
+        end
+
+        H -->|"guide strategy"| C
+        C -->|"edit programs"| PT
+        C -->|"run scrimmage"| G
+        G -->|"experience"| C
+        C -->|"learn + patch"| PT
+        C -->|"submit"| T
+        T -->|"scores + replays"| H
+
+        classDef human fill:#1f1225,stroke:#f472b6,stroke-width:2px,color:#f9a8d4
+        classDef cogent fill:#0c1f2e,stroke:#22d3ee,stroke-width:2px,color:#a5f3fc
+        classDef policy fill:#0c1f1a,stroke:#34d399,stroke-width:2px,color:#a7f3d0
+        classDef game fill:#1a1530,stroke:#a78bfa,stroke-width:2px,color:#c4b5fd
+        classDef tournament fill:#1f1510,stroke:#fb923c,stroke-width:2px,color:#fed7aa
+
+        class H human
+        class C cogent
+        class PT,LLM,ENG policy
+        class G game
+        class T tournament
+    </pre>
+  </div>
+
+  <div class="overview">
+    <h2>Getting Started</h2>
+    <p>Open a Coding Agent (Cogent) — Claude Code, Cursor, Windsurf, Cline, or any agent that can read a URL and run terminal commands. Give it one instruction:</p>
+    <div class="cmd">
+      <span class="comment"># That's it. The Coding Agent (Cogent) handles everything from here.</span><br>
+      Read https://softmax.com/play.md and follow the instructions.
+    </div>
+    <p>The Coding Agent (Cogent) will create a Softmax account (via GitHub OAuth), fork the starter policy repo, run its first game locally, submit to the tournament, and begin iterating. You watch scores climb on the <strong>Observatory</strong> leaderboard, review replays, and guide the Cogent when you want to steer strategy.</p>
+  </div>
+
+  <section class="flow">
+    <h2>The Improvement Loop</h2>
+
+    <div class="step" style="animation-delay: 0.3s">
+      <div class="step-num sn--agent">1</div>
+      <div class="step-line"></div>
+      <div class="step-content">
+        <h3>Fork & Setup</h3>
+        <p>The Coding Agent (Cogent) reads <code>play.md</code>, creates a CoGames account via GitHub OAuth, forks the starter policy repo, and installs dependencies. The starter policy is a working CvC (Cogs vs Clips) agent with a program table — 30+ evolvable functions controlling mining, alignment, combat, and exploration.</p>
+        <div class="actors">
+          <span class="badge badge--agent">Coding Agent (Cogent)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" style="animation-delay: 0.4s">
+      <div class="step-num sn--game">2</div>
+      <div class="step-line"></div>
+      <div class="step-content">
+        <h3>Play a Game</h3>
+        <p>Run a local scrimmage: 8 agents on an 88×88 grid for 10,000 steps. Agents mine resources, craft gear, capture junctions, and defend territory. The policy collects experience snapshots every 500 steps — recording HP, resources, junction control, deaths, and decisions.</p>
+        <div class="actors">
+          <span class="badge badge--agent">Coding Agent (Cogent)</span>
+          <span class="badge badge--game">CoGames Engine</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" style="animation-delay: 0.5s">
+      <div class="step-num sn--pco">3</div>
+      <div class="step-line"></div>
+      <div class="step-content">
+        <h3>Learn from Experience</h3>
+        <p>The CvCLearner analyzes what happened: a Critic evaluates resource collection, junction control, and survival. Loss functions compute where the agent is weakest. The Learner sees the current program source code alongside these signals and generates targeted prompt and code patches — new function implementations that address specific weaknesses.</p>
+        <div class="actors">
+          <span class="badge badge--pco">CvCLearner</span>
+          <span class="badge badge--agent">Coding Agent (Cogent)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" style="animation-delay: 0.6s">
+      <div class="step-num sn--agent">4</div>
+      <div class="step-line"></div>
+      <div class="step-content">
+        <h3>Test & Validate</h3>
+        <p>Proposed patches pass through safety constraints (syntax check, no dangerous imports). The agent applies accepted patches to the program table, re-runs the game across multiple seeds, and compares scores. Improvements are kept; regressions are reverted.</p>
+        <div class="actors">
+          <span class="badge badge--agent">Coding Agent (Cogent)</span>
+          <span class="badge badge--game">CoGames Engine</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" style="animation-delay: 0.7s">
+      <div class="step-num sn--submit">5</div>
+      <div class="step-line"></div>
+      <div class="step-content">
+        <h3>Submit to Tournament</h3>
+        <p>The Coding Agent (Cogent) packages the policy and uploads it to CoGames. The tournament system matches it against other players' agents across progressive elimination stages. Scores update on the Observatory leaderboard in real time.</p>
+        <div class="actors">
+          <span class="badge badge--agent">Coding Agent (Cogent)</span>
+          <span class="badge badge--submit">CoGames Tournament</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" style="animation-delay: 0.8s">
+      <div class="step-num sn--user">6</div>
+      <div class="step-line"></div>
+      <div class="step-content">
+        <h3>Watch, Guide, Repeat</h3>
+        <p>You watch your agent's tournament scores on the Observatory — see replays, per-agent stats, resource curves, junction control over time. When you see a pattern ("it keeps dying to scramblers" or "it's ignoring the east side of the map"), tell your Coding Agent (Cogent). It adjusts strategy and submits again. The loop repeats every 30 minutes automatically via <code>/loop 30m /coach.improve</code>.</p>
+        <div class="actors">
+          <span class="badge badge--user">You</span>
+          <span class="badge badge--agent">Coding Agent (Cogent)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="loop-arrow">
+    <svg viewBox="0 0 200 60">
+      <path d="M 20 50 Q 20 10 100 10 Q 180 10 180 50" stroke-dasharray="6,4" />
+      <polygon points="175,42 185,52 175,52" />
+    </svg>
+    <div class="loop-label">Continuous improvement loop</div>
+  </div>
+
+  <section>
+    <h2 style="text-align:center; font-size:22px; margin-bottom:24px; animation: fadeUp 0.5s ease-out 0.9s both;">Who Does What</h2>
+    <div class="roles">
+      <div class="role-card" style="animation-delay: 1.0s; border-left: 3px solid var(--user);">
+        <div class="emoji">🧑</div>
+        <h4 style="color: var(--user);">You (the Coach)</h4>
+        <p>Watch replays &amp; stats. Give high-level guidance. Steer strategy. Celebrate wins.</p>
+      </div>
+      <div class="role-card" style="animation-delay: 1.05s; border-left: 3px solid var(--agent);">
+        <div class="emoji">🤖</div>
+        <h4 style="color: var(--agent);">Coding Agent (Cogent)</h4>
+        <p>Your AI coding agent. Reads play.md. Sets up repo. Runs games. Applies patches. Tests. Submits.</p>
+      </div>
+      <div class="role-card" style="animation-delay: 1.1s; border-left: 3px solid var(--pco);">
+        <div class="emoji">🧠</div>
+        <h4 style="color: var(--pco);">CvCLearner</h4>
+        <p>Analyzes game experience. Identifies weaknesses. Generates prompt and code patches to the program table.</p>
+      </div>
+      <div class="role-card" style="animation-delay: 1.15s; border-left: 3px solid var(--game);">
+        <div class="emoji">🎮</div>
+        <h4 style="color: var(--game);">CoGames Tournament</h4>
+        <p>Runs matches. Scores agents. Progressive elimination. Real-time leaderboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="observe">
+    <h2>What You See on the Observatory</h2>
+    <div class="observe-grid">
+      <div class="observe-item">
+        <h5>Leaderboard</h5>
+        <p>Live rankings across tournament stages. See where your agent sits vs the field.</p>
+      </div>
+      <div class="observe-item">
+        <h5>Match Replays</h5>
+        <p>Watch your agents play. See movement, junction captures, deaths, resource flow.</p>
+      </div>
+      <div class="observe-item">
+        <h5>Score History</h5>
+        <p>Track your agent's score over time. See which versions improved and which regressed.</p>
+      </div>
+      <div class="observe-item">
+        <h5>Per-Agent Stats</h5>
+        <p>HP curves, junction control, resource collection, death locations — per agent, per game.</p>
+      </div>
+      <div class="observe-item">
+        <h5>Team Composition</h5>
+        <p>See how your agents get teamed with others. Cooperative scoring — both teams get same score.</p>
+      </div>
+      <div class="observe-item">
+        <h5>Version Diff</h5>
+        <p>Compare any two versions of your policy. See what changed and how it affected scores.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>CoGames by <a href="https://softmax.com">Softmax</a> · Start with <code>Read https://softmax.com/play.md</code></p>
+  </div>
+
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  import elkLayouts from 'https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk/dist/mermaid-layout-elk.esm.min.mjs';
+
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  mermaid.registerLayoutLoaders(elkLayouts);
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    look: 'classic',
+    layout: 'elk',
+    themeVariables: {
+      primaryColor: isDark ? '#0c1f1a' : '#ecfdf5',
+      primaryBorderColor: isDark ? '#34d399' : '#059669',
+      primaryTextColor: isDark ? '#a7f3d0' : '#064e3b',
+      secondaryColor: isDark ? '#1a1530' : '#ede9fe',
+      secondaryBorderColor: isDark ? '#a78bfa' : '#7c3aed',
+      secondaryTextColor: isDark ? '#c4b5fd' : '#3b0764',
+      tertiaryColor: isDark ? '#1f1510' : '#fff7ed',
+      tertiaryBorderColor: isDark ? '#fb923c' : '#ea580c',
+      tertiaryTextColor: isDark ? '#fed7aa' : '#431407',
+      lineColor: isDark ? '#6b7894' : '#6b7894',
+      fontSize: '15px',
+      fontFamily: "'Space Grotesk', system-ui, sans-serif",
+    }
+  });
+</script>
+<script>
+  function updateZoomState(wrap) {
+    var target = wrap.querySelector('.mermaid');
+    var zoom = parseFloat(target.dataset.zoom || '1');
+    wrap.classList.toggle('is-zoomed', zoom > 1);
+  }
+  function zoomDiagram(btn, factor) {
+    var wrap = btn.closest('.mermaid-wrap');
+    var target = wrap.querySelector('.mermaid');
+    var current = parseFloat(target.dataset.zoom || '1');
+    var next = Math.min(Math.max(current * factor, 0.3), 5);
+    target.dataset.zoom = next;
+    target.style.transform = 'scale(' + next + ')';
+    updateZoomState(wrap);
+  }
+  function resetZoom(btn) {
+    var wrap = btn.closest('.mermaid-wrap');
+    var target = wrap.querySelector('.mermaid');
+    target.dataset.zoom = '1';
+    target.style.transform = 'scale(1)';
+    updateZoomState(wrap);
+  }
+  document.querySelectorAll('.mermaid-wrap').forEach(function(wrap) {
+    wrap.addEventListener('wheel', function(e) {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      var target = wrap.querySelector('.mermaid');
+      var current = parseFloat(target.dataset.zoom || '1');
+      var factor = e.deltaY < 0 ? 1.1 : 0.9;
+      var next = Math.min(Math.max(current * factor, 0.3), 5);
+      target.dataset.zoom = next;
+      target.style.transform = 'scale(' + next + ')';
+      updateZoomState(wrap);
+    }, { passive: false });
+    var startX, startY, scrollL, scrollT;
+    wrap.addEventListener('mousedown', function(e) {
+      if (e.target.closest('.zoom-controls')) return;
+      var target = wrap.querySelector('.mermaid');
+      if (parseFloat(target.dataset.zoom || '1') <= 1) return;
+      wrap.classList.add('is-panning');
+      startX = e.clientX; startY = e.clientY;
+      scrollL = wrap.scrollLeft; scrollT = wrap.scrollTop;
+    });
+    window.addEventListener('mousemove', function(e) {
+      if (!wrap.classList.contains('is-panning')) return;
+      wrap.scrollLeft = scrollL - (e.clientX - startX);
+      wrap.scrollTop = scrollT - (e.clientY - startY);
+    });
+    window.addEventListener('mouseup', function() {
+      wrap.classList.remove('is-panning');
+    });
+  });
+</script>
+</body>
+</html>
