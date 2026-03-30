@@ -45,12 +45,14 @@ class CvcEngine(
         *,
         agent_id: int,
         world_model: WorldModel,
+        shared_junctions: dict[tuple[int, int], tuple[str | None, int]] | None = None,
+        shared_claims: dict[tuple[int, int], tuple[int, int]] | None = None,
     ) -> None:
         super().__init__(policy_env_info)
         self._agent_id = agent_id
         self._world_model = world_model
-        self._claims: dict[tuple[int, int], tuple[int, int]] = {}
-        self._junctions: dict[tuple[int, int], tuple[str | None, int]] = {}
+        self._claims: dict[tuple[int, int], tuple[int, int]] = shared_claims if shared_claims is not None else {}
+        self._junctions: dict[tuple[int, int], tuple[str | None, int]] = shared_junctions if shared_junctions is not None else {}
         self._events: list[Any] = []
         self._previous_state: MettagridState | None = None
         self._last_global_pos: tuple[int, int] | None = None
