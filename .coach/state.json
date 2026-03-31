@@ -1,23 +1,24 @@
 {
-  "last_session": "20260331-130000",
+  "last_session": "20260331-150000",
   "best_score": 10.63,
-  "total_sessions": 38,
+  "total_sessions": 39,
   "policy_name": "beta",
   "season": "beta-teams-tiny-fixed",
   "tournament_best": 10.63,
   "tournament_rank": 1,
   "tournament_top": 10.63,
-  "latest_submission": "beta:v43",
-  "freeplay_submission": "beta:v42",
-  "key_fix": "Enhanced LLM brain: role/objective guidance + stagnation detection",
+  "latest_submission": "beta:v57",
+  "freeplay_submission": "beta:v56",
+  "key_fix": "Reduced heart retreat margin (hearts*5 → hearts*3) for less aggressive aligner retreat",
   "approach_stats": {
     "pco": {"attempts": 4, "improvements": 1, "last_used": "20260329-000000"},
-    "design": {"attempts": 14, "improvements": 9, "last_used": "20260331-130000"}
+    "design": {"attempts": 15, "improvements": 9, "last_used": "20260331-150000"}
   },
   "freeplay_experiments": {
     "v28_enemy_avoidance": {"score": 1.21, "result": "regression"},
     "v40_no_scramblers": {"score": 1.24, "result": "regression"},
     "v42_enhanced_llm": {"score": "pending", "result": "pending"},
+    "v56_heart_margin": {"score": "pending", "result": "pending"},
     "best_v15": {"score": 1.81, "result": "baseline_best"}
   }
 }
