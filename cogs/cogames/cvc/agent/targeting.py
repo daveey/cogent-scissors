@@ -86,6 +86,19 @@ class TargetingMixin:
 
     # ── Junction targeting ──────────────────────────────────────────
 
+    def _teammate_aligner_positions(self, state: MettagridState) -> list[tuple[int, int]]:
+        """Get positions of teammate aligners from team_summary."""
+        if state.team_summary is None:
+            return []
+        my_entity_id = str(state.self_state.attributes.get("entity_id", ""))
+        positions = []
+        for member in state.team_summary.members:
+            if member.entity_id == my_entity_id:
+                continue
+            if member.role == "aligner":
+                positions.append((member.position.x, member.position.y))
+        return positions
+
     def _nearest_alignable_neutral_junction(self, state: MettagridState) -> KnownEntity | None:
         team = _h.team_id(state)
         current_pos = _h.absolute_position(state)
@@ -113,6 +126,7 @@ class TargetingMixin:
             for entity in self._known_junctions(state, predicate=lambda junction: junction.owner in {None, "neutral"})  # type: ignore[attr-defined]
             if entity not in candidates
         ]
+        teammate_aligners = self._teammate_aligner_positions(state)
         return min(
             candidates,
             key=lambda entity: (
@@ -130,6 +144,11 @@ class TargetingMixin:
                     hub_position=hub_pos,
                     friendly_sources=network_sources,
                     hotspot_count=self._hotspots.get(entity.position, 0),
+                    teammate_closer=_h.teammate_closer_to_target(
+                        current_position=current_pos,
+                        target=entity.position,
+                        teammate_positions=teammate_aligners,
+                    ),
                 ),
                 entity.position,
             ),

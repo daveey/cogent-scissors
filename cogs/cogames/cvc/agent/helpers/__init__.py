@@ -35,6 +35,7 @@ from cvc.agent.helpers.targeting import (
     is_usable_recent_extractor,
     scramble_target_score,
     spawn_relative_station_target,
+    teammate_closer_to_target,
     within_alignment_network,
 )
 from cvc.agent.helpers.types import (
@@ -84,6 +85,7 @@ __all__ = [
     "team_id",
     "team_min_resource",
     "aligner_target_score",
+    "teammate_closer_to_target",
     "is_claimed_by_other",
     "is_usable_recent_extractor",
     "scramble_target_score",

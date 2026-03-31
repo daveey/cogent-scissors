@@ -26,6 +26,20 @@ def within_alignment_network(
     return False
 
 
+def teammate_closer_to_target(
+    *,
+    current_position: tuple[int, int],
+    target: tuple[int, int],
+    teammate_positions: list[tuple[int, int]],
+) -> bool:
+    """Check if any teammate aligner is closer to the target than we are."""
+    my_dist = manhattan(current_position, target)
+    for pos in teammate_positions:
+        if manhattan(pos, target) < my_dist:
+            return True
+    return False
+
+
 def aligner_target_score(
     *,
     current_position: tuple[int, int],
@@ -36,6 +50,7 @@ def aligner_target_score(
     hub_position: tuple[int, int] | None = None,
     friendly_sources: list[KnownEntity] | None = None,
     hotspot_count: int = 0,
+    teammate_closer: bool = False,
 ) -> tuple[float, float]:
     distance = float(manhattan(current_position, candidate.position))
     expansion = sum(
@@ -68,13 +83,15 @@ def aligner_target_score(
         else:
             hub_penalty = network_dist * 0.3
     hotspot_penalty = min(hotspot_count, 5) * 8.0
+    teammate_penalty = 10.0 if teammate_closer else 0.0
     return (
         distance
         - min(expansion * 5.0, 30.0)
         + enemy_aoe * 8.0
         + (_CLAIMED_TARGET_PENALTY if claimed_by_other else 0.0)
         + hub_penalty
-        + hotspot_penalty,
+        + hotspot_penalty
+        + teammate_penalty,
         -float(expansion),
     )
 
