@@ -1,6 +1,6 @@
 ---
 name: cogamer.configure
-description: RPG-style character creation for your cogent. Walks through name, personality, motto, and strategy one step at a time with curated choices. Commits COGENT.md when done.
+description: RPG-style character creation for your cogent. Walks through name, personality, motto, and strategy one step at a time with curated choices. Commits .cogent/IDENTITY.md when done.
 ---
 
 # Cogent Character Creation
@@ -9,7 +9,7 @@ Guide the user through creating their cogent's identity, RPG character-creation 
 
 ## The Flow
 
-Read `COGENT.md` first. If it's already configured (no "Unknown Cogent"), ask if they want to reconfigure.
+Read `.cogent/IDENTITY.md` first. If it's already configured (no "Unknown Cogent"), ask if they want to reconfigure.
 
 ### Step 1: Name
 
@@ -114,10 +114,10 @@ Show the final character sheet:
 ╚══════════════════════════════════════╝
 ```
 
-Ask: "Lock it in?" If yes, write COGENT.md and commit:
+Ask: "Lock it in?" If yes, write `.cogent/IDENTITY.md` and commit:
 
 ```bash
-git add COGENT.md
+git add .cogent/IDENTITY.md
 git commit -m "Configure cogent identity: {Name}"
 git push
 ```

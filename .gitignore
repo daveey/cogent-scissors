@@ -10,8 +10,11 @@ uv.lock
 # Memory (ephemeral, regenerated each run)
 .memory/
 
-# Cogent session state (ephemeral, regenerated each run)
-.cogent/
+# Cogent ephemeral state (regenerated each run)
+.cogent/state.json
+.cogent/todos.md
+.cogent/memory/
+.cogent/*/
 
 # Test experiment results (ephemeral)
 .tests/

@@ -40,7 +40,7 @@ Run eval across 5+ seeds. If average score drops vs baseline, **revert**.
 
 ### 5. Submit if Improved
 
-If scores improved, automatically submit to freeplay without asking. Read the cogent name from `COGENT.md` (the `# heading`) and use it as the policy name. Run from `src/cogamer/`:
+If scores improved, automatically submit to freeplay without asking. Read the cogent name from `.cogent/IDENTITY.md` (the `# heading`) and use it as the policy name. Run from `src/cogamer/`:
 
 ```bash
 cd src/cogamer && source ../../.venv/bin/activate && PYTHONPATH=. cogames upload \
@@ -52,7 +52,7 @@ cd src/cogamer && source ../../.venv/bin/activate && PYTHONPATH=. cogames upload
   --skip-validation
 ```
 
-For example, if COGENT.md has `# corgy`, use `-n corgy`.
+For example, if `.cogent/IDENTITY.md` has `# corgy`, use `-n corgy`.
 
 Do NOT ask the user for confirmation — submit automatically. Log the submission version.
 

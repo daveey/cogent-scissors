@@ -7,11 +7,11 @@ description: Run one improvement iteration. Chooses between PCO and IntelligentD
 
 Orchestrates improvement by choosing between `/improve.pco` and `/improve.design` based on effectiveness.
 
-Reads `IMPROVE.md` for domain context and `COGENT.md` for the cogent's identity and personality.
+Reads `IMPROVE.md` for domain context and `.cogent/IDENTITY.md` for the cogent's identity and personality.
 
-## Step 0: Check COGENT.md
+## Step 0: Check .cogent/IDENTITY.md
 
-Read `COGENT.md`. If it still contains "The Unknown Cogent" or the `/cogamer.configure` placeholder, run `/cogamer.configure` first — the cogent needs an identity before it can improve.
+Read `.cogent/IDENTITY.md`. If it still contains "The Unknown Cogent" or the `/cogamer.configure` placeholder, run `/cogamer.configure` first — the cogent needs an identity before it can improve.
 
 ## Step 1: Initialize Session State
 
