@@ -1,7 +1,7 @@
 {
-  "last_session": "20260401-011500",
+  "last_session": "20260401-020000",
   "best_score": 10.00,
-  "total_sessions": 49,
+  "total_sessions": 50,
   "policy_name": "beta",
   "season": "beta-teams-tiny-fixed",
   "tournament_best": 10.00,
@@ -9,21 +9,16 @@
   "tournament_top": 10.00,
   "freeplay_best": 1.81,
   "freeplay_season": "beta-cvc",
-  "latest_submission": "beta:v77",
-  "freeplay_submission": "beta:v76",
-  "key_fix": "Hub-proximal hotspot discount (weight 2.0/5.0/8.0 by distance). Self-play +9.6%, cumulative +32.5%.",
+  "latest_submission": "beta:v81",
+  "freeplay_submission": "beta:v80",
+  "key_fix": "Extractor memory 600→800 steps. Cumulative +37.9% vs baseline.",
   "approach_stats": {
     "pco": {"attempts": 4, "improvements": 1, "last_used": "20260329-000000"},
-    "design": {"attempts": 21, "improvements": 13, "last_used": "20260401-011500"}
+    "design": {"attempts": 22, "improvements": 14, "last_used": "20260401-020000"}
   },
   "freeplay_experiments": {
-    "v28_enemy_avoidance": {"score": 1.21, "result": "regression"},
-    "v40_no_scramblers": {"score": 1.24, "result": "regression"},
-    "v42_enhanced_llm": {"score": 1.64, "result": "neutral"},
-    "v56_heart_margin": {"score": 1.72, "result": "neutral"},
-    "v60_no_teammate_penalty": {"score": 1.12, "result": "regression"},
-    "v72_junction_mem_800": {"score": "pending", "result": "pending"},
     "v76_hub_hotspot_discount": {"score": "pending", "result": "pending"},
+    "v80_extractor_mem_800": {"score": "pending", "result": "pending"},
     "best_v15": {"score": 1.81, "result": "baseline_best"}
   }
 }

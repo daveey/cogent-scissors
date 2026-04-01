@@ -39,6 +39,8 @@
 - [x] Aggressive adaptive role allocation — killed 1v1 scores (excess_aligners math counts ALL teammates)
 - [x] Pure network-dist scoring — agents venture too far and die (-31% avg)
 - [x] Removing teammate penalty (v60) — hurt freeplay (1.12 vs 1.81)
+- [x] Scrambler heart batch 2→1 — -34.1% regression, wastes hearts
+- [x] Early pressure ramp (step 200) — economy can't sustain with only 2 miners, -8.8%
 
 ## Testing Notes
 - **ALWAYS test 1v1 with `cogames run -c 16 -p A -p B`** not just scrimmage
@@ -48,6 +50,7 @@
 - Need 7+ seeds minimum for any signal in self-play
 
 ## Done
+- [x] (ID) Extractor memory 600→800 — self-play +4.1%, cumulative +37.9% vs baseline, submitted v80/v81
 - [x] (ID) Hub-proximal hotspot discount — self-play +9.6%, cumulative +32.5% vs baseline, submitted v76/v77
 - [x] (ID) Junction memory 400→800 steps — self-play +8.2%, submitted v72/v73
 - [x] (ID) Network proximity bonus (alpha.0 weight 0.5 for chain-building) — self-play neutral, submitted v70/v71
