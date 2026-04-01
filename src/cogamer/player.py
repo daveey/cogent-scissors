@@ -53,12 +53,12 @@ class PlayerCoglet(Coglet, GitLet, LifeLet):
         return json.loads(path.read_text())
 
     def get_experience(self) -> list[dict[str, Any]]:
-        """Get all accumulated experience for Coach to analyze."""
+        """Get all accumulated experience for analysis."""
         return self.experience
 
     @enact("improve")
     async def handle_improve(self, analysis: Any = None) -> None:
-        """Coach directs an improvement based on cross-game analysis."""
+        """Direct an improvement based on cross-game analysis."""
         if analysis:
             await self.transmit("improvement", analysis)
 

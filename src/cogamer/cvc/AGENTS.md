@@ -61,10 +61,10 @@ EXTRACTOR_MEMORY = 600 steps
 
 ### Policy Stack (StatefulPolicyImpl pattern)
 ```
-CogletPolicy (MultiAgentPolicy)
-  └─ StatefulAgentPolicy[CogletAgentState]  ← framework-managed, one per agent
-       └─ CogletPolicyImpl (StatefulPolicyImpl[CogletAgentState])
-            ├─ CogletAgentPolicy (heuristic engine)
+CvCPolicy (MultiAgentPolicy)
+  └─ StatefulAgentPolicy[CvCAgentState]  ← framework-managed, one per agent
+       └─ CvCPolicyImpl (StatefulPolicyImpl[CvCAgentState])
+            ├─ CvCAgentPolicy (heuristic engine)
             ├─ LLM brain (periodic Claude calls → resource_bias)
             └─ Snapshot logging (periodic state capture)
 ```
@@ -74,12 +74,12 @@ This follows the official cogames agent pattern (see `cogames-agents/docs/creati
 - **`StatefulPolicyImpl[S]`**: Per-agent logic, implements `step_with_state(obs, state) -> (Action, state)`
 - **`StatefulAgentPolicy[S]`**: Framework glue, wraps impl into AgentPolicy with state lifecycle
 
-### CogletAgentState (dataclass)
+### CvCAgentState (dataclass)
 All per-agent mutable state:
 ```python
 @dataclass
-class CogletAgentState:
-    engine: CogletAgentPolicy | None   # Heuristic engine (holds own internal state)
+class CvCAgentState:
+    engine: CvCAgentPolicy | None   # Heuristic engine (holds own internal state)
     last_llm_step: int                  # Step of last LLM call
     llm_interval: int                   # Steps between LLM calls (adaptive)
     llm_latencies: list[float]          # Recent LLM call latencies
@@ -89,16 +89,16 @@ class CogletAgentState:
     last_snapshot_step: int             # Step of last snapshot
 ```
 
-### CogletPolicyImpl (StatefulPolicyImpl)
+### CvCPolicyImpl (StatefulPolicyImpl)
 Per-agent decision logic:
 1. Sets `engine._llm_resource_bias` from state (LLM guidance)
 2. Calls `engine.step(obs)` → action (heuristic fast path)
 3. Periodically calls LLM for `resource_bias` (slow path)
 4. Periodically logs game state snapshot
 
-### CogletAgentPolicy (heuristic engine)
+### CvCAgentPolicy (heuristic engine)
 Extends `CvcEngine` with:
-- `_llm_resource_bias` attribute: set by CogletPolicyImpl, used in `_macro_directive()`
+- `_llm_resource_bias` attribute: set by CvCPolicyImpl, used in `_macro_directive()`
 - `_macro_directive()`: returns LLM bias if set, else least-available resource
 - `_pressure_budgets()`: phase-based aligner/scrambler allocation
 - `_should_retreat()`: extra safety for miners far from hub
@@ -106,10 +106,10 @@ Extends `CvcEngine` with:
 ### File Layout
 ```
 cvc/
-├── cvc_policy.py              # CogletPolicy + CogletPolicyImpl + CogletAgentState + LLM brain
+├── cvc_policy.py              # CvCPolicy + CvCPolicyImpl + CvCAgentState + LLM brain
 ├── AGENTS.md                  # This file
 └── agent/
-    ├── coglet_policy.py       # CogletAgentPolicy (heuristic overrides: resource bias, budgets, retreat)
+    ├── coglet_policy.py       # CvCAgentPolicy (heuristic overrides: resource bias, budgets, retreat)
     ├── cogames_policy.py      # CvcBasePolicy (MultiAgentPolicy wrapper)
     ├── engine.py              # CvcEngine (heuristic decision tree, pathfinding, targeting)
     ├── world_model.py         # WorldModel (per-agent entity memory)
@@ -121,7 +121,7 @@ cvc/
 ```
 
 ### Per-Agent Decision Loop
-Each step, CogletPolicyImpl.step_with_state():
+Each step, CvCPolicyImpl.step_with_state():
 1. Set `engine._llm_resource_bias` from LLM state
 2. `engine.step(obs)` → action (heuristic engine handles everything)
 3. If LLM interval reached → call Claude for new `resource_bias`
@@ -158,13 +158,13 @@ step >= 300: aligners=4, scramblers=1  (sustained play)
 
 ```bash
 # Play locally (with LLM if ANTHROPIC_API_KEY is set)
-cogames play -m machina_1 -p class=cvc.cvc_policy.CogletPolicy -c 8 --seed 42 -r none
+cogames play -m machina_1 -p class=cvc.cvc_policy.CvCPolicy -c 8 --seed 42 -r none
 
 # Play without LLM (unset API key)
-ANTHROPIC_API_KEY= cogames play -m machina_1 -p class=cvc.cvc_policy.CogletPolicy -c 8 --seed 42 -r none
+ANTHROPIC_API_KEY= cogames play -m machina_1 -p class=cvc.cvc_policy.CvCPolicy -c 8 --seed 42 -r none
 
 # Upload to tournament
-cogames upload -p class=cvc.cvc_policy.CogletPolicy -n coglet-v0 \
+cogames upload -p class=cvc.cvc_policy.CvCPolicy -n coglet-v0 \
   -f cvc -f mettagrid_sdk -f setup_policy.py \
   --setup-script setup_policy.py --season beta-cvc \
   --secret-env "COGORA_ANTHROPIC_KEY=..."

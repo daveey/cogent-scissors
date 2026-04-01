@@ -1,7 +1,7 @@
 [project]
-name = "coglet"
+name = "cogamer"
 version = "0.1.0"
-description = "Fractal asynchronous control for distributed agent systems"
+description = "Self-improving agent for Softmax CoGames"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "mettagrid",
@@ -20,7 +20,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/coglet", "cogs/cogames"]
+packages = ["src/coglet", "src/cogamer"]
 
 [tool.ty.environment]
 extra-paths = ["src", "."]

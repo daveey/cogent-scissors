@@ -10,9 +10,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Structure
 
 ```
+src/cogamer/    # CoGamer: self-improving agent for CoGames (Improve, Player, Policy)
 src/coglet/     # Framework: Coglet base class + mixins
 src/cogweb/     # CogWeb: graph visualization UI (FastAPI + WebSocket + SVG)
-cogames/        # CvC player: Coach, PlayerCoglet, PolicyCoglet
 tests/          # 200 unit + integration tests (pytest + pytest-asyncio)
 docs/           # Architecture design docs
 ```
@@ -50,13 +50,13 @@ LifeLet (lifecycle hooks), GitLet (repo-as-policy), LogLet (log stream), TickLet
 
 ### CvC Player Stack
 
-Coach (Claude Code) → PlayerCoglet (GitLet) → PolicyCoglet (ProgLet + LLM brain)
+Improve (Claude Code) → PlayerCoglet (GitLet) → PolicyCoglet (ProgLet + LLM brain)
 
 ### Key Commands
 
 ```bash
 # Run tests
-PYTHONPATH=src python -m pytest tests/ -v
+PYTHONPATH=src/cogamer python -m pytest tests/ -v
 ```
 
 See [IMPROVE.md](IMPROVE.md) for CvC agent setup, eval, and submit commands.
@@ -69,4 +69,4 @@ See [IMPROVE.md](IMPROVE.md) for CvC agent setup, eval, and submit commands.
 - [docs/framework.md](docs/framework.md) — Framework implementation reference
 - [docs/improvements.md](docs/improvements.md) — Architectural improvements and status
 - [docs/tournament.md](docs/tournament.md) — Tournament system design
-- [docs/cvc-player.md](docs/cvc-player.md) — CvC player system (Coach, Player, Policy)
+- [docs/cvc-player.md](docs/cvc-player.md) — CvC player system (Improve, Player, Policy)

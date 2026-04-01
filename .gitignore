@@ -7,8 +7,8 @@ build/
 .venv/
 uv.lock
 
-# Coach session data (ephemeral, regenerated each run)
-.coach/sessions/
+# Memory (ephemeral, regenerated each run)
+.memory/
 
 # Test experiment results (ephemeral)
 .tests/

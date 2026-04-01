@@ -126,6 +126,7 @@ class TargetingMixin:
             for entity in self._known_junctions(state, predicate=lambda junction: junction.owner in {None, "neutral"})  # type: ignore[attr-defined]
             if entity not in candidates
         ]
+        teammate_positions = self._teammate_aligner_positions(state)
         return min(
             candidates,
             key=lambda entity: (
@@ -143,7 +144,11 @@ class TargetingMixin:
                     hub_position=hub_pos,
                     friendly_sources=network_sources,
                     hotspot_count=self._hotspots.get(entity.position, 0),
-                    teammate_closer=False,
+                    teammate_closer=_h.teammate_closer_to_target(
+                        current_position=current_pos,
+                        target=entity.position,
+                        teammate_positions=teammate_positions,
+                    ),
                 ),
                 entity.position,
             ),

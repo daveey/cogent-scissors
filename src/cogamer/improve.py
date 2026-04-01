@@ -1,13 +1,13 @@
-"""Coach: orchestrates PolicyCoglet across many games.
+"""Improve: orchestrates PolicyCoglet across many games.
 
-The Coach is NOT a Coglet — it's a Claude Code session that:
+This is a Claude Code session that:
 1. Submits PolicyCoglet to cogames for each game
 2. Reads learnings/experience after each game
 3. Maintains a changelog of analyses, insights, and code changes
 4. Commits improvements to the repo
 5. Repeats
 
-The changelog lives at cogames/coach_log.jsonl — one JSON object per line.
+The changelog lives at cogamer/improve_log.jsonl — one JSON object per line.
 Each entry has a type (game, insight, change) and timestamp.
 """
 from __future__ import annotations
@@ -21,19 +21,19 @@ from pathlib import Path
 from typing import Any
 
 _LEARNINGS_DIR = os.environ.get("COGLET_LEARNINGS_DIR", "/tmp/coglet_learnings")
-_COACH_LOG = Path(__file__).parent / "coach_log.jsonl"
+_IMPROVE_LOG = Path(__file__).parent / "improve_log.jsonl"
 
 
 # --- Changelog ---
 
 def log_entry(entry_type: str, data: dict[str, Any]) -> dict[str, Any]:
-    """Append an entry to the coach changelog."""
+    """Append an entry to the improve changelog."""
     entry = {
         "type": entry_type,
         "timestamp": datetime.now(timezone.utc).isoformat(),
         **data,
     }
-    with _COACH_LOG.open("a") as f:
+    with _IMPROVE_LOG.open("a") as f:
         f.write(json.dumps(entry, default=str) + "\n")
     return entry
 
@@ -48,7 +48,7 @@ def log_game(game_id: str, score: float, learnings: dict[str, Any] | None) -> di
     })
 
 
-def log_insight(insight: str, source: str = "coach") -> dict[str, Any]:
+def log_insight(insight: str, source: str = "improve") -> dict[str, Any]:
     """Log an analysis insight from reviewing games."""
     return log_entry("insight", {"insight": insight, "source": source})
 
@@ -59,11 +59,11 @@ def log_change(description: str, files: list[str] | None = None) -> dict[str, An
 
 
 def read_log(last_n: int | None = None) -> list[dict[str, Any]]:
-    """Read the coach changelog."""
-    if not _COACH_LOG.exists():
+    """Read the improve changelog."""
+    if not _IMPROVE_LOG.exists():
         return []
     entries = []
-    for line in _COACH_LOG.read_text().splitlines():
+    for line in _IMPROVE_LOG.read_text().splitlines():
         if line.strip():
             entries.append(json.loads(line))
     if last_n is not None:
@@ -101,7 +101,7 @@ def play_game(
     cmd = [
         "cogames", "play",
         "-m", mission,
-        "-p", "class=cvc.cvc_policy.CogletPolicy",
+        "-p", "class=cvc.cvc_policy.CvCPolicy",
         "-c", str(num_cogs),
         "-r", render_mode,
         "--seed", str(seed),
@@ -144,7 +144,7 @@ def upload_policy(
     """Upload the current policy to cogames tournament."""
     cmd = [
         "cogames", "upload",
-        "-p", "class=cvc.cvc_policy.CogletPolicy",
+        "-p", "class=cvc.cvc_policy.CvCPolicy",
         "-n", name,
         "-f", "cvc",
         "-f", "mettagrid_sdk",
