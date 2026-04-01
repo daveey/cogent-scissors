@@ -75,6 +75,7 @@ class JunctionMixin:
         hub = self._nearest_hub(state)
         if hub is None:
             return
+        team = _h.team_id(state)
         for entity in state.visible_entities:
             if entity.entity_type != "junction":
                 continue
@@ -84,6 +85,11 @@ class JunctionMixin:
             )
             owner = entity.attributes.get("owner")
             new_owner = None if owner in {None, "neutral"} else str(owner)
+            # Track hotspots: junction was friendly, now scrambled (neutral or enemy)
+            prev = self._junctions.get(rel_position)
+            if prev is not None and prev[0] == team and new_owner != team:
+                abs_pos = (hub.global_x + rel_position[0], hub.global_y + rel_position[1])
+                self._hotspots[abs_pos] = self._hotspots.get(abs_pos, 0) + 1
             self._junctions[rel_position] = (new_owner, state.step or self._step_index)
 
     def _junction_entities(

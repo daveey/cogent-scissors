@@ -142,7 +142,7 @@ class TargetingMixin:
                     ),
                     hub_position=hub_pos,
                     friendly_sources=network_sources,
-                    hotspot_count=0,
+                    hotspot_count=self._hotspots.get(entity.position, 0),
                     teammate_closer=False,
                 ),
                 entity.position,

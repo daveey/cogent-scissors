@@ -73,12 +73,14 @@ def aligner_target_score(
             hub_penalty = (hub_dist - 10) * 1.5 + 2.0
         else:
             hub_penalty = hub_dist * 0.3
+    hotspot_penalty = min(hotspot_count, 3) * 8.0
     return (
         distance
         - min(expansion * 5.0, 30.0)
         + enemy_aoe * 8.0
         + (_CLAIMED_TARGET_PENALTY if claimed_by_other else 0.0)
-        + hub_penalty,
+        + hub_penalty
+        + hotspot_penalty,
         -float(expansion),
     )
 

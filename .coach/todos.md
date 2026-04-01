@@ -1,9 +1,10 @@
 # Coach TODO
 
 ## Current Priorities
-- [ ] Monitor beta:v64 freeplay and beta:v65 tournament results (1-scrambler change)
+- [ ] Monitor beta:v66 freeplay results (hotspot tracking — deprioritize contested junctions)
+- [ ] Monitor beta:v64 freeplay results (1-scrambler change, still pending)
 - [ ] Update IMPROVE.md constants: JUNCTION_ALIGN_DISTANCE=15 (not 3), JUNCTION_AOE_RANGE=10 (not 4)
-- [ ] If 1-scrambler helps freeplay, try combining with network-dist scoring (conservative version)
+- [ ] If hotspot tracking helps freeplay, try combining with network-dist scoring
 - [ ] Investigate programs.py dead code (_should_retreat extra logic never invoked)
 
 ## Improvement Ideas
@@ -48,6 +49,7 @@
 - Need 7+ seeds minimum for any signal in self-play
 
 ## Done
+- [x] Hotspot tracking (deprioritize contested junctions, alpha.0-style) — self-play +49.5%, submitted v66/v67 (ID)
 - [x] Establish baseline: 1.31 on machina_1 (seed 42)
 - [x] Remove LLM resource herding: 1.31 → 1.72
 - [x] Full ProgLet policy (GameState wraps engine): 1.76
