@@ -1,7 +1,7 @@
 {
-  "last_session": "20260401-001500",
+  "last_session": "20260401-004500",
   "best_score": 10.00,
-  "total_sessions": 47,
+  "total_sessions": 48,
   "policy_name": "beta",
   "season": "beta-teams-tiny-fixed",
   "tournament_best": 10.00,
@@ -9,12 +9,12 @@
   "tournament_top": 10.00,
   "freeplay_best": 1.81,
   "freeplay_season": "beta-cvc",
-  "latest_submission": "beta:v71",
-  "freeplay_submission": "beta:v70",
-  "key_fix": "Network proximity bonus (alpha.0 weight 0.5) for chain-building. Self-play neutral.",
+  "latest_submission": "beta:v73",
+  "freeplay_submission": "beta:v72",
+  "key_fix": "Junction memory 400→800 steps. Combined with hotspot+network: +20.9% vs baseline.",
   "approach_stats": {
     "pco": {"attempts": 4, "improvements": 1, "last_used": "20260329-000000"},
-    "design": {"attempts": 19, "improvements": 11, "last_used": "20260401-001500"}
+    "design": {"attempts": 20, "improvements": 12, "last_used": "20260401-004500"}
   },
   "freeplay_experiments": {
     "v28_enemy_avoidance": {"score": 1.21, "result": "regression"},
@@ -24,8 +24,8 @@
     "v60_no_teammate_penalty": {"score": 1.12, "result": "regression"},
     "v64_one_scrambler": {"score": "pending", "result": "pending"},
     "v66_hotspot_tracking": {"score": "pending", "result": "pending"},
-    "v68_resubmit": {"score": "pending", "result": "pending"},
     "v70_hotspot_network": {"score": "pending", "result": "pending"},
+    "v72_junction_mem_800": {"score": "pending", "result": "pending"},
     "best_v15": {"score": 1.81, "result": "baseline_best"}
   }
 }

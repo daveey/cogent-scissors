@@ -4,7 +4,7 @@
 - [ ] Monitor beta:v66 freeplay results (hotspot tracking — deprioritize contested junctions)
 - [ ] Monitor beta:v64 freeplay results (1-scrambler change, still pending)
 - [ ] Update IMPROVE.md constants: JUNCTION_ALIGN_DISTANCE=15 (not 3), JUNCTION_AOE_RANGE=10 (not 4)
-- [ ] Monitor v70 freeplay (hotspot + network bonus combined)
+- [ ] Monitor v72 freeplay (hotspot + network bonus + junction mem 800)
 - [ ] Investigate programs.py dead code (_should_retreat extra logic never invoked)
 
 ## Improvement Ideas
@@ -32,6 +32,7 @@
 - [x] More aligners (6) / fewer miners (2) — economy can't sustain
 - [x] Wider A* margin (12→20) — slower computation wastes ticks
 - [x] Emergency mining threshold 50 or 10 — hurts high-scoring seeds more than helps low ones
+- [x] Early pressure ramp (step 200) — economy can't sustain with only 2 miners, -8.8%
 - [x] Wider enemy AOE radius 15 for retreat — agents retreat too much, avg 1.83 vs 2.10
 - [x] Delay scramblers to step 500 — avg 0.99 vs 2.10, opponent builds unchallenged
 - [x] Hotspot recapture bonus (prioritize recently-scrambled junctions) — agents waste hearts fighting over contested junctions, -27% regression
@@ -49,6 +50,7 @@
 - Need 7+ seeds minimum for any signal in self-play
 
 ## Done
+- [x] (ID) Junction memory 400→800 steps — self-play +8.2%, submitted v72/v73
 - [x] (ID) Network proximity bonus (alpha.0 weight 0.5 for chain-building) — self-play neutral, submitted v70/v71
 - [x] (ID) Hotspot tracking (deprioritize contested junctions, alpha.0-style) — self-play +49.5%, submitted v66/v67
 - [x] Establish baseline: 1.31 on machina_1 (seed 42)
