@@ -5,7 +5,7 @@ description: Run one improvement iteration. Chooses between PCO and IntelligentD
 
 # Improvement Iteration
 
-Orchestrates improvement by choosing between `/improve.pco` and `/improve.design` based on effectiveness.
+Orchestrates improvement by choosing between `/proximal-cogent-optimize` and `/improve.design` based on effectiveness.
 
 Reads `docs/*.md` for domain context and `.cogent/IDENTITY.md` for the cogent's identity and personality.
 
@@ -45,7 +45,7 @@ Log the chosen approach in the session's `plan.md`.
 
 ## Step 3: Run Chosen Approach
 
-Run `/improve.pco` or `/improve.design`.
+Run `/proximal-cogent-optimize` or `/improve.design`.
 
 ## Step 4: Handle Failure
 
