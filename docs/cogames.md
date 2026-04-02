@@ -32,7 +32,7 @@ ANTHROPIC_API_KEY= PYTHONPATH=src/cogamer cogames play -m machina_1 \
 
 ## Uploading
 
-Upload a policy to a season. Use the cogent name from `.cogent/IDENTITY.md` as the policy name (`-n`). Must run from `src/cogamer/`:
+Upload a policy to a season. Use the cogent name from `cogent/IDENTITY.md` as the policy name (`-n`). Must run from `src/cogamer/`:
 
 ```bash
 cd src/cogamer && PYTHONPATH=. cogames upload \

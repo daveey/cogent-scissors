@@ -1,6 +1,6 @@
 # CvC Agent Architecture & Game Rules
 
-See `.cogent/IDENTITY.md` for this cogent's name, personality, and strategic philosophy.
+See `cogent/IDENTITY.md` for this cogent's name, personality, and strategic philosophy.
 
 ## Game Rules
 

@@ -12,7 +12,6 @@ Nuclear option: blow away all `cogent/memory/` contents and reset state files. I
 
 - `cogent/IDENTITY.md` — the cogent's identity
 - `cogent/INTENTION.md` — the cogent's purpose
-- `cogent/AGENTS.md` — directory docs
 
 ## Steps
 
@@ -38,11 +37,4 @@ Nuclear option: blow away all `cogent/memory/` contents and reset state files. I
    _No items yet._
    ```
 
-3. **Commit and push:**
-   ```bash
-   git add cogent/
-   git commit -m "Memory wipe: reset cogent memory and state"
-   git push
-   ```
-
-4. **Report** what was removed (file count, total size).
+3. **Report** what was removed (file count, total size).
