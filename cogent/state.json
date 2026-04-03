@@ -1,7 +1,7 @@
 {
   "approach_stats": {
     "pco": {"attempts": 0, "improvements": 0, "last_used": null},
-    "design": {"attempts": 6, "improvements": 4, "last_used": "20260403-007"}
+    "design": {"attempts": 7, "improvements": 4, "last_used": "20260403-009-reverted"}
   },
   "last_improvement": {
     "date": "20260403",
@@ -59,6 +59,14 @@
       "description": "Increased scrambler threat_bonus weight from 10.0 to 15.0 to better defend friendly junctions in 4-team format",
       "result": "REGRESSION: 8.08 vs baseline 9.74 (-17.04%)",
       "analysis": "Increasing defensive priority hurt performance. Scramblers became too focused on protecting existing junctions rather than disrupting enemy expansion. Junction collapse pattern not addressed by over-defending. Current 10.0 weight appears optimal."
+    },
+    {
+      "date": "20260403",
+      "version": "009-reverted",
+      "focus": "Claim duration reduction",
+      "description": "Reduced _TARGET_CLAIM_STEPS from 30 to 20 for faster claim turnover in 4-team high-churn environment",
+      "result": "MAJOR REGRESSION: 4.58 vs baseline 9.74 (-53.0%)",
+      "analysis": "TOO SHORT. Reducing claim duration from 30 to 20 steps caused massive duplication. Agents re-claim same junctions multiple times before teammate arrives, wasting coordination. 30-step window (6 sec) is necessary for agents to actually reach claimed targets. Shorter claims = more churn, not better efficiency."
     }
   ],
   "mission": "four_score",

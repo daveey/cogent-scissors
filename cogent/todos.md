@@ -13,10 +13,12 @@
 - [x] (20260403-005-REVERTED) Defensive scrambling: removed corner_pressure bonus → -0.77% regression. Minimal impact, offensive push may help in 4-team.
 - [x] (20260403-006-REVERTED) Network bonus increase: 0.5→1.5 (3×) → -64.2% regression. Too aggressive clustering, agents failed to expand.
 - [x] (20260403-008-REVERTED) Scrambler threat_bonus increase: 10.0→15.0 → -17.04% regression. Over-defending existing junctions hurt expansion disruption.
+- [x] (20260403-009-REVERTED) Claim duration reduction: 30→20 steps → -53.0% regression. Too short, caused massive claim duplication and wasted coordination.
 
 ## Candidates
-- [ ] LLM stagnation detection: SOFTER approach needed - maybe increase role-change threshold or add cooldown between switches
-- [ ] Read teammate vibes for coordination
-- [ ] Four_score specific tuning: corner spawns, multi-directional expansion, higher junction churn
+- [ ] Read teammate vibes: Count nearby teammate roles to avoid duplicate aligners heading to same area
+- [ ] LLM stagnation detection: SOFTER approach - detect oscillation/stalled behavior, suggest gentle role switches
+- [ ] Teammate vibe awareness in targeting: If teammate vibe shows aligning to nearby junction, deprioritize that junction
 - [ ] Test mixed-policy matches (vs alpha.0, corgy) to validate competitive performance
-- [ ] Analyze why stalled detection triggers: is threshold too sensitive? Are agents frequently stalling legitimately?
+- [ ] Four_score spawn corners: Adjust initial exploration offsets for corner spawns vs center hubs
+- [ ] Claim duration: Don't reduce globally - maybe reduce only for far junctions (>30 distance)?
