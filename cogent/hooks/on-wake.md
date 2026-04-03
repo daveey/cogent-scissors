@@ -4,15 +4,34 @@ Cogamer-specific wake hook. Runs after the platform has already loaded identity,
 
 ## Steps
 
-1. **Install dependencies** — Run `uv sync` to install the project and cogames CLI.
+1. **Install dependencies** — Run these commands:
+   ```bash
+   uv sync
+   ```
+   This creates `.venv` if needed and installs all dependencies including `cogames`.
 
-2. **Verify cogames CLI** — Run `cogames --version` to confirm it's installed. If it fails, run `uv pip install cogames`.
+2. **Verify cogames CLI** — Run:
+   ```bash
+   uv run cogames --version
+   ```
+   If this fails, run `uv pip install cogames` and retry.
 
-3. **Verify auth** — Run `cogames auth status`. If not authenticated, run `cogames auth set-token <token>` using the token from secrets.
+3. **Verify auth** — Run:
+   ```bash
+   uv run cogames auth status
+   ```
+   If not authenticated, get the token from secrets and run:
+   ```bash
+   uv run cogames auth set-token <token>
+   ```
 
 4. **Read approach state** — Read `cogent/state.json` to understand PCO vs design attempt history.
 
-5. **Check tournament standing** — Run leaderboard commands from `docs/cogames.md` to see current rank and recent matches.
+5. **Check tournament standing** — Run:
+   ```bash
+   uv run cogames leaderboard beta-cvc --mine
+   uv run cogames matches --season beta-cvc
+   ```
 
 6. **Report status** — Brief summary:
    - Current scores / ranking

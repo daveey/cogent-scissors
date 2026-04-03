@@ -10,6 +10,7 @@ dependencies = [
     "uvicorn",
     "fastapi-mcp",
     "click>=8.0",
+    "cogames",
 ]
 
 [build-system]
