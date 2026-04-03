@@ -22,3 +22,7 @@
 - [ ] Test mixed-policy matches (vs alpha.0, corgy) to validate competitive performance
 - [ ] Four_score spawn corners: Adjust initial exploration offsets for corner spawns vs center hubs
 - [ ] Claim duration: Don't reduce globally - maybe reduce only for far junctions (>30 distance)?
+- [ ] Analyze why stalled detection triggers: is threshold too sensitive? Are agents frequently stalling legitimately?
+
+## Blockers
+- [ ] COGAMES_TOKEN auth: Secret exists in store but not in container environment. Need restart to pick up env var. Cannot upload gamma to dashboard until resolved.
