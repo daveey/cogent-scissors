@@ -4,7 +4,10 @@
 
 ## Current Activity
 
-**Idle** - Ready for next improvement cycle
+**Testing attempt 011**: RETREAT_MARGIN 15→20 (match alpha.0)
+- **Status**: In progress (seed 42 started 21:45 UTC)
+- **Test PID**: 2246
+- **Expected completion**: ~22:50 UTC (60-75 min)
 
 ## Latest Improvement
 
