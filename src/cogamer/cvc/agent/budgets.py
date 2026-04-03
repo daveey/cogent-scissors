@@ -66,7 +66,9 @@ def compute_pressure_budgets(
             pressure_budget = 3
 
     scrambler_budget = 0
-    if step >= 100:
+    # Four_score: start scrambler at step 50 instead of 100
+    # With 3 opponents expanding, earlier disruption helps in critical early game
+    if step >= 50:
         scrambler_budget = 1
     aligner_budget = max(pressure_budget - scrambler_budget, 0)
     if objective == "resource_coverage":
