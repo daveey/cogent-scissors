@@ -20,6 +20,13 @@
 - [x] (20260403-010-REVERTED) Mid-game pressure ramp: step 3000→2000 → -47.13% regression. Premature resource burn, exhausted economy before sustainable.
 - [x] (20260403-012-REVERTED) Nearby teammate role awareness in LLM: +3.8% avg BUT 40% catastrophic failure rate (variance 22.14). Extreme instability, LLM role suggestions trigger pathological behavior.
 
+## Testing Strategy Adjustments (CPU Constraint)
+- [ ] **Option A - Single seed quick test**: Test only seed 42, accept higher variance
+- [ ] **Option B - 2-seed validation**: Test seeds 42+43, compromise between speed and confidence
+- [ ] **Option C - Longer cycles**: Accept that improvements take 2-3 hours (multiple 30min loops)
+- [ ] **Option D - Parallel testing**: Start next improvement while previous tests complete in background (risky for isolation)
+- [ ] **Option E - Request GPU access**: If available, would dramatically speed up testing
+
 ## Candidates
 - [ ] Read teammate vibes: Count nearby teammate roles to avoid duplicate aligners heading to same area
 - [ ] LLM stagnation detection: SOFTER approach - detect oscillation/stalled behavior, suggest gentle role switches

@@ -27,9 +27,13 @@
 
 ## Current Session (20260403 continued)
 - Testing improvement 011: teammate penalty 6→9 for 4-team coordination
-- **Discovery**: CPU testing very slow (~15-20min/seed), makes 30min improvement loop impractical
+- **Critical constraint discovered**: CPU testing extremely slow (20-30+ min/seed for 32-agent four_score)
+  - Baseline eval: 17+ minutes, still running
+  - Test seed 42: 9+ minutes, still running
+  - Full 5-seed validation would take ~100-150 minutes
+  - **30min improvement loop not viable with current test protocol**
 - Auth resolved: cogames authenticated, can upload
-- Scheduled loops: 10min tick, 30min improve
+- Scheduled loops: 10min tick, 30min improve (needs adjustment)
 
 ## Next Session
 - Check 011 results (tests running in background)
