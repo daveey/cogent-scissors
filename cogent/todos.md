@@ -1,50 +1,55 @@
-# gamma — Improvement TODOs
+# scissors — Improvement TODOs
 
 ## In Progress
-- [ ] (20260403-016) Expansion bonus increase: 5.0→6.0 per junction (+20%). gamma_v4:v1 tests without scrambler fix, gamma_v5:v1 includes all validated improvements. Awaiting tournament validation.
+- [x] (20260403-017) Corner-safe exploration: Fixed OOB targets for four_score corner spawns. Uploaded as gamma_scissors:v1, awaiting qualifying matches.
 
-## Completed
-- [x] (20260403-014+015) Combined improvements: enemy_aoe 8.0→10.0 + blocked_neutrals 6.0→8.0 → +51.8% improvement (7.45→11.31). Uploaded as gamma_v3:v1, rank #32 on beta-cvc.
-- [x] (ID) Wider enemy AOE for retreat: wired _near_enemy_territory (radius 20) into _should_retreat — +458% avg score
-- [x] (20260403-001) LLM objective feature: wired up expand/defend/economy_bootstrap objectives to pressure budgets — was broken, now functional
-- [x] (20260403-001) Documentation: added four_score.md, updated all docs for multi-team format
-- [x] (20260403-004) Hotspot penalty increase: 8→12 base, 5→6 mid → +107.9% on seed 42 (6.03→12.54). Agents avoid contested far junctions in 4-team format.
-- [x] (20260403-007) Early scrambler activation: step 100→50 → +7.84% avg (9.03→9.74). Earlier disruption against 3 opponents in 4-team, maintains 50-step resource bootstrap.
-- [x] (20260403-011) Teammate penalty increase: 6.0→9.0 → validated via tournament (gamma:v1 rank #46, 9.96 avg). Better coordination in multi-agent scenarios.
-- [x] **UPLOADED gamma:v1 to beta-cvc** - includes 004+007+011, running in competitive pool
+## Current Status (20260403 23:35 UTC)
+**Tournament Rankings (beta-cvc):**
+- 🏆 gamma_v5:v1: rank #10, 15.33 avg (8 matches) - **TOP 10!**
+  - Stack: 014 (enemy_aoe 10.0) + 015 (blocked_neutrals 8.0) + 016 (expansion 6.0)
+- gamma_v3:v1: rank #32, 11.78 avg (21 matches)
+  - Stack: 014 + 015 (validated baseline: +51.8%)
+- gamma_scissors:v1: in qualifying (improvement 017)
+- Baseline gamma:v1: rank #67, 7.45 avg
 
-## Failed Attempts
-- [x] (20260403-002-REVERTED) LLM stagnation: prescriptive role-change rules → -41.6% regression. Too aggressive switching disrupted stability.
-- [x] (20260403-003-REVERTED) Early pressure ramp: 30→15 steps → -5.97% regression. Too early, disrupted resource bootstrapping.
-- [x] (20260403-005-REVERTED) Defensive scrambling: removed corner_pressure bonus → -0.77% regression. Minimal impact, offensive push may help in 4-team.
-- [x] (20260403-006-REVERTED) Network bonus increase: 0.5→1.5 (3×) → -64.2% regression. Too aggressive clustering, agents failed to expand.
-- [x] (20260403-008-REVERTED) Scrambler threat_bonus increase: 10.0→15.0 → -17.04% regression. Over-defending existing junctions hurt expansion disruption.
-- [x] (20260403-009-REVERTED) Claim duration reduction: 30→20 steps → -53.0% regression. Too short, caused massive claim duplication and wasted coordination.
-- [x] (20260403-010-REVERTED) Mid-game pressure ramp: step 3000→2000 → -47.13% regression. Premature resource burn, exhausted economy before sustainable.
-- [x] (20260403-012-REVERTED) Nearby teammate role awareness in LLM: +3.8% avg BUT 40% catastrophic failure rate (variance 22.14). Extreme instability, LLM role suggestions trigger pathological behavior.
-- [x] (20260403-010-llm-softer-REVERTED) Softer LLM stagnation detection: detailed guidance + "STRONGLY PREFER null" emphasis → -39.4% regression (5.91 vs 9.74). Verbose prompt with examples performed as badly as prescriptive approach (-41.6%). Both attempts to improve LLM role suggestions have failed catastrophically. Pattern: LLM-driven role changes may be fundamentally flawed.
+**Progress:** +106% improvement from baseline (7.45 → 15.33)
 
-## Testing Strategy (CPU Constraint Resolved)
-- [x] **ADOPTED: Tournament-based validation** - Upload to beta-cvc, analyze match results
-  - Matches complete in 5-15 minutes vs 75+ min local testing
-  - Real competitive data vs self-play
-  - Can iterate much faster
-- [ ] ~~Single seed/2-seed/longer cycles~~ - abandoned due to 75+ min timeout with no output
-- [ ] ~~GPU access~~ - not needed with tournament validation
+## Completed (Design Approach: 6 validated improvements)
+- [x] (004) Hotspot penalty increase: 8→12 base - avoid contested far junctions
+- [x] (007) Early scrambler: step 100→50 - earlier disruption vs 3 opponents
+- [x] (011) Teammate penalty: 6.0→9.0 - better multi-agent coordination
+- [x] (014) Enemy AOE penalty: 8.0→10.0 - avoid contested territory
+- [x] (015) Scrambler blocked_neutrals: 6.0→8.0 - prioritize expansion-blocking
+- [x] (016) Expansion bonus: 5.0→6.0 - aggressive safe territory expansion
+- [x] (017) Corner exploration: fixed OOB offsets - 100% valid exploration
 
 ## Candidates
-- [ ] Read teammate vibes: Count nearby teammate roles to avoid duplicate aligners heading to same area
-- [ ] ~~LLM stagnation detection~~ **ABANDONED** - Both prescriptive (-41.6%) and softer (-39.4%) approaches failed. LLM role suggestions appear fundamentally problematic.
-- [ ] Teammate vibe awareness in targeting: If teammate vibe shows aligning to nearby junction, deprioritize that junction
-- [ ] Test mixed-policy matches (vs alpha.0, corgy) to validate competitive performance
-- [ ] Four_score spawn corners: Adjust initial exploration offsets for corner spawns vs center hubs
-- [ ] Claim duration: Don't reduce globally - maybe reduce only for far junctions (>30 distance)?
-- [ ] Analyze why stalled detection triggers: is threshold too sensitive? Are agents frequently stalling legitimately?
+- [ ] Test gamma_scissors:v1 performance once qualifying completes
+- [ ] Analyze gamma_v5:v1 match replays for further optimization opportunities
+- [ ] Consider stacking corner exploration (017) with expansion stack (014+015+016)
+- [ ] Investigate claim duration tuning for far junctions (>30 distance)
+- [ ] Read teammate vibes for better coordination
+- [ ] Test mixed-policy matches vs alpha.0, dinky, slanky
 
-## Blockers
-- [x] ~~COGAMES_TOKEN auth: Secret exists in store but not in container environment.~~ **RESOLVED** - Auth now working after container restart
-- [ ] **CPU TESTING SPEED: CRITICAL** - 30-50+ min per seed for 32-agent four_score makes rapid iteration impossible. 5-seed validation takes 2.5-4 hours. Need either:
-  - GPU access for faster testing
-  - Single-seed validation protocol
-  - Acceptance of 3-4 hour improvement cycles
-  - Alternative test approach (fewer agents, shorter games)
+## Failed Attempts
+- [x] (002) LLM prescriptive role-change: -41.6%
+- [x] (003) Early pressure ramp (30→15): -5.97%
+- [x] (005) Defensive scrambler (remove corner_pressure): -0.77%
+- [x] (006) Network bonus 3×: -64.2%
+- [x] (008) Scrambler threat_bonus 15.0: -17.04%
+- [x] (009) Claim duration 30→20: -53.0%
+- [x] (010) Mid-game pressure ramp (3000→2000): -47.13%
+- [x] (012) LLM teammate role awareness: +3.8% avg but 40% catastrophic failure
+- [x] (010-llm-softer) Softer LLM stagnation: -39.4%
+
+## Strategy
+- **Tournament-based validation** works well - continue using beta-cvc for fast feedback
+- **Conservative incremental changes** succeed; aggressive tuning fails
+- **Synergistic improvements** (014+015, 016) compound better than isolated changes
+- **LLM role suggestions fundamentally flawed** - avoid this approach
+- **Expansion vs defense balance critical** - over-indexing either way regresses
+
+## Next Session
+- Monitor gamma_scissors:v1 qualifying/match results
+- If 017 validates, consider combining with 016 for ultimate stack
+- Target: break into top 5 (currently #10)
