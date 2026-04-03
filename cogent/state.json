@@ -1,15 +1,16 @@
 {
   "approach_stats": {
     "pco": {"attempts": 0, "improvements": 0, "last_used": null},
-    "design": {"attempts": 3, "improvements": 2, "last_used": "20260403-001"}
+    "design": {"attempts": 4, "improvements": 3, "last_used": "20260403-004"}
   },
   "last_improvement": {
     "date": "20260403",
-    "version": "001",
-    "focus": "LLM objective feature bug fix",
-    "description": "Wired up LLM objectives (expand/defend/economy_bootstrap) to pressure budget computation. Feature was broken - LLM could set objectives but they had no effect. Now functional.",
-    "status": "committed_untested",
-    "notes": "Documented four_score (multi-team format). BLOCKED: No cogames auth token for freeplay submission."
+    "version": "004",
+    "focus": "Hotspot penalty increase for four_score",
+    "description": "Increased hotspot penalty weights (8→12 base, 5→6 mid) to avoid heavily-contested far junctions in 4-team format.",
+    "result": "MAJOR IMPROVEMENT: 6.03 → 12.54 per cog (+107.9%) on seed 42",
+    "status": "committed_testing_seeds_43_46",
+    "notes": "Conservative defensive tuning. Agents now focus on stable hub-proximal junctions instead of wasting hearts on far junctions that get scrambled by 3 opponents. Testing additional seeds to confirm consistency."
   },
   "failed_attempts": [
     {
@@ -32,9 +33,11 @@
   "mission": "four_score",
   "season": "beta-four-score",
   "baseline_four_score": {
-    "score": 6.03,
+    "old_score": 6.03,
+    "new_score": 12.54,
+    "improvement": "+107.9%",
     "seed": 42,
     "date": "20260403",
-    "notes": "Self-play baseline with LLM objective fix (001)"
+    "notes": "With hotspot penalty increase (004). Testing seeds 43-46 in progress."
   }
 }
