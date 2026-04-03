@@ -16,8 +16,8 @@
       "45": 2.64,
       "46": 5.38
     },
-    "status": "validated_cannot_submit",
-    "notes": "Conservative timing adjustment (50-step shift). Maintains 50-step resource bootstrap buffer (vs 30-step minimum). Follows defensive tuning pattern from hotspot penalty. Cannot submit to freeplay - season not found or auth issue."
+    "status": "uploaded_as_gamma_v1",
+    "notes": "Conservative timing adjustment (50-step shift). Maintains 50-step resource bootstrap buffer (vs 30-step minimum). Follows defensive tuning pattern from hotspot penalty. UPLOADED as gamma:v1 to beta-cvc season on 20260403 21:56. Running in qualifying pool."
   },
   "failed_attempts": [
     {
