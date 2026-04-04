@@ -1,8 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
-- [ ] (20260403-018) Network bonus increase: 0.5→0.75 (+50%) for chain-building consolidation. Uploaded as scissors_v1:v1, awaiting tournament validation.
-- [ ] (20260403-017) Corner-safe exploration: gamma_scissors:v1 has 6+ matches running, awaiting results (1-match sample: 8.26 avg).
+- [ ] (20260403-019) Hub penalty reduction: 8.0→6.0 (-25%) for far junctions (>25 distance) to encourage center-map control in four_score. Uploaded as scissors_v1:v2, awaiting tournament validation.
 
 ## Current Status (20260403 23:35 UTC)
 **Tournament Rankings (beta-cvc):**
@@ -42,6 +41,8 @@
 - [x] (010) Mid-game pressure ramp (3000→2000): -47.13%
 - [x] (012) LLM teammate role awareness: +3.8% avg but 40% catastrophic failure
 - [x] (010-llm-softer) Softer LLM stagnation: -39.4%
+- [x] (017) Corner-safe exploration (22→15 offsets): -62.8%
+- [x] (018) Network bonus +50% (0.5→0.75): -20%
 
 ## Strategy
 - **Tournament-based validation** works well - continue using beta-cvc for fast feedback

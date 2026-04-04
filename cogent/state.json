@@ -6,37 +6,37 @@
       "last_used": null
     },
     "design": {
-      "attempts": 16,
+      "attempts": 17,
       "improvements": 6,
       "last_used": "20260404-011-reverted"
     }
   },
   "testing_in_progress": {
     "date": "20260403",
-    "version": "017",
-    "focus": "Corner-safe exploration for four_score spawns",
-    "description": "Fixed out-of-bounds exploration: reduced offset magnitudes (22\u219215), added dynamic flipping for corner detection. All roles now 100% valid exploration (was 63% OOB for aligners, 75% for miners/scramblers).",
-    "rationale": "Agents wasted time pathing to invalid OOB targets in corner spawns. Better exploration improves territory discovery.",
-    "upload": "gamma_scissors:v1",
+    "version": "019",
+    "focus": "Hub penalty reduction for four_score center control",
+    "description": "Reduced far-range hub_penalty multiplier from 8.0 to 6.0 (for distance >25) to make center-map junctions more attractive",
+    "rationale": "In four_score corner spawns, center map (distance 25-40) may be strategically valuable for controlling pathways and blocking enemy expansion. Current 8.0 multiplier may be too conservative. -25% reduction to encourage center territory capture while still preferring hub-proximal targets.",
+    "upload": "scissors_v1:v2",
     "season": "beta-cvc",
-    "uploaded_at": "20260403 23:30 UTC",
-    "note": "Independent improvement on top of 014+015 baseline. Complements enemy avoidance with efficient exploration."
+    "uploaded_at": "20260403 UTC",
+    "note": "Conservative tuning (-25%) following pattern of successful incremental improvements. Testing if center control improves four_score performance."
   },
   "last_improvement": {
     "date": "20260403",
-    "version": "014+015",
-    "focus": "Contested territory avoidance + scrambler expansion-blocking",
-    "description": "Combined: (014) enemy_aoe 8.0\u219210.0 for aligners + (015) blocked_neutrals 6.0\u21928.0 for scramblers",
-    "result": "MAJOR IMPROVEMENT: gamma_v3:v1 avg 11.31 per cog vs gamma:v1 baseline 7.45 (+51.8%)",
+    "version": "014+015+016",
+    "focus": "Expansion stack: contested avoidance + scrambler blocking + expansion bonus",
+    "description": "Triple stack: (014) enemy_aoe 8.0→10.0 + (015) blocked_neutrals 6.0→8.0 + (016) expansion 5.0→6.0",
+    "result": "MAJOR IMPROVEMENT: gamma_v5:v1 avg 16.84 per cog vs gamma:v1 baseline 7.45 (+126%)",
     "tournament_scores": {
-      "matches": 18,
-      "avg": 11.31,
+      "matches": 23,
+      "avg": 16.84,
       "range": "TBD",
-      "rank": 32,
+      "rank": 8,
       "season": "beta-cvc"
     },
     "status": "validated",
-    "notes": "Early 4-match sample showed regression (3.58 avg) but with 18 matches shows strong improvement. Both changes synergize: aligners avoid contested territory, scramblers prioritize high-impact enemy junctions. Outperforms 014 alone (10.84 avg). Uploaded as gamma_v3:v1."
+    "notes": "Three synergistic changes: avoid contested areas (enemy_aoe), expand aggressively (expansion), disrupt enemy expansion (blocked_neutrals). Reached rank #3-5 initially, stabilized at rank #8. Best performing stack so far."
   },
   "failed_attempts": [
     {
@@ -45,7 +45,7 @@
       "focus": "LLM stagnation detection enhancement",
       "description": "Enhanced LLM prompt with prescriptive anti-stagnation role-change rules",
       "result": "REGRESSION: 3.52 vs baseline 6.03 (-41.6%)",
-      "analysis": "Too aggressive role switching disrupted team stability. Prescriptive rules (stalled miner\u2192aligner, stalled aligner\u2192miner) caused excessive role churn. May need softer approach or better stall detection threshold."
+      "analysis": "Too aggressive role switching disrupted team stability. Prescriptive rules (stalled miner→aligner, stalled aligner→miner) caused excessive role churn. May need softer approach or better stall detection threshold."
     },
     {
       "date": "20260403",
@@ -67,7 +67,7 @@
       "date": "20260403",
       "version": "006-reverted",
       "focus": "Network bonus increase",
-      "description": "Increased network bonus weight from 0.5 to 1.5 (3\u00d7) to prioritize chain-building near existing friendly junctions",
+      "description": "Increased network bonus weight from 0.5 to 1.5 (3×) to prioritize chain-building near existing friendly junctions",
       "result": "MAJOR REGRESSION: 3.23 vs baseline 9.03 (-64.2%)",
       "analysis": "TOO AGGRESSIVE. Tripling network bonus caused agents to cluster around existing junctions instead of expanding. Leads to stagnant territory and missed opportunities. Expansion bonus (max 30) balanced against network bonus (max 2) for a reason - need both expansion and consolidation."
     },
@@ -93,13 +93,28 @@
       "focus": "Mid-game pressure ramp",
       "description": "Changed pressure_budget=6 threshold from step 3000 to step 2000 to get 5 aligners + 1 scrambler earlier during critical window",
       "result": "MAJOR REGRESSION: 5.15 vs baseline 9.74 (-47.13%)",
-      "analysis": "Ramping to 6 pressure budget 1000 steps earlier caused significant performance drop. Agents likely exhausted hearts/resources before establishing sustainable economy. Similar to failed attempt 003 (30\u219215 steps, -5.97%). Pattern confirms: premature pressure ramps hurt economy. Critical window 500-2000 refers to when to capitalize on existing resources, not when to ramp resource burn."
+      "analysis": "Ramping to 6 pressure budget 1000 steps earlier caused significant performance drop. Agents likely exhausted hearts/resources before establishing sustainable economy. Similar to failed attempt 003 (30→15 steps, -5.97%). Pattern confirms: premature pressure ramps hurt economy. Critical window 500-2000 refers to when to capitalize on existing resources, not when to ramp resource burn."
+    },
+    {
+      "date": "20260404",
+      "version": "011-reverted",
+      "focus": "RETREAT_MARGIN increase to match alpha.0",
+      "description": "Increased RETREAT_MARGIN from 15 to 20 to match alpha.0's more conservative retreat threshold for better agent survival",
+      "result": "SLIGHT REGRESSION: 9.34 vs baseline 9.74 (-4.0%), but EXTREME INSTABILITY with variance 6.63",
+      "scores_by_seed": {
+        "42": 19.42,
+        "43": 2.45,
+        "44": 12.22,
+        "45": 5.95,
+        "46": 6.68
+      },
+      "analysis": "UNACCEPTABLE VARIANCE despite small regression. Individual seeds ranged from -79% to +125% (42: +107%, 43: -79%, 44: -38%, 45: +125%, 46: +24%). More conservative retreat creates unpredictable behavior: some scenarios agents survive longer for massive gains, other scenarios agents retreat too early for major losses. Similar to attempt 012 (+3.8% avg but 40% catastrophic failure rate). Standard deviation 6.63 (similar to baseline 6.61) but extreme individual swings make this unsuitable for production. RETREAT_MARGIN=15 appears better calibrated for four_score dynamics than alpha.0's machina_1-tuned value."
     },
     {
       "date": "20260403",
       "version": "012-reverted",
       "focus": "Nearby teammate role awareness for LLM",
-      "description": "Added nearby teammate role counts (\u226420 tiles) to LLM analysis prompt to detect clustering and suggest role switches",
+      "description": "Added nearby teammate role counts (≤20 tiles) to LLM analysis prompt to detect clustering and suggest role switches",
       "result": "UNSTABLE: avg 10.11 vs baseline 9.74 (+3.8%), but variance 22.14 with 40% catastrophic failure rate",
       "scores_by_seed": {
         "42": 2.43,
@@ -126,19 +141,32 @@
       "analysis": "WORSE THAN PRESCRIPTIVE APPROACH. Attempt to soften failed attempt 002's prescriptive rules (-41.6%) resulted in similar magnitude regression (-39.4%). Adding detailed explanations, examples, and strong 'prefer null' bias actually degraded performance vs simpler prompt. LLM may be confused by verbose guidance or 'STRONGLY PREFER null' is too restrictive. Pattern suggests: LLM role guidance itself may be problematic regardless of phrasing - both prescriptive (002: -41.6%) and suggestive (this: -39.4%) approaches fail. Consider abandoning LLM-driven role changes entirely or use only for extreme dysfunction detection with very high threshold."
     },
     {
-      "date": "20260404",
-      "version": "011-reverted",
-      "focus": "RETREAT_MARGIN increase to match alpha.0",
-      "description": "Increased RETREAT_MARGIN from 15 to 20 to match alpha.0's more conservative retreat threshold for better agent survival",
-      "result": "SLIGHT REGRESSION: 9.34 vs baseline 9.74 (-4.0%), but EXTREME INSTABILITY with variance 6.63",
-      "scores_by_seed": {
-        "42": 19.42,
-        "43": 2.45,
-        "44": 12.22,
-        "45": 5.95,
-        "46": 6.68
+      "date": "20260403",
+      "version": "017-reverted",
+      "focus": "Corner-safe exploration",
+      "description": "Fixed out-of-bounds exploration: reduced offset magnitudes (22→15), added dynamic flipping for corner detection. All roles now 100% valid exploration (was 63% OOB for aligners, 75% for miners/scramblers).",
+      "result": "MAJOR REGRESSION: gamma_scissors:v1 avg 6.26 vs baseline 16.84 (-62.8%)",
+      "tournament_scores": {
+        "matches": 5,
+        "avg": 6.26,
+        "rank": 71,
+        "season": "beta-cvc"
       },
-      "analysis": "UNACCEPTABLE VARIANCE despite small regression. Individual seeds ranged from -79% to +125% (42: +107%, 43: -79%, 44: -38%, 45: +125%, 46: +24%). More conservative retreat creates unpredictable behavior: some scenarios agents survive longer for massive gains, other scenarios agents retreat too early for major losses. Similar to attempt 012 (+3.8% avg but 40% catastrophic failure rate). Standard deviation 6.63 (similar to baseline 6.61) but extreme individual swings make this unsuitable for production. RETREAT_MARGIN=15 appears better calibrated for four_score dynamics than alpha.0's machina_1-tuned value."
+      "analysis": "Despite fixing OOB pathfinding issue, performance collapsed. Agents may have been over-exploring instead of capturing junctions, or reduced exploration range (22→15) limited territory discovery. Original exploration offsets (even with OOB failures) apparently worked better due to sticky targets keeping agents focused on valid junctions most of the time."
+    },
+    {
+      "date": "20260403",
+      "version": "018-reverted",
+      "focus": "Network bonus moderate increase",
+      "description": "Increased network bonus weight from 0.5 to 0.75 (+50%) for chain-building consolidation",
+      "result": "REGRESSION: gamma_v6:v1 avg 13.48 vs baseline 16.84 (-20%)",
+      "tournament_scores": {
+        "matches": 12,
+        "avg": 13.48,
+        "rank": 18,
+        "season": "beta-cvc"
+      },
+      "analysis": "Even moderate +50% increase hurt performance. Agents over-indexed on consolidation instead of expansion. Pattern from 006 (-64%) and this attempt (-20%) confirms: network_bonus at 0.5 is optimal. Any increase causes clustering behavior that hurts overall score."
     }
   ],
   "mission": "four_score",
