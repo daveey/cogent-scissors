@@ -60,6 +60,7 @@
 - **LLM role suggestions fundamentally flawed** - avoid this approach
 - **Expansion vs defense balance critical** - over-indexing either way regresses
 - **Architecture limits reached** - FOUR CONSECUTIVE TIMEOUTS (057-060: pathfinding, A*, junction memory, exploration). Every behavioral/infrastructure change causes critical failures. Current implementation comprehensively optimized across all subsystems. Further incremental improvements impossible without fundamental architecture changes.
+- **Local testing infrastructure FAILED (20260404)** - All baseline seeds (42-46) timeout (900-1200s limits). Games initialize but never complete. Environmental issue (61 zombie processes). Cannot establish baseline per improve.md Step 2. Combined with Step 3 terminal status, improve.md methodology completely blocked.
 
 ## Next Session
 - Monitor gamma_scissors:v1 qualifying/match results
