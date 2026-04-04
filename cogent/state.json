@@ -8,20 +8,10 @@
     "design": {
       "attempts": 28,
       "improvements": 7,
-      "last_used": "20260404-028-testing"
+      "last_used": "20260404-028-reverted"
     }
   },
-  "testing_in_progress": {
-    "date": "20260404",
-    "version": "028",
-    "focus": "Hotspot cap increase for contested junction avoidance",
-    "description": "Increased hotspot penalty cap from 3 to 4 scrambles to more strongly avoid frequently contested junctions",
-    "rationale": "Current cap of 3 means junctions scrambled 4, 5, or 10+ times get same penalty as 3 scrambles. In four_score with 4 teams, some junctions are hyper-contested. Increasing cap to 4 allows agents to more strongly avoid these hotspots. Conservative +1 increase follows successful pattern of increasing penalties for bad behavior. Max penalty increases from 36 to 48 for far contested junctions.",
-    "upload": "scissors_v1:v12",
-    "season": "beta-cvc",
-    "uploaded_at": "20260404 UTC",
-    "note": "Building on gamma_v6 baseline (15.75 avg, rank #9). Pattern: 9 consecutive parameter tuning attempts failed (019-027). This targets architectural feature (hotspot tracking) mentioned in docs/strategy.md 'What To Try'."
-  },
+  "testing_in_progress": null,
   "last_improvement": {
     "date": "20260404",
     "version": "018",
@@ -273,6 +263,20 @@
         "season": "beta-cvc"
       },
       "analysis": "MAJOR FAILURE. Reducing switch threshold caused agents to switch targets too frequently, likely disrupting the stability that sticky targets provide. Agents probably oscillated between targets or abandoned good targets prematurely. The current threshold 3.0 is correctly calibrated - it prevents oscillation while still allowing adaptation. Pattern: behavioral parameters as sensitive as scoring weights. docs/strategy.md lists 'Sticky targets: threshold 3.0' as 'What Works' for good reason."
+    },
+    {
+      "date": "20260404",
+      "version": "028-reverted",
+      "focus": "Hotspot cap increase for contested junction avoidance",
+      "description": "Increased hotspot penalty cap from 3 to 4 scrambles to more strongly avoid frequently contested junctions",
+      "result": "MAJOR REGRESSION: scissors_v1:v12 avg 10.42 vs baseline 15.75 (-33.8%)",
+      "tournament_scores": {
+        "matches": 19,
+        "avg": 10.42,
+        "rank": 49,
+        "season": "beta-cvc"
+      },
+      "analysis": "MAJOR FAILURE. Increasing hotspot cap caused agents to over-avoid contested junctions. Max penalty increase (36→48 for far junctions) likely made agents too cautious, missing valuable contested junctions that are worth fighting for despite scrambles. Current cap of 3 scrambles is correctly calibrated. Pattern: 11TH CONSECUTIVE FAILURE (019-028). ALL incremental parameter tuning attempts have failed. Current gamma_v6:v1 parameters appear OPTIMAL for this architecture. Further improvements likely require architectural changes, not parameter adjustments."
     }
   ],
   "mission": "four_score",

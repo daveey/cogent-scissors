@@ -1,7 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
-- [ ] (20260404-028) Hotspot cap increase: 3→4 for stronger contested junction avoidance. Uploaded as scissors_v1:v12, awaiting tournament validation.
+(none)
 
 ## Current Status (20260404 UTC)
 **Tournament Rankings (beta-cvc):**
@@ -52,6 +52,7 @@
 - [x] (025) Enemy AOE range increase (10→12): -39.0%
 - [x] (026) Scrambler corner pressure increase (8.0→7.0 divisor): -44.3%
 - [x] (027) Target switch threshold reduction (3.0→2.5): -33.3%
+- [x] (028) Hotspot cap increase (3→4): -33.8%
 
 ## Strategy
 - **Tournament-based validation** works well - continue using beta-cvc for fast feedback
