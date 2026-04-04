@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 24,
+      "attempts": 25,
       "improvements": 7,
-      "last_used": "20260404-025-testing"
+      "last_used": "20260404-026-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "025",
-    "focus": "Wider enemy AOE detection range",
-    "description": "Increased _JUNCTION_AOE_RANGE from 10 to 12 (+20%) to align closer to alpha.0's wider enemy detection",
-    "rationale": "Alpha.0 uses radius 20 for enemy AOE, we use 10. Conservative 20% increase improves both defensive (aligners avoid contested areas) and offensive (scramblers block more neutrals) behavior. Should improve survival and scrambler effectiveness without over-cautious behavior that attempt 011 (RETREAT_MARGIN 20) caused.",
-    "upload": "scissors_v1:v9",
+    "version": "026",
+    "focus": "Scrambler corner pressure increase",
+    "description": "Increased corner_pressure divisor from 8.0 to 7.0 (-12.5% to divisor, +14% to bonus) to encourage more aggressive distant scrambling",
+    "rationale": "In four_score with 4 teams in corners, scramblers need to reach distant enemies more aggressively. Reducing divisor from 8.0 to 7.0 increases bonus for distant targets: 70+ distance now gets max 10.0 bonus (vs 80+ before). Conservative change that amplifies existing successful scrambler behavior (blocked_neutrals validated in 015).",
+    "upload": "scissors_v1:v10",
     "season": "beta-cvc",
     "uploaded_at": "20260404 UTC",
-    "note": "Building on gamma_v6 baseline (15.84 avg). Different from failed 011: that changed retreat HP threshold, this changes spatial detection radius."
+    "note": "Building on gamma_v6 baseline (15.84 avg). Attempt 025 still validating (6 matches, 14.50 avg). Running tests in parallel for efficiency."
   },
   "last_improvement": {
     "date": "20260404",
