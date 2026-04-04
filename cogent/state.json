@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 38,
+      "attempts": 39,
       "improvements": 7,
-      "last_used": "20260404-038-pending"
+      "last_used": "20260404-039-uploaded"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "038",
-    "focus": "Enemy AOE penalty reduction for territorial contestation",
-    "description": "Reduced enemy_aoe weight from 10.0 to 9.5 (-5%) in aligner_target_score",
-    "rationale": "Current 10.0 penalty for enemy-proximal junctions may make agents too risk-averse, avoiding valuable contested territory. Conservative -5% reduction to 9.5 encourages slightly more territorial contestation while maintaining enemy avoidance. Stacks with 036 (teammate_penalty 7.0) + 037 (hotspot_weight 11.0). Unified theme: reduce penalties for more flexible/aggressive target selection. Built on gamma_v6:v1 baseline.",
-    "upload": "pending_upload",
+    "version": "039",
+    "focus": "Network bonus cap increase for exceptional consolidation (scissors branch)",
+    "description": "Increased network_bonus cap from 4 to 5 nearby friendlies (+25% max bonus: 3.0→3.75) in aligner_target_score. Based on gamma_v6:v1 baseline (e073b3e), NOT stacked with 036-038.",
+    "rationale": "Parallel approach to 036-038 penalty reduction stack. Attempt 018 validated network_bonus 0.5→0.75 (+3.9%). Increasing cap from 4→5 allows +0.75 bonus for 5th nearby friendly, rewarding tighter consolidation without over-clustering. Conservative +25% max increase vs attempt 006's catastrophic 3x failure.",
+    "upload": "scissors_v1_v21:v1",
     "season": "beta-cvc",
-    "uploaded_at": "TBD",
-    "note": "Third focused change in stack. All three reduce scoring penalties to improve target selection flexibility. No COGAMES_TOKEN for tournament upload."
+    "uploaded_at": "2026-04-04T06:33:58Z",
+    "note": "Uploaded from scissors branch. Conflicts with delta's 036-038 stack (teammate/hotspot/enemy_aoe reductions). Tournament will test both approaches independently."
   },
   "last_improvement": {
     "date": "20260404",
