@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 47,
+      "attempts": 48,
       "improvements": 7,
-      "last_used": "20260404-112-testing"
+      "last_used": "20260404-113-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "112",
-    "focus": "Aligner hub penalty 10-15 base reduction",
-    "description": "Reduced hub penalty base from 2.0 to 1.96 (-2%) for junctions 10-15 distance",
-    "rationale": "Complements attempt 105 (multiplier 1.5→1.46 for 10-15 range). Conservative -2% base reduction to further strengthen hub-proximal strategy. Total penalty at distance 15 now: (15-10)*1.46+1.96=9.26 vs original 9.5 (-2.5%). Stacks with 087-111.",
-    "upload": "scissors_v28:v1",
+    "version": "113",
+    "focus": "Aligner expansion bonus cap increase",
+    "description": "Increased expansion bonus cap from 36.0 to 36.5 (+1.4%)",
+    "rationale": "Failed attempt 024 tried 36→42 (+16.7%) and regressed -20.7%. Much more conservative +1.4% cap increase for extreme expansion cases (6 nearby unreachable junctions). Complements attempt 096 weight increase (6.0→6.2). Stacks with 087-112.",
+    "upload": "scissors_v29:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 112. Clean baseline hub penalty 10-15 base exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 113. Clean baseline expansion bonus cap exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (113) Aligner expansion bonus cap increase (36.0→36.5): scissors_v29:v1 qualifying - extreme expansion cases (+1.4%, stacks with 087-112)
 - [ ] (112) Aligner hub penalty 10-15 base reduction (2.0→1.96): scissors_v28:v1 qualifying - 10-15 range base penalty (-2%, stacks with 087-111)
 - [ ] (111) Aligner hub penalty far-range multiplier reduction (8.0→7.92): scissors_v27:v1 qualifying - far-range multiplier penalty (-1%, stacks with 087-110)
 - [ ] (110) Aligner hub penalty far-range base reduction (50.0→49.5): scissors_v26:v1 qualifying - far-range base penalty (-1%, stacks with 087-109)
