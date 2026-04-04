@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 48,
+      "attempts": 49,
       "improvements": 7,
-      "last_used": "20260404-113-testing"
+      "last_used": "20260404-114-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "113",
-    "focus": "Aligner expansion bonus cap increase",
-    "description": "Increased expansion bonus cap from 36.0 to 36.5 (+1.4%)",
-    "rationale": "Failed attempt 024 tried 36→42 (+16.7%) and regressed -20.7%. Much more conservative +1.4% cap increase for extreme expansion cases (6 nearby unreachable junctions). Complements attempt 096 weight increase (6.0→6.2). Stacks with 087-112.",
-    "upload": "scissors_v29:v1",
+    "version": "114",
+    "focus": "Aligner network bonus cap increase",
+    "description": "Increased network bonus cap from 4 to 4.2 (+5%)",
+    "rationale": "Failed attempt 006 tripled weight (0.5→1.5) causing over-clustering (-64.2%). Conservative +5% cap increase for dense cluster scenarios (5+ nearby friendly junctions). Complements attempts 018/097 weight increases. Only affects extreme clustering cases. Stacks with 087-113.",
+    "upload": "scissors_v30:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 113. Clean baseline expansion bonus cap exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 114. Clean baseline network bonus cap exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
