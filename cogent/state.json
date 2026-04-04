@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 63,
+      "attempts": 64,
       "improvements": 7,
-      "last_used": "20260404-063-pending"
+      "last_used": "20260404-064-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "063",
-    "focus": "Mid-range hotspot weight reduction for contested junction flexibility",
-    "description": "Reduced mid-range hotspot_weight from 5.8 to 5.7 (-1.7%) in scoring.py",
-    "rationale": "Builds on attempt 046 (6.0→5.8, -3.3%) for continued mid-range contested junction optimization. Synergizes with near-hub hotspot reduction (045: 2.0→1.9) and far-range hotspot reductions (051: 11.0→10.8, 062: 10.8→10.7) for comprehensive contested junction strategy across all hub distances. Progressive reductions show coordinated approach to contested territory targeting.",
-    "upload": "scissors_v1_v45:v1",
+    "version": "064",
+    "focus": "Near-hub hotspot weight reduction for contested junction recapture",
+    "description": "Reduced near-hub hotspot_weight from 1.9 to 1.88 (-1.1%) in scoring.py",
+    "rationale": "Builds on attempt 045 (2.0→1.9, -5%) for continued near-hub contested junction optimization. Near-hub junctions are safest and most valuable due to proximity to hub. Synergizes with mid-range hotspot reductions (046, 063) and far-range hotspot reductions (051, 062) for comprehensive contested junction strategy. Completing hotspot weight optimization across all hub distance ranges.",
+    "upload": "scissors_v1_v46:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T09:12:48Z",
-    "note": "Twenty-fifth scissors improvement. Continues mid-range hotspot optimization (046, 063)."
+    "uploaded_at": "2026-04-04T09:34:08Z",
+    "note": "Twenty-sixth scissors improvement. Continues near-hub hotspot optimization (045, 064)."
   },
   "last_improvement": {
     "date": "20260404",
