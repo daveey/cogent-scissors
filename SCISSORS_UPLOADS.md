@@ -37,3 +37,10 @@ Delta's 036-040 are committed but not uploaded (no COGAMES_TOKEN).
 - **Base**: Delta's 036-038 + scissors 039-042
 - **Status**: Awaiting tournament results (need 20+ matches)
 - **Rationale**: Conservative increase vs attempt 008's failed +50%. Defends consolidated networks.
+
+## scissors_v1_v26:v1 (Attempt 044)
+- **Uploaded**: 2026-04-04T07:04:19Z
+- **Change**: Near-hub penalty 0.3→0.28 (-7%)
+- **Base**: Delta's 036-038 + scissors 039-043
+- **Status**: Awaiting tournament results (need 20+ matches)
+- **Rationale**: Near-hub zone safest. Far/mid hub penalty reductions failed badly (019: -48.6%, 023: -29%).
