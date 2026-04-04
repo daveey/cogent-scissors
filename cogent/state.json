@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 59,
+      "attempts": 60,
       "improvements": 7,
-      "last_used": "20260404-124-testing"
+      "last_used": "20260404-125-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "124",
-    "focus": "Target claim steps increase",
-    "description": "Increased _TARGET_CLAIM_STEPS from 32 to 32.5 (+2%)",
-    "rationale": "Attempt 091 increased from 30 to 32 (+7%). Failed attempt 009 reduced 30→20 (-33%) and regressed -53%. Conservative +2% further increase extends claim validity window slightly, helping with teammate coordination and reducing duplicate targeting in four_score. Stacks with 087-123.",
-    "upload": "scissors_v40:v1",
+    "version": "125",
+    "focus": "Claimed target penalty reduction",
+    "description": "Reduced _CLAIMED_TARGET_PENALTY from 11.5 to 11.38 (-1%)",
+    "rationale": "Attempt 090 reduced from 12.0 to 11.5 (-4%). Conservative -1% further reduction for more flexible claim override. Helps agents override stale teammate claims when needed without excessive duplication in four_score team coordination. Stacks with 087-124.",
+    "upload": "scissors_v41:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 124. Clean baseline target claim steps exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 125. Clean baseline claimed target penalty exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

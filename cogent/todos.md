@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (125) Claimed target penalty reduction (11.5→11.38): scissors_v41:v1 qualifying - flexible claim override (-1%, stacks with 087-124)
 - [ ] (124) Target claim steps increase (32.0→32.5): scissors_v40:v1 qualifying - longer claim validity (+2%, stacks with 087-123)
 - [ ] (123) Scrambler HP threshold increase (33.0→33.66): scissors_v39:v1 qualifying - more aggressive disruption (+2%, stacks with 087-122)
 - [ ] (122) Aligner HP threshold reduction (47.0→46.5): scissors_v38:v1 qualifying - safer aligner retreat (-1%, stacks with 087-121)
