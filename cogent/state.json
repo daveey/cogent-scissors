@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 49,
+      "attempts": 50,
       "improvements": 7,
-      "last_used": "20260404-049-pending"
+      "last_used": "20260404-050-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "049",
-    "focus": "Teammate penalty reduction for flexible multi-agent coordination",
-    "description": "Reduced teammate_penalty from 7.0 to 6.8 (-2.9%) in aligner_target_score",
-    "rationale": "Delta's attempt 036 reduced 9.0→7.0 (-22%). Attempt 020 tried increasing 9.0→10.0 and failed (-42.8%). Conservative -2.9% further reduction (7.0→6.8) continues flexible coordination theme. Allows more overlap when teammates are at similar distances without catastrophic duplication.",
-    "upload": "scissors_v1_v31:v1",
+    "version": "050",
+    "focus": "Enemy AOE penalty reduction for aggressive contested territory",
+    "description": "Reduced enemy_aoe penalty from 9.5 to 9.3 (-2.1%) in aligner_target_score",
+    "rationale": "Delta's attempt 038 reduced 10.0→9.5 (-5%). Attempt 014 increased 8.0→10.0 successfully. Conservative -2.1% further reduction (9.5→9.3) encourages slightly more aggressive targeting of enemy-proximal junctions. Synergizes with scissors 048 (expansion 6.15) for territorial expansion.",
+    "upload": "scissors_v1_v32:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T07:38:01Z",
-    "note": "Eleventh scissors improvement. Builds on delta's 036 (9.0→7.0) with incremental reduction."
+    "uploaded_at": "2026-04-04T07:41:23Z",
+    "note": "Twelfth scissors improvement. Builds on delta's 038 (10.0→9.5) with incremental reduction."
   },
   "last_improvement": {
     "date": "20260404",
