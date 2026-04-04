@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 48,
+      "attempts": 49,
       "improvements": 7,
-      "last_used": "20260404-048-pending"
+      "last_used": "20260404-049-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "048",
-    "focus": "Expansion weight increase for aggressive territory acquisition",
-    "description": "Increased expansion bonus weight from 6.0 to 6.15 (+2.5%) in aligner_target_score",
-    "rationale": "Attempt 016 successfully increased 5.0→6.0 (+20%). Conservative +2.5% further increase (6.0→6.15) continues expansion prioritization. More conservative than scissors 040 (+4% in v22) which tested on delta's stack. Synergizes with scissors 041 (scrambler blocking 8.4) for expansion protection.",
-    "upload": "scissors_v1_v30:v1",
+    "version": "049",
+    "focus": "Teammate penalty reduction for flexible multi-agent coordination",
+    "description": "Reduced teammate_penalty from 7.0 to 6.8 (-2.9%) in aligner_target_score",
+    "rationale": "Delta's attempt 036 reduced 9.0→7.0 (-22%). Attempt 020 tried increasing 9.0→10.0 and failed (-42.8%). Conservative -2.9% further reduction (7.0→6.8) continues flexible coordination theme. Allows more overlap when teammates are at similar distances without catastrophic duplication.",
+    "upload": "scissors_v1_v31:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T07:34:41Z",
-    "note": "Tenth scissors improvement. Returns to expansion optimization after hub-proximal focus (044-047)."
+    "uploaded_at": "2026-04-04T07:38:01Z",
+    "note": "Eleventh scissors improvement. Builds on delta's 036 (9.0→7.0) with incremental reduction."
   },
   "last_improvement": {
     "date": "20260404",
