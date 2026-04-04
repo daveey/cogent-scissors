@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 55,
+      "attempts": 56,
       "improvements": 7,
-      "last_used": "20260404-055-pending"
+      "last_used": "20260404-056-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "055",
-    "focus": "Expansion weight increase for aggressive territory acquisition",
-    "description": "Increased expansion bonus weight from 6.15 to 6.2 (+0.8%) in scoring.py",
-    "rationale": "Attempt 040 tested 6.0→6.15 (+2.5%). Conservative +0.8% increase (6.15→6.2) further rewards high-expansion junctions. Synergizes with scissors attempts 044-047,053 (hub penalty reductions across all ranges) and 051 (far hotspot reduction 12.0→11.0) for balanced hub-proximal expansion strategy.",
-    "upload": "scissors_v1_v37:v1",
+    "version": "056",
+    "focus": "Teammate penalty reduction for coordination flexibility",
+    "description": "Reduced teammate_penalty from 6.8 to 6.7 (-1.5%) in scoring.py",
+    "rationale": "Builds on attempt 049 (7.0→6.8, -2.9%) for continued coordination flexibility. Synergizes with attempt 054 (claim penalty 11.0→10.8) for comprehensive multi-agent coordination. Attempt 020 showed increasing to 10.0 failed badly (-42.8%), confirming lower penalties improve coordination.",
+    "upload": "scissors_v1_v38:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T08:14:44Z",
-    "note": "Seventeenth scissors improvement. Continues expansion optimization trilogy (040, 048, 055)."
+    "uploaded_at": "2026-04-04T08:34:31Z",
+    "note": "Eighteenth scissors improvement. Completes coordination optimization trilogy (049, 054, 056)."
   },
   "last_improvement": {
     "date": "20260404",
