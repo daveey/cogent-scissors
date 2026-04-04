@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 34,
+      "attempts": 35,
       "improvements": 7,
-      "last_used": "20260404-099-testing"
+      "last_used": "20260404-100-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "099",
-    "focus": "Scrambler threat_bonus weight increase",
-    "description": "Increased threat_bonus weight from 10.0 to 10.3 (+3%)",
-    "rationale": "Attempt 008 showed 10.0→15.0 (+50%) failed badly (-17%). Conservative +3% increase to modestly strengthen defensive prioritization of enemy junctions near friendly network without over-indexing. Helps protect valuable friendly junctions. Stacks with 087-098.",
-    "upload": "scissors_v15:v1",
+    "version": "100",
+    "focus": "Scrambler corner_pressure cap increase",
+    "description": "Increased corner_pressure cap from 10.0 to 10.5 (+5%)",
+    "rationale": "Corner pressure (distance/8.0, capped) encourages scramblers to disrupt distant enemies. Attempt 005 showed removing it hurt slightly (-0.77%). Conservative +5% cap increase to modestly strengthen far-enemy disruption incentive in four_score 4-team format. Stacks with 087-099.",
+    "upload": "scissors_v16:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 099. Clean baseline scrambler defensive weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 100. Clean baseline scrambler corner pressure exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
