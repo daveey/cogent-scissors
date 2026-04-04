@@ -287,6 +287,21 @@
         "season": "beta-cvc"
       },
       "analysis": "MAJOR FAILURE. Increasing hotspot cap caused agents to over-avoid contested junctions. Max penalty increase (36→48 for far junctions) likely made agents too cautious, missing valuable contested junctions that are worth fighting for despite scrambles. Current cap of 3 scrambles is correctly calibrated. Pattern: 11TH CONSECUTIVE FAILURE (019-028). ALL incremental parameter tuning attempts have failed. Current gamma_v6:v1 parameters appear OPTIMAL for this architecture. Further improvements likely require architectural changes, not parameter adjustments."
+    },
+    {
+      "date": "20260404",
+      "version": "086-reverted",
+      "focus": "LLM prompt streamlining (remove tactical context)",
+      "description": "Removed tactical/non-actionable context from LLM prompt: HP, hearts, position, gear counts, stalled/oscillating, safe distance, target hotspot. Kept strategic context: step, role, hub resources, team roles, junction counts.",
+      "result": "MAJOR REGRESSION: 6.72 vs baseline 11.76 (-42.9%)",
+      "scores_by_seed": {
+        "42": 3.22,
+        "43": 14.83,
+        "44": 7.97,
+        "45": 5.83,
+        "46": 1.74
+      },
+      "analysis": "MAJOR FAILURE with EXTREME INSTABILITY. Removing tactical context from LLM prompt caused -43% regression with massive variance (1.74 to 14.83 per cog). Only 1 of 5 seeds above baseline. Similar instability to failed attempts 011/012. LLM apparently needs tactical context (HP, position, stalled/oscillating status) to make good resource_bias and objective decisions, even though these fields seem unrelated to strategic choices. Reverted immediately. Note: Scissors uploaded this as scissors:v2 to tournament before delta testing completed - await tournament results for comparison with local testing."
     }
   ],
   "mission": "four_score",
