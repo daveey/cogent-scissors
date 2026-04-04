@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 18,
+      "attempts": 19,
       "improvements": 6,
-      "last_used": "20260404-020-testing"
+      "last_used": "20260404-021-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "020",
-    "focus": "Teammate penalty increase for better coordination",
-    "description": "Increased teammate_penalty from 9.0 to 10.0 (+11%) to further reduce multi-agent duplication",
-    "rationale": "Building on successful attempt 011 (6.0→9.0). In four_score with 8 agents per team, coordination is critical. +11% increase continues the successful pattern of reducing junction duplication when a teammate is closer to the target.",
-    "upload": "scissors_v1:v3",
+    "version": "021",
+    "focus": "Hotspot weight reduction with improved enemy avoidance",
+    "description": "Reduced hotspot_weight from 12.0 to 11.0 (-8%) for far junctions now that enemy_aoe avoidance is stronger",
+    "rationale": "With enemy_aoe increased to 10.0 (validated), agents already avoid contested areas better. Slightly reducing hotspot penalty may allow recapturing valuable junctions that are temporarily hotspots. Conservative -8% reduction.",
+    "upload": "scissors_v1:v4",
     "season": "beta-cvc",
     "uploaded_at": "20260404 UTC",
-    "note": "Conservative incremental increase following validated improvement 011. Also testing attempt 019 (scissors_v1:v2) simultaneously for hub penalty reduction."
+    "note": "Testing alongside attempts 019 (hub penalty) and 020 (teammate penalty). All three are conservative parameter tunings building on validated baseline."
   },
   "last_improvement": {
     "date": "20260403",

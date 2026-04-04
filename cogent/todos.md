@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (20260404-021) Hotspot weight reduction: 12.0→11.0 (-8%) with improved enemy_aoe avoidance. Uploaded as scissors_v1:v4, awaiting tournament validation.
 - [ ] (20260404-020) Teammate penalty increase: 9.0→10.0 (+11%) for even better multi-agent coordination. Uploaded as scissors_v1:v3, awaiting tournament validation.
 - [ ] (20260403-019) Hub penalty reduction: 8.0→6.0 (-25%) for far junctions (>25 distance) to encourage center-map control in four_score. Uploaded as scissors_v1:v2, awaiting tournament validation.
 
