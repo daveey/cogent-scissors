@@ -1,7 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
-(none)
+- [ ] (20260404-023) Hub penalty mid-tier: 3.0→2.7 (-10%) for distance 15-25. Uploaded as scissors_v1:v6, awaiting tournament validation.
 
 ## Current Status (20260403 23:35 UTC)
 **Tournament Rankings (beta-cvc):**

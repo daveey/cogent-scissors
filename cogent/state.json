@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 20,
+      "attempts": 21,
       "improvements": 6,
-      "last_used": "20260404-022-testing"
+      "last_used": "20260404-023-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "022",
-    "focus": "Hotspot weight mid-tier reduction",
-    "description": "Reduced mid-range hotspot_weight from 6.0 to 5.5 (-8%) for junctions at hub distance 10-15",
-    "rationale": "Following successful pattern from attempt 021 (base hotspot_weight 12→11 showing +9.7% early). Mid-range junctions (10-15 from hub) are relatively safe and valuable. Reducing their hotspot penalty may help recapture contested territory in that sweet spot.",
-    "upload": "scissors_v1:v5",
+    "version": "023",
+    "focus": "Hub penalty mid-tier reduction",
+    "description": "Reduced mid-range (15-25 distance) hub_penalty multiplier from 3.0 to 2.7 (-10%) for better accessibility",
+    "rationale": "After reverting to validated baseline, trying conservative adjustment to mid-range hub penalty tier. Distance 15-25 is a reasonable range in four_score that's not too far. -10% reduction (vs failed attempt 019's -25%) targets this specific tier without affecting near (<15) or far (>25) junctions.",
+    "upload": "scissors_v1:v6",
     "season": "beta-cvc",
     "uploaded_at": "20260404 UTC",
-    "note": "Testing alongside attempt 021 (scissors_v1:v4) which shows early promise at rank #7, 16.70 avg. Both target hotspot penalty reductions with improved enemy_aoe avoidance."
+    "note": "Code now matches validated gamma_v5:v1 baseline exactly except for this single targeted change. More conservative than attempt 019 which reduced far-range (>25) by -25%."
   },
   "last_improvement": {
     "date": "20260403",
