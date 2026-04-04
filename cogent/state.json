@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 94,
+      "attempts": 95,
       "improvements": 7,
-      "last_used": "20260404-094-pending"
+      "last_used": "20260404-095-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "094",
-    "focus": "Near-hub hotspot weight reduction for aggressive near-hub recapture",
-    "description": "Reduced near-hub hotspot_weight from 1.88 to 1.86 (-1.1%) in scoring.py",
-    "rationale": "Builds on attempts 064 (1.9→1.88, -1.1%) and 045 (2.0→1.9, -5%) for continued near-hub hotspot optimization (<10 distance). Synergizes with near-hub penalty reductions (044, 066, 093) for strongest hub-proximal preference and aggressive near-hub recapture despite contest. Also synergizes with mid-range hotspot reductions (046, 063, 080) and far-range hotspot reductions (051, 062, 079, 088) for comprehensive hotspot weight optimization across all hub distance ranges. Progressive near-hub hotspot weight reductions enable increasingly aggressive near-hub contested junction pursuit in the safest zone.",
-    "upload": "scissors_v1_v76:v1",
+    "version": "095",
+    "focus": "Mid-range hotspot weight reduction for contested junction flexibility",
+    "description": "Reduced mid-range hotspot_weight from 5.6 to 5.5 (-1.8%) in scoring.py",
+    "rationale": "Builds on attempts 080 (5.7→5.6, -1.8%), 063 (5.8→5.7, -1.7%), and 046 (6.0→5.8, -3.3%) for continued mid-range hotspot optimization (10-15 distance). Completes comprehensive hotspot weight optimization across all hub distance ranges: near-hub (045, 064, 094), mid-range (046, 063, 080, 095), and far-range (051, 062, 079, 088). Synergizes with mid-range hub penalty reductions (047, 065, 091) and enemy AOE penalty reductions for comprehensive mid-range contested junction strategy. Progressive mid-range hotspot weight reductions from 6.0 to 5.5 enable increasingly flexible mid-range contested junction pursuit.",
+    "upload": "scissors_v1_v77:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T11:50:34Z",
-    "note": "Fifty-sixth scissors improvement. Continues near-hub hotspot optimization (045, 064, 094)."
+    "uploaded_at": "2026-04-04T11:51:35Z",
+    "note": "Fifty-seventh scissors improvement. Continues mid-range hotspot optimization (046, 063, 080, 095)."
   },
   "last_improvement": {
     "date": "20260404",
