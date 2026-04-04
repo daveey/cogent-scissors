@@ -7,36 +7,26 @@
     },
     "design": {
       "attempts": 21,
-      "improvements": 6,
-      "last_used": "20260404-023-testing"
+      "improvements": 7,
+      "last_used": "20260404-018-validated"
     }
   },
-  "testing_in_progress": {
-    "date": "20260404",
-    "version": "023",
-    "focus": "Hub penalty mid-tier reduction",
-    "description": "Reduced mid-range (15-25 distance) hub_penalty multiplier from 3.0 to 2.7 (-10%) for better accessibility",
-    "rationale": "After reverting to validated baseline, trying conservative adjustment to mid-range hub penalty tier. Distance 15-25 is a reasonable range in four_score that's not too far. -10% reduction (vs failed attempt 019's -25%) targets this specific tier without affecting near (<15) or far (>25) junctions.",
-    "upload": "scissors_v1:v6",
-    "season": "beta-cvc",
-    "uploaded_at": "20260404 UTC",
-    "note": "Code now matches validated gamma_v5:v1 baseline exactly except for this single targeted change. More conservative than attempt 019 which reduced far-range (>25) by -25%."
-  },
+  "testing_in_progress": null,
   "last_improvement": {
-    "date": "20260403",
-    "version": "014+015+016",
-    "focus": "Expansion stack: contested avoidance + scrambler blocking + expansion bonus",
-    "description": "Triple stack: (014) enemy_aoe 8.0→10.0 + (015) blocked_neutrals 6.0→8.0 + (016) expansion 5.0→6.0",
-    "result": "MAJOR IMPROVEMENT: gamma_v5:v1 avg 16.84 per cog vs gamma:v1 baseline 7.45 (+126%)",
+    "date": "20260404",
+    "version": "018",
+    "focus": "Network bonus increase for chain-building consolidation",
+    "description": "Increased network_bonus from 0.5 to 0.75 (+50%) on top of 014+015+016 stack",
+    "result": "IMPROVEMENT: gamma_v6:v1 avg 15.84 vs gamma_v5:v1 baseline 15.25 (+3.9%)",
     "tournament_scores": {
-      "matches": 23,
-      "avg": 16.84,
+      "matches": 27,
+      "avg": 15.84,
       "range": "TBD",
-      "rank": 8,
+      "rank": 9,
       "season": "beta-cvc"
     },
     "status": "validated",
-    "notes": "Three synergistic changes: avoid contested areas (enemy_aoe), expand aggressively (expansion), disrupt enemy expansion (blocked_neutrals). Reached rank #3-5 initially, stabilized at rank #8. Best performing stack so far."
+    "notes": "CORRECTED ASSESSMENT: Early 12-match sample showed -20% regression (13.48 avg), but with 27 matches shows +3.9% improvement. Small tournament samples misleading. Network bonus helps chain-building without over-clustering. Stack now: 014+015+016+018. Rank #9, best performing configuration."
   },
   "failed_attempts": [
     {
@@ -155,20 +145,6 @@
       "analysis": "Despite fixing OOB pathfinding issue, performance collapsed. Agents may have been over-exploring instead of capturing junctions, or reduced exploration range (22→15) limited territory discovery. Original exploration offsets (even with OOB failures) apparently worked better due to sticky targets keeping agents focused on valid junctions most of the time."
     },
     {
-      "date": "20260403",
-      "version": "018-reverted",
-      "focus": "Network bonus moderate increase",
-      "description": "Increased network bonus weight from 0.5 to 0.75 (+50%) for chain-building consolidation",
-      "result": "REGRESSION: gamma_v6:v1 avg 13.48 vs baseline 16.84 (-20%)",
-      "tournament_scores": {
-        "matches": 12,
-        "avg": 13.48,
-        "rank": 18,
-        "season": "beta-cvc"
-      },
-      "analysis": "Even moderate +50% increase hurt performance. Agents over-indexed on consolidation instead of expansion. Pattern from 006 (-64%) and this attempt (-20%) confirms: network_bonus at 0.5 is optimal. Any increase causes clustering behavior that hurts overall score."
-    },
-    {
       "date": "20260404",
       "version": "019-reverted",
       "focus": "Hub penalty reduction for center control",
@@ -217,6 +193,20 @@
       "description": "Reduced mid-range hotspot_weight from 6.0 to 5.5 (-8%) for junctions at hub distance 10-15",
       "result": "CANCELED: Built on failed attempt 021",
       "analysis": "Attempt 022 (scissors_v1:v5) uploaded but not validated. Canceled after attempt 021 failed, as both reduce hotspot penalties. No need to wait for tournament results."
+    },
+    {
+      "date": "20260404",
+      "version": "023-reverted",
+      "focus": "Hub penalty mid-tier reduction",
+      "description": "Reduced mid-range (15-25 distance) hub_penalty multiplier from 3.0 to 2.7 (-10%)",
+      "result": "MAJOR REGRESSION: scissors_v1:v6 avg 10.83 vs baseline 15.25 (-29.0%)",
+      "tournament_scores": {
+        "matches": 16,
+        "avg": 10.83,
+        "rank": 41,
+        "season": "beta-cvc"
+      },
+      "analysis": "Worse than attempt 019 (-48.6%). Even conservative -10% reduction to mid-tier hub penalty hurt badly. Hub-proximal strategy is fundamental to four_score success. All three hub penalty tiers (0.3, 1.5, 3.0, 8.0) are correctly calibrated and should not be reduced."
     }
   ],
   "mission": "four_score",

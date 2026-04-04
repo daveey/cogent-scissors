@@ -1,27 +1,28 @@
 # scissors — Improvement TODOs
 
 ## In Progress
-- [ ] (20260404-023) Hub penalty mid-tier: 3.0→2.7 (-10%) for distance 15-25. Uploaded as scissors_v1:v6, awaiting tournament validation.
+(none)
 
-## Current Status (20260403 23:35 UTC)
+## Current Status (20260404 UTC)
 **Tournament Rankings (beta-cvc):**
-- 🏆 gamma_v5:v1: rank #10, 15.33 avg (8 matches) - **TOP 10!**
-  - Stack: 014 (enemy_aoe 10.0) + 015 (blocked_neutrals 8.0) + 016 (expansion 6.0)
-- gamma_v3:v1: rank #32, 11.78 avg (21 matches)
-  - Stack: 014 + 015 (validated baseline: +51.8%)
-- gamma_scissors:v1: in qualifying (improvement 017)
-- Baseline gamma:v1: rank #67, 7.45 avg
+- 🏆 gamma_v6:v1: rank #9, 15.84 avg (27 matches) - **TOP 10!**
+  - Stack: 014 + 015 + 016 + 018 (network_bonus 0.5→0.75)
+- gamma_v5:v1: rank #11, 15.25 avg (30 matches)
+  - Stack: 014 + 015 + 016 (previous best)
+- gamma_v3:v1: rank #33, 12.02 avg (40 matches)
+  - Stack: 014 + 015
+- Baseline gamma:v1: rank #73, 7.45 avg (21 matches)
 
-**Progress:** +106% improvement from baseline (7.45 → 15.33)
+**Progress:** +113% improvement from baseline (7.45 → 15.84)
 
-## Completed (Design Approach: 6 validated improvements)
+## Completed (Design Approach: 7 validated improvements)
 - [x] (004) Hotspot penalty increase: 8→12 base - avoid contested far junctions
 - [x] (007) Early scrambler: step 100→50 - earlier disruption vs 3 opponents
 - [x] (011) Teammate penalty: 6.0→9.0 - better multi-agent coordination
 - [x] (014) Enemy AOE penalty: 8.0→10.0 - avoid contested territory
 - [x] (015) Scrambler blocked_neutrals: 6.0→8.0 - prioritize expansion-blocking
 - [x] (016) Expansion bonus: 5.0→6.0 - aggressive safe territory expansion
-- [x] (017) Corner exploration: fixed OOB offsets - 100% valid exploration
+- [x] (018) Network bonus: 0.5→0.75 - improved chain-building consolidation
 
 ## Candidates
 - [ ] Test gamma_scissors:v1 performance once qualifying completes
@@ -42,11 +43,11 @@
 - [x] (012) LLM teammate role awareness: +3.8% avg but 40% catastrophic failure
 - [x] (010-llm-softer) Softer LLM stagnation: -39.4%
 - [x] (017) Corner-safe exploration (22→15 offsets): -62.8%
-- [x] (018) Network bonus +50% (0.5→0.75): -20%
 - [x] (019) Hub penalty reduction (8.0→6.0): -48.6%
 - [x] (020) Teammate penalty increase (9.0→10.0): -42.8%
 - [x] (021) Hotspot weight base reduction (12.0→11.0): -9.8%
 - [x] (022) Hotspot weight mid-tier reduction (6.0→5.5): canceled (built on failed 021)
+- [x] (023) Hub penalty mid-tier reduction (3.0→2.7): -29.0%
 
 ## Strategy
 - **Tournament-based validation** works well - continue using beta-cvc for fast feedback

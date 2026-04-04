@@ -68,7 +68,7 @@ def aligner_target_score(
         if hub_dist > 25:
             hub_penalty = (hub_dist - 25) * 8.0 + 50.0
         elif hub_dist > 15:
-            hub_penalty = (hub_dist - 15) * 2.7 + 10.0  # Reduced from 3.0 for mid-range accessibility
+            hub_penalty = (hub_dist - 15) * 3.0 + 10.0
         elif hub_dist > 10:
             hub_penalty = (hub_dist - 10) * 1.5 + 2.0
         else:
@@ -83,8 +83,8 @@ def aligner_target_score(
         elif hub_dist <= 15:
             hotspot_weight = 6.0
     hotspot_penalty = min(hotspot_count, 3) * hotspot_weight
-    # Small bonus for junctions near existing friendly network (chain-building)
-    # Matching alpha.0's _DEFAULT_NETWORK_WEIGHT = 0.5
+    # Network bonus for chain-building near friendly junctions
+    # Increased from alpha.0's 0.5 to 0.75 for better consolidation (gamma_v6 validated)
     network_bonus = 0.0
     if friendly_sources:
         nearby_friendly = sum(
@@ -93,7 +93,7 @@ def aligner_target_score(
             if source.entity_type != "hub"
             and manhattan(candidate.position, source.position) <= _JUNCTION_ALIGN_DISTANCE
         )
-        network_bonus = min(nearby_friendly, 4) * 0.5
+        network_bonus = min(nearby_friendly, 4) * 0.75
     teammate_penalty = 9.0 if teammate_closer else 0.0
     return (
         distance
