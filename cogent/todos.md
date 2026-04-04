@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (143) Scrambler corner pressure divisor reduction (7.8→7.75): scissors_v59:v1 qualifying - slightly faster pressure growth (-0.6%, stacks with 087-142)
 - [ ] (142) Aligner network bonus cap increase (4.2→4.25): scissors_v58:v1 qualifying - denser network clustering (+1.2%, stacks with 087-141)
 - [ ] (141) Aligner expansion bonus cap increase (36.5→36.8): scissors_v57:v1 qualifying - higher expansion ceiling (+0.8%, stacks with 087-140)
 - [ ] (140) Aligner teammate penalty increase (9.15→9.2): scissors_v56:v1 qualifying - slightly better coordination (+0.5%, stacks with 087-139)

@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 77,
+      "attempts": 78,
       "improvements": 7,
-      "last_used": "20260404-142-testing"
+      "last_used": "20260404-143-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "142",
-    "focus": "Aligner network bonus cap increase",
-    "description": "Increased network bonus cap from 4.2 to 4.25 (+1.2%)",
-    "rationale": "Network bonus cap limits maximum bonus from nearby friendly junctions. Conservative +1.2% increase builds on validated 018 (weight 0.5→0.75) and attempts 097 (0.75→0.77), 114 (cap 4.0→4.2), 134 (weight 0.77→0.78). Higher cap allows slightly more reward for junctions in extremely dense clusters (5+ nearby friendlies). Stacks with 087-141.",
-    "upload": "scissors_v58:v1",
+    "version": "143",
+    "focus": "Scrambler corner pressure divisor reduction",
+    "description": "Reduced corner_pressure divisor from 7.8 to 7.75 (-0.6%)",
+    "rationale": "Corner pressure divisor controls growth rate of far-enemy disruption incentive (hub_distance / divisor). Conservative -0.6% divisor reduction builds on attempt 107 (8.0→7.8). Lower divisor = faster pressure growth, meaning scramblers prioritize distant enemies slightly sooner. Paired with cap increases (100: 10.0→10.5, 136: 10.5→10.6). Stacks with 087-142.",
+    "upload": "scissors_v59:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 142. Clean baseline network cap exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 143. Clean baseline corner pressure divisor exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
