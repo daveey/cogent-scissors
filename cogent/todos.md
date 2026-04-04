@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (148) Aligner hub penalty 10-15 base reduction (1.96→1.94): scissors_v64:v1 qualifying - close-mid-range base penalty (-1%, stacks with 087-147)
 - [ ] (147) Aligner hub penalty 15-25 base reduction (9.8→9.7): scissors_v63:v1 qualifying - mid-range base penalty (-1%, stacks with 087-146)
 - [ ] (146) Aligner hub penalty far-range base reduction (49.5→49.0): scissors_v62:v1 qualifying - slightly less far-range penalty (-1%, stacks with 087-145)
 - [ ] (145) Aligner network bonus weight increase (0.78→0.79): scissors_v61:v1 qualifying - stronger network consolidation (+1.3%, stacks with 087-144)
