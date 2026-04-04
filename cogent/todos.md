@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (119) Emergency resource low threshold increase (2.0→2.2): scissors_v35:v1 qualifying - earlier emergency mining (+10%, stacks with 087-118)
 - [ ] (118) Scrambler heart batch target increase (3.0→3.2): scissors_v34:v1 qualifying - better persistence (+7%, stacks with 087-117)
 - [ ] (117) Extractor memory steps increase (800→820): scissors_v33:v1 qualifying - longer extractor memory (+2.5%, stacks with 087-116)
 - [ ] (116) Aligner heart batch target increase (3.0→3.2): scissors_v32:v1 qualifying - better persistence (+7%, stacks with 087-115)
