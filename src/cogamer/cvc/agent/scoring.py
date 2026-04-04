@@ -85,6 +85,7 @@ def aligner_target_score(
     hotspot_penalty = min(hotspot_count, 3) * hotspot_weight
     # Network bonus for chain-building near friendly junctions
     # Increased from alpha.0's 0.5 to 0.75 for better consolidation (gamma_v6 validated)
+    # Further increased to 0.77 (+3%) for stronger chain-building incentive
     network_bonus = 0.0
     if friendly_sources:
         nearby_friendly = sum(
@@ -93,7 +94,7 @@ def aligner_target_score(
             if source.entity_type != "hub"
             and manhattan(candidate.position, source.position) <= _JUNCTION_ALIGN_DISTANCE
         )
-        network_bonus = min(nearby_friendly, 4) * 0.75
+        network_bonus = min(nearby_friendly, 4) * 0.77
     teammate_penalty = 9.0 if teammate_closer else 0.0
     return (
         distance
