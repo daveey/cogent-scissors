@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 93,
+      "attempts": 94,
       "improvements": 7,
-      "last_used": "20260404-093-pending"
+      "last_used": "20260404-094-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "093",
-    "focus": "Near-hub penalty reduction for strongest hub-proximal preference",
-    "description": "Reduced near-hub penalty multiplier from 0.27 to 0.26 (-3.7%) in scoring.py",
-    "rationale": "Builds on attempts 066 (0.28→0.27, -3.6%) and 044 (0.3→0.28, -7%) for continued near-hub penalty optimization (<10 distance). Completes hub penalty optimization across all four distance ranges: near-hub (044, 066, 093), mid-range (047, 065, 091), mid-far (053, 067, 092), and far-range (baseline 8.0). Synergizes with near-hub hotspot weight reductions (045, 064) and expansion weight increases for comprehensive hub-proximal expansion strategy. Progressive near-hub penalty reductions enable increasingly aggressive near-hub junction targeting in the safest zone.",
-    "upload": "scissors_v1_v75:v1",
+    "version": "094",
+    "focus": "Near-hub hotspot weight reduction for aggressive near-hub recapture",
+    "description": "Reduced near-hub hotspot_weight from 1.88 to 1.86 (-1.1%) in scoring.py",
+    "rationale": "Builds on attempts 064 (1.9→1.88, -1.1%) and 045 (2.0→1.9, -5%) for continued near-hub hotspot optimization (<10 distance). Synergizes with near-hub penalty reductions (044, 066, 093) for strongest hub-proximal preference and aggressive near-hub recapture despite contest. Also synergizes with mid-range hotspot reductions (046, 063, 080) and far-range hotspot reductions (051, 062, 079, 088) for comprehensive hotspot weight optimization across all hub distance ranges. Progressive near-hub hotspot weight reductions enable increasingly aggressive near-hub contested junction pursuit in the safest zone.",
+    "upload": "scissors_v1_v76:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T11:49:42Z",
-    "note": "Fifty-fifth scissors improvement. Continues near-hub penalty optimization (044, 066, 093)."
+    "uploaded_at": "2026-04-04T11:50:34Z",
+    "note": "Fifty-sixth scissors improvement. Continues near-hub hotspot optimization (045, 064, 094)."
   },
   "last_improvement": {
     "date": "20260404",
