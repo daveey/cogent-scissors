@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 79,
+      "attempts": 80,
       "improvements": 7,
-      "last_used": "20260404-079-pending"
+      "last_used": "20260404-080-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "079",
-    "focus": "Far-range hotspot weight reduction for contested junction flexibility",
-    "description": "Reduced far-range hotspot_weight from 10.7 to 10.6 (-0.9%) in scoring.py",
-    "rationale": "Builds on attempts 062 (10.8→10.7, -0.9%) and 051 (11.0→10.8, -1.8%) for continued far-range contested junction optimization. Synergizes with enemy AOE penalty reductions (050, 057, 071, 078) and mid-range hotspot reduction (046, 063) for comprehensive contested territory strategy. Attempt 021 showed reducing base from 12.0→11.0 failed (-9.8%), but conservative incremental reductions from 11.0 have been successful. Progressive far-range hotspot weight reductions from 11.0 to 10.6 enable increasingly aggressive far-range contested junction pursuit.",
-    "upload": "scissors_v1_v61:v1",
+    "version": "080",
+    "focus": "Mid-range hotspot weight reduction for contested junction flexibility",
+    "description": "Reduced mid-range hotspot_weight from 5.7 to 5.6 (-1.8%) in scoring.py",
+    "rationale": "Builds on attempts 063 (5.8→5.7, -1.7%) and 046 (6.0→5.8, -3.3%) for continued mid-range contested junction optimization. Synergizes with near-hub hotspot reduction (045, 064) and far-range hotspot reductions (051, 062, 079) for comprehensive hotspot weight optimization across all hub distance ranges. Attempt 021 showed reducing base from 12.0→11.0 failed (-9.8%), but conservative incremental reductions targeting specific distance ranges have been successful. Progressive mid-range hotspot weight reductions from 6.0 to 5.6 enable increasingly flexible mid-range contested junction pursuit.",
+    "upload": "scissors_v1_v62:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T11:13:36Z",
-    "note": "Forty-first scissors improvement. Continues far-range hotspot optimization (051, 062, 079)."
+    "uploaded_at": "2026-04-04T11:35:49Z",
+    "note": "Forty-second scissors improvement. Continues mid-range hotspot optimization (046, 063, 080)."
   },
   "last_improvement": {
     "date": "20260404",
