@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 54,
+      "attempts": 55,
       "improvements": 7,
-      "last_used": "20260404-054-pending"
+      "last_used": "20260404-055-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "054",
-    "focus": "Claimed target penalty reduction for flexible coordination",
-    "description": "Reduced _CLAIMED_TARGET_PENALTY from 11.0 to 10.8 (-1.8%) in types.py",
-    "rationale": "Delta's attempt 040 reduced 12.0→11.0 (not uploaded). Attempt 034 tried 12.0→10.0 (-17%) and failed. Conservative -1.8% reduction (11.0→10.8) allows more flexible claim override when one agent is significantly closer. Synergizes with scissors 049 (teammate_penalty 6.8) for comprehensive coordination flexibility.",
-    "upload": "scissors_v1_v36:v1",
+    "version": "055",
+    "focus": "Expansion weight increase for aggressive territory acquisition",
+    "description": "Increased expansion bonus weight from 6.15 to 6.2 (+0.8%) in scoring.py",
+    "rationale": "Attempt 040 tested 6.0→6.15 (+2.5%). Conservative +0.8% increase (6.15→6.2) further rewards high-expansion junctions. Synergizes with scissors attempts 044-047,053 (hub penalty reductions across all ranges) and 051 (far hotspot reduction 12.0→11.0) for balanced hub-proximal expansion strategy.",
+    "upload": "scissors_v1_v37:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T08:11:21Z",
-    "note": "Sixteenth scissors improvement. Builds on delta's 040 (12.0→11.0) with incremental reduction."
+    "uploaded_at": "2026-04-04T08:14:44Z",
+    "note": "Seventeenth scissors improvement. Continues expansion optimization trilogy (040, 048, 055)."
   },
   "last_improvement": {
     "date": "20260404",
