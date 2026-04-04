@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 24,
+      "attempts": 25,
       "improvements": 7,
-      "last_used": "20260404-089-testing"
+      "last_used": "20260404-090-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "089",
-    "focus": "Aligner HP threshold reduction for safer retreats",
-    "description": "Reduced aligner retreat HP threshold from 50 to 47 (-6%)",
-    "rationale": "Aligners are the most valuable role for scoring. 50 HP threshold is aggressive. Modest reduction could improve survival without over-conservative retreat. Stacks with 087 (miner 18) and 088 (scrambler 33).",
-    "upload": "scissors:v5",
+    "version": "090",
+    "focus": "Claimed target penalty reduction for flexible coordination",
+    "description": "Reduced _CLAIMED_TARGET_PENALTY from 12.0 to 11.5 (-4%)",
+    "rationale": "12.0 penalty may cause agents to miss valuable opportunities when teammate claims are stale or junction is critical. Modest reduction could improve coordination flexibility without breaking claim system. Stacks with 087-089 (HP thresholds).",
+    "upload": "scissors:v6",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 089. Clean baseline HP threshold exploration: miner +20%, scrambler +10%, aligner -6%. Awaiting tournament validation."
+    "note": "Scissors attempt 090. Clean baseline parameter exploration continuing. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
