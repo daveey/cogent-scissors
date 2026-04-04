@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 44,
+      "attempts": 45,
       "improvements": 7,
-      "last_used": "20260404-044-pending"
+      "last_used": "20260404-045-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "044",
-    "focus": "Near-hub penalty reduction for stronger hub-proximal consolidation",
-    "description": "Reduced near-hub penalty multiplier from 0.3 to 0.28 (-7%) for junctions within 10 distance of hub",
-    "rationale": "Attempts 019 (-48.6%) and 023 (-29%) failed when reducing far/mid-range hub penalties. Near-hub zone (0-10 distance) is safest territory. Conservative -7% reduction (0.3→0.28) encourages slightly tighter hub-proximal consolidation. Synergizes with scissors 042 (network weight) by making near-hub networks more attractive.",
-    "upload": "scissors_v1_v26:v1",
+    "version": "045",
+    "focus": "Near-hub hotspot weight reduction for aggressive recapture",
+    "description": "Reduced near-hub hotspot_weight from 2.0 to 1.9 (-5%) for contested junctions within 10 distance of hub",
+    "rationale": "Near-hub zone is safest for aggressive recapture. Attempt 021 tried base weight 12.0→11.0 and failed (-9.8%). This targets only near-hub contested junctions (<=10 distance). -5% reduction (2.0→1.9) encourages recapturing contested near-hub junctions. Synergizes with scissors 044 (near-hub penalty 0.28) for comprehensive near-hub optimization.",
+    "upload": "scissors_v1_v27:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T07:04:19Z",
-    "note": "Sixth scissors improvement. Near-hub focus (safest zone) vs failed far-hub attempts."
+    "uploaded_at": "2026-04-04T07:07:35Z",
+    "note": "Seventh scissors improvement. Completes near-hub optimization trilogy: 044 (penalty), 045 (hotspot), 042 (network)."
   },
   "last_improvement": {
     "date": "20260404",

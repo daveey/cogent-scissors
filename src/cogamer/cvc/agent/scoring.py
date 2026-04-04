@@ -79,7 +79,7 @@ def aligner_target_score(
     if hub_position is not None:
         hub_dist = float(manhattan(hub_position, candidate.position))
         if hub_dist <= 10:
-            hotspot_weight = 2.0  # near hub: still recapture despite contest
+            hotspot_weight = 1.9  # Reduced from 2.0 for stronger near-hub recapture incentive
         elif hub_dist <= 15:
             hotspot_weight = 6.0
     hotspot_penalty = min(hotspot_count, 3) * hotspot_weight
