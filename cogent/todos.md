@@ -1,7 +1,8 @@
 # scissors — Improvement TODOs
 
 ## In Progress
-- [ ] (20260404-021) Hotspot weight reduction: 12.0→11.0 (-8%) with improved enemy_aoe avoidance. Uploaded as scissors_v1:v4, EARLY LEAD: 16.70 avg (4 matches), rank #7. Needs more matches for validation.
+- [ ] (20260404-022) Hotspot weight mid-tier reduction: 6.0→5.5 (-8%) for junctions at hub distance 10-15. Uploaded as scissors_v1:v5, awaiting tournament validation.
+- [ ] (20260404-021) Hotspot weight base reduction: 12.0→11.0 (-8%) with improved enemy_aoe avoidance. Uploaded as scissors_v1:v4, EARLY LEAD: 16.70 avg (4 matches), rank #7. Needs more matches for validation.
 
 ## Current Status (20260403 23:35 UTC)
 **Tournament Rankings (beta-cvc):**
