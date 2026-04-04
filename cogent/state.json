@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 88,
+      "attempts": 89,
       "improvements": 7,
-      "last_used": "20260404-088-pending"
+      "last_used": "20260404-089-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "088",
-    "focus": "Far-range hotspot weight reduction for contested junction flexibility",
-    "description": "Reduced far-range hotspot_weight from 10.6 to 10.5 (-0.9%) in scoring.py",
-    "rationale": "Builds on attempts 079 (10.7→10.6, -0.9%), 062 (10.8→10.7, -0.9%), 051 (11.0→10.8, -1.8%), and validated baseline reduction from 12.0 to 11.0 in attempt 021 context for continued far-range hotspot optimization. Cumulative -12.5% reduction from baseline 12.0 to 10.5. Synergizes with enemy AOE penalty reductions (050, 057, 071, 078, 084) and mid-range hotspot reductions (046, 063, 080) for comprehensive contested territory strategy. Progressive far-range hotspot weight reductions enable increasingly aggressive far-range contested junction pursuit.",
-    "upload": "scissors_v1_v70:v1",
+    "version": "089",
+    "focus": "Network bonus weight increase for junction cluster consolidation",
+    "description": "Increased network_bonus weight from 0.90 to 0.92 (+2.2%) in scoring.py",
+    "rationale": "Builds on attempts 081 (0.88→0.90, +2.3%), 076 (0.86→0.88, +2.3%), 069 (0.84→0.86, +2.4%), 060 (0.82→0.84, +2.4%), 052 (0.8→0.82, +2.5%), 042 (0.75→0.8, +7%), 039 (cap 4→5), and validated 018 (0.5→0.75, +3.9%) for continued network bonus optimization. Cumulative +84% increase from baseline 0.5 to 0.92. Synergizes with threat_bonus increases (043, 058, 072, 085) to protect consolidated junction clusters. Progressive network bonus increases enable increasingly effective chain-building consolidation strategy.",
+    "upload": "scissors_v1_v71:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T11:45:04Z",
-    "note": "Fiftieth scissors improvement. Continues far-range hotspot optimization (051, 062, 079, 088)."
+    "uploaded_at": "2026-04-04T11:45:59Z",
+    "note": "Fifty-first scissors improvement. Continues network bonus optimization (018, 039, 042, 052, 060, 069, 076, 081, 089)."
   },
   "last_improvement": {
     "date": "20260404",
