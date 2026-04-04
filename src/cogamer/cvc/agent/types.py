@@ -58,7 +58,7 @@ _GEAR_COSTS = {
 }
 _EMERGENCY_RESOURCE_LOW = 2.2  # Increased from 2 to 2.2 (+10%) for earlier emergency mining trigger
 _HEART_BATCH_TARGETS = {"aligner": 3.2, "scrambler": 3.2}  # Increased scrambler from 3 to 3.2 (+7%) for better persistence
-_HUB_ALIGN_DISTANCE = 26  # Increased from 25 (+4%) for slightly extended hub reach
+_HUB_ALIGN_DISTANCE = 26.3  # Increased from 26 to 26.3 (+1%) for slightly extended hub reach
 _JUNCTION_ALIGN_DISTANCE = 16  # Increased from 15 (+7%) for improved chain-building reach
 _JUNCTION_AOE_RANGE = 10.3  # Increased from 10 (+3%) for slightly larger area-of-effect detection
 _CLAIMED_TARGET_PENALTY = 11.38  # Reduced from 11.5 to 11.38 (-1%) for more flexible claim override
