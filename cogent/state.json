@@ -19,7 +19,7 @@
     "rationale": "Current implementation permanently penalizes junctions once scrambled. In 10,000 step games, junctions contested at step 500 still have penalties at step 10,000. Time-aware decay allows agents to reconsider valuable junctions that were contested early but are now safe. Decay rate: 1 per 2000 steps (3-count hotspot becomes 0 after 6000 steps).",
     "upload": "scissors_v1_v14:v1",
     "season": "beta-cvc",
-    "uploaded_at": "TBD",
+    "uploaded_at": "20260404 04:05 UTC",
     "note": "Architectural improvement to hotspot tracking. After 11 consecutive parameter failures and 029 testing wider AOE, this adds time-awareness to existing hotspot system."
   },
   "last_improvement": {
