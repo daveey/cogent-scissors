@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 109,
+      "attempts": 110,
       "improvements": 7,
-      "last_used": "20260404-109-pending"
+      "last_used": "20260404-110-pending"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "109",
-    "focus": "Scrambler blocked neutrals weight increase for expansion blocking",
-    "description": "Increased scrambler blocked_neutrals weight from 8.8 to 8.9 (+1.1%) in scoring.py",
-    "rationale": "Builds on attempts 101 (8.7→8.8, +1.1%), 086 (8.6→8.7, +1.2%), 073 (8.5→8.6, +1.2%), 059 (8.4→8.5, +1.2%), 041 (8.0→8.4, +5%), and validated 015 (6.0→8.0, improvement) for continued scrambler blocked_neutrals optimization. Cumulative +48% increase from baseline 6.0 to 8.9. Synergizes with threat_bonus increases (043, 058, 072, 085, 100, 108) for balanced scrambler strategy targeting both expansion blocking (blocked_neutrals) and network defense (threat_bonus). Progressive blocked_neutrals weight increases enable increasingly effective enemy expansion disruption.",
-    "upload": "scissors_v1_v91:v1",
+    "version": "110",
+    "focus": "Claimed target penalty reduction for flexible claim override",
+    "description": "Reduced _CLAIMED_TARGET_PENALTY from 10.5 to 10.4 (-0.9%) in types.py",
+    "rationale": "Builds on attempts 102 (10.6→10.5, -0.9%), 087 (10.7→10.6, -0.9%), 074 (10.8→10.7, -0.9%), 054 (11.0→10.8, -1.8%), and validated 040 (12.0→11.0, improvement) for continued claim penalty optimization. Cumulative -13.3% reduction from baseline 12.0 to 10.4. Synergizes with teammate penalty reductions (049, 056, 068, 075, 083, 096, 106) for comprehensive multi-agent coordination flexibility. Progressive claim penalty reductions enable increasingly flexible claim override when strategically beneficial while maintaining coordination stability.",
+    "upload": "scissors_v1_v92:v1",
     "season": "beta-cvc",
-    "uploaded_at": "2026-04-04T12:33:44Z",
-    "note": "Seventy-first scissors improvement. Continues scrambler blocked_neutrals optimization (015, 041, 059, 073, 086, 101, 109)."
+    "uploaded_at": "2026-04-04T12:34:59Z",
+    "note": "Seventy-second scissors improvement. Continues claimed penalty optimization (040, 054, 074, 087, 102, 110)."
   },
   "last_improvement": {
     "date": "20260404",
