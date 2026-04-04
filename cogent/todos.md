@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (104) Aligner mid-range hotspot weight reduction (6.0→5.8): scissors_v20:v1 qualifying - mid-range contested recapture (-3%, stacks with 087-103)
 - [ ] (103) Aligner near-hub hotspot weight reduction (2.0→1.9): scissors_v19:v1 qualifying - stronger near-hub recapture (-5%, stacks with 087-102)
 - [ ] (102) Aligner hub penalty reduction (0.3→0.28): scissors_v18:v1 qualifying - tighter hub clustering (-7%, stacks with 087-101)
 - [ ] (101) Aligner enemy_aoe penalty weight increase (10.0→10.3): scissors_v17:v1 qualifying - stronger enemy avoidance (+3%, stacks with 087-100)

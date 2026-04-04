@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 38,
+      "attempts": 39,
       "improvements": 7,
-      "last_used": "20260404-103-testing"
+      "last_used": "20260404-104-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "103",
-    "focus": "Aligner near-hub hotspot weight reduction",
-    "description": "Reduced near-hub hotspot_weight from 2.0 to 1.9 (-5%) for junctions ≤10 distance",
-    "rationale": "Near-hub junctions worth defending despite enemy contest. Conservative -5% reduction encourages recapture of contested near-hub territory. Complements hub-proximal strategy. Different from failed attempt 021 (far-range base 12.0). Stacks with 087-102.",
-    "upload": "scissors_v19:v1",
+    "version": "104",
+    "focus": "Aligner mid-range hotspot weight reduction",
+    "description": "Reduced mid-range hotspot_weight from 6.0 to 5.8 (-3%) for junctions 10-15 distance",
+    "rationale": "Different from failed attempt 021/022 which touched far-range base (12.0). Mid-range tier (10-15 distance from hub) less critical than far-range. Conservative -3% reduction to encourage recapture of moderately contested hub-proximal territory. Stacks with 087-103.",
+    "upload": "scissors_v20:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 103. Clean baseline near-hub hotspot weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 104. Clean baseline mid-range hotspot weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
