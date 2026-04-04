@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 56,
+      "attempts": 57,
       "improvements": 7,
-      "last_used": "20260404-121-testing"
+      "last_used": "20260404-122-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "121",
-    "focus": "Miner HP threshold increase",
-    "description": "Increased miner HP threshold from 18 to 18.3 (+2%)",
-    "rationale": "Attempt 087 increased from 15 to 18 (+20%). Conservative +2% further increase for slightly more aggressive resource gathering before retreat. Miners are critical for economy in four_score, so better uptime helps maintain resource flow. Stacks with 087-120.",
-    "upload": "scissors_v37:v1",
+    "version": "122",
+    "focus": "Aligner HP threshold reduction",
+    "description": "Reduced aligner HP threshold from 47 to 46.5 (-1%)",
+    "rationale": "Attempt 089 reduced from 50 to 47 (-6%). Conservative -1% further reduction for even safer aligner retreat. Aligners are critical for scoring, so prioritizing survival over aggression. Earlier retreat helps maintain aligner uptime and junction control. Stacks with 087-121.",
+    "upload": "scissors_v38:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 121. Clean baseline miner HP threshold exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 122. Clean baseline aligner HP threshold exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
