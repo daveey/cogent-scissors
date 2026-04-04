@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (096) Expansion bonus weight increase (6.0→6.2): scissors:v12 qualifying - stronger expansion incentive (+3%, stacks with 087-095)
 - [ ] (095) Emergency resource low threshold increase (1→2): scissors:v11 qualifying - earlier emergency mining (+100%, stacks with 087-094)
 - [ ] (094) Scrambler heart batch target increase (2→3): scissors:v10 qualifying - better scrambler persistence (+50%, stacks with 087-093)
 - [ ] (093) Junction alignment distance increase (15→16): scissors:v9 qualifying - chain-building reach (+7%, stacks with 087-092)

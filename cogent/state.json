@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 30,
+      "attempts": 31,
       "improvements": 7,
-      "last_used": "20260404-095-testing"
+      "last_used": "20260404-096-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "095",
-    "focus": "Emergency resource low threshold increase for earlier mining trigger",
-    "description": "Increased _EMERGENCY_RESOURCE_LOW from 1 to 2",
-    "rationale": "Emergency mining currently triggers at 1 resource (critical state). Increasing to 2 provides slightly earlier warning and better resource management without being overly conservative. Different from failed attempts at 10 or 50 which were too aggressive (documented as Dead Ends). Stacks with 087-094.",
-    "upload": "scissors:v11",
+    "version": "096",
+    "focus": "Expansion bonus weight increase for stronger expansion incentive",
+    "description": "Increased expansion bonus weight from 6.0 to 6.2 (+3%)",
+    "rationale": "Current weight 6.0 validated in attempt 016. Cap of 36.0 is correct (attempt 024's increase to 42 failed -20.7%). Modest increase to weight from 6.0 to 6.2 could further prioritize expansion-enabling junctions without over-prioritizing extreme cases. Stacks with 087-095.",
+    "upload": "scissors:v12",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 095. Clean baseline economy parameter exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 096. Clean baseline scoring weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
