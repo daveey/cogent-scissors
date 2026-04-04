@@ -6,19 +6,19 @@
       "last_used": null
     },
     "design": {
-      "attempts": 29,
+      "attempts": 30,
       "improvements": 7,
-      "last_used": "20260404-064-testing"
+      "last_used": "20260404-065-testing"
     }
   },
   "testing_in_progress": {
-    "version": "064",
+    "version": "065",
     "date": "20260404",
-    "focus": "Resource cargo retreat margin cap increase",
-    "description": "Increased cargo retreat margin cap from 12 to 14 (miners with heavy cargo retreat 1 HP earlier)",
-    "upload": "gamma:v8",
+    "focus": "Near enemy territory retreat margin increase",
+    "description": "Increased near_enemy_territory retreat margin from 5 to 6 HP (more cautious near enemy-controlled areas)",
+    "upload": "gamma:v9",
     "status": "qualifying",
-    "previous": "061 (gamma:v5), 062 (gamma:v6), 063 (gamma:v7) also qualifying"
+    "previous": "061 (v5), 062 (v6), 063 (v7), 064 (v8) also qualifying"
   },
   "local_testing_status": {
     "status": "FAILED",

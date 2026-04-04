@@ -25,6 +25,7 @@
 - [x] (018) Network bonus: 0.5→0.75 - improved chain-building consolidation
 
 ## Candidates
+- [ ] (065) Near enemy territory retreat margin (5→6): gamma:v9 qualifying - more cautious near enemy-controlled areas (untried parameter)
 - [ ] (064) Cargo retreat margin cap increase (12→14): gamma:v8 qualifying - miners with heavy cargo retreat 1 HP earlier for cargo protection
 - [ ] (063) Late game threshold reduction (2500→2200): gamma:v7 qualifying - earlier conservative behavior during critical window end
 - [ ] (062) Early phase duration extension (30→35): gamma:v6 qualifying - more economy stability before pressure ramp (opposite of failed 003)
