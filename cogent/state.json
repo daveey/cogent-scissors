@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 36,
+      "attempts": 37,
       "improvements": 7,
-      "last_used": "20260404-101-testing"
+      "last_used": "20260404-102-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "101",
-    "focus": "Aligner enemy_aoe penalty weight increase",
-    "description": "Increased enemy_aoe penalty weight from 10.0 to 10.3 (+3%)",
-    "rationale": "Validated in attempt 014 (8.0→10.0, +25%). Conservative +3% increase to strengthen aligner avoidance of enemy-contested junctions. Reduces losses in four_score multi-team combat scenarios. Stacks with 087-100.",
-    "upload": "scissors_v17:v1",
+    "version": "102",
+    "focus": "Aligner hub penalty reduction for very close junctions",
+    "description": "Reduced hub penalty multiplier from 0.3 to 0.28 (-7%) for junctions ≤10 distance",
+    "rationale": "Encourages tighter hub clustering for safer territory control. Very close junctions (≤10 distance) now slightly more attractive. Conservative -7% reduction strengthens hub-proximal strategy core to four_score success. Stacks with 087-101.",
+    "upload": "scissors_v18:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 101. Clean baseline aligner enemy avoidance weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 102. Clean baseline hub clustering exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

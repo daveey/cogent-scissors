@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (102) Aligner hub penalty reduction (0.3→0.28): scissors_v18:v1 qualifying - tighter hub clustering (-7%, stacks with 087-101)
 - [ ] (101) Aligner enemy_aoe penalty weight increase (10.0→10.3): scissors_v17:v1 qualifying - stronger enemy avoidance (+3%, stacks with 087-100)
 - [ ] (100) Scrambler corner_pressure cap increase (10.0→10.5): scissors_v16:v1 qualifying - stronger far-enemy disruption (+5%, stacks with 087-099)
 - [ ] (099) Scrambler threat_bonus weight increase (10.0→10.3): scissors_v15:v1 qualifying - modest defensive priority (+3%, stacks with 087-098)
