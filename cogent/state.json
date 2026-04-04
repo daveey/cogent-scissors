@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 72,
+      "attempts": 73,
       "improvements": 7,
-      "last_used": "20260404-137-testing"
+      "last_used": "20260404-138-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "137",
-    "focus": "Scrambler threat bonus weight increase",
-    "description": "Increased threat_bonus weight from 10.3 to 10.4 (+1%)",
-    "rationale": "Threat bonus prioritizes enemy junctions near friendly junctions (defensive scrambling). Conservative +1% increase builds on attempt 099 (10.0→10.3). Balances offensive corner_pressure (136) with defensive protection. Failed attempt 008 (15.0) was too aggressive (-17%), but incremental tuning from 10.0 may improve. Stacks with 087-136.",
-    "upload": "scissors_v53:v1",
+    "version": "138",
+    "focus": "Scrambler blocked neutrals weight increase",
+    "description": "Increased blocked_neutrals weight from 8.5 to 8.6 (+1.2%)",
+    "rationale": "Blocked neutrals bonus rewards scramblers for occupying enemy junctions that block neutral junctions (expansion-blocking). Conservative +1.2% increase builds on validated 015 (6.0→8.0) and attempt 098 (8.0→8.5). Stronger expansion-blocking in four_score multi-team format. Stacks with 087-137.",
+    "upload": "scissors_v54:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 137. Clean baseline scrambler threat bonus exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 138. Clean baseline scrambler blocked_neutrals exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
