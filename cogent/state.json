@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 80,
+      "attempts": 81,
       "improvements": 7,
-      "last_used": "20260404-145-testing"
+      "last_used": "20260404-146-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "145",
-    "focus": "Aligner network bonus weight increase",
-    "description": "Increased network bonus weight from 0.78 to 0.79 (+1.3%)",
-    "rationale": "Network bonus rewards chain-building near existing friendly junctions. Conservative +1.3% increase builds on validated 018 (0.5→0.75) and attempts 097 (0.75→0.77), 134 (0.77→0.78). Paired with cap increases (114: 4.0→4.2, 142: 4.2→4.25). Promotes denser junction networks for better territorial control. Stacks with 087-144.",
-    "upload": "scissors_v61:v1",
+    "version": "146",
+    "focus": "Aligner hub penalty far-range base reduction",
+    "description": "Reduced hub penalty far-range base from 49.5 to 49.0 (-1%)",
+    "rationale": "Hub penalty far-range (>25 distance) base value sets minimum penalty before multiplier applied. Conservative -1% reduction builds on attempts 110 (50.0→49.5), 111 (multiplier 8.0→7.92). Slightly reduces penalty for junctions 26-30 distance from hub, allowing marginally more center-map exploration without over-extending. Stacks with 087-145.",
+    "upload": "scissors_v62:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 145. Clean baseline network weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 146. Clean baseline hub penalty base exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
