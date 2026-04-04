@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 32,
+      "attempts": 33,
       "improvements": 7,
-      "last_used": "20260404-097-testing"
+      "last_used": "20260404-098-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "097",
-    "focus": "Network bonus weight increase for stronger chain-building",
-    "description": "Increased network bonus weight from 0.75 to 0.77 (+3%)",
-    "rationale": "Current weight 0.75 validated in attempt 018 (0.5→0.75, +50%, gamma_v6 improvement). Modest further increase to 0.77 could strengthen chain-building consolidation without over-clustering. Conservative increment on proven improvement direction. Cap remains 4 junctions. Stacks with 087-096.",
-    "upload": "scissors:v13",
+    "version": "098",
+    "focus": "Scrambler blocked_neutrals weight increase",
+    "description": "Increased blocked_neutrals weight from 8.0 to 8.5 (+6%)",
+    "rationale": "Current weight 8.0 validated in attempt 015 (6.0→8.0). Conservative +6% increase to strengthen scrambler prioritization of expansion-blocking positions. Helps disrupt enemy territory claims and maintain board control. Stacks with 087-097.",
+    "upload": "scissors_v14:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 097. Clean baseline scoring weight exploration continuing. Awaiting tournament validation."
+    "note": "Scissors attempt 098. Clean baseline scrambler scoring weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
