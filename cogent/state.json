@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 33,
+      "attempts": 34,
       "improvements": 7,
-      "last_used": "20260404-098-testing"
+      "last_used": "20260404-099-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260404",
-    "version": "098",
-    "focus": "Scrambler blocked_neutrals weight increase",
-    "description": "Increased blocked_neutrals weight from 8.0 to 8.5 (+6%)",
-    "rationale": "Current weight 8.0 validated in attempt 015 (6.0→8.0). Conservative +6% increase to strengthen scrambler prioritization of expansion-blocking positions. Helps disrupt enemy territory claims and maintain board control. Stacks with 087-097.",
-    "upload": "scissors_v14:v1",
+    "version": "099",
+    "focus": "Scrambler threat_bonus weight increase",
+    "description": "Increased threat_bonus weight from 10.0 to 10.3 (+3%)",
+    "rationale": "Attempt 008 showed 10.0→15.0 (+50%) failed badly (-17%). Conservative +3% increase to modestly strengthen defensive prioritization of enemy junctions near friendly network without over-indexing. Helps protect valuable friendly junctions. Stacks with 087-098.",
+    "upload": "scissors_v15:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260404",
-    "note": "Scissors attempt 098. Clean baseline scrambler scoring weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 099. Clean baseline scrambler defensive weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

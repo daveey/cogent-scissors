@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (099) Scrambler threat_bonus weight increase (10.0→10.3): scissors_v15:v1 qualifying - modest defensive priority (+3%, stacks with 087-098)
 - [ ] (098) Scrambler blocked_neutrals weight increase (8.0→8.5): scissors_v14:v1 qualifying - stronger expansion-blocking (+6%, stacks with 087-097)
 - [ ] (097) Network bonus weight increase (0.75→0.77): scissors:v13 qualifying - stronger chain-building (+3%, stacks with 087-096)
 - [ ] (096) Expansion bonus weight increase (6.0→6.2): scissors:v12 qualifying - stronger expansion incentive (+3%, stacks with 087-095)
