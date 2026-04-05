@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (210) Aligner teammate penalty increase (9.27→9.29): scissors_v126:v1 qualifying - continued better coordination (+0.22%, stacks with 087-209)
 - [ ] (209) Aligner enemy AOE penalty increase (10.52→10.54): scissors_v125:v1 qualifying - continued stronger enemy avoidance (+0.19%, stacks with 087-208)
 - [ ] (208) Aligner network bonus weight increase (0.81→0.82): scissors_v124:v1 qualifying - continued network consolidation (+1.23%, stacks with 087-207)
 - [ ] (207) Aligner expansion bonus weight increase (6.38→6.4): scissors_v123:v1 qualifying - continued expansion emphasis (+0.31%, stacks with 087-206)
