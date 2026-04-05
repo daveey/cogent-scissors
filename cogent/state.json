@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 161,
+      "attempts": 162,
       "improvements": 7,
-      "last_used": "20260405-226-testing"
+      "last_used": "20260405-227-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "226",
-    "focus": "Aligner expansion bonus weight increase",
-    "description": "Increased expansion bonus weight from 6.4 to 6.42 (+0.31%)",
-    "rationale": "Expansion weight determines how strongly aligners prioritize junctions that unlock access to unreachable junctions. Conservative +0.31% increase builds on validated improvements 016, 082, 096, 135, 143, 167, 174, 207. Higher weight encourages strategic territory expansion. Stacks with 087-225.",
-    "upload": "scissors_v142:v1",
+    "version": "227",
+    "focus": "Aligner network bonus weight increase",
+    "description": "Increased network bonus weight from 0.82 to 0.83 (+1.22%)",
+    "rationale": "Network bonus weight determines how strongly aligners prioritize junctions near friendly junctions for chain-building consolidation. Conservative +1.22% increase builds on validated improvements 018, 081, 097, 134, 145, 175, 208. Higher weight encourages denser network formation. Stacks with 087-226.",
+    "upload": "scissors_v143:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 226. Clean baseline expansion weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 227. Clean baseline network weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

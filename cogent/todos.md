@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (227) Aligner network bonus weight increase (0.82→0.83): scissors_v143:v1 qualifying - continued network consolidation (+1.22%, stacks with 087-226)
 - [ ] (226) Aligner expansion bonus weight increase (6.4→6.42): scissors_v142:v1 qualifying - continued expansion emphasis (+0.31%, stacks with 087-225)
 - [ ] (225) Extractor memory steps increase (832→834): scissors_v141:v1 qualifying - continued longer extractor memory (+0.24%, stacks with 087-224)
 - [ ] (224) Target claim steps increase (32.85→32.9): scissors_v140:v1 qualifying - continued longer claim validity (+0.15%, stacks with 087-223)
