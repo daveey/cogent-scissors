@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 287,
+      "attempts": 288,
       "improvements": 7,
-      "last_used": "20260405-352-testing"
+      "last_used": "20260405-353-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "352",
-    "focus": "Miner HP threshold increase",
-    "description": "Increased miner HP threshold from 18.50 to 18.52 (+0.11%)",
-    "rationale": "Higher threshold allows miners to stay in field longer, improving resource gathering. Conservative +0.11% increase builds on validated improvements. Stacks with 087-351.",
-    "upload": "scissors_v268:v1",
+    "version": "353",
+    "focus": "Scrambler HP threshold increase",
+    "description": "Increased scrambler HP threshold from 34.13 to 34.15 (+0.059%)",
+    "rationale": "Higher threshold allows scramblers to stay in field longer, improving disruption. Conservative +0.059% increase builds on validated improvements. Stacks with 087-352.",
+    "upload": "scissors_v269:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 352. Clean baseline aggressive resource gathering tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 353. Clean baseline aggressive disruption tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
