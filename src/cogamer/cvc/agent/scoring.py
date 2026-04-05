@@ -93,7 +93,7 @@ def aligner_target_score(
             if source.entity_type != "hub"
             and manhattan(candidate.position, source.position) <= _JUNCTION_ALIGN_DISTANCE
         )
-        network_bonus = min(nearby_friendly, 5) * 0.98  # Increased cap from 4 to 5 for highly connected junction chains
+        network_bonus = min(nearby_friendly, 4) * 0.75  # Cap at 4 - increasing to 5 caused -37.2% regression
     teammate_penalty = 6.1 if teammate_closer else 0.0  # Reduced from 6.2 for more flexible coordination
     return (
         distance
