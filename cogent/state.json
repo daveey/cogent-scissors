@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 119,
+      "attempts": 120,
       "improvements": 7,
-      "last_used": "20260405-184-testing"
+      "last_used": "20260405-185-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "184",
-    "focus": "Junction align distance increase",
-    "description": "Increased junction align distance from 16.2 to 16.22 (+0.12%)",
-    "rationale": "Junction align distance determines maximum range for junction-junction alignment network. Conservative +0.12% increase builds on validated improvements 084 (15\u219216), 093 (16\u219216.16), 127 (16.16\u219216.2), 161 (16.2\u219216.22). Larger range enables better chain-building. Stacks with 087-183.",
-    "upload": "scissors_v100:v1",
+    "version": "185",
+    "focus": "Junction AOE range increase",
+    "description": "Increased junction AOE range from 10.4 to 10.42 (+0.19%)",
+    "rationale": "Junction AOE range determines area-of-effect for enemy detection and scrambler blocked_neutrals calculation. Conservative +0.19% increase builds on validated improvements 115 (10.0\u219210.3), 162 (10.3\u219210.4). Larger range improves threat detection and expansion blocking. Stacks with 087-184.",
+    "upload": "scissors_v101:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 184. Clean baseline junction align distance exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 185. Clean baseline AOE range exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
