@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (249) Aligner network bonus cap increase (4.36→4.38): scissors_v165:v1 qualifying - denser network clustering (+0.46%, stacks with 087-248)
 - [ ] (248) Aligner expansion bonus cap increase (37.25→37.3): scissors_v164:v1 qualifying - higher expansion bonus ceiling (+0.13%, stacks with 087-247)
 - [ ] (247) Aligner expansion bonus weight increase (6.42→6.44): scissors_v163:v1 qualifying - continued expansion emphasis (+0.31%, stacks with 087-246)
 - [ ] (246) Aligner network bonus weight increase (0.83→0.84): scissors_v162:v1 qualifying - stronger network consolidation (+1.2%, stacks with 087-245)
