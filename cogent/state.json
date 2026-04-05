@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 179,
+      "attempts": 180,
       "improvements": 7,
-      "last_used": "20260405-244-testing"
+      "last_used": "20260405-245-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "244",
-    "focus": "Scrambler blocked neutrals weight increase",
-    "description": "Increased scrambler blocked_neutrals from 8.62 to 8.64 (+0.23%)",
-    "rationale": "Scrambler blocked neutrals determines priority for disrupting neutral junction access. Conservative +0.23% increase builds on validated improvement 204. Higher weight increases expansion-blocking effectiveness. Stacks with 087-243.",
-    "upload": "scissors_v160:v1",
+    "version": "245",
+    "focus": "Scrambler corner pressure divisor reduction",
+    "description": "Reduced scrambler corner_pressure divisor from 7.68 to 7.66 (-0.26%)",
+    "rationale": "Scrambler corner pressure divisor controls pressure growth rate. Conservative -0.26% reduction builds on validated improvement 205. Lower divisor increases pressure growth, encouraging farther enemy disruption. Stacks with 087-244.",
+    "upload": "scissors_v161:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 244. Clean baseline scrambler expansion-blocking tuning. Milestone: 244 attempts. Awaiting tournament validation."
+    "note": "Scissors attempt 245. Clean baseline scrambler pressure growth tuning. Milestone: 245 attempts. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
