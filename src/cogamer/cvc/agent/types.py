@@ -44,7 +44,7 @@ _SCRAMBLER_EXPLORE_OFFSETS = (
 
 _ELEMENTS = ("carbon", "oxygen", "germanium", "silicon")
 _HP_THRESHOLDS = {
-    "miner": 18.52,  # Increased from 18.50 to 18.52 (+0.11%) for continued aggressive resource gathering
+    "miner": 18.54,  # Increased from 18.52 to 18.54 (+0.11%) for continued aggressive resource gathering
     "aligner": 45.78,  # Reduced from 45.80 to 45.78 (-0.044%) for continued aligner retreat tuning
     "scrambler": 34.15,  # Increased from 34.13 to 34.15 (+0.059%) for continued aggressive disruption
     "scout": 30,
