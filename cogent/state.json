@@ -6,9 +6,9 @@
       "last_used": null
     },
     "design": {
-      "attempts": 176,
+      "attempts": 177,
       "improvements": 14,
-      "last_used": "20260405-hotspot-base-102"
+      "last_used": "20260405-hotspot-mid-054"
     }
   },
   "testing_in_progress": null,
@@ -1082,6 +1082,33 @@
       },
       "status": "reverted",
       "notes": "Delta Cycle 53 - Over-aggression on far-range contested junctions. Lower penalty caused agents to fight for hotly contested far junctions instead of safer alternatives. Catastrophic on seed 44 (6.08). Confirms 10.3 is optimal."
+    },
+    {
+      "date": "20260405",
+      "version": "hotspot-mid-054-reverted",
+      "focus": "Mid-range hotspot penalty reduction",
+      "description": "Reduced mid-range (10<dist\u226415) hotspot_weight from 5.5 to 5.4 (-1.8%) to test if more aggressive mid-range contested junction targeting improves",
+      "result": "REGRESSION: avg 14.37 vs baseline 15.73 (-8.6%)",
+      "local_scores": {
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "scores": [
+          9.17,
+          14.76,
+          14.58,
+          16.67,
+          16.69
+        ],
+        "avg": 14.37,
+        "baseline": 15.73
+      },
+      "status": "reverted",
+      "notes": "Delta Cycle 54 - Over-aggression on mid-range contested junctions. Lower penalty caused agents to fight for mid-range hotspots instead of safer alternatives. Particularly damaging on seed 42 (9.17). Confirms 5.5 is optimal."
     }
   ],
   "mission": "arena",
