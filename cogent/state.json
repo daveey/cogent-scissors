@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 187,
+      "attempts": 188,
       "improvements": 7,
-      "last_used": "20260405-252-testing"
+      "last_used": "20260405-253-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "252",
-    "focus": "Aligner hotspot penalty cap increase",
-    "description": "Increased hotspot_penalty cap from 3.12 to 3.14 (+0.64%)",
-    "rationale": "Hotspot penalty cap limits maximum penalty for highly contested junctions. Conservative +0.64% increase builds on validated improvements 232. Higher cap allows stronger contested junction penalty. Stacks with 087-251.",
-    "upload": "scissors_v168:v1",
+    "version": "253",
+    "focus": "Aligner hotspot weight far-range reduction",
+    "description": "Reduced hotspot_weight far-range from 11.72 to 11.7 (-0.17%)",
+    "rationale": "Hotspot weight far-range determines penalty for contested junctions >15 from hub. Conservative -0.17% reduction builds on validated improvements 233. Lower weight reduces far-range contested penalty. Stacks with 087-252.",
+    "upload": "scissors_v169:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 252. Clean baseline contested junction penalty tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 253. Clean baseline far-range hotspot tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
