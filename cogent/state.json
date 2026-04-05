@@ -6,9 +6,9 @@
       "last_used": null
     },
     "design": {
-      "attempts": 174,
+      "attempts": 175,
       "improvements": 14,
-      "last_used": "20260405-hub-penalty-mid-143"
+      "last_used": "20260405-hub-penalty-far-291"
     }
   },
   "testing_in_progress": null,
@@ -1028,6 +1028,33 @@
       },
       "status": "reverted",
       "notes": "Delta Cycle 51 - Mid-range targeting imbalance. Lower penalty caused agents to over-extend into mid-range junctions at expense of safer near-hub or strategic far positions. Particularly damaging on seeds 43 and 45. Confirms 1.44 is optimal."
+    },
+    {
+      "date": "20260405",
+      "version": "hub-penalty-far-291-reverted",
+      "focus": "Mid-far hub penalty coefficient reduction",
+      "description": "Reduced mid-far (15<dist\u226425) hub penalty coefficient from 2.92 to 2.91 (-0.3%) to test if targeting slightly farther junctions improves",
+      "result": "REGRESSION: avg 13.26 vs baseline 15.73 (-15.7%)",
+      "local_scores": {
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "scores": [
+          15.31,
+          13.73,
+          12.54,
+          16.79,
+          7.91
+        ],
+        "avg": 13.26,
+        "baseline": 15.73
+      },
+      "status": "reverted",
+      "notes": "Delta Cycle 52 - Over-extension into mid-far junctions. Lower penalty caused agents to target junctions too far from hub, leading to inefficiency and increased risk. Particularly damaging on seed 46 (7.91). Confirms 2.92 is optimal."
     }
   ],
   "mission": "arena",
