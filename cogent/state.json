@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 160,
+      "attempts": 161,
       "improvements": 7,
-      "last_used": "20260405-225-testing"
+      "last_used": "20260405-226-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "225",
-    "focus": "Extractor memory steps increase",
-    "description": "Increased extractor memory steps from 832 to 834 (+0.24%)",
-    "rationale": "Extractor memory steps determines how long extractors remain valid for miner targeting. Conservative +0.24% increase builds on validated improvements 117, 165, 188. Longer memory improves miner efficiency by maintaining extractor validity longer. Stacks with 087-224.",
-    "upload": "scissors_v141:v1",
+    "version": "226",
+    "focus": "Aligner expansion bonus weight increase",
+    "description": "Increased expansion bonus weight from 6.4 to 6.42 (+0.31%)",
+    "rationale": "Expansion weight determines how strongly aligners prioritize junctions that unlock access to unreachable junctions. Conservative +0.31% increase builds on validated improvements 016, 082, 096, 135, 143, 167, 174, 207. Higher weight encourages strategic territory expansion. Stacks with 087-225.",
+    "upload": "scissors_v142:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 225. Clean baseline extractor memory exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 226. Clean baseline expansion weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
