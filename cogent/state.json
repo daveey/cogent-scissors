@@ -6,22 +6,12 @@
       "last_used": null
     },
     "design": {
-      "attempts": 138,
+      "attempts": 139,
       "improvements": 9,
       "last_used": "20260405-hub-camp-85-improved"
     }
   },
-  "testing_in_progress": {
-    "date": "20260405",
-    "version": "oscillation-unstick-3",
-    "focus": "Faster oscillation recovery",
-    "description": "Reduced oscillation unstick threshold from 4 to 3 steps (-25%)",
-    "baseline": 14.62,
-    "mission": "machina_1",
-    "seeds": "42-46",
-    "started": "11:11 UTC",
-    "estimated_duration": "50 minutes"
-  },
+  "testing_in_progress": null,
   "last_improvement": {
     "date": "20260405",
     "version": "hub-camp-85",
@@ -428,6 +418,14 @@
       "result": "INSUFFICIENT DATA: 0 scores, 5 timeouts",
       "scores_by_seed": {},
       "analysis": "Testing failed with 5 consecutive timeouts (seeds 42-44+). Only 0 of 5 seeds produced scores. Pattern differs from Cycle 10 (1 timeout, 4 scores). Insufficient data to validate change. Reverted conservatively per improve.md principle. Possible causes: (1) code change introduced hanging behavior, (2) infrastructure degradation, (3) random timeout cluster. Need investigation before retrying stall threshold changes."
+    },
+    {
+      "date": "20260405",
+      "version": "oscillation-unstick-3-reverted",
+      "focus": "Faster oscillation recovery",
+      "description": "Reduced oscillation unstick threshold from 4 to 3 steps (-25%)",
+      "result": "TIMEOUT PATTERN: 2 timeouts, 0 scores",
+      "analysis": "Same timeout pattern as Cycle 11 (stall 10). Both timing-related unstick threshold reductions cause catastrophic timeouts. 2 seeds failed to produce scores. Pattern suggests: reducing recovery thresholds (stall 12\u219210, oscillation 4\u21923) causes agents to unstick too aggressively, leading to pathological behavior or infinite loops. Reverted immediately. RECOMMENDATION: Do not reduce unstick thresholds further. Consider increasing them or investigating root cause of stalls/oscillations instead."
     }
   ],
   "mission": "machina_1",
