@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 386,
+      "attempts": 389,
       "improvements": 7,
-      "last_used": "20260405-452-testing"
+      "last_used": "20260405-455-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "452",
-    "focus": "Scrambler HP threshold increase",
-    "description": "Increased scrambler HP threshold from 34.19 to 34.21 (+0.059%)",
-    "rationale": "Scrambler HP retreat threshold controls when scramblers flee from danger. Higher threshold allows scramblers to stay aggressive longer during disruption. Conservative +0.059% increase builds on validated improvements. Stacks with 087-451.",
-    "upload": "scissors_v368:v1",
+    "version": "455",
+    "focus": "Scrambler heart batch target increase",
+    "description": "Increased scrambler heart batch target from 3.46 to 3.48 (+0.58%)",
+    "rationale": "Heart batch target controls how many hearts scramblers collect before deploying. Higher value improves persistence and survival during disruption missions. Conservative +0.58% increase builds on validated improvements. Stacks with 087-454.",
+    "upload": "scissors_v371:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 452. Clean baseline aggressive disruption tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 455. Clean baseline scrambler persistence tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
