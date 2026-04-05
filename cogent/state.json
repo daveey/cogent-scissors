@@ -13,14 +13,14 @@
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "441",
-    "focus": "Network bonus cap increase",
-    "description": "Increased network bonus cap from 4.48 to 4.50 (+0.45%)",
-    "rationale": "Network bonus cap limits maximum network consolidation bonus. Higher value encourages denser clustering around existing junctions. Conservative +0.45% increase builds on validated improvements. Stacks with 087-440.",
-    "upload": "scissors_v357:v1",
+    "version": "442",
+    "focus": "Teammate penalty increase",
+    "description": "Increased teammate penalty from 9.43 to 9.45 (+0.21%)",
+    "rationale": "Teammate penalty discourages multiple aligners from targeting the same junction when a teammate is closer. Higher value improves coordination. Conservative +0.21% increase builds on validated improvements. Stacks with 087-441.",
+    "upload": "scissors_v358:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 441. Clean baseline denser network clustering tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 442. Clean baseline coordination tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
