@@ -22,8 +22,8 @@ _STALL_UNSTICK_STEPS = 12
 
 
 def check_hub_camp_heal(ctx: TickContext, role: str, engine: CvcEngine) -> tuple[Action, str] | None:
-    """Stay at hub until full HP in early game."""
-    if ctx.hp < 100 and ctx.hp > 0 and ctx.hub is not None and ctx.hub_distance <= 3 and ctx.step <= 20:
+    """Stay at hub until sufficient HP in early game."""
+    if ctx.hp < 80 and ctx.hp > 0 and ctx.hub is not None and ctx.hub_distance <= 3 and ctx.step <= 20:
         return engine._hold(summary="hub_camp_heal", vibe="change_vibe_default")
     return None
 

@@ -11,7 +11,16 @@
       "last_used": "20260405-scrambler-hp-25-cycle3-failure"
     }
   },
-  "testing_in_progress": null,
+  "testing_in_progress": {
+    "date": "20260405",
+    "version": "hub-camp-80",
+    "focus": "Early game efficiency - hub camp threshold",
+    "description": "Reduced hub camp HP threshold from 100 to 80 to start productive work 10-15 steps earlier",
+    "baseline": 9.74,
+    "validation_method": "tournament",
+    "reason": "Local cogames testing broken (3 consecutive cycles failed). Using tournament validation.",
+    "started": "05:40 UTC"
+  },
   "last_improvement": {
     "date": "20260404",
     "version": "018",
