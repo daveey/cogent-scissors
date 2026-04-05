@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 206,
+      "attempts": 207,
       "improvements": 7,
-      "last_used": "20260405-271-testing"
+      "last_used": "20260405-272-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "271",
-    "focus": "Aligner hub penalty 15-25 base reduction",
-    "description": "Reduced hub penalty 15-25 base from 9.66 to 9.64 (-0.21%)",
-    "rationale": "Hub penalty 15-25 base determines starting penalty for junctions 15-25 from hub. Conservative -0.21% reduction builds on validated improvements 239. Lower base reduces penalty floor in mid-range. Stacks with 087-270.",
-    "upload": "scissors_v187:v1",
+    "version": "272",
+    "focus": "Aligner hub penalty 15-25 multiplier reduction",
+    "description": "Reduced hub penalty 15-25 multiplier from 2.89 to 2.88 (-0.35%)",
+    "rationale": "Hub penalty 15-25 multiplier determines penalty rate for junctions 15-25 from hub. Conservative -0.35% reduction builds on validated improvements 240. Lower multiplier reduces penalty growth in mid-range. Stacks with 087-271.",
+    "upload": "scissors_v188:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 271. Clean baseline 15-25 base exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 272. Clean baseline 15-25 multiplier exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
