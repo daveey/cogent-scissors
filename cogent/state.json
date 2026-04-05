@@ -6,7 +6,7 @@
       "last_used": null
     },
     "design": {
-      "attempts": 158,
+      "attempts": 159,
       "improvements": 13,
       "last_used": "20260405-hub-camp-dist-2"
     }
@@ -629,6 +629,21 @@
         "46": 6.59
       },
       "analysis": "Seed 46 collapsed (6.59, -58%). Increasing retreat distance from 2 to 3 makes agents at distance 3 move toward hub instead of holding, which disrupts retreat behavior. Distance 2 is optimal - agents close to hub (\u22642) should hold and heal, agents farther (>2) should move closer. All retreat/distance parameters are precisely calibrated."
+    },
+    {
+      "date": "20260405",
+      "version": "hub-camp-step-22-reverted",
+      "focus": "Early game timing - hub camp step limit",
+      "description": "Increased hub camp step limit from 20 to 22 (+10%) to give agents slightly more early healing time",
+      "result": "REGRESSION: avg 15.12 vs baseline 15.52 (-2.6%)",
+      "scores_by_seed": {
+        "42": 16.12,
+        "43": 12.53,
+        "44": 14.29,
+        "45": 15.79,
+        "46": 16.88
+      },
+      "analysis": "Modest regression. Increasing step limit from 20 to 22 delays agent activation without sufficient benefit. Pattern: Cycle 15 (20\u219215, reverted), this cycle (20\u219222, reverted) confirm 20 steps is optimal hub camp duration. Any deviation in either direction causes regression."
     }
   ],
   "mission": "arena",
