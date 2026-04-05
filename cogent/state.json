@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 361,
+      "attempts": 362,
       "improvements": 7,
-      "last_used": "20260405-426-testing"
+      "last_used": "20260405-427-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "426",
-    "focus": "Claimed target penalty reduction",
-    "description": "Reduced claimed target penalty from 11.13 to 11.11 (-0.18%)",
-    "rationale": "Claimed target penalty prevents agents from choosing targets already claimed by teammates. Lower value allows more flexible claim override when agent is much closer or target is urgent. Conservative -0.18% reduction builds on validated improvements. Stacks with 087-425.",
-    "upload": "scissors_v342:v1",
+    "version": "427",
+    "focus": "Target claim steps increase",
+    "description": "Increased target claim steps from 33.15 to 33.20 (+0.15%)",
+    "rationale": "Target claim steps determines how long a junction claim remains valid before expiring. Higher value gives agents more time to reach claimed targets, reducing duplicate effort. Conservative +0.15% increase builds on validated improvements. Stacks with 087-426.",
+    "upload": "scissors_v343:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 426. Clean baseline flexible claim override tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 427. Clean baseline longer claim validity tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
