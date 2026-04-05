@@ -6,18 +6,18 @@
       "last_used": null
     },
     "design": {
-      "attempts": 141,
-      "improvements": 10,
-      "last_used": "20260405-early-retreat-120"
+      "attempts": 142,
+      "improvements": 11,
+      "last_used": "20260405-hub-camp-15"
     }
   },
   "testing_in_progress": null,
   "last_improvement": {
     "date": "20260405",
-    "version": "early-retreat-120",
-    "focus": "Early game timing - early retreat window",
-    "description": "Reduced early retreat window from 150 steps to 120 steps (-20%) to transition agents from survival mode to productive operation earlier",
-    "result": "IMPROVEMENT: avg 14.19 vs baseline 12.96 (+9.5%)",
+    "version": "hub-camp-15",
+    "focus": "Early game timing - hub camp duration",
+    "description": "Reduced hub camp step limit from 20 to 15 steps (-25%) to get agents into action earlier",
+    "result": "MARGINAL: avg 14.28 vs baseline 14.19 (+0.6%)",
     "local_scores": {
       "seeds": [
         42,
@@ -27,17 +27,17 @@
         46
       ],
       "scores": [
-        16.01,
-        13.95,
-        12.54,
-        11.76,
-        16.67
+        10.88,
+        15.33,
+        12.07,
+        15.78,
+        17.33
       ],
-      "avg": 14.19,
-      "baseline": 12.96
+      "avg": 14.28,
+      "baseline": 14.19
     },
     "status": "local-only",
-    "notes": "Delta Cycle 14 - Second successful improve.md cycle on arena mission. Follows Cycle 10 pattern of 'earlier productive work'. All 5 seeds completed successfully. Cannot tournament-validate due to missing COGAMES_TOKEN."
+    "notes": "Delta Cycle 15 - Marginal improvement with high variance (seed 42: -32%, seed 45: +34%). Technically improves average but individual seed performance highly unstable. Follows Cycle 10/14 'earlier productive work' pattern but shows diminishing returns."
   },
   "failed_attempts": [
     {
@@ -456,7 +456,7 @@
     "notes": "Delta Cycle 10 breakthrough baseline. Established after resolving timeout issues (10-min timeout required). 2-team format, 16 agents. Target mission for delta improve.md cycles due to four_score timeout issues (>20 min per seed)."
   },
   "baseline_arena": {
-    "avg": 14.19,
+    "avg": 14.28,
     "seeds": [
       42,
       43,
@@ -465,13 +465,13 @@
       46
     ],
     "scores": [
-      16.01,
-      13.95,
-      12.54,
-      11.76,
-      16.67
+      10.88,
+      15.33,
+      12.07,
+      15.78,
+      17.33
     ],
     "date": "20260405",
-    "notes": "Updated after Cycle 14 early retreat window improvement."
+    "notes": "Updated after Cycle 15 hub camp duration reduction. High variance observed."
   }
 }
