@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 154,
+      "attempts": 155,
       "improvements": 7,
-      "last_used": "20260405-219-testing"
+      "last_used": "20260405-220-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "219",
-    "focus": "Scrambler heart batch target increase",
-    "description": "Increased scrambler heart batch target from 3.32 to 3.34 (+0.60%)",
-    "rationale": "Scrambler heart batch target determines persistence before role change. Conservative +0.60% increase builds on validated improvements 094, 118, 159, 182. Higher target increases scrambler longevity and enemy disruption. Stacks with 087-218.",
-    "upload": "scissors_v135:v1",
+    "version": "220",
+    "focus": "Hub align distance increase",
+    "description": "Increased hub align distance from 26.42 to 26.44 (+0.08%)",
+    "rationale": "Hub align distance determines maximum range for hub-junction alignment network. Conservative +0.08% increase builds on validated improvements 092, 126, 159, 183. Larger range allows more distant junctions to benefit from hub connectivity. Stacks with 087-219.",
+    "upload": "scissors_v136:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 219. Clean baseline scrambler persistence exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 220. Clean baseline hub align distance exploration. Milestone: 220 total attempts. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
