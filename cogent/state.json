@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 283,
+      "attempts": 284,
       "improvements": 7,
-      "last_used": "20260405-348-testing"
+      "last_used": "20260405-349-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "348",
-    "focus": "Scrambler corner pressure divisor reduction",
-    "description": "Reduced scrambler corner pressure divisor from 7.64 to 7.62 (-0.26%)",
-    "rationale": "Lower divisor increases corner pressure growth rate with distance from hub, encouraging far-corner disruption. Conservative -0.26% reduction builds on validated improvements. Stacks with 087-347.",
-    "upload": "scissors_v264:v1",
+    "version": "349",
+    "focus": "Scrambler threat bonus increase",
+    "description": "Increased scrambler threat bonus from 10.46 to 10.48 (+0.19%)",
+    "rationale": "Higher threat bonus prioritizes enemy junctions near friendly network, improving defensive disruption. Conservative +0.19% increase builds on validated improvements. Stacks with 087-348.",
+    "upload": "scissors_v265:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 348. Clean baseline faster pressure growth tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 349. Clean baseline defensive priority tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
