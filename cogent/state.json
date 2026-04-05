@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 225,
+      "attempts": 226,
       "improvements": 7,
-      "last_used": "20260405-290-testing"
+      "last_used": "20260405-291-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "290",
-    "focus": "Scrambler heart batch target increase",
-    "description": "Increased scrambler heart batch target from 3.36 to 3.38 (+0.60%)",
-    "rationale": "Scrambler heart batch target determines respawn heart requirement. Conservative +0.60% increase builds on validated improvements 261. Higher target requires more hearts for respawn. Stacks with 087-289.",
-    "upload": "scissors_v206:v1",
+    "version": "291",
+    "focus": "Hub align distance increase",
+    "description": "Increased _HUB_ALIGN_DISTANCE from 26.46 to 26.48 (+0.08%)",
+    "rationale": "Hub align distance determines junction alignment range from hub. Conservative +0.08% increase builds on validated improvements 262. Higher distance extends hub reach. Stacks with 087-290.",
+    "upload": "scissors_v207:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 290. Clean baseline scrambler persistence tuning. MILESTONE: 290 attempts. Awaiting tournament validation."
+    "note": "Scissors attempt 291. Clean baseline hub reach tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
