@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 99,
+      "attempts": 100,
       "improvements": 7,
-      "last_used": "20260405-164-testing"
+      "last_used": "20260405-165-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "164",
-    "focus": "Target claim steps increase",
-    "description": "Increased target claim steps from 32.5 to 32.8 (+1%)",
-    "rationale": "Target claim steps determines how long claims remain valid. Conservative +1% increase builds on attempts 091 (30→32), 124 (32→32.5). Extends claim validity duration slightly, reducing claim churn and improving coordination stability when agents are farther from targets. Stacks with 087-163.",
-    "upload": "scissors_v80:v1",
+    "version": "165",
+    "focus": "Extractor memory steps increase",
+    "description": "Increased extractor memory steps from 820 to 830 (+1.2%)",
+    "rationale": "Extractor memory steps determines how long miners remember extractor locations. Conservative +1.2% increase builds on attempt 117 (800→820). Extends memory duration, reducing redundant exploration and improving resource gathering efficiency. Stacks with 087-164.",
+    "upload": "scissors_v81:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 164. Clean baseline target claim steps exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 165. Clean baseline extractor memory steps exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
