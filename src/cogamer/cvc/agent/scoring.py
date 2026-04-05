@@ -70,7 +70,7 @@ def aligner_target_score(
         elif hub_dist > 15:
             hub_penalty = (hub_dist - 15) * 2.89 + 9.66  # Reduced multiplier from 2.9 to 2.89 (-0.34%) for 15-25 range
         elif hub_dist > 10:
-            hub_penalty = (hub_dist - 10) * 1.42 + 1.92  # Reduced multiplier from 1.43 to 1.42 (-0.70%) for 10-15 range
+            hub_penalty = (hub_dist - 10) * 1.42 + 1.91  # Reduced base from 1.92 to 1.91 (-0.52%) for 10-15 range base
         else:
             hub_penalty = hub_dist * 0.271  # Reduced from 0.272 to 0.271 (-0.37%) for further tighter hub clustering
     # Reduce hotspot penalty for hub-proximal junctions (worth defending)
