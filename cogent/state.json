@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 211,
+      "attempts": 212,
       "improvements": 7,
-      "last_used": "20260405-276-testing"
+      "last_used": "20260405-277-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "276",
-    "focus": "Aligner expansion bonus weight increase",
-    "description": "Increased expansion bonus weight from 6.44 to 6.46 (+0.31%)",
-    "rationale": "Expansion bonus weight determines priority for junctions that unlock unreachable entities. Conservative +0.31% increase builds on validated improvements 247. Higher weight strengthens expansion emphasis. Stacks with 087-275.",
-    "upload": "scissors_v192:v1",
+    "version": "277",
+    "focus": "Aligner expansion bonus cap increase",
+    "description": "Increased expansion bonus cap from 37.3 to 37.35 (+0.13%)",
+    "rationale": "Expansion bonus cap limits maximum bonus for high-expansion junctions. Conservative +0.13% increase builds on validated improvements 248. Higher cap allows stronger expansion bonus ceiling. Stacks with 087-276.",
+    "upload": "scissors_v193:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 276. Clean baseline expansion emphasis tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 277. Clean baseline expansion ceiling tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
