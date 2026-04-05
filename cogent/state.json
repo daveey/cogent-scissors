@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 375,
+      "attempts": 376,
       "improvements": 7,
-      "last_used": "20260405-440-testing"
+      "last_used": "20260405-441-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "440",
-    "focus": "Network bonus weight increase",
-    "description": "Increased network bonus weight from 0.89 to 0.90 (+1.12%)",
-    "rationale": "Network bonus weight encourages aligners to build chains near friendly junctions. Higher value strengthens consolidation incentive for denser networks. Conservative +1.12% increase builds on validated improvements. Stacks with 087-439.",
-    "upload": "scissors_v356:v1",
+    "version": "441",
+    "focus": "Network bonus cap increase",
+    "description": "Increased network bonus cap from 4.48 to 4.50 (+0.45%)",
+    "rationale": "Network bonus cap limits maximum network consolidation bonus. Higher value encourages denser clustering around existing junctions. Conservative +0.45% increase builds on validated improvements. Stacks with 087-440.",
+    "upload": "scissors_v357:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 440 [MILESTONE: 440 attempts]. Clean baseline stronger network consolidation tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 441. Clean baseline denser network clustering tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
