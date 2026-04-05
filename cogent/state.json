@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 224,
+      "attempts": 225,
       "improvements": 7,
-      "last_used": "20260405-289-testing"
+      "last_used": "20260405-290-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "289",
-    "focus": "Aligner heart batch target increase",
-    "description": "Increased aligner heart batch target from 3.36 to 3.38 (+0.60%)",
-    "rationale": "Aligner heart batch target determines respawn heart requirement. Conservative +0.60% increase builds on validated improvements 260. Higher target requires more hearts for respawn. Stacks with 087-288.",
-    "upload": "scissors_v205:v1",
+    "version": "290",
+    "focus": "Scrambler heart batch target increase",
+    "description": "Increased scrambler heart batch target from 3.36 to 3.38 (+0.60%)",
+    "rationale": "Scrambler heart batch target determines respawn heart requirement. Conservative +0.60% increase builds on validated improvements 261. Higher target requires more hearts for respawn. Stacks with 087-289.",
+    "upload": "scissors_v206:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 289. Clean baseline aligner persistence tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 290. Clean baseline scrambler persistence tuning. MILESTONE: 290 attempts. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
