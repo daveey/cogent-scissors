@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 482,
+      "attempts": 483,
       "improvements": 7,
-      "last_used": "20260405-548-testing"
+      "last_used": "20260405-549-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "548",
-    "focus": "Scrambler blocked neutrals weight increase",
-    "description": "Increased scrambler blocked neutrals weight from 8.78 to 8.80 (+0.23%)",
-    "rationale": "Blocked neutrals weight prioritizes scramblers targeting enemy junctions that block neutral expansion. Higher weight improves expansion-blocking. Conservative +0.23% increase builds on validated improvements. Stacks with 087-547.",
-    "upload": "scissors_v465:v1",
+    "version": "549",
+    "focus": "Aligner HP threshold reduction",
+    "description": "Reduced aligner HP threshold from 45.70 to 45.68 (-0.044%)",
+    "rationale": "HP threshold controls when aligners retreat to safety. Lower threshold allows slightly more aggressive alignment before retreating. Conservative -0.044% reduction builds on validated improvements. Stacks with 087-548.",
+    "upload": "scissors_v466:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 548. Clean baseline stronger expansion-blocking. Awaiting tournament validation."
+    "note": "Scissors attempt 549. Clean baseline more aggressive aligner. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
