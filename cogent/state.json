@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 88,
+      "attempts": 89,
       "improvements": 7,
-      "last_used": "20260405-153-testing"
+      "last_used": "20260405-154-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "153",
-    "focus": "Aligner hotspot penalty cap increase",
-    "description": "Increased hotspot_penalty cap from 3.06 to 3.09 (+1%)",
-    "rationale": "Hotspot penalty cap determines maximum contested enemies counted in penalty calculation. Conservative +1% increase builds on attempt 133 (3.0→3.06). Allows slightly higher penalty for extremely heavily contested junctions (4+ enemies), making agents more cautious about extreme hotspots in four_score 4-team format. Stacks with 087-152.",
-    "upload": "scissors_v69:v1",
+    "version": "154",
+    "focus": "Miner HP threshold increase",
+    "description": "Increased miner HP threshold from 18.3 to 18.4 (+0.5%)",
+    "rationale": "Miner HP threshold determines when miners retreat for safety. Conservative +0.5% increase builds on attempts 087 (15→18), 121 (18→18.3). Allows miners to stay in field slightly longer before retreating, gathering more resources at marginally higher risk. Stacks with 087-153.",
+    "upload": "scissors_v70:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 153. Clean baseline hotspot penalty cap exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 154. Clean baseline miner HP threshold exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
