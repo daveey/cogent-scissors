@@ -6,22 +6,12 @@
       "last_used": null
     },
     "design": {
-      "attempts": 139,
+      "attempts": 140,
       "improvements": 9,
       "last_used": "20260405-hub-camp-85-improved"
     }
   },
-  "testing_in_progress": {
-    "date": "20260405",
-    "version": "early-retreat-45",
-    "focus": "Conservative early game survival",
-    "description": "Increased early retreat HP threshold from 40 to 45 (+12.5%)",
-    "baseline": 14.62,
-    "mission": "machina_1",
-    "seeds": "42-46",
-    "started": "11:39 UTC",
-    "estimated_duration": "50 minutes"
-  },
+  "testing_in_progress": null,
   "last_improvement": {
     "date": "20260405",
     "version": "hub-camp-85",
@@ -436,6 +426,14 @@
       "description": "Reduced oscillation unstick threshold from 4 to 3 steps (-25%)",
       "result": "TIMEOUT PATTERN: 2 timeouts, 0 scores",
       "analysis": "Same timeout pattern as Cycle 11 (stall 10). Both timing-related unstick threshold reductions cause catastrophic timeouts. 2 seeds failed to produce scores. Pattern suggests: reducing recovery thresholds (stall 12\u219210, oscillation 4\u21923) causes agents to unstick too aggressively, leading to pathological behavior or infinite loops. Reverted immediately. RECOMMENDATION: Do not reduce unstick thresholds further. Consider increasing them or investigating root cause of stalls/oscillations instead."
+    },
+    {
+      "date": "20260405",
+      "version": "early-retreat-45-reverted",
+      "focus": "Conservative early game survival",
+      "description": "Increased early retreat HP threshold from 40 to 45 (+12.5%)",
+      "result": "TIMEOUT PATTERN: 2 timeouts, 0 scores",
+      "analysis": "Despite following Cycle 10 early-game timing pattern, multiple timeouts observed (2). Pattern differs from Cycle 10 (1 timeout, 4 scores = viable). If this follows Cycles 11-12 catastrophic pattern (multiple consecutive timeouts), suggests infrastructure or environmental issue rather than code-specific problem. Reverted conservatively."
     }
   ],
   "mission": "machina_1",
