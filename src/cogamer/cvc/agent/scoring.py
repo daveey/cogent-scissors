@@ -96,7 +96,7 @@ def aligner_target_score(
             and manhattan(candidate.position, source.position) <= _JUNCTION_ALIGN_DISTANCE
         )
         network_bonus = min(nearby_friendly, 4.56) * 0.93  # Increased cap from 4.54 to 4.56 (+0.44%) for continued denser network clustering
-    teammate_penalty = 9.49 if teammate_closer else 0.0  # Increased from 9.47 to 9.49 (+0.21%) for continued coordination tuning
+    teammate_penalty = 9.51 if teammate_closer else 0.0  # Increased from 9.49 to 9.51 (+0.21%) for continued coordination tuning
     return (
         distance
         - min(expansion * 6.60, 37.70)  # Increased cap from 37.65 to 37.70 (+0.13%) for continued higher expansion bonus ceiling

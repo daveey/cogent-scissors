@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 474,
+      "attempts": 475,
       "improvements": 7,
-      "last_used": "20260405-540-testing"
+      "last_used": "20260405-541-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "540",
-    "focus": "Network bonus cap increase",
-    "description": "Increased network bonus cap from 4.54 to 4.56 (+0.44%)",
-    "rationale": "Network bonus cap limits maximum network bonus. Higher cap allows denser network clustering for junctions with many nearby friendlies. Conservative +0.44% increase builds on validated improvements. Stacks with 087-539.",
-    "upload": "scissors_v457:v1",
+    "version": "541",
+    "focus": "Teammate penalty increase",
+    "description": "Increased teammate penalty from 9.49 to 9.51 (+0.21%)",
+    "rationale": "Teammate penalty discourages agents from targeting junctions when teammates are closer. Higher penalty improves coordination. Conservative +0.21% increase builds on validated improvements. Stacks with 087-540.",
+    "upload": "scissors_v458:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 540. Clean baseline denser network clustering. Awaiting tournament validation. [MILESTONE: 540 attempts]"
+    "note": "Scissors attempt 541. Clean baseline improved coordination. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

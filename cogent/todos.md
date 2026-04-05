@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (541) Teammate penalty increase (9.49→9.51): scissors_v458:v1 qualifying - continued coordination tuning (+0.21%, stacks with 087-540)
 - [ ] (540) Network bonus cap increase (4.54→4.56): scissors_v457:v1 qualifying - continued denser network clustering (+0.44%, stacks with 087-539) [MILESTONE: 540 attempts]
 - [ ] (539) Network bonus weight increase (0.92→0.93): scissors_v456:v1 qualifying - continued stronger network consolidation (+1.09%, stacks with 087-538)
 - [ ] (538) Hotspot penalty cap increase (3.30→3.32): scissors_v455:v1 qualifying - continued contested junction penalty cap tuning (+0.61%, stacks with 087-537)
