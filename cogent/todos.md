@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (284) Aligner hotspot weight near-hub reduction (1.82→1.8): scissors_v200:v1 qualifying - continued near-hub recapture (-1.10%, stacks with 087-283)
 - [ ] (283) Aligner hotspot weight mid-range reduction (5.64→5.62): scissors_v199:v1 qualifying - continued mid-range contested tuning (-0.35%, stacks with 087-282)
 - [ ] (282) Aligner hotspot weight far-range reduction (11.7→11.68): scissors_v198:v1 qualifying - further far-range contested junction tuning (-0.17%, stacks with 087-281)
 - [ ] (281) Aligner hotspot penalty cap increase (3.14→3.16): scissors_v197:v1 qualifying - continued contested junction penalty cap (+0.64%, stacks with 087-280)
