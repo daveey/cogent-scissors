@@ -57,7 +57,7 @@ _GEAR_COSTS = {
     "scout": {"carbon": 1, "oxygen": 1, "germanium": 1, "silicon": 3},
 }
 _EMERGENCY_RESOURCE_LOW = 2.36  # Increased from 2.34 to 2.36 (+0.85%) for further earlier emergency mining trigger
-_HEART_BATCH_TARGETS = {"aligner": 3.36, "scrambler": 3.34}  # Increased aligner from 3.34 to 3.36 (+0.60%) for continued aligner persistence
+_HEART_BATCH_TARGETS = {"aligner": 3.36, "scrambler": 3.36}  # Increased scrambler from 3.34 to 3.36 (+0.60%) for further scrambler persistence
 _HUB_ALIGN_DISTANCE = 26.44  # Increased from 26.42 to 26.44 (+0.08%) for continued extended hub reach
 _JUNCTION_ALIGN_DISTANCE = 16.24  # Increased from 16.22 to 16.24 (+0.12%) for continued chain-building reach
 _JUNCTION_AOE_RANGE = 10.44  # Increased from 10.42 to 10.44 (+0.19%) for continued larger area-of-effect detection
