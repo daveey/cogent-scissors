@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 141,
+      "attempts": 142,
       "improvements": 7,
-      "last_used": "20260405-206-testing"
+      "last_used": "20260405-207-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "206",
-    "focus": "Scrambler corner pressure cap increase",
-    "description": "Increased corner pressure cap from 10.7 to 10.72 (+0.19%)",
-    "rationale": "Corner pressure cap determines maximum far-enemy disruption incentive. Conservative +0.19% increase builds on validated improvements 100 (10.0\u219210.5), 136 (10.5\u219210.6), 173 (10.6\u219210.7). Higher cap allows slightly stronger incentive for targeting extremely distant enemy junctions. Stacks with 087-205.",
-    "upload": "scissors_v122:v1",
+    "version": "207",
+    "focus": "Aligner expansion bonus weight increase",
+    "description": "Increased expansion bonus weight from 6.38 to 6.4 (+0.31%)",
+    "rationale": "Expansion weight determines how strongly aligners prioritize junctions that unlock access to unreachable junctions. Conservative +0.31% increase builds on validated improvements 016, 082, 096, 135, 143, 167, 174. Higher weight encourages strategic territory expansion. Stacks with 087-206.",
+    "upload": "scissors_v123:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 206. Clean baseline corner pressure cap exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 207. Clean baseline expansion weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
