@@ -6,9 +6,9 @@
       "last_used": null
     },
     "design": {
-      "attempts": 168,
+      "attempts": 169,
       "improvements": 14,
-      "last_used": "20260405-enemy-aoe-085"
+      "last_used": "20260405-teammate-penalty-060"
     }
   },
   "testing_in_progress": null,
@@ -866,6 +866,33 @@
       },
       "status": "reverted",
       "notes": "Delta Cycle 45 - Testing more aggressive targeting in enemy-controlled areas backfired. Lower penalty led agents into dangerous positions, particularly damaging on seed 43 (6.73). Confirms 8.6 is optimal."
+    },
+    {
+      "date": "20260405",
+      "version": "teammate-penalty-060-reverted",
+      "focus": "Teammate coordination penalty reduction",
+      "description": "Reduced aligner teammate_penalty from 6.1 to 6.0 (-1.6%) to test if more flexible coordination improves performance",
+      "result": "MAJOR REGRESSION: avg 9.81 vs baseline 15.73 (-37.6%)",
+      "local_scores": {
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "scores": [
+          7.51,
+          12.37,
+          6.21,
+          5.6,
+          17.38
+        ],
+        "avg": 9.81,
+        "baseline": 15.73
+      },
+      "status": "reverted",
+      "notes": "Delta Cycle 46 - Major coordination breakdown. Lower teammate penalty caused agents to compete for same targets, leading to massive efficiency loss across most seeds. Confirms 6.1 is optimal for preventing target contention."
     }
   ],
   "mission": "arena",
