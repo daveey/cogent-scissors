@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 367,
+      "attempts": 368,
       "improvements": 7,
-      "last_used": "20260405-432-testing"
+      "last_used": "20260405-433-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "432",
-    "focus": "Hub penalty 15-25 range base reduction",
-    "description": "Reduced hub penalty 15-25 range base from 9.60 to 9.59 (-0.10%)",
-    "rationale": "Hub penalty 15-25 range base affects junctions 15-25 steps from hub. Lower value encourages wider expansion beyond mid-range for increased territorial coverage. Conservative -0.10% reduction builds on validated improvements. Stacks with 087-431.",
-    "upload": "scissors_v348:v1",
+    "version": "433",
+    "focus": "Hub penalty 15-25 range multiplier reduction",
+    "description": "Reduced hub penalty 15-25 range multiplier from 2.84 to 2.83 (-0.35%)",
+    "rationale": "Hub penalty 15-25 range multiplier affects rate of penalty growth for junctions 15-25 steps from hub. Lower value softens penalty gradient for wider expansion. Conservative -0.35% reduction builds on validated improvements. Stacks with 087-432.",
+    "upload": "scissors_v349:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 432. Clean baseline 15-25 range base tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 433. Clean baseline 15-25 range multiplier tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
