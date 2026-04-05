@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 370,
+      "attempts": 371,
       "improvements": 7,
-      "last_used": "20260405-435-testing"
+      "last_used": "20260405-436-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "435",
-    "focus": "Hub penalty far-range base reduction",
-    "description": "Reduced hub penalty far-range base from 48.89 to 48.88 (-0.02%)",
-    "rationale": "Hub penalty far-range base affects junctions beyond 25 steps from hub. Lower value slightly reduces extreme distance penalties. Conservative -0.02% reduction builds on validated improvements. Stacks with 087-434.",
-    "upload": "scissors_v351:v1",
+    "version": "436",
+    "focus": "Hotspot weight far-range reduction",
+    "description": "Reduced hotspot weight far-range from 11.60 to 11.58 (-0.17%)",
+    "rationale": "Hotspot weight far-range affects contested junctions beyond 15 steps from hub. Lower value reduces avoidance of contested far junctions, encouraging expansion into contested areas. Conservative -0.17% reduction builds on validated improvements. Stacks with 087-435.",
+    "upload": "scissors_v352:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 435. Clean baseline far-range base tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 436. Clean baseline far-range contested junction tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
