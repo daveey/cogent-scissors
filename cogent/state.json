@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 101,
+      "attempts": 102,
       "improvements": 7,
-      "last_used": "20260405-166-testing"
+      "last_used": "20260405-167-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "166",
-    "focus": "Aligner network bonus weight increase",
-    "description": "Increased network bonus weight from 0.79 to 0.8 (+1.3%)",
-    "rationale": "Network bonus weight rewards junctions near existing friendly junctions. Conservative +1.3% increase builds on validated 018 (0.5→0.75) and attempts 097 (0.75→0.77), 134 (0.77→0.78), 145 (0.78→0.79). Continues emphasis on dense network formation for territorial control. Stacks with 087-165.",
-    "upload": "scissors_v82:v1",
+    "version": "167",
+    "focus": "Aligner expansion bonus weight increase",
+    "description": "Increased expansion bonus weight from 6.3 to 6.35 (+0.8%)",
+    "rationale": "Expansion bonus rewards junctions that unlock new territory. Conservative +0.8% increase builds on validated 016 (5.0→6.0) and attempts 096 (6.0→6.2), 135 (6.2→6.28), 144 (6.28→6.3). Continues emphasis on aggressive safe territory expansion in four_score. Stacks with 087-166.",
+    "upload": "scissors_v83:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 166. Clean baseline network bonus weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 167. Clean baseline expansion bonus weight exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
