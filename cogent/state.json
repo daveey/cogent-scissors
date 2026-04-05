@@ -6,7 +6,7 @@
       "last_used": null
     },
     "design": {
-      "attempts": 162,
+      "attempts": 163,
       "improvements": 13,
       "last_used": "20260405-hub-camp-dist-2"
     }
@@ -749,6 +749,21 @@
         "46": 6.59
       },
       "analysis": "Seed 46 collapsed (6.59, -58%). Increasing distance from 15 to 16 exempts agents at distance 16 from distant retreat check, allowing them to remain too exposed with medium HP. Combined with Cycle 35 (15\u219214 failed), confirms 15 as optimal distant retreat distance through bidirectional testing."
+    },
+    {
+      "date": "20260405",
+      "version": "retreat-distance-1-reverted",
+      "focus": "Retreat behavior - retreat distance reduction",
+      "description": "Reduced retreat distance threshold from 2 to 1 (-50%) to make agents closer to hub hold and heal",
+      "result": "MAJOR REGRESSION: avg 12.92 vs baseline 15.52 (-16.8%)",
+      "scores_by_seed": {
+        "42": 15.31,
+        "43": 12.52,
+        "44": 13.4,
+        "45": 5.65,
+        "46": 17.7
+      },
+      "analysis": "Seed 45 collapsed (5.65, -64%). Reducing retreat distance from 2 to 1 forces agents to get extremely close to hub (distance \u22641) before holding, causing agents at distance 2 to continue moving when they should hold and heal. Combined with Cycle 31 (2\u21923 failed), confirms 2 as optimal retreat distance through bidirectional testing."
     }
   ],
   "mission": "arena",
