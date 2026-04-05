@@ -100,7 +100,7 @@ def aligner_target_score(
     return (
         distance
         - min(expansion * 6.4, 37.15)  # Increased weight from 6.38 to 6.4 (+0.31%) for continued expansion emphasis
-        + enemy_aoe * 10.52  # Increased from 10.5 to 10.52 (+0.19%) for continued stronger enemy avoidance
+        + enemy_aoe * 10.54  # Increased from 10.52 to 10.54 (+0.19%) for continued stronger enemy avoidance
         + (_CLAIMED_TARGET_PENALTY if claimed_by_other else 0.0)
         + hub_penalty
         + hotspot_penalty

@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 143,
+      "attempts": 144,
       "improvements": 7,
-      "last_used": "20260405-208-testing"
+      "last_used": "20260405-209-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "208",
-    "focus": "Aligner network bonus weight increase",
-    "description": "Increased network bonus weight from 0.81 to 0.82 (+1.23%)",
-    "rationale": "Network bonus weight determines how strongly aligners prioritize junctions near friendly junctions for chain-building consolidation. Conservative +1.23% increase builds on validated improvements 018, 081, 097, 134, 145, 175. Higher weight encourages denser network formation. Stacks with 087-207.",
-    "upload": "scissors_v124:v1",
+    "version": "209",
+    "focus": "Aligner enemy AOE penalty increase",
+    "description": "Increased enemy AOE penalty from 10.52 to 10.54 (+0.19%)",
+    "rationale": "Enemy AOE penalty determines how strongly aligners avoid junctions within AOE range of enemy junctions. Conservative +0.19% increase builds on validated improvements 014, 101, 139, 170, 176. Higher penalty encourages safer junction selection. Stacks with 087-208.",
+    "upload": "scissors_v125:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 208. Clean baseline network weight exploration. Awaiting tournament validation."
+    "note": "Scissors attempt 209. Clean baseline enemy avoidance exploration. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
