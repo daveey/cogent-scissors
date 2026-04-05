@@ -110,9 +110,35 @@ Tested machina_1 (2 teams, 16 agents) instead of four_score (4 teams, 32 agents)
 
 **Consistent pattern:** Only 4 header lines captured, process times out, no score output.
 
-## Workaround: Tournament Validation
+## RESOLUTION: Cycle 10 Success (2026-04-05 08:10 UTC)
 
-If local testing cannot be fixed, provide `COGAMES_TOKEN` to enable:
+**BREAKTHROUGH:** Test succeeded with 10-minute timeout!
+
+**Result:**
+- Mission: machina_1 (seed 42)
+- Timeout: 600 seconds (10 minutes)
+- Exit code: 0 (success)
+- Score: **13.63 per cog**
+- Full output captured including "Episode Complete!" and stats table
+
+**Root cause:** INSUFFICIENT TIMEOUT DURATION
+- machina_1 takes >6 minutes for delta to complete
+- Scissors completes faster (<6 min), hence their tests succeeded
+- Previous cycles used 2-6 min timeouts, all hit limit before game completion
+- Only 4 header lines captured because game was still running when timeout killed process
+
+**Solution:** Use 10-minute (600 second) timeouts for all cogames tests
+
+**Cycles 1-9 post-mortem:**
+- All failed due to timeout too short, not cogames bug
+- Delta runs slower than scissors (environment/resource difference)
+- Issue was testing approach, not fundamental infrastructure problem
+
+**Status:** Local testing NOW FUNCTIONAL with adequate timeout
+
+## Workaround: Tournament Validation (NO LONGER NEEDED)
+
+~~If local testing cannot be fixed, provide `COGAMES_TOKEN` to enable:~~
 ```bash
 cd src/cogamer && PYTHONPATH=. cogames upload \
   -p class=cvc.cogamer_policy.CvCPolicy \
