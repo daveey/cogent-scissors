@@ -6,9 +6,9 @@
       "last_used": null
     },
     "design": {
-      "attempts": 121,
+      "attempts": 122,
       "improvements": 7,
-      "last_used": "20260405-aoe-12-failed"
+      "last_used": "20260405-miner-hp-test-harness-failure"
     }
   },
   "testing_in_progress": null,
@@ -337,6 +337,14 @@
         "46": "incomplete"
       },
       "analysis": "CATASTROPHIC FAILURE with incomplete testing. Testing interrupted after 2 seeds showing major regression (seed 42: -80%, seed 43: -46%). Matches historical attempt 025 failure (10\u219212, -39% regression). Pattern: AOE range extremely sensitive. Even conservative +9% increase from already-increased baseline 11 causes severe performance degradation. Agents likely over-avoiding contested areas or missing valuable targets due to overly conservative enemy detection. AOE 11 appears optimal; further increases break behavior. Note: Baseline seed 42 showed extreme variance (17.06 this run vs 8.29 previous run, +106%), indicating local testing unreliability. Cannot tournament-validate due to missing COGAMES_TOKEN."
+    },
+    {
+      "date": "20260405",
+      "version": "miner-hp-18-test-failure",
+      "focus": "Miner HP threshold increase",
+      "description": "Increased miner retreat threshold from 15 to 18 HP (+20%)",
+      "result": "TEST HARNESS FAILURE: No scores captured",
+      "analysis": "Tests ran for ~30 minutes (5 seeds) but grep buffering prevented score capture in test script. Output piped through grep was buffered and not written to results file. Change reverted conservatively since no scores available to evaluate vs baseline (9.74). Need to fix test harness: remove grep pipe filtering, write full output to file, then parse results. Tests themselves completed successfully (confirmed by timing) but evaluation impossible."
     }
   ],
   "mission": "four_score",
