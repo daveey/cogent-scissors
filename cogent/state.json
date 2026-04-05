@@ -6,18 +6,18 @@
       "last_used": null
     },
     "design": {
-      "attempts": 150,
-      "improvements": 11,
-      "last_used": "20260405-stall-unstick-13"
+      "attempts": 151,
+      "improvements": 12,
+      "last_used": "20260405-stall-unstick-14"
     }
   },
   "testing_in_progress": null,
   "last_improvement": {
     "date": "20260405",
-    "version": "stall-unstick-13",
-    "focus": "Behavioral stability - stall threshold",
-    "description": "Increased stall unstick threshold from 12 to 13 steps (+8.3%) to give agents more time before taking corrective action",
-    "result": "IMPROVEMENT: avg 15.16 vs baseline 14.19 (+6.9%)",
+    "version": "stall-unstick-14",
+    "focus": "Behavioral stability - stall threshold continued",
+    "description": "Increased stall unstick threshold from 13 to 14 steps (+7.7%) to give agents more patience, building on Cycle 19 success",
+    "result": "MARGINAL: avg 15.26 vs baseline 15.16 (+0.6%)",
     "local_scores": {
       "seeds": [
         42,
@@ -27,17 +27,17 @@
         46
       ],
       "scores": [
-        16.0,
-        13.23,
-        14.29,
-        15.63,
-        16.67
+        15.84,
+        15.23,
+        12.54,
+        15.75,
+        16.92
       ],
-      "avg": 15.16,
-      "baseline": 14.19
+      "avg": 15.26,
+      "baseline": 15.16
     },
     "status": "local-only",
-    "notes": "Delta Cycle 19 - Third successful improve.md cycle on arena. All 5 seeds completed successfully. Opposite direction from Cycle 11 failure (12\u219210, timeouts). Increasing threshold allows agents more patience before unsticking, improving stability. Cumulative improvement: 17.0% from arena starting baseline (12.96\u219215.16)."
+    "notes": "Delta Cycle 24 - Fourth successful improve.md cycle on arena. Marginal improvement continuing Cycle 19's successful pattern (12\u219213 +6.9%, now 13\u219214 +0.6%). Diminishing returns suggest approaching optimal stall threshold. Cumulative improvement: 17.7% from arena start (12.96\u219215.26)."
   },
   "failed_attempts": [
     {
@@ -561,7 +561,7 @@
     "notes": "Delta Cycle 10 breakthrough baseline. Established after resolving timeout issues (10-min timeout required). 2-team format, 16 agents. Target mission for delta improve.md cycles due to four_score timeout issues (>20 min per seed)."
   },
   "baseline_arena": {
-    "avg": 15.16,
+    "avg": 15.26,
     "seeds": [
       42,
       43,
@@ -570,13 +570,13 @@
       46
     ],
     "scores": [
-      16.0,
-      13.23,
-      14.29,
-      15.63,
-      16.67
+      15.84,
+      15.23,
+      12.54,
+      15.75,
+      16.92
     ],
     "date": "20260405",
-    "notes": "Updated after Cycle 19 stall unstick threshold improvement."
+    "notes": "Updated after Cycle 24 stall unstick threshold improvement."
   }
 }

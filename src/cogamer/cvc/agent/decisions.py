@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 _ALIGNER_GEAR_DELAY_STEPS = 0
 _OSCILLATION_UNSTICK_STEPS = 4
-_STALL_UNSTICK_STEPS = 13
+_STALL_UNSTICK_STEPS = 14
 
 
 def check_hub_camp_heal(ctx: TickContext, role: str, engine: CvcEngine) -> tuple[Action, str] | None:
