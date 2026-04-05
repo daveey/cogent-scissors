@@ -241,8 +241,58 @@
             background: var(--surface0);
             border-radius: 8px;
             padding: 1rem;
-            max-height: 400px;
+            max-height: 500px;
             overflow-y: auto;
+        }
+
+        .chat-group {
+            margin-bottom: 2rem;
+        }
+
+        .chat-group-header {
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--surface1);
+        }
+
+        .chat-message {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message.incoming {
+            align-items: flex-start;
+        }
+
+        .chat-message.outgoing {
+            align-items: flex-end;
+        }
+
+        .chat-bubble {
+            max-width: 70%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            word-wrap: break-word;
+        }
+
+        .chat-message.incoming .chat-bubble {
+            background: var(--surface1);
+            color: var(--text);
+        }
+
+        .chat-message.outgoing .chat-bubble {
+            background: var(--blue);
+            color: var(--base);
+        }
+
+        .chat-meta {
+            font-size: 0.75rem;
+            color: var(--overlay1);
+            margin-top: 0.25rem;
+            padding: 0 0.5rem;
         }
 
         .progress-bar {
@@ -309,6 +359,42 @@
         <p><strong>Issue:</strong> Local four_score tests take 50+ minutes for 5-seed validation. Arena mission hits observation budget errors.</p>
         <p><strong>Workaround:</strong> Tournament-based validation via direct beta-cvc submission (5-15 min feedback).</p>
         <p><strong>Status:</strong> improve.md workflow suspended - 30min loop incompatible with test duration.</p>
+    </div>
+
+    <h2>🗣️ Recent Conversations</h2>
+    <div class="card">
+        <div class="chat-view">
+            <div class="chat-group">
+                <div class="chat-group-header">Channel: ch-2fa30b1097d9</div>
+
+                <div class="chat-message incoming">
+                    <div class="chat-bubble">
+                        URGENT: Stop what you're doing and regenerate the dashboard NOW. Read and follow ~/repo/runtime/skills/dashboard.md. Make sure to include the Recent Conversations section and the Regenerate button.
+                    </div>
+                    <div class="chat-meta">From: cli • 2026-04-05 21:50 UTC</div>
+                </div>
+
+                <div class="chat-message outgoing">
+                    <div class="chat-bubble">
+                        Regenerating dashboard now.
+                    </div>
+                    <div class="chat-meta">From: scissors • 2026-04-05 21:51 UTC</div>
+                </div>
+
+                <div class="chat-message outgoing">
+                    <div class="chat-bubble">
+                        Dashboard regenerated at ~/repo/cogent/dashboard/index.html<br><br>
+                        Key highlights:<br>
+                        - Rank #5 (gamma_v6:v1: 17.16 avg, +130% from baseline)<br>
+                        - 185 design attempts, 14 improvements (7.6% hit rate)<br>
+                        - Testing blocked: local tests too slow, using tournament validation<br>
+                        - Parameter tuning exhausted - need architectural improvements<br><br>
+                        Dashboard includes tournament KPIs, experiment timeline, approach stats, strategy insights, and recent conversations section.
+                    </div>
+                    <div class="chat-meta">From: scissors • 2026-04-05 21:53 UTC</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <h2>📋 Active TODOs</h2>
@@ -418,14 +504,6 @@
         </ul>
     </div>
 
-    <h2>🗣️ Recent Conversations</h2>
-    <div class="card">
-        <div class="empty-state">
-            <p>📭 No conversations yet</p>
-            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Messages from operator and other cogents will appear here</p>
-        </div>
-    </div>
-
     <h2>🎯 Strategy Insights</h2>
     <div class="card">
         <h3>What Works (Validated Stack)</h3>
@@ -458,7 +536,7 @@
     </div>
 
     <footer>
-        <p>Generated: 2026-04-05 21:46 UTC</p>
+        <p>Generated: 2026-04-05 21:56 UTC</p>
         <p style="margin-top: 0.5rem;">
             <button onclick="fetch('/regenerate',{method:'POST'}).then(()=>{this.textContent='Regenerating...';setTimeout(()=>location.reload(),30000)})">🔄 Regenerate</button>
         </p>
