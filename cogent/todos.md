@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (406) Hotspot penalty cap increase (3.22→3.24): scissors_v322:v1 qualifying - continued contested junction penalty cap tuning (+0.62%, stacks with 087-405)
 - [ ] (405) Hotspot weight near-hub reduction (1.74→1.72): scissors_v321:v1 qualifying - continued near-hub recapture tuning (-1.15%, stacks with 087-404)
 - [ ] (404) Hotspot weight mid-range reduction (5.56→5.54): scissors_v320:v1 qualifying - continued mid-range contested junction tuning (-0.36%, stacks with 087-403)
 - [ ] (403) Hotspot weight far-range reduction (11.62→11.60): scissors_v319:v1 qualifying - continued far-range contested junction tuning (-0.17%, stacks with 087-402)
