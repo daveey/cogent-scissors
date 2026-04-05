@@ -11,7 +11,17 @@
       "last_used": "20260405-hub-camp-85-improved"
     }
   },
-  "testing_in_progress": null,
+  "testing_in_progress": {
+    "date": "20260405",
+    "version": "early-retreat-45",
+    "focus": "Conservative early game survival",
+    "description": "Increased early retreat HP threshold from 40 to 45 (+12.5%)",
+    "baseline": 14.62,
+    "mission": "machina_1",
+    "seeds": "42-46",
+    "started": "11:39 UTC",
+    "estimated_duration": "50 minutes"
+  },
   "last_improvement": {
     "date": "20260405",
     "version": "hub-camp-85",
