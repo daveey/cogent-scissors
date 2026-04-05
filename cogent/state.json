@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 460,
+      "attempts": 461,
       "improvements": 7,
-      "last_used": "20260405-526-testing"
+      "last_used": "20260405-527-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "526",
-    "focus": "Target claim steps increase",
-    "description": "Increased target claim steps from 33.30 to 33.35 (+0.15%)",
-    "rationale": "Target claim steps defines how long claims remain valid. Longer validity improves coordination by reducing premature claim expiration. Conservative +0.15% increase builds on validated improvements. Stacks with 087-525.",
-    "upload": "scissors_v443:v1",
+    "version": "527",
+    "focus": "Extractor memory steps increase",
+    "description": "Increased extractor memory steps from 850 to 852 (+0.24%)",
+    "rationale": "Extractor memory steps defines how long extractors remain in agent memory. Longer memory improves resource site awareness. Conservative +0.24% increase builds on validated improvements. Stacks with 087-526.",
+    "upload": "scissors_v444:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 526. Clean baseline longer claim validity. Awaiting tournament validation."
+    "note": "Scissors attempt 527. Clean baseline longer extractor memory. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
