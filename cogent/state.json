@@ -6,9 +6,9 @@
       "last_used": null
     },
     "design": {
-      "attempts": 177,
+      "attempts": 178,
       "improvements": 14,
-      "last_used": "20260405-hotspot-mid-054"
+      "last_used": "20260405-expansion-066-validation"
     }
   },
   "testing_in_progress": null,
@@ -1109,6 +1109,33 @@
       },
       "status": "reverted",
       "notes": "Delta Cycle 54 - Over-aggression on mid-range contested junctions. Lower penalty caused agents to fight for mid-range hotspots instead of safer alternatives. Particularly damaging on seed 42 (9.17). Confirms 5.5 is optimal."
+    },
+    {
+      "date": "20260405",
+      "version": "expansion-066-validation-reverted",
+      "focus": "Bidirectional validation: expansion weight 6.7\u21926.6",
+      "description": "Tested reverting expansion weight from 6.7 back to 6.6 (-1.5%) to validate Cycle 43 improvement was genuine",
+      "result": "CATASTROPHIC REGRESSION: avg 9.75 vs baseline 15.73 (-38.0%)",
+      "local_scores": {
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "scores": [
+          15.31,
+          14.5,
+          5.29,
+          6.36,
+          7.28
+        ],
+        "avg": 9.75,
+        "baseline": 15.73
+      },
+      "status": "reverted",
+      "notes": "Delta Cycle 55 - Bidirectional validation confirms Cycle 43's expansion weight increase to 6.7 was a critical improvement. Reverting to 6.6 caused massive performance collapse on seeds 44-46. Expansion weight 6.7 is STRONGLY validated as optimal."
     }
   ],
   "mission": "arena",
