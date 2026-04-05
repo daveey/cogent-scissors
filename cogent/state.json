@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 180,
+      "attempts": 181,
       "improvements": 7,
-      "last_used": "20260405-245-testing"
+      "last_used": "20260405-246-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "245",
-    "focus": "Scrambler corner pressure divisor reduction",
-    "description": "Reduced scrambler corner_pressure divisor from 7.68 to 7.66 (-0.26%)",
-    "rationale": "Scrambler corner pressure divisor controls pressure growth rate. Conservative -0.26% reduction builds on validated improvement 205. Lower divisor increases pressure growth, encouraging farther enemy disruption. Stacks with 087-244.",
-    "upload": "scissors_v161:v1",
+    "version": "246",
+    "focus": "Aligner network bonus weight increase",
+    "description": "Increased network_bonus weight from 0.83 to 0.84 (+1.2%)",
+    "rationale": "Network bonus weight determines chain-building priority near friendly junctions. Conservative +1.2% increase builds on validated improvements 227. Higher weight strengthens network consolidation. Stacks with 087-245.",
+    "upload": "scissors_v162:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 245. Clean baseline scrambler pressure growth tuning. Milestone: 245 attempts. Awaiting tournament validation."
+    "note": "Scissors attempt 246. Clean baseline network consolidation tuning. Milestone: 246 attempts. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

@@ -95,7 +95,7 @@ def aligner_target_score(
             if source.entity_type != "hub"
             and manhattan(candidate.position, source.position) <= _JUNCTION_ALIGN_DISTANCE
         )
-        network_bonus = min(nearby_friendly, 4.36) * 0.83  # Increased cap from 4.34 to 4.36 (+0.46%) for denser network clustering
+        network_bonus = min(nearby_friendly, 4.36) * 0.84  # Increased weight from 0.83 to 0.84 (+1.2%) for stronger network consolidation
     teammate_penalty = 9.31 if teammate_closer else 0.0  # Increased from 9.29 to 9.31 (+0.22%) for continued better coordination
     return (
         distance
