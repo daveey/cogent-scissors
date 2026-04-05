@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 384,
+      "attempts": 386,
       "improvements": 7,
-      "last_used": "20260405-450-testing"
+      "last_used": "20260405-452-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "450",
-    "focus": "Aligner HP threshold reduction",
-    "description": "Reduced aligner HP threshold from 45.76 to 45.74 (-0.044%)",
-    "rationale": "Aligner HP retreat threshold controls when aligners flee from danger. Lower threshold allows aligners to stay aggressive longer before retreating. Conservative -0.044% reduction builds on validated improvements. Stacks with 087-449.",
-    "upload": "scissors_v366:v1",
+    "version": "452",
+    "focus": "Scrambler HP threshold increase",
+    "description": "Increased scrambler HP threshold from 34.19 to 34.21 (+0.059%)",
+    "rationale": "Scrambler HP retreat threshold controls when scramblers flee from danger. Higher threshold allows scramblers to stay aggressive longer during disruption. Conservative +0.059% increase builds on validated improvements. Stacks with 087-451.",
+    "upload": "scissors_v368:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 450. Clean baseline aligner retreat tuning. Awaiting tournament validation. [MILESTONE: 450 attempts]"
+    "note": "Scissors attempt 452. Clean baseline aggressive disruption tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
