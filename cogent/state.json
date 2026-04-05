@@ -11,7 +11,17 @@
       "last_used": "20260405-hub-camp-85-improved"
     }
   },
-  "testing_in_progress": null,
+  "testing_in_progress": {
+    "date": "20260405",
+    "version": "stall-unstick-10",
+    "focus": "Faster stall recovery",
+    "description": "Reduced stall unstick threshold from 12 to 10 steps (-17%) for faster recovery from stuck states",
+    "baseline": 14.62,
+    "mission": "machina_1",
+    "seeds": "42-46",
+    "started": "10:19 UTC",
+    "estimated_duration": "50 minutes"
+  },
   "last_improvement": {
     "date": "20260405",
     "version": "hub-camp-85",
