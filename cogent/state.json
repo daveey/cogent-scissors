@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 354,
+      "attempts": 355,
       "improvements": 7,
-      "last_used": "20260405-419-testing"
+      "last_used": "20260405-420-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "419",
-    "focus": "Scrambler HP threshold increase",
-    "description": "Increased scrambler HP threshold from 34.17 to 34.19 (+0.059%)",
-    "rationale": "Scrambler HP threshold determines when scramblers retreat to hub. Higher value makes scramblers stay in field longer for more aggressive disruption. Conservative +0.059% increase builds on validated improvements. Stacks with 087-418.",
-    "upload": "scissors_v335:v1",
+    "version": "420",
+    "focus": "Emergency resource low threshold increase",
+    "description": "Increased emergency resource low threshold from 2.44 to 2.46 (+0.82%)",
+    "rationale": "Emergency resource low threshold triggers emergency mining when team resources are critically low. Higher value triggers emergency mode earlier, ensuring resource availability. Conservative +0.82% increase builds on validated improvements. Stacks with 087-419.",
+    "upload": "scissors_v336:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 419. Clean baseline aggressive disruption tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 420 [MILESTONE: 420 attempts]. Clean baseline earlier emergency mining trigger tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
