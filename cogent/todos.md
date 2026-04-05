@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (174) Aligner expansion bonus weight increase (6.35→6.38): scissors_v90:v1 qualifying - continued expansion emphasis (+0.47%, stacks with 087-173)
 - [ ] (173) Scrambler corner pressure cap increase (10.6→10.7): scissors_v89:v1 qualifying - continued stronger far-enemy pressure (+1%, stacks with 087-172)
 - [ ] (172) Scrambler corner pressure divisor reduction (7.75→7.7): scissors_v88:v1 qualifying - continued faster pressure growth (-0.6%, stacks with 087-171)
 - [ ] (171) Aligner teammate penalty increase (9.2→9.25): scissors_v87:v1 qualifying - continued better coordination (+0.5%, stacks with 087-170)
