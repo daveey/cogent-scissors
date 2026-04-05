@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (322) Aligner heart batch target increase (3.38→3.40): scissors_v238:v1 qualifying - continued aligner persistence tuning (+0.59%, stacks with 087-321)
 - [ ] (321) Emergency resource low threshold increase (2.38→2.40): scissors_v237:v1 qualifying - continued earlier emergency mining trigger tuning (+0.84%, stacks with 087-320)
 - [ ] (320) Scrambler HP threshold increase (34.11→34.13): scissors_v236:v1 qualifying - continued aggressive disruption (+0.059%, stacks with 087-319) [MILESTONE: 320 attempts]
 - [ ] (319) Miner HP threshold increase (18.48→18.50): scissors_v235:v1 qualifying - continued aggressive resource gathering (+0.11%, stacks with 087-318)
