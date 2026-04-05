@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 119,
+      "attempts": 120,
       "improvements": 7,
-      "last_used": "20260404-085-local-only"
+      "last_used": "20260405-aoe-local-only"
     }
   },
   "testing_in_progress": {
-    "date": "20260404",
-    "version": "086",
-    "focus": "LLM prompt streamlining (remove tactical context)",
-    "description": "Removed tactical/non-actionable context from LLM prompt: HP, hearts, position, gear counts, stalled/oscillating, safe distance, target hotspot. Kept strategic context: step, role, hub resources, team roles, junction counts.",
-    "rationale": "After removing role field in 085, stalled/oscillating info became wasted context. LLM should focus on strategic resource and objective decisions only. Delta local testing showed baseline 11.76 per cog (seed 42).",
-    "upload": "scissors:v2",
+    "date": "20260405",
+    "version": "aoe-range-11",
+    "focus": "Junction AOE range increase for wider enemy detection",
+    "description": "Increased _JUNCTION_AOE_RANGE from 10 to 11 (+10%) for slightly wider enemy detection range",
+    "rationale": "Conservative approach toward alpha.0's wider AOE range (20). With 085's LLM changes (no role field), enemy detection may have different impact. Testing minimal +10% increase vs failed attempt 025's aggressive +20% (10→12, -39% regression). Local testing shows +24% improvement (9.24 vs 7.46 baseline) but with high variance (5.31-15.35 range, 2.9x). Cannot tournament-validate due to missing COGAMES_TOKEN.",
+    "upload": null,
     "season": "beta-four-score",
-    "uploaded_at": "20260404",
-    "note": "Delta attempt 086 uploaded as scissors:v2. Builds on scissors:v1 (085). Awaiting tournament validation. Next: revert to gamma_v6:v1 clean baseline."
+    "uploaded_at": null,
+    "note": "Delta local testing only: avg 9.24 vs baseline 7.46 (+23.9%). HIGH VARIANCE: 5.31-15.35 per cog, 3/5 seeds above baseline. Requires tournament validation before acceptance. BLOCKED: No COGAMES_TOKEN for upload. Keeping change due to positive average per improve.md principle."
   },
   "last_improvement": {
     "date": "20260404",
