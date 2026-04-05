@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 243,
+      "attempts": 244,
       "improvements": 7,
-      "last_used": "20260405-308-testing"
+      "last_used": "20260405-309-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "308",
-    "focus": "Enemy AOE penalty increase",
-    "description": "Increased aligner enemy AOE penalty from 10.6 to 10.62 (+0.19%)",
-    "rationale": "Higher penalty makes aligners avoid junctions near enemy junctions more strongly. Conservative +0.19% increase builds on validated improvements. Stacks with 087-307.",
-    "upload": "scissors_v224:v1",
+    "version": "309",
+    "focus": "Expansion bonus weight increase",
+    "description": "Increased aligner expansion bonus weight from 6.46 to 6.48 (+0.31%)",
+    "rationale": "Higher weight increases bonus for junctions that unlock many neutral junctions. Conservative +0.31% increase builds on validated improvements. Stacks with 087-308.",
+    "upload": "scissors_v225:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 308. Clean baseline enemy avoidance tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 309. Clean baseline expansion bonus tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
