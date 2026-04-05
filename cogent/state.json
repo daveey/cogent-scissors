@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 247,
+      "attempts": 248,
       "improvements": 7,
-      "last_used": "20260405-312-testing"
+      "last_used": "20260405-313-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260405",
-    "version": "312",
-    "focus": "Network bonus weight increase",
-    "description": "Increased aligner network bonus weight from 0.85 to 0.86 (+1.18%)",
-    "rationale": "Higher weight increases reward for chain-building near friendly junctions. Conservative +1.18% increase builds on validated improvements. Stacks with 087-311.",
-    "upload": "scissors_v228:v1",
+    "version": "313",
+    "focus": "Network bonus cap increase",
+    "description": "Increased aligner network bonus cap from 4.4 to 4.42 (+0.45%)",
+    "rationale": "Higher cap allows network bonus to scale higher when many friendly junctions nearby. Conservative +0.45% increase builds on validated improvements. Stacks with 087-312.",
+    "upload": "scissors_v229:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260405",
-    "note": "Scissors attempt 312. Clean baseline network consolidation tuning. Awaiting tournament validation."
+    "note": "Scissors attempt 313. Clean baseline network clustering tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
