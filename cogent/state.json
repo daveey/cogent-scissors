@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 649,
+      "attempts": 650,
       "improvements": 7,
-      "last_used": "20260406-715-testing"
+      "last_used": "20260406-716-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "715",
-    "focus": "Miner HP threshold reduction",
-    "description": "Reduced miner HP threshold from 18.68 to 18.66 (-0.11%)",
-    "rationale": "Miner HP threshold controls when miners retreat to hub for healing. Lower threshold means miners stay active longer before retreating, maximizing resource gathering time. Conservative -0.11% reduction for bidirectional resource gathering tuning. Stacks with 087-714.",
-    "upload": "gamma_v164_v1:v1",
+    "version": "716",
+    "focus": "Scrambler HP threshold reduction",
+    "description": "Reduced scrambler HP threshold from 34.31 to 34.29 (-0.058%)",
+    "rationale": "Scrambler HP threshold controls when scramblers retreat to hub for healing. Lower threshold means scramblers stay active longer before retreating, maximizing disruption time. Conservative -0.058% reduction for bidirectional disruption tuning. Stacks with 087-715.",
+    "upload": "gamma_v165_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 715. Reduced miner HP threshold for bidirectional resource gathering tuning. Awaiting tournament validation."
+    "note": "Attempt 716. Reduced scrambler HP threshold for bidirectional disruption tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

@@ -46,7 +46,7 @@ _ELEMENTS = ("carbon", "oxygen", "germanium", "silicon")
 _HP_THRESHOLDS = {
     "miner": 18.66,  # Reduced from 18.68 to 18.66 (-0.11%) for bidirectional resource gathering tuning
     "aligner": 45.66,  # Reduced from 45.68 to 45.66 (-0.044%) for continued aligner retreat tuning
-    "scrambler": 34.31,  # Increased from 34.29 to 34.31 (+0.058%) for continued aggressive disruption
+    "scrambler": 34.29,  # Reduced from 34.31 to 34.29 (-0.058%) for bidirectional disruption tuning
     "scout": 30,
     "unknown": 30,
 }
