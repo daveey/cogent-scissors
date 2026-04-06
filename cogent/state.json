@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 743,
+      "attempts": 744,
       "improvements": 7,
-      "last_used": "20260406-809-testing"
+      "last_used": "20260406-810-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "809",
-    "focus": "Target claim steps increase",
-    "description": "Increased target claim steps from 33.51 to 33.52 (+0.03%)",
-    "rationale": "Target claim steps controls duration of target claims. Longer duration reduces duplication by keeping claims valid longer. Conservative +0.03% increase for bidirectional claim validity tuning. Stacks with 087-808.",
-    "upload": "gamma_v258_v1:v1",
+    "version": "810",
+    "focus": "Extractor memory steps increase",
+    "description": "Increased extractor memory steps from 859 to 860 (+0.12%)",
+    "rationale": "Extractor memory steps controls how long miners remember extractor locations. Longer memory improves resource gathering efficiency. Conservative +0.12% increase for bidirectional extractor memory tuning. Stacks with 087-809.",
+    "upload": "gamma_v259_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 809. Increased target claim steps for bidirectional claim validity tuning. Awaiting tournament validation."
+    "note": "Attempt 810. Increased extractor memory steps for bidirectional extractor memory tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

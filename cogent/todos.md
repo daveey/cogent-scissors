@@ -782,3 +782,4 @@
 - [ ] (807) Junction AOE range increase (15.03→15.04): gamma_v256_v1 qualifying - bidirectional enemy AOE detection tuning (+0.07%, stacks with 087-806)
 - [ ] (808) Claimed target penalty increase (10.98→10.99): gamma_v257_v1 qualifying - bidirectional claim override tuning (+0.09%, stacks with 087-807)
 - [ ] (809) Target claim steps increase (33.51→33.52): gamma_v258_v1 qualifying - bidirectional claim validity tuning (+0.03%, stacks with 087-808)
+- [ ] (810) Extractor memory steps increase (859→860): gamma_v259_v1 qualifying - bidirectional extractor memory tuning (+0.12%, stacks with 087-809)
