@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (715) Miner HP threshold reduction (18.68→18.66): gamma_v164_v1:v1 qualifying - bidirectional resource gathering tuning (-0.11%, stacks with 087-714)
 - [ ] (714) Aligner HP threshold reduction (45.68→45.66): gamma_v163_v1:v1 qualifying - bidirectional aligner retreat tuning (-0.044%, stacks with 087-713)
 - [ ] (713) Scrambler threat bonus increase (10.60→10.62): gamma_v162_v1:v1 qualifying - continued defensive priority tuning (+0.19%, stacks with 087-712)
 - [ ] (712) Scrambler corner pressure cap increase (10.90→10.92): gamma_v161_v1:v1 qualifying - continued corner pressure tuning (+0.18%, stacks with 087-711)
