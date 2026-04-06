@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 677,
+      "attempts": 678,
       "improvements": 7,
-      "last_used": "20260406-743-testing"
+      "last_used": "20260406-744-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "743",
-    "focus": "Scrambler corner pressure divisor reduction",
-    "description": "Reduced scrambler corner_pressure divisor from 7.52 to 7.50 (-0.27%)",
-    "rationale": "Scrambler corner_pressure divisor controls rate of pressure growth for distant enemy junction targeting. Lower divisor means faster pressure ramp (more aggressive distant targeting). Conservative -0.27% reduction for bidirectional pressure growth tuning. Stacks with 087-742.",
-    "upload": "gamma_v192_v1:v1",
+    "version": "744",
+    "focus": "Scrambler corner pressure cap reduction",
+    "description": "Reduced scrambler corner_pressure cap from 10.92 to 10.90 (-0.18%)",
+    "rationale": "Scrambler corner_pressure cap limits maximum bonus for distant enemy junction targeting. Lower cap reduces maximum distant targeting aggression. Conservative -0.18% reduction for bidirectional corner pressure cap tuning. Stacks with 087-743.",
+    "upload": "gamma_v193_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 743. Reduced scrambler corner_pressure divisor for bidirectional pressure growth tuning. Awaiting tournament validation."
+    "note": "Attempt 744. Reduced scrambler corner_pressure cap for bidirectional corner pressure cap tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

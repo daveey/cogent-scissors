@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (744) Scrambler corner pressure cap reduction (10.92→10.90): gamma_v193_v1:v1 qualifying - bidirectional corner pressure cap tuning (-0.18%, stacks with 087-743)
 - [ ] (743) Scrambler corner pressure divisor reduction (7.52→7.50): gamma_v192_v1:v1 qualifying - bidirectional pressure growth tuning (-0.27%, stacks with 087-742)
 - [ ] (742) Scrambler blocked neutrals weight increase (8.78→8.80): gamma_v191_v1:v1 qualifying - bidirectional expansion-blocking tuning (+0.23%, stacks with 087-741)
 - [ ] (741) Teammate penalty increase (9.49→9.51): gamma_v190_v1:v1 qualifying - bidirectional coordination tuning (+0.21%, stacks with 087-740)
