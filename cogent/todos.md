@@ -741,3 +741,4 @@
 - [ ] (766) Expansion bonus weight increase (6.62→6.63): gamma_v215_v1 qualifying - bidirectional expansion bonus weight tuning (+0.15%, stacks with 087-765)
 - [ ] (767) Enemy AOE penalty increase (10.76→10.77): gamma_v216_v1 qualifying - bidirectional enemy avoidance tuning (+0.09%, stacks with 087-766)
 - [ ] (768) Teammate coordination penalty increase (9.51→9.52): gamma_v217_v1 qualifying - bidirectional coordination tuning (+0.11%, stacks with 087-767)
+- [ ] (769) Scrambler corner pressure divisor reduction (7.50→7.49): gamma_v218_v1 qualifying - bidirectional corner pressure divisor tuning (-0.13%, stacks with 087-768)

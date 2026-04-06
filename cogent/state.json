@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 702,
+      "attempts": 703,
       "improvements": 7,
-      "last_used": "20260406-768-testing"
+      "last_used": "20260406-769-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "768",
-    "focus": "Teammate coordination penalty increase",
-    "description": "Increased teammate penalty from 9.51 to 9.52 (+0.11%)",
-    "rationale": "Teammate penalty controls avoidance of targets when teammates are closer. Higher penalty reduces multi-agent duplication. Conservative +0.11% increase for bidirectional coordination tuning. Stacks with 087-767.",
-    "upload": "gamma_v217_v1:v1",
+    "version": "769",
+    "focus": "Scrambler corner pressure divisor reduction",
+    "description": "Reduced corner pressure divisor from 7.50 to 7.49 (-0.13%)",
+    "rationale": "Corner pressure divisor controls rate at which scrambler priority increases for distant enemies. Lower divisor increases pressure growth rate, encouraging scramblers to disrupt farther enemies more aggressively. Conservative -0.13% reduction for bidirectional corner pressure divisor tuning. Stacks with 087-768.",
+    "upload": "gamma_v218_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 768. Increased teammate coordination penalty for bidirectional coordination tuning. Awaiting tournament validation."
+    "note": "Attempt 769. Reduced scrambler corner pressure divisor for bidirectional corner pressure divisor tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
