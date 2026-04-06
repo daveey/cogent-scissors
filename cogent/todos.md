@@ -802,3 +802,4 @@
 - [ ] (827) Threat bonus weight increase (10.62→10.63): gamma_v276_v1 qualifying - bidirectional defensive priority tuning (+0.09%, stacks with 087-826)
 - [ ] (828) Blocked neutrals weight increase (8.82→8.83): gamma_v277_v1 qualifying - bidirectional expansion-blocking tuning (+0.11%, stacks with 087-827)
 - [ ] (829) Corner pressure cap increase (10.91→10.92): gamma_v278_v1 qualifying - bidirectional corner pressure cap tuning (+0.09%, stacks with 087-828)
+- [ ] (830) Hub penalty near-hub multiplier increase (0.262→0.263): gamma_v279_v1 qualifying - bidirectional hub clustering tuning (+0.38%, stacks with 087-829)

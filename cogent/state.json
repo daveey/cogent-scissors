@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 763,
+      "attempts": 764,
       "improvements": 7,
-      "last_used": "20260406-829-testing"
+      "last_used": "20260406-830-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "829",
-    "focus": "Corner pressure cap increase",
-    "description": "Increased corner pressure cap from 10.91 to 10.92 (+0.09%)",
-    "rationale": "Corner pressure cap limits maximum corner pressure bonus for scrambler targeting. Higher cap allows more pressure incentive for very distant enemy junctions. Conservative +0.09% increase for bidirectional corner pressure cap tuning. Stacks with 087-828.",
-    "upload": "gamma_v278_v1:v1",
+    "version": "830",
+    "focus": "Hub penalty near-hub multiplier increase",
+    "description": "Increased hub penalty near-hub multiplier from 0.262 to 0.263 (+0.38%)",
+    "rationale": "Hub penalty near-hub multiplier (≤10 distance) controls how strongly hub-proximal junctions are favored. Higher multiplier slightly reduces hub clustering incentive. Conservative +0.38% increase for bidirectional hub clustering tuning. Stacks with 087-829.",
+    "upload": "gamma_v279_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 829. Increased corner pressure cap for bidirectional corner pressure cap tuning. Awaiting tournament validation."
+    "note": "Attempt 830. Increased hub penalty near-hub multiplier for bidirectional hub clustering tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
