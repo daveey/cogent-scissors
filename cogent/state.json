@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 691,
+      "attempts": 692,
       "improvements": 7,
-      "last_used": "20260406-757-testing"
+      "last_used": "20260406-758-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "757",
-    "focus": "Extractor memory steps increase",
-    "description": "Increased extractor memory steps from 856 to 858 (+0.23%)",
-    "rationale": "Extractor memory steps controls how long miners remember extractors they've seen. Higher value means miners remember extractors longer, potentially allowing more efficient return trips to known locations. Conservative +0.23% increase for bidirectional extractor memory tuning. Stacks with 087-756.",
-    "upload": "gamma_v206_v1:v1",
+    "version": "758",
+    "focus": "Hub penalty very-close multiplier reduction",
+    "description": "Reduced hub penalty very-close multiplier from 0.261 to 0.260 (-0.38%)",
+    "rationale": "Hub penalty very-close multiplier controls penalty for junctions ≤10 distance from hub. Lower multiplier reduces penalty, encouraging aligners slightly toward immediate hub vicinity. Conservative -0.38% reduction for bidirectional hub clustering tuning. Stacks with 087-757.",
+    "upload": "gamma_v207_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 757. Increased extractor memory steps for bidirectional extractor memory tuning. Awaiting tournament validation."
+    "note": "Attempt 758. Reduced hub penalty very-close multiplier for bidirectional hub clustering tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
