@@ -30,7 +30,7 @@ _HP_THRESHOLDS = {
     "miner": 12,
     "aligner": 45,
     "scrambler": 30,
-    "scout": 30,
+    "scout": 25,
     "unknown": 30,
 }
 _GEAR_COSTS = {

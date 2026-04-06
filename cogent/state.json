@@ -6,9 +6,9 @@
       "last_used": null
     },
     "design": {
-      "attempts": 10,
-      "improvements": 5,
-      "last_used": "20260406-miner-hp-12"
+      "attempts": 11,
+      "improvements": 6,
+      "last_used": "20260406-scout-hp-25"
     }
   },
   "failed_attempts": [
@@ -126,10 +126,10 @@
   ],
   "last_improvement": {
     "date": "20260406",
-    "version": "miner-hp-12",
-    "focus": "Miner HP retreat threshold reduction",
-    "description": "Reduced miner HP threshold from 15 to 12 (-20%) for longer mining time",
-    "result": "IMPROVEMENT: avg 23.86 vs baseline 23.11 (+3.2%)",
+    "version": "scout-hp-25",
+    "focus": "Scout HP retreat threshold reduction",
+    "description": "Reduced scout HP threshold from 30 to 25 (-16.7%) for longer field time",
+    "result": "IMPROVEMENT: avg 25.05 vs baseline 23.86 (+5.0%)",
     "local_scores": {
       "seeds": [
         42,
@@ -139,16 +139,16 @@
         46
       ],
       "scores": [
-        26.28,
-        23.57,
-        21.81,
-        24.42,
-        23.20
+        25.38,
+        23.24,
+        30.41,
+        22.31,
+        23.92
       ],
-      "avg": 23.86,
-      "baseline": 23.11
+      "avg": 25.05,
+      "baseline": 23.86
     },
-    "status": "uploaded-beta-cvc",
-    "notes": "Cycle 87 - Following Cycle 86's success pattern. Less conservative miner retreat threshold allows miners to stay in field longer, improving resource economy. Modest but consistent improvement across test seeds. New baseline: 23.86."
+    "status": "local-only",
+    "notes": "Cycle 89 - Scout HP reduction successful where scrambler failed. Less conservative scout retreat improves field presence. Particularly strong on seed 44 (+27.5%). Confirms retreat optimization pattern applies selectively by role (aligner, miner, scout ✓; scrambler ✗). New baseline: 25.05."
   }
 }
