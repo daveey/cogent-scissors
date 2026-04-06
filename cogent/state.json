@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 681,
+      "attempts": 682,
       "improvements": 7,
-      "last_used": "20260406-747-testing"
+      "last_used": "20260406-748-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "747",
-    "focus": "Aligner HP threshold increase",
-    "description": "Increased aligner HP threshold from 45.66 to 45.68 (+0.044%)",
-    "rationale": "Aligner HP threshold controls when aligners retreat to hub for healing. Higher threshold means aligners retreat earlier for safer play. Conservative +0.044% increase for bidirectional aligner retreat tuning. Stacks with 087-746.",
-    "upload": "gamma_v196_v1:v1",
+    "version": "748",
+    "focus": "Miner HP threshold increase",
+    "description": "Increased miner HP threshold from 18.66 to 18.68 (+0.11%)",
+    "rationale": "Miner HP threshold controls when miners retreat to hub for healing. Higher threshold means miners retreat earlier, reducing risk but potentially limiting resource gathering time. Conservative +0.11% increase for bidirectional resource gathering tuning. Stacks with 087-747.",
+    "upload": "gamma_v197_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 747. Increased aligner HP threshold for bidirectional aligner retreat tuning. Awaiting tournament validation."
+    "note": "Attempt 748. Increased miner HP threshold for bidirectional resource gathering tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

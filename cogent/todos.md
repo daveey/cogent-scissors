@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (748) Miner HP threshold increase (18.66→18.68): gamma_v197_v1:v1 qualifying - bidirectional resource gathering tuning (+0.11%, stacks with 087-747)
 - [ ] (747) Aligner HP threshold increase (45.66→45.68): gamma_v196_v1:v1 qualifying - bidirectional aligner retreat tuning (+0.044%, stacks with 087-746)
 - [ ] (746) Junction AOE range increase (15.0→15.02): gamma_v195_v1:v1 qualifying - bidirectional enemy AOE detection tuning (+0.13%, stacks with 087-745)
 - [ ] (745) Scrambler threat bonus reduction (10.62→10.60): gamma_v194_v1:v1 qualifying - bidirectional defensive priority tuning (-0.19%, stacks with 087-744)
