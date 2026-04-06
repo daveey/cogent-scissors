@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (647) Scrambler blocked neutrals weight increase (8.80→8.82): gamma_v96:v1 qualifying - continued expansion-blocking (+0.23%, stacks with 087-646)
 - [ ] (646) Scrambler threat bonus increase (10.60→10.62): gamma_v95:v1 qualifying - continued defensive priority tuning (+0.19%, stacks with 087-645)
 - [ ] (645) Scrambler corner pressure divisor reduction (7.50→7.48): gamma_v94:v1 qualifying - continued faster pressure growth (-0.27%, stacks with 087-644)
 - [ ] (644) Scrambler corner pressure cap increase (10.90→10.92): gamma_v93:v1 qualifying - continued corner pressure tuning (+0.18%, stacks with 087-643)

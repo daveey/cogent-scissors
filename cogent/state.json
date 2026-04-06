@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 580,
+      "attempts": 581,
       "improvements": 7,
-      "last_used": "20260406-646-testing"
+      "last_used": "20260406-647-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "646",
-    "focus": "Scrambler threat bonus increase",
-    "description": "Increased scrambler threat bonus from 10.60 to 10.62 (+0.19%)",
-    "rationale": "Scrambler threat bonus prioritizes enemy junctions near friendly network for defensive disruption. Higher bonus increases defensive targeting priority. Conservative +0.19% increase builds on validated improvements. Stacks with 087-645.",
-    "upload": "gamma_v95:v1",
+    "version": "647",
+    "focus": "Scrambler blocked neutrals weight increase",
+    "description": "Increased scrambler blocked neutrals weight from 8.80 to 8.82 (+0.23%)",
+    "rationale": "Scrambler blocked neutrals weight rewards targeting enemy junctions that block neutral junction access. Higher weight increases expansion-blocking priority. Conservative +0.23% increase builds on validated improvements. Stacks with 087-646.",
+    "upload": "gamma_v96:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 646. Clean baseline increased scrambler threat bonus. Awaiting tournament validation."
+    "note": "Scissors attempt 647. Clean baseline increased scrambler blocked neutrals weight. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
