@@ -6,12 +6,27 @@
       "last_used": null
     },
     "design": {
-      "attempts": 16,
-      "improvements": 8,
-      "last_used": "20260406-llm-objective"
+      "attempts": 17,
+      "improvements": 7,
+      "last_used": "20260406-junction-aoe-20"
     }
   },
   "failed_attempts": [
+    {
+      "date": "20260406",
+      "version": "llm-objective-reverted",
+      "focus": "LLM objective wiring to pressure budgets",
+      "description": "Wired LLM objective (expand/defend/economy_bootstrap) through to pressure budget computation",
+      "result": "FALSE POSITIVE: avg 27.55 vs baseline 25.42 (+8.4% apparent)",
+      "local_scores": {
+        "seeds": [42, 43, 44, 45, 46],
+        "scores": [29.98, 27.55, 30.97, 24.21, 25.04],
+        "avg": 27.55,
+        "baseline": 25.42
+      },
+      "status": "reverted",
+      "notes": "Cycle 94 - False positive. Code analysis shows objective=None without LLM, making Cycle 94 identical to Cycle 91. Local tests run with ANTHROPIC_API_KEY= (no LLM), so new code paths never executed. The +8.4% was statistical variance. Cannot validate LLM-dependent changes with current testing protocol (local=no LLM, tournament=Bedrock LLM). High seed variance observed: seed 42 ranges 14-30."
+    },
     {
       "date": "20260406",
       "version": "late-game-hp-modifiers-reverted",
@@ -171,29 +186,17 @@
   ],
   "last_improvement": {
     "date": "20260406",
-    "version": "llm-objective",
-    "focus": "LLM objective wiring to pressure budgets (alpha.0 cyborg parity)",
-    "description": "Wired LLM objective guidance (expand/defend/economy_bootstrap) through to pressure budget computation, allowing LLM to influence role allocation",
-    "result": "IMPROVEMENT: avg 27.55 vs baseline 25.42 (+8.4%)",
+    "version": "junction-aoe-20",
+    "focus": "Enemy detection radius expansion (alpha.0 parity)",
+    "description": "Increased JUNCTION_AOE_RANGE from 10 to 20 (+100%) to match alpha.0",
+    "result": "IMPROVEMENT: avg 25.42 vs baseline 25.05 (+1.5%)",
     "local_scores": {
-      "seeds": [
-        42,
-        43,
-        44,
-        45,
-        46
-      ],
-      "scores": [
-        29.98,
-        27.55,
-        30.97,
-        24.21,
-        25.04
-      ],
-      "avg": 27.55,
-      "baseline": 25.42
+      "seeds": [42, 43, 44, 45, 46],
+      "scores": [29.21, 24.31, 24.84, 24.85, 23.90],
+      "avg": 25.42,
+      "baseline": 25.05
     },
     "status": "uploaded-beta-cvc",
-    "notes": "Cycle 94 - Cyborg architecture advancement. LLM was already parsing objective from analysis, but it was being ignored. Now objective affects pressure budgets: 'expand' allocates all pressure to aligners, 'defend' boosts scramblers to 2, 'economy_bootstrap' caps aligners at 2. Brings us closer to alpha.0's strategic flexibility. Consistent improvement across all seeds (except 45). New baseline: 27.55."
+    "notes": "Cycle 91 - Alpha.0 parity achievement. Wider enemy AOE radius improves agent survival near enemy junctions. Particularly strong on seed 42 (+16.6%). This parameter controls enemy detection range for retreat decisions, targeting, and pressure calculations. New baseline: 25.42."
   }
 }
