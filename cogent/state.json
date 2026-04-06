@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 712,
+      "attempts": 713,
       "improvements": 7,
-      "last_used": "20260406-778-testing"
+      "last_used": "20260406-779-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "778",
-    "focus": "Scrambler heart batch target increase",
-    "description": "Increased scrambler heart batch target from 3.58 to 3.59 (+0.28%)",
-    "rationale": "Heart batch target controls how many hearts scramblers carry before crafting gear. Higher target improves persistence and reduces trips to station. Conservative +0.28% increase for bidirectional scrambler persistence tuning. Stacks with 087-777.",
-    "upload": "gamma_v227_v1:v1",
+    "version": "779",
+    "focus": "Hub align distance increase",
+    "description": "Increased hub align distance from 26.68 to 26.69 (+0.04%)",
+    "rationale": "Hub align distance controls maximum range for hub-based alignment network. Higher distance expands hub reach for junction connectivity. Conservative +0.04% increase for bidirectional hub reach tuning. Stacks with 087-778.",
+    "upload": "gamma_v228_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 778. Increased scrambler heart batch target for bidirectional scrambler persistence tuning. Awaiting tournament validation."
+    "note": "Attempt 779. Increased hub align distance for bidirectional hub reach tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

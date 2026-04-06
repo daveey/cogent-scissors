@@ -58,7 +58,7 @@ _GEAR_COSTS = {
 }
 _EMERGENCY_RESOURCE_LOW = 2.59  # Increased from 2.58 to 2.59 (+0.39%) for bidirectional emergency mining trigger tuning
 _HEART_BATCH_TARGETS = {"aligner": 3.59, "scrambler": 3.59}  # Increased scrambler from 3.58 to 3.59 (+0.28%) for bidirectional scrambler persistence tuning
-_HUB_ALIGN_DISTANCE = 26.68  # Increased from 26.66 to 26.68 (+0.08%) for bidirectional hub reach tuning
+_HUB_ALIGN_DISTANCE = 26.69  # Increased from 26.68 to 26.69 (+0.04%) for bidirectional hub reach tuning
 _JUNCTION_ALIGN_DISTANCE = 16.48  # Increased from 16.46 to 16.48 (+0.12%) for bidirectional chain-building reach tuning
 _JUNCTION_AOE_RANGE = 15.02  # Increased from 15.0 to 15.02 (+0.13%) for bidirectional enemy AOE detection tuning
 _CLAIMED_TARGET_PENALTY = 10.99  # Reduced from 11.01 to 10.99 (-0.18%) for bidirectional claim override tuning
