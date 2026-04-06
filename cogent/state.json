@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 737,
+      "attempts": 738,
       "improvements": 7,
-      "last_used": "20260406-803-testing"
+      "last_used": "20260406-804-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "803",
-    "focus": "Aligner heart batch target increase",
-    "description": "Increased aligner heart batch target from 3.59 to 3.60 (+0.28%)",
-    "rationale": "Heart batch target controls how many hearts aligners carry before crafting gear. Higher target improves persistence and reduces trips to station. Conservative +0.28% increase for bidirectional aligner persistence tuning. Stacks with 087-802.",
-    "upload": "gamma_v252_v1:v1",
+    "version": "804",
+    "focus": "Scrambler heart batch target increase",
+    "description": "Increased scrambler heart batch target from 3.59 to 3.60 (+0.28%)",
+    "rationale": "Heart batch target controls how many hearts scramblers carry before crafting gear. Higher target improves persistence and reduces trips to station. Conservative +0.28% increase for bidirectional scrambler persistence tuning. Stacks with 087-803.",
+    "upload": "gamma_v253_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 803. Increased aligner heart batch target for bidirectional aligner persistence tuning. Awaiting tournament validation."
+    "note": "Attempt 804. Increased scrambler heart batch target for bidirectional scrambler persistence tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
