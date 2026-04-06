@@ -73,12 +73,6 @@ def compute_pressure_budgets(
         return 0, 0
     if objective == "economy_bootstrap":
         return min(aligner_budget, _ECONOMY_BOOTSTRAP_ALIGNER_BUDGET), 0
-    if objective == "expand":
-        # Expand: focus all pressure on capturing neutral junctions
-        return pressure_budget, 0
-    if objective == "defend":
-        # Defend: boost scrambler presence to counter enemy pressure
-        return max(pressure_budget - 2, 0), min(2, pressure_budget)
     return aligner_budget, scrambler_budget
 
 

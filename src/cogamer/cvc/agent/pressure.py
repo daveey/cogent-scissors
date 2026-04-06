@@ -54,8 +54,7 @@ class PressureMixin:
             int(state.self_state.inventory.get("heart", 0)) > 0 or resource_total(state) > 0
         )
         pressure_metrics = self._pressure_metrics(state)
-        objective = getattr(self, "_llm_objective", None)
-        aligner_budget, scrambler_budget = self._pressure_budgets(state, objective=objective)
+        aligner_budget, scrambler_budget = self._pressure_budgets(state)
         heart_supply = heart_supply_capacity(state)
 
         macro_note = (
