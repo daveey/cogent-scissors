@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 559,
+      "attempts": 560,
       "improvements": 7,
-      "last_used": "20260406-625-testing"
+      "last_used": "20260406-626-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "625",
-    "focus": "Target claim steps reduction",
-    "description": "Reduced target claim steps from 33.45 to 33.40 (-0.15%)",
-    "rationale": "Target claim steps defines how long junction claims remain valid. Lower duration enables faster claim turnover and more dynamic coordination. Conservative -0.15% reduction builds on validated improvements. Stacks with 087-624.",
-    "upload": "gamma_v74:v1",
+    "version": "626",
+    "focus": "Extractor memory steps reduction",
+    "description": "Reduced extractor memory steps from 856 to 854 (-0.23%)",
+    "rationale": "Extractor memory steps defines how long extractors remain valid in memory. Lower duration enables faster memory recycling and reduced memory footprint. Conservative -0.23% reduction builds on validated improvements. Stacks with 087-625.",
+    "upload": "gamma_v75:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 625. Clean baseline reduced target claim steps. Awaiting tournament validation."
+    "note": "Scissors attempt 626. Clean baseline reduced extractor memory steps. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
