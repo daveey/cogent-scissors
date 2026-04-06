@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 813,
+      "attempts": 814,
       "improvements": 7,
-      "last_used": "20260406-879-testing"
+      "last_used": "20260406-880-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "879",
-    "focus": "Near-hub hotspot weight increase",
-    "description": "Increased near-hub hotspot weight from 1.66 to 1.67 (+0.60%)",
-    "rationale": "Near-hub hotspot weight controls penalty for contested junctions within 10 distance of hub. Higher value increases avoidance of near-hub contested areas, encouraging safer recapture timing. Conservative +0.60% increase for bidirectional near-hub recapture tuning. Stacks with 087-878.",
-    "upload": "gamma_v328_v1:v1",
+    "version": "880",
+    "focus": "Mid-range hotspot weight increase",
+    "description": "Increased mid-range hotspot weight from 5.48 to 5.49 (+0.18%)",
+    "rationale": "Mid-range hotspot weight controls penalty for contested junctions at 10-15 distance from hub. Higher value increases avoidance of mid-range contested areas, balancing defense and expansion. Conservative +0.18% increase for bidirectional mid-range contested junction tuning. Stacks with 087-879.",
+    "upload": "gamma_v329_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 879. Increased near-hub hotspot weight for bidirectional near-hub recapture timing tuning. Awaiting tournament validation."
+    "note": "Attempt 880. Increased mid-range hotspot weight for bidirectional mid-range contested junction tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
