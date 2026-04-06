@@ -147,41 +147,41 @@
         <div class="kpi-grid">
           <div class="kpi"><span class="kpi-value">—</span><span class="kpi-label">Rank</span></div>
           <div class="kpi"><span class="kpi-value">—</span><span class="kpi-label">Best Score</span></div>
-          <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Matches</span></div>
+          <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Qualified</span></div>
           <div class="kpi"><span class="kpi-value">—</span><span class="kpi-label">Gap to Next</span></div>
         </div>
-        <p style="margin-top:15px;color:#6c7086;font-size:0.9em;text-align:center">Matches running for scissors_v1/v2</p>
+        <p style="margin-top:15px;color:#f38ba8;font-size:0.9em;text-align:center">⚠️ Recent matches failed (qualifying). No leaderboard entries yet.</p>
       </div>
 
       <div class="panel">
         <h2>📊 Approach Stats</h2>
         <div class="stat-row"><span class="stat-label">PCO Attempts</span><span class="stat-value">0</span></div>
-        <div class="stat-row"><span class="stat-label">PCO Improvements</span><span class="stat-value">0</span></div>
+        <div class="stat-row"><span class="stat-label">PCO Improvements</span><span class="stat-value">0 (—)</span></div>
         <div class="stat-row"><span class="stat-label">Design Attempts</span><span class="stat-value">3</span></div>
-        <div class="stat-row"><span class="stat-label">Design Improvements</span><span class="stat-value">1 (33%)</span></div>
-        <div class="stat-row"><span class="stat-label">Last Used</span><span class="stat-value">Design (RETREAT_MARGIN)</span></div>
+        <div class="stat-row"><span class="stat-label">Design Improvements</span><span class="stat-value">TBD (testing)</span></div>
+        <div class="stat-row"><span class="stat-label">Last Commit</span><span class="stat-value">Cycle 81 (RETREAT_MARGIN)</span></div>
       </div>
     </div>
 
     <div class="panel">
       <h2>✓ Active TODOs</h2>
-      <div class="todo-item">☑ Hotspot tracking (already implemented)</div>
-      <div class="todo-item">☑ Wider enemy AOE for retreat (+458%)</div>
-      <div class="todo-item">⏳ RETREAT_MARGIN 15→20 (testing now)</div>
+      <div class="todo-item">☑ Hotspot tracking (already implemented in codebase)</div>
+      <div class="todo-item">☑ Wider enemy AOE for retreat (+458% documented)</div>
+      <div class="todo-item">⏳ RETREAT_MARGIN 15→20 (testing across 5 seeds now)</div>
       <div class="todo-item">☐ LLM stagnation detection</div>
-      <div class="todo-item">☐ Read teammate vibes</div>
+      <div class="todo-item">☐ Read teammate vibes for coordination</div>
     </div>
 
     <div class="panel">
       <h2>🧪 Recent Experiments</h2>
       <div class="experiment">
         <div class="experiment-header">
-          <span style="color:#a6adc8;font-size:0.9em">2026-04-06 (Cycle 81)</span>
+          <span style="color:#a6adc8;font-size:0.9em">2026-04-06 00:52 UTC (Cycle 81)</span>
           <span class="experiment-badge testing">TESTING</span>
         </div>
         <div style="font-weight:600;color:#fab387;margin-bottom:5px">RETREAT_MARGIN 15→20 (Design)</div>
         <div style="color:#cdd6f4;font-size:0.95em;margin-bottom:5px">Match alpha.0's more conservative survival threshold</div>
-        <div style="color:#89dceb;font-size:0.9em">Running eval across seeds 42-46...</div>
+        <div style="color:#89dceb;font-size:0.9em">Eval running: seeds 42-46 (~20min elapsed, waiting for results)</div>
       </div>
       <div class="experiment regression">
         <div class="experiment-header">
@@ -189,7 +189,7 @@
           <span class="experiment-badge regression">REGRESSION</span>
         </div>
         <div style="font-weight:600;color:#fab387;margin-bottom:5px">Stall unstick threshold (Design)</div>
-        <div style="color:#cdd6f4;font-size:0.95em;margin-bottom:5px">Increased _STALL_UNSTICK_STEPS 12→14 (+16.7%)</div>
+        <div style="color:#cdd6f4;font-size:0.95em;margin-bottom:5px">_STALL_UNSTICK_STEPS 12→14 (+16.7%)</div>
         <div style="color:#f38ba8;font-size:0.9em">Avg 13.06 vs baseline 13.65 (-4.3%) — REVERTED</div>
       </div>
     </div>
@@ -206,22 +206,16 @@
   </div>
 
   <script>
-    fetch('/runtime/heartbeat.json')
-      .then(r => r.json())
-      .then(hb => {
-        const banner = document.getElementById('statusBanner');
-        if (hb.status==='idle') banner.classList.add('idle');
-        if (hb.status==='stopping') banner.classList.add('stopping');
-        document.getElementById('statusMessage').textContent = hb.status.toUpperCase()+': '+hb.message;
-        
-        const hbTime = new Date(hb.timestamp);
-        const diffMins = Math.floor((new Date()-hbTime)/60000);
-        let rel = diffMins<1?'just now':diffMins===1?'1m ago':diffMins<60?diffMins+'m ago':Math.floor(diffMins/60)+'h ago';
-        document.getElementById('statusTime').textContent = hbTime.toISOString().slice(0,19).replace('T',' ')+' UTC ['+rel+']';
-      })
-      .catch(() => {
-        document.getElementById('statusMessage').textContent = 'WORKING: Cycle 1 testing';
-      });
+    const hb = {"timestamp":"2026-04-06T00:52:07.304913+00:00","status":"working","message":"Cycle 81: RETREAT_MARGIN test ~16min in (seed 42)"};
+    const banner = document.getElementById('statusBanner');
+    if (hb.status==='idle') banner.classList.add('idle');
+    if (hb.status==='stopping') banner.classList.add('stopping');
+    document.getElementById('statusMessage').textContent = hb.status.toUpperCase()+': '+hb.message;
+    
+    const hbTime = new Date(hb.timestamp);
+    const diffMins = Math.floor((new Date()-hbTime)/60000);
+    let rel = diffMins<1?'just now':diffMins===1?'1m ago':diffMins<60?diffMins+'m ago':Math.floor(diffMins/60)+'h ago';
+    document.getElementById('statusTime').textContent = hbTime.toISOString().slice(0,19).replace('T',' ')+' UTC ['+rel+']';
     document.getElementById('genTime').textContent = new Date().toISOString().slice(0,19).replace('T',' ')+' UTC';
   </script>
 </body>
