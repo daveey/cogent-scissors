@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 654,
+      "attempts": 655,
       "improvements": 7,
-      "last_used": "20260406-720-testing"
+      "last_used": "20260406-721-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "720",
-    "focus": "Hub align distance reduction",
-    "description": "Reduced hub align distance from 26.68 to 26.66 (-0.08%)",
-    "rationale": "Hub align distance controls how far junctions can be from hub while still counting toward alignment network. Lower distance tightens hub-proximal clustering. Conservative -0.08% reduction for bidirectional hub reach tuning. Stacks with 087-719.",
-    "upload": "gamma_v169_v1:v1",
+    "version": "721",
+    "focus": "Junction align distance reduction",
+    "description": "Reduced junction align distance from 16.48 to 16.46 (-0.12%)",
+    "rationale": "Junction align distance controls how far junctions can chain-build from other junctions in the alignment network. Lower distance tightens network clustering. Conservative -0.12% reduction for bidirectional chain-building reach tuning. Stacks with 087-720.",
+    "upload": "gamma_v170_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 720. Reduced hub align distance for bidirectional hub reach tuning. MILESTONE: 720 attempts! Awaiting tournament validation."
+    "note": "Attempt 721. Reduced junction align distance for bidirectional chain-building reach tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
