@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 678,
+      "attempts": 679,
       "improvements": 7,
-      "last_used": "20260406-744-testing"
+      "last_used": "20260406-745-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "744",
-    "focus": "Scrambler corner pressure cap reduction",
-    "description": "Reduced scrambler corner_pressure cap from 10.92 to 10.90 (-0.18%)",
-    "rationale": "Scrambler corner_pressure cap limits maximum bonus for distant enemy junction targeting. Lower cap reduces maximum distant targeting aggression. Conservative -0.18% reduction for bidirectional corner pressure cap tuning. Stacks with 087-743.",
-    "upload": "gamma_v193_v1:v1",
+    "version": "745",
+    "focus": "Scrambler threat bonus reduction",
+    "description": "Reduced scrambler threat_bonus from 10.62 to 10.60 (-0.19%)",
+    "rationale": "Scrambler threat_bonus weight controls priority for defending friendly junctions from nearby enemy presence. Lower weight reduces defensive priority for more balanced offense/defense. Conservative -0.19% reduction for bidirectional defensive priority tuning. Stacks with 087-744.",
+    "upload": "gamma_v194_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 744. Reduced scrambler corner_pressure cap for bidirectional corner pressure cap tuning. Awaiting tournament validation."
+    "note": "Attempt 745. Reduced scrambler threat_bonus for bidirectional defensive priority tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
