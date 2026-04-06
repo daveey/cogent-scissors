@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 575,
+      "attempts": 576,
       "improvements": 7,
-      "last_used": "20260406-641-testing"
+      "last_used": "20260406-642-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "641",
-    "focus": "Expansion bonus weight increase",
-    "description": "Increased expansion bonus weight from 6.62 to 6.64 (+0.30%)",
-    "rationale": "Expansion bonus weight controls the per-junction bonus for unlocking unreachable entities. Higher weight increases expansion incentive. Conservative +0.30% increase builds on validated improvements. Stacks with 087-640.",
-    "upload": "gamma_v90:v1",
+    "version": "642",
+    "focus": "Expansion bonus cap increase",
+    "description": "Increased expansion bonus cap from 37.75 to 37.80 (+0.13%)",
+    "rationale": "Expansion bonus cap controls the maximum expansion bonus for high-value junctions. Higher cap increases bonus ceiling for valuable expansions. Conservative +0.13% increase builds on validated improvements. Stacks with 087-641.",
+    "upload": "gamma_v91:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 641. Clean baseline increased expansion bonus weight. Awaiting tournament validation."
+    "note": "Scissors attempt 642. Clean baseline increased expansion bonus cap. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
