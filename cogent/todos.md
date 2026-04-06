@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (624) Claimed target penalty increase (11.01→11.03): gamma:v73 qualifying - continued flexible claim override tuning (+0.18%, stacks with 087-623)
 - [ ] (623) Junction AOE range reduction (10.66→10.64): gamma:v72 qualifying - continued larger area-of-effect detection tuning (-0.19%, stacks with 087-622)
 - [ ] (622) Junction align distance reduction (16.46→16.44): gamma:v71 qualifying - continued chain-building reach tuning (-0.12%, stacks with 087-621)
 - [ ] (621) Hub align distance reduction (26.66→26.64): gamma:v70 qualifying - continued extended hub reach tuning (-0.08%, stacks with 087-620)
