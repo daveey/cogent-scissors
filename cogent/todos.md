@@ -804,3 +804,4 @@
 - [ ] (829) Corner pressure cap increase (10.91→10.92): gamma_v278_v1 qualifying - bidirectional corner pressure cap tuning (+0.09%, stacks with 087-828)
 - [ ] (830) Hub penalty near-hub multiplier increase (0.262→0.263): gamma_v279_v1 qualifying - bidirectional hub clustering tuning (+0.38%, stacks with 087-829)
 - [ ] (831) Hub penalty 10-15 range multiplier increase (1.32→1.33): gamma_v280_v1 qualifying - bidirectional 10-15 range multiplier tuning (+0.76%, stacks with 087-830)
+- [ ] (832) Hub penalty 10-15 range base increase (1.81→1.82): gamma_v281_v1 qualifying - bidirectional 10-15 range base tuning (+0.55%, stacks with 087-831)
