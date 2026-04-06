@@ -14,9 +14,7 @@
       line-height: 1.6;
     }
     .container { max-width: 1400px; margin: 0 auto; }
-    .status-banner {
-      background: #f9e2af;
-      color: #1e1e2e;
+    .heartbeat-banner {
       padding: 15px 20px;
       border-radius: 8px;
       margin-bottom: 20px;
@@ -25,9 +23,10 @@
       justify-content: space-between;
       align-items: center;
     }
-    .status-banner.idle { background: #a6e3a1; }
-    .status-banner.stopping { background: #f38ba8; }
-    .status-time { font-size: 0.9em; opacity: 0.9; }
+    .heartbeat-banner.status-idle, .heartbeat-banner.status-active, .heartbeat-banner.status-working { background: #a6e3a1; color: #1e1e2e; }
+    .heartbeat-banner.status-sleeping { background: #f9e2af; color: #1e1e2e; }
+    .heartbeat-banner.status-stopping { background: #f38ba8; color: #1e1e2e; }
+    .heartbeat-banner.status-unknown { background: #45475a; color: #cdd6f4; }
     .dashboard-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -136,53 +135,41 @@
 </head>
 <body>
   <div class="container">
-    <div class="status-banner" id="statusBanner">
-      <span id="statusMessage">Loading...</span>
-      <span class="status-time" id="statusTime"></span>
-    </div>
+    <div id="heartbeat-banner" class="heartbeat-banner status-unknown">Loading status...</div>
 
     <div class="dashboard-grid">
       <div class="panel">
         <h2>🏆 Tournament Status</h2>
         <div class="kpi-grid">
-          <div class="kpi"><span class="kpi-value">—</span><span class="kpi-label">Rank</span></div>
-          <div class="kpi"><span class="kpi-value">—</span><span class="kpi-label">Best Score</span></div>
-          <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Qualified</span></div>
-          <div class="kpi"><span class="kpi-value">—</span><span class="kpi-label">Gap to Next</span></div>
+          <div class="kpi"><span class="kpi-value">35</span><span class="kpi-label">Best Rank</span></div>
+          <div class="kpi"><span class="kpi-value">12.00</span><span class="kpi-label">Best Score</span></div>
+          <div class="kpi"><span class="kpi-value">97</span><span class="kpi-label">Total Policies</span></div>
+          <div class="kpi"><span class="kpi-value">-0.09</span><span class="kpi-label">Gap to #34</span></div>
         </div>
-        <p style="margin-top:15px;color:#f38ba8;font-size:0.9em;text-align:center">⚠️ Recent matches failed (qualifying). No leaderboard entries yet.</p>
+        <p style="margin-top:15px;color:#a6e3a1;font-size:0.9em;text-align:center">✓ scissors_v1:v5 @ rank 35 (22 matches)</p>
       </div>
 
       <div class="panel">
         <h2>📊 Approach Stats</h2>
         <div class="stat-row"><span class="stat-label">PCO Attempts</span><span class="stat-value">0</span></div>
         <div class="stat-row"><span class="stat-label">PCO Improvements</span><span class="stat-value">0 (—)</span></div>
-        <div class="stat-row"><span class="stat-label">Design Attempts</span><span class="stat-value">3</span></div>
-        <div class="stat-row"><span class="stat-label">Design Improvements</span><span class="stat-value">TBD (testing)</span></div>
-        <div class="stat-row"><span class="stat-label">Last Commit</span><span class="stat-value">Cycle 81 (RETREAT_MARGIN)</span></div>
+        <div class="stat-row"><span class="stat-label">Design Attempts</span><span class="stat-value">2</span></div>
+        <div class="stat-row"><span class="stat-label">Design Improvements</span><span class="stat-value">1 (50%)</span></div>
+        <div class="stat-row"><span class="stat-label">Last Approach</span><span class="stat-value">stall-14-reverted</span></div>
       </div>
     </div>
 
     <div class="panel">
       <h2>✓ Active TODOs</h2>
-      <div class="todo-item">☑ Hotspot tracking (already implemented in codebase)</div>
-      <div class="todo-item">☑ Wider enemy AOE for retreat (+458% documented)</div>
-      <div class="todo-item">⏳ RETREAT_MARGIN 15→20 (testing across 5 seeds now)</div>
-      <div class="todo-item">☐ LLM stagnation detection</div>
+      <div class="todo-item">☑ Hotspot tracking (implemented in junctions.py, scoring.py)</div>
+      <div class="todo-item">☑ Wider enemy AOE for retreat (+458% avg score documented)</div>
+      <div class="todo-item">⏳ RETREAT_MARGIN 15→20 (testing alpha.0 parity)</div>
+      <div class="todo-item">☐ LLM stagnation detection: detect stuck agents</div>
       <div class="todo-item">☐ Read teammate vibes for coordination</div>
     </div>
 
     <div class="panel">
       <h2>🧪 Recent Experiments</h2>
-      <div class="experiment">
-        <div class="experiment-header">
-          <span style="color:#a6adc8;font-size:0.9em">2026-04-06 00:52 UTC (Cycle 81)</span>
-          <span class="experiment-badge testing">TESTING</span>
-        </div>
-        <div style="font-weight:600;color:#fab387;margin-bottom:5px">RETREAT_MARGIN 15→20 (Design)</div>
-        <div style="color:#cdd6f4;font-size:0.95em;margin-bottom:5px">Match alpha.0's more conservative survival threshold</div>
-        <div style="color:#89dceb;font-size:0.9em">Eval running: seeds 42-46 (~20min elapsed, waiting for results)</div>
-      </div>
       <div class="experiment regression">
         <div class="experiment-header">
           <span style="color:#a6adc8;font-size:0.9em">2026-04-06 (Cycle 80)</span>
@@ -191,6 +178,7 @@
         <div style="font-weight:600;color:#fab387;margin-bottom:5px">Stall unstick threshold (Design)</div>
         <div style="color:#cdd6f4;font-size:0.95em;margin-bottom:5px">_STALL_UNSTICK_STEPS 12→14 (+16.7%)</div>
         <div style="color:#f38ba8;font-size:0.9em">Avg 13.06 vs baseline 13.65 (-4.3%) — REVERTED</div>
+        <div style="color:#6c7086;font-size:0.85em;margin-top:5px">Testing after codebase reset. Threshold 14 regressed in new context.</div>
       </div>
     </div>
 
@@ -206,16 +194,20 @@
   </div>
 
   <script>
-    const hb = {"timestamp":"2026-04-06T00:52:07.304913+00:00","status":"working","message":"Cycle 81: RETREAT_MARGIN test ~16min in (seed 42)"};
-    const banner = document.getElementById('statusBanner');
-    if (hb.status==='idle') banner.classList.add('idle');
-    if (hb.status==='stopping') banner.classList.add('stopping');
-    document.getElementById('statusMessage').textContent = hb.status.toUpperCase()+': '+hb.message;
-    
-    const hbTime = new Date(hb.timestamp);
-    const diffMins = Math.floor((new Date()-hbTime)/60000);
-    let rel = diffMins<1?'just now':diffMins===1?'1m ago':diffMins<60?diffMins+'m ago':Math.floor(diffMins/60)+'h ago';
-    document.getElementById('statusTime').textContent = hbTime.toISOString().slice(0,19).replace('T',' ')+' UTC ['+rel+']';
+    function updateHeartbeat(){
+      fetch('/heartbeat.json').then(r=>r.json()).then(hb=>{
+        const el=document.getElementById('heartbeat-banner');
+        const ts=hb.timestamp?new Date(hb.timestamp):null;
+        const ago=ts?Math.floor((Date.now()-ts)/60000):null;
+        const rel=ago===null?'':ago<1?'just now':ago<60?ago+'m ago':Math.floor(ago/60)+'h ago';
+        const time=ts?ts.toISOString().replace('T',' ').replace(/\.\d+Z/,' UTC')+' ['+rel+']':'';
+        el.textContent=(hb.status||'unknown').toUpperCase()+': '+(hb.message||'')+'  '+time;
+        el.className='heartbeat-banner status-'+(hb.status||'unknown');
+      }).catch(()=>{});
+    }
+    updateHeartbeat();
+    setInterval(updateHeartbeat,10000);
+
     document.getElementById('genTime').textContent = new Date().toISOString().slice(0,19).replace('T',' ')+' UTC';
   </script>
 </body>
