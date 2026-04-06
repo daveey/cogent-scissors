@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 820,
+      "attempts": 821,
       "improvements": 7,
-      "last_used": "20260406-886-testing"
+      "last_used": "20260406-887-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "886",
-    "focus": "Network bonus cap increase",
-    "description": "Increased network bonus cap from 4.58 to 4.59 (+0.22%)",
-    "rationale": "Network bonus cap limits maximum reward for chain-building near friendly junctions. Higher cap allows stronger consolidation around dense network clusters. Conservative +0.22% increase for bidirectional network consolidation cap tuning. Stacks with 087-885.",
-    "upload": "gamma_v335_v1:v1",
+    "version": "887",
+    "focus": "Hub penalty near-hub multiplier increase",
+    "description": "Increased hub penalty near-hub multiplier from 0.264 to 0.265 (+0.38%)",
+    "rationale": "Hub penalty near-hub multiplier controls penalty for junctions within 10 distance of hub. Higher value increases penalty for distant junctions even in near-hub range, encouraging tighter clustering. Conservative +0.38% increase for bidirectional hub clustering tuning. Stacks with 087-886.",
+    "upload": "gamma_v336_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 886. Increased network bonus cap for bidirectional network consolidation tuning. Awaiting tournament validation."
+    "note": "Attempt 887. Increased hub penalty near-hub multiplier for bidirectional hub clustering tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
