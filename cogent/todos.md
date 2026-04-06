@@ -795,3 +795,4 @@
 - [ ] (820) Network bonus weight increase (0.94→0.95): gamma_v269_v1 qualifying - bidirectional network consolidation weight tuning (+1.06%, stacks with 087-819)
 - [ ] (821) Network bonus cap increase (4.57→4.58): gamma_v270_v1 qualifying - bidirectional network consolidation cap tuning (+0.22%, stacks with 087-820)
 - [ ] (822) Expansion bonus weight increase (6.63→6.64): gamma_v271_v1 qualifying - bidirectional expansion bonus weight tuning (+0.15%, stacks with 087-821)
+- [ ] (823) Expansion bonus cap increase (37.76→37.77): gamma_v272_v1 qualifying - bidirectional expansion bonus cap tuning (+0.03%, stacks with 087-822)
