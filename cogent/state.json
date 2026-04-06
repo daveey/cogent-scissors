@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 571,
+      "attempts": 572,
       "improvements": 7,
-      "last_used": "20260406-637-testing"
+      "last_used": "20260406-638-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "637",
-    "focus": "Hotspot penalty cap increase",
-    "description": "Increased hotspot penalty cap from 3.32 to 3.34 (+0.60%)",
-    "rationale": "Hotspot penalty cap controls the maximum hotspot count used in penalty calculation. Higher cap allows more contested junctions to be counted, increasing penalty ceiling. Conservative +0.60% increase builds on validated improvements. Stacks with 087-636.",
-    "upload": "gamma_v86:v1",
+    "version": "638",
+    "focus": "Network bonus weight increase",
+    "description": "Increased network bonus weight from 0.93 to 0.94 (+1.08%)",
+    "rationale": "Network bonus weight controls the incentive for building chains near friendly junctions. Higher weight increases chain-building consolidation bonus. Conservative +1.08% increase builds on validated improvements. Stacks with 087-637.",
+    "upload": "gamma_v87:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 637. Clean baseline increased hotspot penalty cap. Awaiting tournament validation."
+    "note": "Scissors attempt 638. Clean baseline increased network bonus weight. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
