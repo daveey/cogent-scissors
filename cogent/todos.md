@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (557) Junction AOE range increase (10.62→10.64): scissors_v474:v1 qualifying - continued larger area-of-effect detection tuning (+0.19%, stacks with 087-556)
 - [ ] (556) Junction align distance increase (16.42→16.44): scissors_v473:v1 qualifying - continued chain-building reach tuning (+0.12%, stacks with 087-555)
 - [ ] (555) Hub align distance increase (26.62→26.64): scissors_v472:v1 qualifying - continued extended hub reach tuning (+0.08%, stacks with 087-554)
 - [ ] (554) Scrambler heart batch target increase (3.52→3.54): scissors_v471:v1 qualifying - continued scrambler persistence tuning (+0.57%, stacks with 087-553)
