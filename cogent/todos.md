@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (648) Aligner HP threshold reduction (45.68→45.66): gamma_v97:v1 qualifying - continued aligner retreat tuning (-0.044%, stacks with 087-647)
 - [ ] (647) Scrambler blocked neutrals weight increase (8.80→8.82): gamma_v96:v1 qualifying - continued expansion-blocking (+0.23%, stacks with 087-646)
 - [ ] (646) Scrambler threat bonus increase (10.60→10.62): gamma_v95:v1 qualifying - continued defensive priority tuning (+0.19%, stacks with 087-645)
 - [ ] (645) Scrambler corner pressure divisor reduction (7.50→7.48): gamma_v94:v1 qualifying - continued faster pressure growth (-0.27%, stacks with 087-644)
