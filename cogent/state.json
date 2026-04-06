@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 511,
+      "attempts": 512,
       "improvements": 7,
-      "last_used": "20260406-577-testing"
+      "last_used": "20260406-578-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "577",
-    "focus": "Enemy AOE penalty increase",
-    "description": "Increased enemy AOE penalty from 10.76 to 10.78 (+0.19%)",
-    "rationale": "Enemy AOE penalty discourages targeting junctions near enemy junctions. Higher penalty improves safety by avoiding dangerous areas. Conservative +0.19% increase builds on validated improvements. Stacks with 087-576.",
-    "upload": "gamma:v26",
+    "version": "578",
+    "focus": "Scrambler corner pressure cap increase",
+    "description": "Increased scrambler corner pressure cap from 10.90 to 10.92 (+0.18%)",
+    "rationale": "Scrambler corner pressure cap limits maximum pressure bonus for distant enemies. Higher cap allows stronger pressure incentive for far corners. Conservative +0.18% increase builds on validated improvements. Stacks with 087-577.",
+    "upload": "gamma:v27",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 577. Clean baseline increased enemy AOE penalty. Awaiting tournament validation."
+    "note": "Scissors attempt 578. Clean baseline increased scrambler corner pressure cap. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
