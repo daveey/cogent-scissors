@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (737) Network bonus weight increase (0.92→0.93): gamma_v186_v1:v1 qualifying - bidirectional network consolidation tuning (+1.09%, stacks with 087-736)
 - [ ] (736) Network bonus cap increase (4.54→4.56): gamma_v185_v1:v1 qualifying - bidirectional network consolidation tuning (+0.44%, stacks with 087-735)
 - [ ] (735) Hotspot penalty cap increase (3.30→3.32): gamma_v184_v1:v1 qualifying - bidirectional contested junction penalty cap tuning (+0.61%, stacks with 087-734)
 - [ ] (734) Hotspot weight far-range increase (11.50→11.52): gamma_v183_v1:v1 qualifying - bidirectional far-range contested junction tuning (+0.17%, stacks with 087-733)
