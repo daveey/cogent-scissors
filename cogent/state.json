@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 605,
+      "attempts": 606,
       "improvements": 7,
-      "last_used": "20260406-671-testing"
+      "last_used": "20260406-672-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "671",
-    "focus": "Network bonus weight reduction",
-    "description": "Reduced network bonus weight from 0.94 to 0.93 (-1.06%)",
-    "rationale": "Network bonus weight controls the incentive for building chains near friendly junctions. Lower weight reduces chain-building consolidation bonus. Conservative -1.06% reduction builds on validated improvements. Stacks with 087-670.",
-    "upload": "gamma_v120:v1",
+    "version": "672",
+    "focus": "Network bonus cap reduction",
+    "description": "Reduced network bonus cap from 4.58 to 4.56 (-0.44%)",
+    "rationale": "Network bonus cap controls the maximum nearby friendly junctions counted for chain-building bonus. Lower cap reduces dense network clustering bonus ceiling. Conservative -0.44% reduction builds on validated improvements. Stacks with 087-671.",
+    "upload": "gamma_v121:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 671. Clean baseline reduced network bonus weight. Awaiting tournament validation."
+    "note": "Scissors attempt 672. Clean baseline reduced network bonus cap. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
