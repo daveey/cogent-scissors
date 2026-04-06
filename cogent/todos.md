@@ -860,3 +860,4 @@
 - [ ] (885) Teammate penalty increase (9.54→9.55): gamma_v334_v1 qualifying - bidirectional coordination tuning (+0.10%, stacks with 087-884)
 - [ ] (886) Network bonus cap increase (4.58→4.59): gamma_v335_v1 qualifying - bidirectional network consolidation cap tuning (+0.22%, stacks with 087-885)
 - [ ] (887) Hub penalty near-hub multiplier increase (0.264→0.265): gamma_v336_v1 qualifying - bidirectional hub clustering tuning (+0.38%, stacks with 087-886)
+- [ ] (888) Hub penalty 10-15 range multiplier increase (1.34→1.35): gamma_v337_v1 qualifying - bidirectional 10-15 range multiplier tuning (+0.75%, stacks with 087-887)

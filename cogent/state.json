@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 821,
+      "attempts": 822,
       "improvements": 7,
-      "last_used": "20260406-887-testing"
+      "last_used": "20260406-888-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "887",
-    "focus": "Hub penalty near-hub multiplier increase",
-    "description": "Increased hub penalty near-hub multiplier from 0.264 to 0.265 (+0.38%)",
-    "rationale": "Hub penalty near-hub multiplier controls penalty for junctions within 10 distance of hub. Higher value increases penalty for distant junctions even in near-hub range, encouraging tighter clustering. Conservative +0.38% increase for bidirectional hub clustering tuning. Stacks with 087-886.",
-    "upload": "gamma_v336_v1:v1",
+    "version": "888",
+    "focus": "Hub penalty 10-15 range multiplier increase",
+    "description": "Increased hub penalty 10-15 range multiplier from 1.34 to 1.35 (+0.75%)",
+    "rationale": "Hub penalty 10-15 range multiplier controls penalty scaling for junctions at 10-15 distance from hub. Higher value increases penalty gradient in this range, encouraging closer positioning. Conservative +0.75% increase for bidirectional 10-15 range multiplier tuning. Stacks with 087-887.",
+    "upload": "gamma_v337_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 887. Increased hub penalty near-hub multiplier for bidirectional hub clustering tuning. Awaiting tournament validation."
+    "note": "Attempt 888. Increased hub penalty 10-15 range multiplier for bidirectional 10-15 range tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
