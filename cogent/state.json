@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 551,
+      "attempts": 552,
       "improvements": 7,
-      "last_used": "20260406-617-testing"
+      "last_used": "20260406-618-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "617",
-    "focus": "Scrambler HP threshold reduction",
-    "description": "Reduced scrambler HP threshold from 34.29 to 34.27 (-0.058%)",
-    "rationale": "Scrambler HP threshold controls when scramblers retreat to refill hearts. Lower threshold makes scramblers stay on field longer for more aggressive disruption. Conservative -0.058% reduction builds on validated improvements. Stacks with 087-616.",
-    "upload": "gamma:v66",
+    "version": "618",
+    "focus": "Emergency resource low threshold reduction",
+    "description": "Reduced emergency resource low from 2.56 to 2.54 (-0.78%)",
+    "rationale": "Emergency resource low threshold triggers emergency mining when resources dip below this level. Lower threshold delays emergency mining trigger. Conservative -0.78% reduction builds on validated improvements. Stacks with 087-617.",
+    "upload": "gamma:v67",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 617. Clean baseline reduced scrambler HP threshold. Awaiting tournament validation."
+    "note": "Scissors attempt 618. Clean baseline reduced emergency resource low threshold. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
