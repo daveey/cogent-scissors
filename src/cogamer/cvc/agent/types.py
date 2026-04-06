@@ -57,7 +57,7 @@ _GEAR_COSTS = {
     "scout": {"carbon": 1, "oxygen": 1, "germanium": 1, "silicon": 3},
 }
 _EMERGENCY_RESOURCE_LOW = 2.58  # Increased from 2.56 to 2.58 (+0.78%) for bidirectional emergency mining trigger tuning
-_HEART_BATCH_TARGETS = {"aligner": 3.56, "scrambler": 3.56}  # Reduced scrambler from 3.58 to 3.56 (-0.56%) for bidirectional scrambler persistence tuning
+_HEART_BATCH_TARGETS = {"aligner": 3.58, "scrambler": 3.56}  # Increased aligner from 3.56 to 3.58 (+0.56%) for bidirectional aligner persistence tuning
 _HUB_ALIGN_DISTANCE = 26.66  # Reduced from 26.68 to 26.66 (-0.08%) for bidirectional hub reach tuning
 _JUNCTION_ALIGN_DISTANCE = 16.46  # Reduced from 16.48 to 16.46 (-0.12%) for bidirectional chain-building reach tuning
 _JUNCTION_AOE_RANGE = 15.02  # Increased from 15.0 to 15.02 (+0.13%) for bidirectional enemy AOE detection tuning
