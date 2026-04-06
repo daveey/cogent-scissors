@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 815,
+      "attempts": 816,
       "improvements": 7,
-      "last_used": "20260406-881-testing"
+      "last_used": "20260406-882-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "881",
-    "focus": "Far-range hotspot weight increase",
-    "description": "Increased far-range hotspot weight from 11.54 to 11.55 (+0.09%)",
-    "rationale": "Far-range hotspot weight controls base penalty for contested junctions beyond 15 distance from hub. Higher value increases avoidance of far-range contested areas in four_score multi-team format. Conservative +0.09% increase for bidirectional far-range contested junction tuning. Stacks with 087-880.",
-    "upload": "gamma_v330_v1:v1",
+    "version": "882",
+    "focus": "Corner pressure divisor decrease",
+    "description": "Decreased corner pressure divisor from 7.52 to 7.51 (-0.13%)",
+    "rationale": "Corner pressure divisor affects scrambler targeting of distant enemies. Lower divisor increases corner pressure value, giving scramblers slightly stronger incentive to disrupt distant enemies. Conservative -0.13% decrease for bidirectional corner pressure divisor tuning. Stacks with 087-881.",
+    "upload": "gamma_v331_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 881. Increased far-range hotspot weight for bidirectional far-range contested junction tuning. Awaiting tournament validation."
+    "note": "Attempt 882. Decreased corner pressure divisor for bidirectional scrambler distant targeting tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
