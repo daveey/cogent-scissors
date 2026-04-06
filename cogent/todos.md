@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (676) Enemy AOE penalty reduction (10.78→10.76): gamma_v125:v1 qualifying - continued enemy avoidance tuning (-0.19%, stacks with 087-675)
 - [ ] (675) Expansion bonus cap reduction (37.80→37.75): gamma_v124:v1 qualifying - continued higher expansion bonus ceiling (-0.13%, stacks with 087-674)
 - [ ] (674) Expansion bonus weight reduction (6.64→6.62): gamma_v123:v1 qualifying - continued expansion emphasis (-0.30%, stacks with 087-673)
 - [ ] (673) Teammate penalty reduction (9.53→9.51): gamma_v122:v1 qualifying - continued coordination tuning (-0.21%, stacks with 087-672)
