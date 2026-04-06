@@ -6,12 +6,27 @@
       "last_used": null
     },
     "design": {
-      "attempts": 14,
+      "attempts": 15,
       "improvements": 7,
       "last_used": "20260406-junction-aoe-20"
     }
   },
   "failed_attempts": [
+    {
+      "date": "20260406",
+      "version": "late-game-hp-modifiers-reverted",
+      "focus": "Late-game HP retreat modifiers reduction",
+      "description": "Reduced late-game HP modifiers: aligner/scrambler 10→5, miner/scout 5→0",
+      "result": "REGRESSION: avg 23.09 vs baseline 25.42 (-9.2%)",
+      "local_scores": {
+        "seeds": [42, 43, 44, 45, 46],
+        "scores": [20.69, 21.31, 23.01, 25.73, 24.73],
+        "avg": 23.09,
+        "baseline": 25.42
+      },
+      "status": "reverted",
+      "notes": "Cycle 93 - Regression. Reducing late-game HP modifiers caused significant performance drop, particularly on seed 42 (-29%). Mixed results across seeds (42-44 regressed, 45-46 improved slightly). The existing late-game modifiers appear necessary for proper survival balance after step 2500. Unlike base HP thresholds, late-game modifiers serve a different purpose and cannot be reduced."
+    },
     {
       "date": "20260406",
       "version": "network-bonus-1.0-reverted",
