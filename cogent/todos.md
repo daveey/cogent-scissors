@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (633) Hub penalty far-range base increase (48.83→48.84): gamma_v82:v1 qualifying - continued far-range base tuning (+0.02%, stacks with 087-632)
 - [ ] (632) Hub penalty far-range multiplier increase (7.80→7.81): gamma_v81:v1 qualifying - continued far-range multiplier tuning (+0.13%, stacks with 087-631)
 - [ ] (631) Hub penalty 15-25 range multiplier increase (2.78→2.79): gamma_v80:v1 qualifying - continued 15-25 range multiplier tuning (+0.36%, stacks with 087-630)
 - [ ] (630) Hub penalty 15-25 range base increase (9.54→9.55): gamma_v79:v1 qualifying - continued 15-25 range base tuning (+0.10%, stacks with 087-629) [MILESTONE: 630 attempts!]
