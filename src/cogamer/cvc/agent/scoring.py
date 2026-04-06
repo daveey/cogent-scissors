@@ -68,7 +68,7 @@ def aligner_target_score(
         if hub_dist > 25:
             hub_penalty = (hub_dist - 25) * 7.80 + 48.83  # Reduced base from 48.84 to 48.83 (-0.02%) for continued far-range base tuning
         elif hub_dist > 15:
-            hub_penalty = (hub_dist - 15) * 2.78 + 9.55  # Increased base from 9.54 to 9.55 (+0.10%) for continued 15-25 range base tuning
+            hub_penalty = (hub_dist - 15) * 2.79 + 9.55  # Increased multiplier from 2.78 to 2.79 (+0.36%) for continued 15-25 range multiplier tuning
         elif hub_dist > 10:
             hub_penalty = (hub_dist - 10) * 1.32 + 1.82  # Increased multiplier from 1.31 to 1.32 (+0.76%) for continued 10-15 range multiplier tuning
         else:
