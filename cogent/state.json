@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 635,
+      "attempts": 636,
       "improvements": 7,
-      "last_used": "20260406-701-testing"
+      "last_used": "20260406-702-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "701",
-    "focus": "Hotspot weight mid-range reduction",
-    "description": "Reduced hotspot weight mid-range from 5.46 to 5.44 (-0.37%)",
-    "rationale": "Hotspot weight mid-range controls penalty for contested junctions at medium distance from hub (10-15 distance). Lower weight reduces avoidance of contested mid-range junctions. Conservative -0.37% reduction for continued mid-range contested junction tuning. Stacks with 087-700.",
-    "upload": "gamma_v150:v1",
+    "version": "702",
+    "focus": "Hotspot weight near-hub reduction",
+    "description": "Reduced hotspot weight near-hub from 1.64 to 1.62 (-1.22%)",
+    "rationale": "Hotspot weight near-hub controls penalty for contested junctions very close to hub (≤10 distance). Lower weight reduces avoidance of contested near-hub junctions, encouraging more aggressive recapture attempts near the hub. Conservative -1.22% reduction for continued near-hub recapture tuning. Stacks with 087-701.",
+    "upload": "gamma_v151:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 701. Reduced hotspot weight mid-range for continued mid-range contested junction tuning. Awaiting tournament validation."
+    "note": "Attempt 702. Reduced hotspot weight near-hub for continued near-hub recapture tuning. Awaiting tournament validation."
   },
   },
   "last_improvement": {
