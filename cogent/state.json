@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 576,
+      "attempts": 577,
       "improvements": 7,
-      "last_used": "20260406-642-testing"
+      "last_used": "20260406-643-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "642",
-    "focus": "Expansion bonus cap increase",
-    "description": "Increased expansion bonus cap from 37.75 to 37.80 (+0.13%)",
-    "rationale": "Expansion bonus cap controls the maximum expansion bonus for high-value junctions. Higher cap increases bonus ceiling for valuable expansions. Conservative +0.13% increase builds on validated improvements. Stacks with 087-641.",
-    "upload": "gamma_v91:v1",
+    "version": "643",
+    "focus": "Enemy AOE penalty increase",
+    "description": "Increased enemy AOE penalty from 10.76 to 10.78 (+0.19%)",
+    "rationale": "Enemy AOE penalty discourages targeting junctions near enemy junctions. Higher penalty increases avoidance of enemy-controlled areas. Conservative +0.19% increase builds on validated improvements. Stacks with 087-642.",
+    "upload": "gamma_v92:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 642. Clean baseline increased expansion bonus cap. Awaiting tournament validation."
+    "note": "Scissors attempt 643. Clean baseline increased enemy AOE penalty. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
