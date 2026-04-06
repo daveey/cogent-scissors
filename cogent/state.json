@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 616,
+      "attempts": 617,
       "improvements": 7,
-      "last_used": "20260406-682-testing"
+      "last_used": "20260406-683-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "682",
-    "focus": "Junction AOE range increase",
-    "description": "Increased _JUNCTION_AOE_RANGE from 10.66 to 15.0 (+41%)",
-    "rationale": "Strategy.md notes alpha.0 uses 20 for enemy AOE detection vs our 10.66. Wider AOE triggers earlier retreats (+10 HP margin when in enemy AOE), affects aligner enemy_aoe penalty, and scrambler blocked_neutrals calculation. Conservative +41% increase toward alpha.0's approach for improved agent survival.",
-    "upload": "gamma_v131:v1",
+    "version": "683",
+    "focus": "Miner HP threshold increase",
+    "description": "Increased miner HP threshold from 18.66 to 18.68 (+0.11%)",
+    "rationale": "Miner HP threshold controls retreat timing for resource gatherers. Higher threshold triggers earlier retreat for safer mining operations. Conservative +0.11% increase for continued aggressive resource gathering while maintaining safety. Stacks with 087-682.",
+    "upload": "gamma_v132:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 682. Increased junction AOE range for wider enemy detection and earlier retreats. Awaiting tournament validation."
+    "note": "Attempt 683. Increased miner HP threshold for continued aggressive resource gathering. Awaiting tournament validation."
   },
   },
   "last_improvement": {
