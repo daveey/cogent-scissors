@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (722) Claimed target penalty increase (10.99→11.01): gamma_v171_v1:v1 qualifying - bidirectional claim override tuning (+0.18%, stacks with 087-721)
 - [ ] (721) Junction align distance reduction (16.48→16.46): gamma_v170_v1:v1 qualifying - bidirectional chain-building reach tuning (-0.12%, stacks with 087-720)
 - [ ] (720) Hub align distance reduction (26.68→26.66): gamma_v169_v1:v1 qualifying - bidirectional hub reach tuning (-0.08%, stacks with 087-719) [MILESTONE: 720 attempts!]
 - [ ] (719) Scrambler heart batch target reduction (3.58→3.56): gamma_v168_v1:v1 qualifying - bidirectional scrambler persistence tuning (-0.56%, stacks with 087-718)
