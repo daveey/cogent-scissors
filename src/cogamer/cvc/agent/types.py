@@ -63,7 +63,7 @@ _JUNCTION_ALIGN_DISTANCE = 16.44  # Increased from 16.42 to 16.44 (+0.12%) for c
 _JUNCTION_AOE_RANGE = 10.64  # Increased from 10.62 to 10.64 (+0.19%) for continued larger area-of-effect detection tuning
 _CLAIMED_TARGET_PENALTY = 11.03  # Reduced from 11.05 to 11.03 (-0.18%) for continued flexible claim override tuning
 _TARGET_CLAIM_STEPS = 33.40  # Increased from 33.35 to 33.40 (+0.15%) for continued longer claim validity tuning
-_EXTRACTOR_MEMORY_STEPS = 852  # Increased from 850 to 852 (+0.24%) for continued longer extractor memory tuning
+_EXTRACTOR_MEMORY_STEPS = 854  # Increased from 852 to 854 (+0.23%) for continued longer extractor memory tuning
 _STATION_TARGETS_BY_AGENT = {
     "aligner": {
         0: (-3, 7),
