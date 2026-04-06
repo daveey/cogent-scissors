@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## Recent Wins
+- [x] **Cycle 91: Junction AOE 10→20 (+1.5%)** — Alpha.0 parity: wider enemy detection for better survival
 - [x] **Cycle 89: Scout HP 30→25 (+5.0%)** — Retreat optimization success (unlike scrambler)
 - [x] **Cycle 87: Miner HP 15→12 (+3.2%)** — Continued retreat optimization pattern
 - [x] **Cycle 86: Aligner HP 50→45 (+41.2%)** — MAJOR breakthrough! Less conservative retreat = more field time
@@ -13,7 +14,7 @@
 
 ## Completed
 - [x] Hotspot tracking implemented
-- [x] Wider enemy AOE for retreat (_NEAR_ENEMY_RADIUS=20)
+- [x] Wider enemy AOE for retreat (JUNCTION_AOE_RANGE 10→20) — IMPROVED!
 - [x] RETREAT_MARGIN 15→20 tested and reverted
 - [x] Aligner HP threshold optimization
 - [x] Miner HP threshold optimization
