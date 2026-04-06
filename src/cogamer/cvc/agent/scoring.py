@@ -149,7 +149,7 @@ def scramble_target_score(
         threatened = sum(
             1 for f in friendly_junctions if manhattan(candidate.position, f.position) <= _JUNCTION_ALIGN_DISTANCE
         )
-        threat_bonus = threatened * 10.60  # Reduced from 10.62 to 10.60 (-0.19%) for continued defensive priority tuning
+        threat_bonus = threatened * 10.62  # Increased from 10.60 to 10.62 (+0.19%) for continued defensive priority tuning
     return (
         distance - blocked_neutrals * 8.80 - corner_pressure - threat_bonus,  # Reduced from 8.82 to 8.80 (-0.23%) for continued expansion-blocking
         -float(blocked_neutrals),
