@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 627,
+      "attempts": 628,
       "improvements": 7,
-      "last_used": "20260406-693-testing"
+      "last_used": "20260406-694-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "693",
-    "focus": "Hub penalty very-close multiplier reduction",
-    "description": "Reduced hub penalty very-close multiplier from 0.261 to 0.260 (-0.38%)",
-    "rationale": "Hub penalty very-close multiplier controls penalty for junctions very close to hub (<10 distance). Lower penalty encourages tighter hub clustering for safer initial territory control. Conservative -0.38% reduction for continued tighter hub clustering tuning. Stacks with 087-692.",
-    "upload": "gamma_v142:v1",
+    "version": "694",
+    "focus": "Hub penalty 10-15 range multiplier reduction",
+    "description": "Reduced hub penalty 10-15 range multiplier from 1.31 to 1.30 (-0.76%)",
+    "rationale": "Hub penalty 10-15 range multiplier controls penalty for mid-range junctions (10-15 distance from hub). Lower penalty encourages slightly broader hub-proximal territory control. Conservative -0.76% reduction for continued 10-15 range multiplier tuning. Stacks with 087-693.",
+    "upload": "gamma_v143:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 693. Reduced hub penalty very-close multiplier for continued tighter hub clustering. Awaiting tournament validation."
+    "note": "Attempt 694. Reduced hub penalty 10-15 range multiplier for continued mid-range hub territory. Awaiting tournament validation."
   },
   },
   "last_improvement": {
