@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 626,
+      "attempts": 627,
       "improvements": 7,
-      "last_used": "20260406-692-testing"
+      "last_used": "20260406-693-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "692",
-    "focus": "Extractor memory steps increase",
-    "description": "Increased _EXTRACTOR_MEMORY_STEPS from 856 to 858 (+0.23%)",
-    "rationale": "Extractor memory steps controls how long agents remember extractor locations after last observation. Longer memory improves mining efficiency by reducing rediscovery overhead. Conservative +0.23% increase for continued longer extractor memory tuning. Stacks with 087-691.",
-    "upload": "gamma_v141:v1",
+    "version": "693",
+    "focus": "Hub penalty very-close multiplier reduction",
+    "description": "Reduced hub penalty very-close multiplier from 0.261 to 0.260 (-0.38%)",
+    "rationale": "Hub penalty very-close multiplier controls penalty for junctions very close to hub (<10 distance). Lower penalty encourages tighter hub clustering for safer initial territory control. Conservative -0.38% reduction for continued tighter hub clustering tuning. Stacks with 087-692.",
+    "upload": "gamma_v142:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 692. Increased extractor memory steps for continued longer extractor memory. Awaiting tournament validation."
+    "note": "Attempt 693. Reduced hub penalty very-close multiplier for continued tighter hub clustering. Awaiting tournament validation."
   },
   },
   "last_improvement": {
