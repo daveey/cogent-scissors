@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 516,
+      "attempts": 517,
       "improvements": 7,
-      "last_used": "20260406-582-testing"
+      "last_used": "20260406-583-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "582",
-    "focus": "Aligner HP threshold reduction",
-    "description": "Reduced aligner HP threshold from 45.68 to 45.66 (-0.044%)",
-    "rationale": "Aligner HP threshold controls when aligners retreat to refill hearts. Lower threshold makes aligners stay on field longer before retreating. Conservative -0.044% reduction builds on validated improvements. Stacks with 087-581.",
-    "upload": "gamma:v31",
+    "version": "583",
+    "focus": "Miner HP threshold increase",
+    "description": "Increased miner HP threshold from 18.64 to 18.66 (+0.11%)",
+    "rationale": "Miner HP threshold controls when miners retreat to refill hearts. Higher threshold makes miners retreat earlier for safer resource gathering. Conservative +0.11% increase builds on validated improvements. Stacks with 087-582.",
+    "upload": "gamma:v32",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 582. Clean baseline reduced aligner HP threshold. Awaiting tournament validation."
+    "note": "Scissors attempt 583. Clean baseline increased miner HP threshold. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
