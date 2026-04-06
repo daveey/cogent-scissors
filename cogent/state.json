@@ -6,12 +6,27 @@
       "last_used": null
     },
     "design": {
-      "attempts": 22,
+      "attempts": 23,
       "improvements": 7,
       "last_used": "20260406-junction-aoe-20"
     }
   },
   "failed_attempts": [
+    {
+      "date": "20260406",
+      "version": "enemy-aoe-weight-10.0-reverted",
+      "focus": "Enemy AOE weight increase",
+      "description": "Increased enemy_aoe weight from 8.0 to 10.0 (+25%) in aligner_target_score",
+      "result": "MARGINAL: avg 25.58 vs baseline 25.42 (+0.6%)",
+      "local_scores": {
+        "seeds": [42, 43, 44, 45, 46],
+        "scores": [22.80, 27.52, 28.81, 23.76, 24.99],
+        "avg": 25.58,
+        "baseline": 25.42
+      },
+      "status": "reverted",
+      "notes": "Cycle 100 - Marginal improvement, too small to be meaningful (+0.6%). High variance across seeds (22.80 to 28.81). Similar to Cycle 98 hotspot weight result. Improvement magnitude insufficient compared to historical successes (+1.5% to +41.2%). Decision: revert due to insufficient signal. Success rate: 7/23 = 30.4% (9 consecutive failures)."
+    },
     {
       "date": "20260406",
       "version": "teammate-penalty-4.0-reverted",

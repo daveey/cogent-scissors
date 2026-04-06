@@ -8,7 +8,6 @@
 
 ## Next Candidates
 - [ ] Junction scoring parameter tuning: hub penalty curves
-- [ ] Enemy AOE weight in scoring (currently 8.0)
 - [ ] Explore other non-HP parameters that can be validated locally
 - [ ] **BLOCKED:** LLM-dependent changes (cannot validate without LLM access in local tests)
 
@@ -18,11 +17,13 @@
 - Target switch threshold 3.0 is optimal (2.5 failed -10.5% with high variance)
 - Hotspot weight 8.0 is optimal (6.0 too marginal +0.4%, likely noise)
 - Teammate penalty 6.0 is optimal (4.0 failed -43.3%, major regression)
+- Enemy AOE weight 8.0 is optimal (10.0 too marginal +0.6%, likely noise)
 
 ## Testing Protocol Issue
 **Critical finding:** Local tests run with `ANTHROPIC_API_KEY=` (no LLM) per docs/cogames.md, but tournament uses Bedrock (LLM enabled). Cannot validate LLM-dependent changes locally. Cycle 94 reverted due to this issue.
 
 ## Completed
+- [x] Enemy AOE weight 8.0→10.0 tested and reverted (+0.6%, too marginal)
 - [x] Teammate penalty 6.0→4.0 tested and reverted (-43.3%, major regression)
 - [x] Hotspot weight 8.0→6.0 tested and reverted (+0.4%, too marginal)
 - [x] Target switch threshold 3.0→2.5 tested and reverted (-10.5%, high variance)
