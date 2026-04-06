@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (574) Teammate penalty increase (9.51→9.53): gamma:v23 qualifying - continued coordination tuning (+0.21%, stacks with 087-573)
 - [ ] (573) Network bonus cap increase (4.56→4.58): gamma:v22 qualifying - continued denser network clustering (+0.44%, stacks with 087-572)
 - [ ] (572) Network bonus weight increase (0.93→0.94): gamma:v21 qualifying - continued stronger network consolidation (+1.08%, stacks with 087-571)
 - [ ] (571) Hotspot penalty cap increase (3.32→3.34): gamma:v20 qualifying - continued contested junction penalty cap tuning (+0.60%, stacks with 087-570)

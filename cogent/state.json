@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 507,
+      "attempts": 508,
       "improvements": 7,
-      "last_used": "20260406-573-testing"
+      "last_used": "20260406-574-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "573",
-    "focus": "Network bonus cap increase",
-    "description": "Increased network bonus cap from 4.56 to 4.58 (+0.44%)",
-    "rationale": "Network bonus cap limits maximum bonus from nearby friendly junctions. Higher cap allows stronger bonus for dense network clusters. Conservative +0.44% increase builds on validated improvements. Stacks with 087-572.",
-    "upload": "gamma:v22",
+    "version": "574",
+    "focus": "Teammate penalty increase",
+    "description": "Increased teammate penalty from 9.51 to 9.53 (+0.21%)",
+    "rationale": "Teammate penalty discourages targeting junctions when a teammate is closer. Higher penalty improves coordination by reducing duplication. Conservative +0.21% increase builds on validated improvements. Stacks with 087-573.",
+    "upload": "gamma:v23",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 573. Clean baseline increased network bonus cap. Awaiting tournament validation."
+    "note": "Scissors attempt 574. Clean baseline increased teammate penalty. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
