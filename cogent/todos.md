@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (711) Scrambler corner pressure divisor increase (7.50→7.52): gamma_v160_v1:v1 qualifying - continued faster pressure growth tuning (+0.27%, stacks with 087-710)
 - [ ] (710) Scrambler blocked neutrals weight reduction (8.80→8.78): gamma_v159:v1 qualifying - continued expansion-blocking tuning (-0.23%, stacks with 087-709) [MILESTONE: 710 attempts!]
 - [ ] (709) Teammate penalty reduction (9.51→9.49): gamma_v158:v1 qualifying - continued coordination tuning (-0.21%, stacks with 087-708)
 - [ ] (708) Enemy AOE penalty reduction (10.76→10.74): gamma_v157:v1 qualifying - continued enemy avoidance tuning (-0.19%, stacks with 087-707)
