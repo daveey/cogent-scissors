@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (617) Scrambler HP threshold reduction (34.29→34.27): gamma:v66 qualifying - continued aggressive disruption (-0.058%, stacks with 087-616)
 - [ ] (616) Miner HP threshold reduction (18.66→18.64): gamma:v65 qualifying - continued aggressive resource gathering (-0.11%, stacks with 087-615)
 - [ ] (615) Aligner HP threshold increase (45.66→45.68): gamma:v64 qualifying - continued aligner retreat tuning (+0.044%, stacks with 087-614)
 - [ ] (614) Scrambler blocked neutrals weight reduction (8.82→8.80): gamma:v63 qualifying - continued expansion-blocking (-0.23%, stacks with 087-613)

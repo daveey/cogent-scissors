@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 550,
+      "attempts": 551,
       "improvements": 7,
-      "last_used": "20260406-616-testing"
+      "last_used": "20260406-617-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "616",
-    "focus": "Miner HP threshold reduction",
-    "description": "Reduced miner HP threshold from 18.66 to 18.64 (-0.11%)",
-    "rationale": "Miner HP threshold controls when miners retreat to refill hearts. Lower threshold makes miners stay on field longer before retreating. Conservative -0.11% reduction builds on validated improvements. Stacks with 087-615.",
-    "upload": "gamma:v65",
+    "version": "617",
+    "focus": "Scrambler HP threshold reduction",
+    "description": "Reduced scrambler HP threshold from 34.29 to 34.27 (-0.058%)",
+    "rationale": "Scrambler HP threshold controls when scramblers retreat to refill hearts. Lower threshold makes scramblers stay on field longer for more aggressive disruption. Conservative -0.058% reduction builds on validated improvements. Stacks with 087-616.",
+    "upload": "gamma:v66",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Scissors attempt 616. Clean baseline reduced miner HP threshold. Awaiting tournament validation."
+    "note": "Scissors attempt 617. Clean baseline reduced scrambler HP threshold. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
