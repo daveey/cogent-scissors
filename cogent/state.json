@@ -1,6 +1,43 @@
 {
   "approach_stats": {
-    "pco": {"attempts": 0, "improvements": 0, "last_used": null},
-    "design": {"attempts": 1, "improvements": 1, "last_used": "20260401-001"}
-  }
+    "pco": {
+      "attempts": 0,
+      "improvements": 0,
+      "last_used": null
+    },
+    "design": {
+      "attempts": 2,
+      "improvements": 1,
+      "last_used": "20260406-stall-14-reverted"
+    }
+  },
+  "failed_attempts": [
+    {
+      "date": "20260406",
+      "version": "stall-14-reverted",
+      "focus": "Stall unstick threshold",
+      "description": "Increased _STALL_UNSTICK_STEPS from 12 to 14 (+16.7%)",
+      "result": "REGRESSION: avg 13.06 vs baseline 13.65 (-4.3%)",
+      "local_scores": {
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "scores": [
+          15.65,
+          15.9,
+          8.12,
+          7.13,
+          18.5
+        ],
+        "avg": 13.06,
+        "baseline": 13.65
+      },
+      "status": "reverted",
+      "notes": "Delta Cycle 80 - Testing after codebase reset. Stall threshold 14 regressed in new context (previous testing showed 14 optimal, but other parameters have changed)."
+    }
+  ]
 }
