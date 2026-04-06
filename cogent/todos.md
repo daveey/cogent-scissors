@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (661) Hub penalty 10-15 range base reduction (1.82→1.81): gamma_v110:v1 qualifying - continued 10-15 range base penalty tuning (-0.55%, stacks with 087-660)
 - [ ] (660) Hub penalty very-close multiplier reduction (0.262→0.261): gamma_v109:v1 qualifying - continued tighter hub clustering tuning (-0.38%, stacks with 087-659) [MILESTONE: 660 attempts!]
 - [ ] (659) Extractor memory steps increase (854→856): gamma_v108:v1 qualifying - continued longer extractor memory tuning (+0.23%, stacks with 087-658)
 - [ ] (658) Target claim steps increase (33.40→33.45): gamma_v107:v1 qualifying - continued longer claim validity tuning (+0.15%, stacks with 087-657)
