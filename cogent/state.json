@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 484,
+      "attempts": 485,
       "improvements": 7,
-      "last_used": "20260405-550-testing"
+      "last_used": "20260406-551-testing"
     }
   },
   "testing_in_progress": {
-    "date": "20260405",
-    "version": "550",
-    "focus": "Miner HP threshold increase",
-    "description": "Increased miner HP threshold from 18.62 to 18.64 (+0.11%)",
-    "rationale": "HP threshold controls when miners retreat to safety. Higher threshold enables more aggressive resource gathering before retreating. Conservative +0.11% increase builds on validated improvements. Stacks with 087-549.",
-    "upload": "scissors_v467:v1",
+    "date": "20260406",
+    "version": "551",
+    "focus": "Scrambler HP threshold increase",
+    "description": "Increased scrambler HP threshold from 34.25 to 34.27 (+0.058%)",
+    "rationale": "HP threshold controls when scramblers retreat to safety. Higher threshold enables more aggressive disruption before retreating. Conservative +0.058% increase builds on validated improvements. Stacks with 087-550.",
+    "upload": "scissors_v468:v1",
     "season": "beta-four-score",
-    "uploaded_at": "20260405",
-    "note": "Scissors attempt 550. Clean baseline more aggressive miner. Awaiting tournament validation. [MILESTONE: 550 attempts]"
+    "uploaded_at": "20260406",
+    "note": "Scissors attempt 551. Clean baseline more aggressive scrambler. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
