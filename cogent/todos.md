@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (756) Target claim steps increase (33.45→33.50): gamma_v205_v1:v1 qualifying - bidirectional claim validity tuning (+0.15%, stacks with 087-755)
 - [ ] (755) Claimed target penalty reduction (11.01→10.99): gamma_v204_v1:v1 qualifying - bidirectional claim override tuning (-0.18%, stacks with 087-754)
 - [ ] (754) Junction align distance increase (16.46→16.48): gamma_v203_v1:v1 qualifying - bidirectional chain-building reach tuning (+0.12%, stacks with 087-753)
 - [ ] (753) Hub align distance increase (26.66→26.68): gamma_v202_v1:v1 qualifying - bidirectional hub reach tuning (+0.08%, stacks with 087-752)
