@@ -82,7 +82,7 @@ def aligner_target_score(
             hotspot_weight = 1.66  # Increased from 1.65 to 1.66 (+0.61%) for bidirectional near-hub recapture tuning
         elif hub_dist <= 15:
             hotspot_weight = 5.48  # Increased from 5.47 to 5.48 (+0.18%) for bidirectional mid-range contested junction tuning
-    hotspot_penalty = min(hotspot_count, 3.33) * hotspot_weight  # Increased cap from 3.32 to 3.33 (+0.30%) for bidirectional contested junction penalty cap tuning
+    hotspot_penalty = min(hotspot_count, 3.34) * hotspot_weight  # Increased cap from 3.33 to 3.34 (+0.30%) for bidirectional contested junction penalty cap tuning
     # Network bonus for chain-building near friendly junctions
     # Increased from alpha.0's 0.5 to 0.75 for better consolidation (gamma_v6 validated)
     # Further increased to 0.77 (+3%) for stronger chain-building incentive

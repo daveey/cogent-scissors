@@ -791,3 +791,4 @@
 - [ ] (816) Hotspot weight far-range increase (11.53→11.54): gamma_v265_v1 qualifying - bidirectional far-range contested junction tuning (+0.09%, stacks with 087-815)
 - [ ] (817) Hotspot weight near-hub increase (1.65→1.66): gamma_v266_v1 qualifying - bidirectional near-hub recapture tuning (+0.61%, stacks with 087-816)
 - [ ] (818) Hotspot weight mid-range increase (5.47→5.48): gamma_v267_v1 qualifying - bidirectional mid-range contested junction tuning (+0.18%, stacks with 087-817)
+- [ ] (819) Hotspot penalty cap increase (3.33→3.34): gamma_v268_v1 qualifying - bidirectional contested junction penalty cap tuning (+0.30%, stacks with 087-818)
