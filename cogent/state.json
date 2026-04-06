@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 827,
+      "attempts": 828,
       "improvements": 7,
-      "last_used": "20260406-893-testing"
+      "last_used": "20260406-894-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "893",
-    "focus": "Hub penalty far-range base increase",
-    "description": "Increased hub penalty far-range base from 48.85 to 48.86 (+0.02%)",
-    "rationale": "Hub penalty far-range base controls minimum penalty at the start of far range (>25 distance). Higher value increases base penalty, discouraging very distant expansion. Conservative +0.02% increase for bidirectional far-range base tuning. Stacks with 087-892.",
-    "upload": "gamma_v342_v1:v1",
+    "version": "894",
+    "focus": "Corner pressure cap increase",
+    "description": "Increased corner pressure cap from 10.93 to 10.94 (+0.09%)",
+    "rationale": "Corner pressure cap limits maximum bonus for scramblers targeting distant enemies. Higher cap allows stronger incentive to disrupt far enemies in four_score format. Conservative +0.09% increase for bidirectional corner pressure cap tuning. Stacks with 087-893.",
+    "upload": "gamma_v343_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 893. Increased hub penalty far-range base for bidirectional far-range base tuning. Awaiting tournament validation."
+    "note": "Attempt 894. Increased corner pressure cap for bidirectional scrambler distant targeting tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

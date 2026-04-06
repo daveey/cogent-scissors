@@ -866,3 +866,4 @@
 - [ ] (891) Hub penalty 15-25 range base increase (9.56→9.57): gamma_v340_v1 qualifying - bidirectional 15-25 range base tuning (+0.10%, stacks with 087-890)
 - [ ] (892) Hub penalty far-range multiplier increase (7.82→7.83): gamma_v341_v1 qualifying - bidirectional far-range multiplier tuning (+0.13%, stacks with 087-891)
 - [ ] (893) Hub penalty far-range base increase (48.85→48.86): gamma_v342_v1 qualifying - bidirectional far-range base tuning (+0.02%, stacks with 087-892)
+- [ ] (894) Corner pressure cap increase (10.93→10.94): gamma_v343_v1 qualifying - bidirectional corner pressure cap tuning (+0.09%, stacks with 087-893)
