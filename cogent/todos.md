@@ -1,6 +1,7 @@
 # scissors — Improvement TODOs
 
 ## In Progress
+- [ ] (685) Emergency resource threshold increase (2.56→2.58): gamma_v134:v1 qualifying - earlier emergency mining trigger (+0.78%, stacks with 087-684)
 - [ ] (684) Scrambler HP threshold increase (34.29→34.31): gamma_v133:v1 qualifying - continued aggressive disruption (+0.058%, stacks with 087-683)
 - [ ] (683) Miner HP threshold increase (18.66→18.68): gamma_v132:v1 qualifying - continued aggressive resource gathering (+0.11%, stacks with 087-682)
 - [ ] (682) Junction AOE range increase (10.66→15.0): gamma_v131:v1 qualifying - wider enemy detection for earlier retreats (+41%, toward alpha.0's approach)

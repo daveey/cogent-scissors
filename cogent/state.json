@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 618,
+      "attempts": 619,
       "improvements": 7,
-      "last_used": "20260406-684-testing"
+      "last_used": "20260406-685-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260406",
-    "version": "684",
-    "focus": "Scrambler HP threshold increase",
-    "description": "Increased scrambler HP threshold from 34.29 to 34.31 (+0.058%)",
-    "rationale": "Scrambler HP threshold controls retreat timing for disruptors. Higher threshold triggers earlier retreat for safer disruption operations in contested territory. Conservative +0.058% increase for continued aggressive disruption while maintaining survival. Stacks with 087-683.",
-    "upload": "gamma_v133:v1",
+    "version": "685",
+    "focus": "Emergency resource threshold increase",
+    "description": "Increased _EMERGENCY_RESOURCE_LOW from 2.56 to 2.58 (+0.78%)",
+    "rationale": "Emergency resource threshold triggers emergency mining when team resources drop low. Higher threshold triggers emergency mining earlier for more robust economic bootstrapping. Conservative +0.78% increase maintains economic stability. Stacks with 087-684.",
+    "upload": "gamma_v134:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260406",
-    "note": "Attempt 684. Increased scrambler HP threshold for continued aggressive disruption. Awaiting tournament validation."
+    "note": "Attempt 685. Increased emergency resource threshold for earlier emergency mining trigger. Awaiting tournament validation."
   },
   },
   "last_improvement": {
