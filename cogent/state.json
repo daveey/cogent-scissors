@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 859,
+      "attempts": 860,
       "improvements": 7,
-      "last_used": "20260407-925-testing"
+      "last_used": "20260407-926-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260407",
-    "version": "925",
-    "focus": "Hotspot weight far-range increase",
-    "description": "Increased hotspot weight far-range from 11.55 to 11.56 (+0.09%)",
-    "rationale": "Hotspot weight far-range controls contested junction penalty for junctions >15 distance from hub. Higher value discourages fighting over far-range contested junctions. Conservative +0.09% increase for bidirectional far-range contested junction tuning. Stacks with 087-924.",
-    "upload": "gamma_v374_v1:v1",
+    "version": "926",
+    "focus": "Hotspot penalty cap increase",
+    "description": "Increased hotspot penalty cap from 3.35 to 3.36 (+0.30%)",
+    "rationale": "Hotspot penalty cap controls maximum hotspot count used in penalty calculation. Higher value allows penalty to scale with more contested recaptures. Conservative +0.30% increase for bidirectional contested junction penalty cap tuning. Stacks with 087-925.",
+    "upload": "gamma_v375_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260407",
-    "note": "Attempt 925. Increased hotspot weight far-range for bidirectional far-range contested junction tuning. Awaiting tournament validation."
+    "note": "Attempt 926. Increased hotspot penalty cap for bidirectional contested junction penalty cap tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
