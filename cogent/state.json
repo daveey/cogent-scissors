@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 833,
+      "attempts": 834,
       "improvements": 7,
-      "last_used": "20260407-899-testing"
+      "last_used": "20260407-900-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260407",
-    "version": "899",
-    "focus": "Aligner HP threshold increase",
-    "description": "Increased aligner HP threshold from 45.72 to 45.73 (+0.02%)",
-    "rationale": "Aligner HP threshold controls when aligners retreat to safety. Higher value allows aligners to stay in dangerous situations slightly longer before retreating. Conservative +0.02% increase for bidirectional aligner retreat tuning. Stacks with 087-898.",
-    "upload": "gamma_v348_v1:v1",
+    "version": "900",
+    "focus": "Scrambler HP threshold increase",
+    "description": "Increased scrambler HP threshold from 34.35 to 34.36 (+0.03%)",
+    "rationale": "Scrambler HP threshold controls when scramblers retreat to safety. Higher value allows scramblers to stay in dangerous situations slightly longer before retreating. Conservative +0.03% increase for bidirectional disruption tuning. Stacks with 087-899.",
+    "upload": "gamma_v349_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260407",
-    "note": "Attempt 899. Increased aligner HP threshold for bidirectional aligner retreat tuning. Awaiting tournament validation."
+    "note": "Attempt 900. Increased scrambler HP threshold for bidirectional disruption tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

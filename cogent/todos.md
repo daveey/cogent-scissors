@@ -872,3 +872,4 @@
 - [ ] (897) Extractor memory steps increase (862→863): gamma_v346_v1 qualifying - bidirectional extractor memory tuning (+0.12%, stacks with 087-896)
 - [ ] (898) Miner HP threshold increase (18.72→18.73): gamma_v347_v1 qualifying - bidirectional resource gathering tuning (+0.05%, stacks with 087-897)
 - [ ] (899) Aligner HP threshold increase (45.72→45.73): gamma_v348_v1 qualifying - bidirectional aligner retreat tuning (+0.02%, stacks with 087-898)
+- [ ] (900) Scrambler HP threshold increase (34.35→34.36): gamma_v349_v1 qualifying - bidirectional disruption tuning (+0.03%, stacks with 087-899)
