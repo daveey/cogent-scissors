@@ -929,3 +929,4 @@
 - [ ] (954) Hub penalty far-range multiplier increase (7.84→7.85): gamma_v403_v1 qualifying - bidirectional far-range multiplier tuning (+0.13%, stacks with 087-953)
 - [ ] (955) Hub penalty far-range base increase (48.87→48.88): gamma_v404_v1 qualifying - bidirectional far-range base tuning (+0.02%, stacks with 087-954)
 - [ ] (956) Hotspot weight near-hub increase (1.68→1.69): gamma_v405_v1 qualifying - bidirectional near-hub recapture tuning (+0.60%, stacks with 087-955)
+- [ ] (957) Hotspot weight mid-range increase (5.50→5.51): gamma_v406_v1 qualifying - bidirectional mid-range contested junction tuning (+0.18%, stacks with 087-956)
