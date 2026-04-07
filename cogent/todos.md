@@ -871,3 +871,4 @@
 - [ ] (896) Blocked neutrals weight increase (8.84→8.85): gamma_v345_v1 qualifying - bidirectional expansion-blocking tuning (+0.11%, stacks with 087-895)
 - [ ] (897) Extractor memory steps increase (862→863): gamma_v346_v1 qualifying - bidirectional extractor memory tuning (+0.12%, stacks with 087-896)
 - [ ] (898) Miner HP threshold increase (18.72→18.73): gamma_v347_v1 qualifying - bidirectional resource gathering tuning (+0.05%, stacks with 087-897)
+- [ ] (899) Aligner HP threshold increase (45.72→45.73): gamma_v348_v1 qualifying - bidirectional aligner retreat tuning (+0.02%, stacks with 087-898)
