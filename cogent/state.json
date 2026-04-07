@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 856,
+      "attempts": 857,
       "improvements": 7,
-      "last_used": "20260407-922-testing"
+      "last_used": "20260407-923-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260407",
-    "version": "922",
-    "focus": "Hub penalty far-range base increase",
-    "description": "Increased hub penalty far-range base from 48.86 to 48.87 (+0.02%)",
-    "rationale": "Hub penalty far-range base controls minimum penalty at the start of this range (>25 distance). Higher value increases base penalty, discouraging overextension to distant junctions. Conservative +0.02% increase for bidirectional far-range base tuning. Stacks with 087-921.",
-    "upload": "gamma_v371_v1:v1",
+    "version": "923",
+    "focus": "Hotspot weight near-hub increase",
+    "description": "Increased hotspot weight near-hub from 1.67 to 1.68 (+0.60%)",
+    "rationale": "Hotspot weight near-hub controls contested junction penalty for junctions ≤10 distance from hub. Higher value discourages fighting over near-hub contested junctions. Conservative +0.60% increase for bidirectional near-hub recapture tuning. Stacks with 087-922.",
+    "upload": "gamma_v372_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260407",
-    "note": "Attempt 922. Increased hub penalty far-range base for bidirectional far-range base tuning. Awaiting tournament validation."
+    "note": "Attempt 923. Increased hotspot weight near-hub for bidirectional near-hub recapture tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
