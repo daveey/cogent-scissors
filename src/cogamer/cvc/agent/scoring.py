@@ -96,7 +96,7 @@ def aligner_target_score(
             and manhattan(candidate.position, source.position) <= _JUNCTION_ALIGN_DISTANCE
         )
         network_bonus = min(nearby_friendly, 4.61) * 0.98  # Increased weight from 0.97 to 0.98 (+1.03%) for bidirectional network bonus weight tuning
-    teammate_penalty = 9.56 if teammate_closer else 0.0  # Increased from 9.55 to 9.56 (+0.10%) for bidirectional coordination tuning
+    teammate_penalty = 9.57 if teammate_closer else 0.0  # Increased from 9.56 to 9.57 (+0.10%) for bidirectional coordination tuning
     return (
         distance
         - min(expansion * 6.68, 37.81)  # Increased cap from 37.80 to 37.81 (+0.03%) for bidirectional expansion bonus cap tuning

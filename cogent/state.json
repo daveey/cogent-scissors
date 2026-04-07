@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 865,
+      "attempts": 866,
       "improvements": 7,
-      "last_used": "20260407-931-testing"
+      "last_used": "20260407-932-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260407",
-    "version": "931",
-    "focus": "Enemy AOE penalty increase",
-    "description": "Increased enemy AOE penalty from 10.81 to 10.82 (+0.09%)",
-    "rationale": "Enemy AOE penalty controls penalty for targeting junctions within enemy AOE range. Higher value discourages approaching enemy-controlled areas. Conservative +0.09% increase for bidirectional enemy avoidance tuning. Stacks with 087-930.",
-    "upload": "gamma_v380_v1:v1",
+    "version": "932",
+    "focus": "Teammate penalty increase",
+    "description": "Increased teammate penalty from 9.56 to 9.57 (+0.10%)",
+    "rationale": "Teammate penalty controls penalty when a teammate is closer to a target. Higher value reduces target duplication by encouraging agents to pursue different targets. Conservative +0.10% increase for bidirectional coordination tuning. Stacks with 087-931.",
+    "upload": "gamma_v381_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260407",
-    "note": "Attempt 931. Increased enemy AOE penalty for bidirectional enemy avoidance tuning. Awaiting tournament validation."
+    "note": "Attempt 932. Increased teammate penalty for bidirectional coordination tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
