@@ -944,3 +944,4 @@
 - [ ] (969) Blocked neutrals multiplier increase (8.86→8.87): gamma_v418_v1 qualifying - bidirectional expansion-blocking tuning (+0.11%, stacks with 087-968)
 - [ ] (970) Miner HP threshold increase (18.74→18.75): gamma_v419_v1 qualifying - bidirectional resource gathering tuning (+0.05%, stacks with 087-969)
 - [ ] (971) Aligner HP threshold increase (45.74→45.75): gamma_v420_v1 qualifying - bidirectional aligner retreat tuning (+0.02%, stacks with 087-970) [MILESTONE: 971 attempts!]
+- [ ] (972) Scrambler HP threshold increase (34.37→34.38): gamma_v421_v1 qualifying - bidirectional disruption tuning (+0.03%, stacks with 087-971)
