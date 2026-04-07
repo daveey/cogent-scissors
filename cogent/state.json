@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 872,
+      "attempts": 873,
       "improvements": 7,
-      "last_used": "20260407-938-testing"
+      "last_used": "20260407-939-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260407",
-    "version": "938",
-    "focus": "Miner HP threshold increase",
-    "description": "Increased miner HP threshold from 18.73 to 18.74 (+0.05%)",
-    "rationale": "Miner HP threshold controls when miners retreat to safety. Higher value means miners retreat earlier, improving survival and resource gathering efficiency. Conservative +0.05% increase for bidirectional resource gathering tuning. Stacks with 087-937.",
-    "upload": "gamma_v387_v1:v1",
+    "version": "939",
+    "focus": "Scrambler HP threshold increase",
+    "description": "Increased scrambler HP threshold from 34.36 to 34.37 (+0.03%)",
+    "rationale": "Scrambler HP threshold controls when scramblers retreat to safety. Higher value means scramblers retreat earlier, improving survival and disruption effectiveness. Conservative +0.03% increase for bidirectional disruption tuning. Stacks with 087-938.",
+    "upload": "gamma_v388_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260407",
-    "note": "Attempt 938. Increased miner HP threshold for bidirectional resource gathering tuning. Awaiting tournament validation."
+    "note": "Attempt 939. Increased scrambler HP threshold for bidirectional disruption tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",

@@ -911,3 +911,4 @@
 - [ ] (936) Scrambler threat bonus increase (10.65→10.66): gamma_v385_v1 qualifying - bidirectional defensive priority tuning (+0.09%, stacks with 087-935)
 - [ ] (937) Aligner HP threshold increase (45.73→45.74): gamma_v386_v1 qualifying - bidirectional aligner retreat tuning (+0.02%, stacks with 087-936)
 - [ ] (938) Miner HP threshold increase (18.73→18.74): gamma_v387_v1 qualifying - bidirectional resource gathering tuning (+0.05%, stacks with 087-937)
+- [ ] (939) Scrambler HP threshold increase (34.36→34.37): gamma_v388_v1 qualifying - bidirectional disruption tuning (+0.03%, stacks with 087-938)
