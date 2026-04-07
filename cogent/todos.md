@@ -877,3 +877,4 @@
 - [ ] (902) Aligner heart batch target increase (3.62→3.63): gamma_v351_v1 qualifying - bidirectional aligner persistence tuning (+0.28%, stacks with 087-901)
 - [ ] (903) Scrambler heart batch target increase (3.62→3.63): gamma_v352_v1 qualifying - bidirectional scrambler persistence tuning (+0.28%, stacks with 087-902)
 - [ ] (904) Hub align distance increase (26.72→26.73): gamma_v353_v1 qualifying - bidirectional hub reach tuning (+0.04%, stacks with 087-903)
+- [ ] (905) Junction align distance increase (16.52→16.53): gamma_v354_v1 qualifying - bidirectional chain-building reach tuning (+0.06%, stacks with 087-904)
