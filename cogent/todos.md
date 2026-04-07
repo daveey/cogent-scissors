@@ -889,3 +889,4 @@
 - [ ] (914) Network bonus weight increase (0.96→0.97): gamma_v363_v1 qualifying - bidirectional network bonus weight tuning (+1.04%, stacks with 087-913)
 - [ ] (915) Network bonus cap increase (4.59→4.60): gamma_v364_v1 qualifying - bidirectional network consolidation cap tuning (+0.22%, stacks with 087-914)
 - [ ] (916) Hub penalty near-hub multiplier increase (0.265→0.266): gamma_v365_v1 qualifying - bidirectional hub clustering tuning (+0.38%, stacks with 087-915)
+- [ ] (917) Hub penalty 10-15 range multiplier increase (1.35→1.36): gamma_v366_v1 qualifying - bidirectional 10-15 range multiplier tuning (+0.74%, stacks with 087-916)
