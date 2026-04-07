@@ -66,7 +66,7 @@ def aligner_target_score(
     if hub_position is not None:
         hub_dist = float(manhattan(hub_position, candidate.position))
         if hub_dist > 25:
-            hub_penalty = (hub_dist - 25) * 7.84 + 48.86  # Increased multiplier from 7.83 to 7.84 (+0.13%) for bidirectional far-range multiplier tuning
+            hub_penalty = (hub_dist - 25) * 7.84 + 48.87  # Increased base from 48.86 to 48.87 (+0.02%) for bidirectional far-range base tuning
         elif hub_dist > 15:
             hub_penalty = (hub_dist - 15) * 2.84 + 9.58  # Increased base from 9.57 to 9.58 (+0.10%) for bidirectional 15-25 range base tuning
         elif hub_dist > 10:
