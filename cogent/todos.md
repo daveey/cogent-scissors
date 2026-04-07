@@ -918,3 +918,4 @@
 - [ ] (943) Hub align distance increase (26.73→26.74): gamma_v392_v1 qualifying - bidirectional hub reach tuning (+0.04%, stacks with 087-942)
 - [ ] (944) Junction align distance increase (16.53→16.54): gamma_v393_v1 qualifying - bidirectional chain-building reach tuning (+0.06%, stacks with 087-943)
 - [ ] (945) Junction AOE range increase (15.07→15.08): gamma_v394_v1 qualifying - bidirectional enemy AOE detection tuning (+0.07%, stacks with 087-944)
+- [ ] (946) Claimed target penalty increase (11.02→11.03): gamma_v395_v1 qualifying - bidirectional claim override tuning (+0.09%, stacks with 087-945)
