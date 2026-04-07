@@ -901,3 +901,4 @@
 - [ ] (926) Hotspot penalty cap increase (3.35→3.36): gamma_v375_v1 qualifying - bidirectional contested junction penalty cap tuning (+0.30%, stacks with 087-925)
 - [ ] (927) Network bonus cap increase (4.60→4.61): gamma_v376_v1 qualifying - bidirectional network consolidation cap tuning (+0.22%, stacks with 087-926)
 - [ ] (928) Network bonus weight increase (0.97→0.98): gamma_v377_v1 qualifying - bidirectional network bonus weight tuning (+1.03%, stacks with 087-927)
+- [ ] (929) Expansion bonus weight increase (6.67→6.68): gamma_v378_v1 qualifying - bidirectional expansion emphasis tuning (+0.15%, stacks with 087-928)
