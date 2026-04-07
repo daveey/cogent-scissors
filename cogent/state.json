@@ -6,21 +6,21 @@
       "last_used": null
     },
     "design": {
-      "attempts": 861,
+      "attempts": 862,
       "improvements": 7,
-      "last_used": "20260407-927-testing"
+      "last_used": "20260407-928-testing"
     }
   },
   "testing_in_progress": {
     "date": "20260407",
-    "version": "927",
-    "focus": "Network bonus cap increase",
-    "description": "Increased network bonus cap from 4.60 to 4.61 (+0.22%)",
-    "rationale": "Network bonus cap controls maximum nearby friendly junctions counted for chain-building bonus. Higher value allows bonus to scale with more adjacent friendly junctions. Conservative +0.22% increase for bidirectional network consolidation cap tuning. Stacks with 087-926.",
-    "upload": "gamma_v376_v1:v1",
+    "version": "928",
+    "focus": "Network bonus weight increase",
+    "description": "Increased network bonus weight from 0.97 to 0.98 (+1.03%)",
+    "rationale": "Network bonus weight controls per-junction bonus for chain-building near friendly junctions. Higher value encourages building chains near existing friendly network. Conservative +1.03% increase for bidirectional network bonus weight tuning. Stacks with 087-927.",
+    "upload": "gamma_v377_v1:v1",
     "season": "beta-four-score",
     "uploaded_at": "20260407",
-    "note": "Attempt 927. Increased network bonus cap for bidirectional network consolidation cap tuning. Awaiting tournament validation."
+    "note": "Attempt 928. Increased network bonus weight for bidirectional network bonus weight tuning. Awaiting tournament validation."
   },
   "last_improvement": {
     "date": "20260404",
